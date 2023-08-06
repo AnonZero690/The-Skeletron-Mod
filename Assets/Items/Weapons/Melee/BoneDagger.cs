@@ -8,6 +8,11 @@ namespace TheSkeletronMod.Assets.Items.Weapons.Melee
 {
 	public class BoneDagger : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			Tooltip.SetDefault("Is a cool Bony Dagger.");
+
+		}
 		public override void SetDefaults()
 		{
 			Item.damage = 17;
