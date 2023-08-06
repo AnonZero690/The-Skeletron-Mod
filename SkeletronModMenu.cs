@@ -10,15 +10,15 @@ namespace TheSkeletronMod
 {
     public class SkeletronModMenu : ModMenu
     {
-        private const string menuAssetPath = "SkellyModYT/Assets/Textures/Menu"; // Creates a constant variable representing the texture path, so we don't have to write it out multiple times
+        private const string menuAssetPath = "TheSkeletronMod/Assets/Textures/Menu"; // Creates a constant variable representing the texture path, so we don't have to write it out multiple times
 
-        public override Asset<Texture2D> Logo => ModContent.Request<Texture2D>("SkellyModYT/Assets/Textures/Menu/Logopl", (AssetRequestMode)2);
+        public override Asset<Texture2D> Logo => ModContent.Request<Texture2D>("TheSkeletronMod/Assets/Textures/Menu/Logopl", (AssetRequestMode)2);
 
         public override Asset<Texture2D> SunTexture => ModContent.Request<Texture2D>($"{menuAssetPath}/SkullSun");
 
         public override Asset<Texture2D> MoonTexture => ModContent.Request<Texture2D>($"{menuAssetPath}/SkullMoon");
 
-        public override int Music => MusicLoader.GetMusicSlot(this.Mod, "Assets/Music/Assault");
+        public override int Music => MusicLoader.GetMusicSlot(this.Mod, "TheSkeletronMod/Assets/Music/Assault");
         private float floatX;
 
         private float floatY;
@@ -35,7 +35,7 @@ namespace TheSkeletronMod
         {
 
             logoScale = 0.6f;
-            Texture2D MenuBG = (Texture2D)ModContent.Request<Texture2D>("SkellyModYT/Assets/Textures/Menu/BGPL", (AssetRequestMode)2);
+            Texture2D MenuBG = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Assets/Textures/Menu/BGPL", (AssetRequestMode)2);
             Vector2 zero = Vector2.Zero;
             float width = Main.screenWidth / (float)MenuBG.Width;
             _ = Main.screenHeight / (float)MenuBG.Height;

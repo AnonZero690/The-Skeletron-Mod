@@ -9,6 +9,6 @@ public class SkelSound : ModSystem
 
     static SkelSound()
     {
-        ModMenuClick = new SoundStyle("RealmOne/Assets/Sounds/ModMenuClick", (SoundType)0);
+        ModMenuClick = new SoundStyle("TheSkeletronMod/Assets/Sounds/ModMenuClick", (SoundType)0);
     }
 }
