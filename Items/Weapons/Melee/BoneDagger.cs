@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 
-namespace TheSkeletronMod.Assets.Items.Weapons.Melee
+namespace TheSkeletronMod.Items.Weapons.Melee
 {
 	public class BoneDagger : ModItem
 	{

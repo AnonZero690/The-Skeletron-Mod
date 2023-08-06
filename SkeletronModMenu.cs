@@ -18,7 +18,7 @@ namespace TheSkeletronMod
 
         public override Asset<Texture2D> MoonTexture => ModContent.Request<Texture2D>($"{menuAssetPath}/SkullMoon");
 
-        public override int Music => MusicLoader.GetMusicSlot(this.Mod, "TheSkeletronMod/Assets/Music/Assault");
+        //public override int Music => MusicLoader.GetMusicSlot(this.Mod, "TheSkeletronMod/Assets/Music/Assault");
         private float floatX;
 
         private float floatY;
