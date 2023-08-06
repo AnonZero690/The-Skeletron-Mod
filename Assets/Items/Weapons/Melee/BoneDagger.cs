@@ -32,6 +32,5 @@ namespace TheSkeletronMod.Assets.Items.Weapons.Melee
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
 		}
-		int timesShot = 0;
 	}
 }
