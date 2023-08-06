@@ -7,7 +7,7 @@ namespace TheSkeletronMod.Common
     {
         public void Load(Mod mod)
         {
-            MusicLoader.AddMusic(mod, "Assets/Music/Assault");
+            MusicLoader.AddMusic(mod, "TheSkeletronMod/Assets/Music/Assault");
 
 
         }

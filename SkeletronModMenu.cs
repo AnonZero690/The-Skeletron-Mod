@@ -12,7 +12,7 @@ namespace TheSkeletronMod
     {
         private const string menuAssetPath = "TheSkeletronMod/Assets/Textures/Menu"; // Creates a constant variable representing the texture path, so we don't have to write it out multiple times
 
-        public override Asset<Texture2D> Logo => ModContent.Request<Texture2D>("TheSkeletronMod/Assets/Textures/Menu/Logopl", (AssetRequestMode)2);
+        public override Asset<Texture2D> Logo => ModContent.Request<Texture2D>($"{menuAssetPath}/Logopl", (AssetRequestMode)2);
 
         public override Asset<Texture2D> SunTexture => ModContent.Request<Texture2D>($"{menuAssetPath}/SkullSun");
 
