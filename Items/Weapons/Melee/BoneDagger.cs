@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
+using TheSkeletronMod.Items.Weapons.Ranged.Projectiles;
 
 namespace TheSkeletronMod.Items.Weapons.Melee
 {
@@ -12,9 +13,9 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 		{
 			Item.damage = 17;
 			Item.DamageType = DamageClass.Melee;
-			Item.useTime = 20;
-			Item.width = 30;
-			Item.height = 30;
+			Item.useTime = 10;
+			Item.width = 50;
+			Item.height = 50;
 			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 3;
@@ -23,13 +24,28 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 			Item.autoReuse = false;
 			Item.crit = 15;
 		}
+		public override bool AltFunctionUse(Player player)
+		{
+            return true;
+        }
 
-		public override void AddRecipes()
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            if (player.altFunctionUse == 2)
+            {
+                int proj = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BoneDaggerProjectile>(), 12, 1, player.whoAmI);
+				Main.projectile[proj].friendly = true;
+            }
+            return true;
+            
+        }
+        public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.DirtBlock,27);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
 		}
+		
 	}
 }
