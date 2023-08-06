@@ -1,0 +1,22 @@
+Mods: {
+	TheSkeletronMod: {
+	GameTips: {
+			ExampleTip0: Skeletron Kawaii
+			ExampleTip1: Rattle em Bois!!!
+			ExampleTip2: The dungeon seems angered...
+			ExampleTip3: Skeletron, the youtuber is amazing! Go sub to him!
+			DisabledExampleTip: Get back in the dungeon, follower of skeletron!
+		}
+		Items: {
+			BoneDagger: {
+				DisplayName: Bone Dagger
+				Tooltip: "Is made out of bones lol"
+			}
+		}
+		DamageClasses: {
+			Bonecursed.DisplayName: Calcium Damage
+			}
+
+		Projectiles.BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
+	}
+}
