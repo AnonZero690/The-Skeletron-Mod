@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
-using TheSkeletronMod.Items.Weapons.Ranged.Projectiles;
+using TheSkeletronMod.Projectiles;
 
 namespace TheSkeletronMod.Items.Weapons.Melee
 {
@@ -13,9 +13,9 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 		{
 			Item.damage = 17;
 			Item.DamageType = DamageClass.Melee;
-			Item.useTime = 20;
-			Item.width = 30;
-			Item.height = 30;
+			Item.useTime = 10;
+			Item.width = 50;
+			Item.height = 50;
 			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 3;
@@ -33,10 +33,9 @@ namespace TheSkeletronMod.Items.Weapons.Melee
         {
             if (player.altFunctionUse == 2)
             {
-                int proj = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BoneDaggerProjectile>(), 12, 1, player.whoAmI);
+                int proj = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BoneDaggerProjectile>(), damage, knockback, player.whoAmI);
 				Main.projectile[proj].friendly = true;
-				return false;
-            }else
+            }
             return true;
             
         }
