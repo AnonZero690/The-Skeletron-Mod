@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 
-namespace TheSkeletronMod.Items.Weapons.Ranged.Projectiles
+namespace TheSkeletronMod.Projectiles
 {
 	public class BoneDaggerProjectile : ModProjectile
 	{
