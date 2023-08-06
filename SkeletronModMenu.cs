@@ -1,14 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SkellyModYT.Common.Systems;
+using TheSkeletronMod.Common.Systems;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ModLoader;
 
-namespace SkellyModYT
+namespace TheSkeletronMod
 {
-    public class SkellyModMenu : ModMenu
+    public class SkeletronModMenu : ModMenu
     {
         private const string menuAssetPath = "SkellyModYT/Assets/Textures/Menu"; // Creates a constant variable representing the texture path, so we don't have to write it out multiple times
 

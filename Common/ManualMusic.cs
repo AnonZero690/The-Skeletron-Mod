@@ -1,6 +1,6 @@
 ﻿using Terraria.ModLoader;
 
-namespace SkellyModYT.Common
+namespace TheSkeletronMod.Common
 {
 
     public sealed class ManualMusic : ILoadable

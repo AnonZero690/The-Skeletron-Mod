@@ -1,7 +1,7 @@
 ﻿using Terraria.Audio;
 using Terraria.ModLoader;
 
-namespace SkellyModYT.Common.Systems;
+namespace TheSkeletronMod.Common.Systems;
 
 public class SkelSound : ModSystem
 {
