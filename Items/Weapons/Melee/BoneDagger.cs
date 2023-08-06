@@ -12,16 +12,15 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 		{
 			Item.damage = 17;
 			Item.DamageType = DamageClass.Melee;
-			Item.useTime = 23;
-			Item.width = 10;
-			Item.height = 10;
-			Item.useAnimation = 32;
+			Item.useTime = 20;
+			Item.width = 30;
+			Item.height = 30;
+			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 3;
 			Item.value = 60;
 			Item.rare = ItemRarityID.Green;
 			Item.autoReuse = false;
-			Item.useAnimation = 20;
 			Item.crit = 15;
 		}
 

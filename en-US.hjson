@@ -1,0 +1,10 @@
+Mods: {
+	TheSkeletronMod: {
+		Items: {
+			BoneDagger: {
+				DisplayName: Bone Dagger
+				Tooltip: ""
+			}
+		}
+	}
+}
