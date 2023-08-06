@@ -1,0 +1,3 @@
+displayName = The Skeletron Mod
+author = Zero and Other Bones
+version = 0.1

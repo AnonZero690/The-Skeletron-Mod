@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>SkellyModYT</AssemblyName>
+    <TargetFramework>net6.0</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\Textures\Menu\BGPL.png" />
+    <None Remove="Assets\Textures\Menu\Logopl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Music\" />
+    <Folder Include="Minibosses\" />
+    <Folder Include="Gores\" />
+    <Folder Include="Projectiles\" />
+    <Folder Include="Weapons\" />
+  </ItemGroup>
+</Project>
