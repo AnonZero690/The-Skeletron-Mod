@@ -33,7 +33,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
         {
             if (player.altFunctionUse == 2)
             {
-                int proj = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BoneDaggerProjectile>(), 12, 1, player.whoAmI);
+                int proj = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BoneDaggerProjectile>(), damage, knockback, player.whoAmI);
 				Main.projectile[proj].friendly = true;
             }
             return true;
