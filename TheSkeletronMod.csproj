@@ -8,6 +8,11 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Weapons\**" />
+    <EmbeddedResource Remove="Weapons\**" />
+    <None Remove="Weapons\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Assets\Textures\Menu\BGPL.png" />
     <None Remove="Assets\Textures\Menu\Logopl.png" />
   </ItemGroup>
@@ -19,6 +24,5 @@
     <Folder Include="Minibosses\" />
     <Folder Include="Gores\" />
     <Folder Include="Projectiles\" />
-    <Folder Include="Weapons\" />
   </ItemGroup>
 </Project>
