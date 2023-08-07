@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 using TheSkeletronMod.projectiles;
 using TheSkeletronMod.Common.DamageClasses;
+using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Ammo
 {
@@ -29,8 +30,8 @@ namespace TheSkeletronMod.Items.Ammo
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Bone, 1);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.AddCondition(conditions: Condition.InGraveyard);
+            recipe.AddTile(ModContent.TileType<BoneAltarTile>());
+            //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.ReplaceResult(this,5);
             recipe.Register();
         }

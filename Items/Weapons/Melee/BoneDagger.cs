@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.projectiles;
 using TheSkeletronMod.Common.DamageClasses;
+using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Weapons.Melee
 {
@@ -28,6 +29,10 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 				Item.useStyle = ItemUseStyleID.Shoot;
             return base.CanUseItem(player);
         }
+        public override bool MeleePrefix()
+        {
+			return true; // allows it to have melee prefixes
+        }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 			if(player.altFunctionUse == 2)
@@ -45,7 +50,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
         {
             Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.DirtBlock,27);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddTile(ModContent.TileType<BoneAltarTile>());
 			recipe.Register();
 		}
 		
