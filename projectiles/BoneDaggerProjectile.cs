@@ -1,7 +1,7 @@
 using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using TheSkeletronMod.Items.Weapons.Melee;
+using TheSkeletronMod.Items.Weapons.Calcium;
 
 namespace TheSkeletronMod.projectiles
 {
