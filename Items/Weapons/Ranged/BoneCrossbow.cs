@@ -16,7 +16,7 @@ namespace TheSkeletronMod.Items.Weapons.Ranged
             Item.useTime = 120;
             Item.width = 10;
             Item.height = 10;
-            Item.useAnimation = 32;
+            Item.useAnimation = 120;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2;
             Item.value = 60;
