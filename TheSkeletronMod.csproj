@@ -17,6 +17,7 @@
     <None Remove="Assets\Textures\Menu\Logopl.png" />
     <None Remove="Items\Ammo\SharpenedBone.png" />
     <None Remove="Items\Materials\AncientBone-1.png.png" />
+    <None Remove="Tiles\Blocks\CalciumOreT.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />

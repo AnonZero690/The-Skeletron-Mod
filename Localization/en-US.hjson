@@ -47,24 +47,19 @@ Mods: {
 					'''
 			}
 
-			BoneAltar: {
+			BoneAltarItem: {
 				DisplayName: Bone Altar
-				Tooltip: ""
-			}
-
-			TestITem: {
-				DisplayName: Test Item
-				Tooltip: ""
+				Tooltip: '''[c/9D00FF:"The insufferable cries of the souls surrounding it grant you the ability to make strange things..."]'''
 			}
 
 			TestItem: {
 				DisplayName: Test Item
-				Tooltip: ""
+				Tooltip: TESTING TESTING 123!!!!
 			}
 
-			BoneAltarItem: {
-				Tooltip: ""
-				DisplayName: Bone Altar Item
+			CalciumOre: {
+				DisplayName: Calcium Ore
+				Tooltip: '''[c/393b3c:"It's quite strong!"]'''
 			}
 		}
 
@@ -77,8 +72,9 @@ Mods: {
 		}
 
 		Tiles: {
-			BoneAltarTile.MapEntry: Bone Altar Tile
+			BoneAltarTile.MapEntry: Bone Altar T
 			BoneAltar.MapEntry: Bone Altar
+			CalciumOreT.MapEntry: Calcium Ore T
 		}
 	}
 }
