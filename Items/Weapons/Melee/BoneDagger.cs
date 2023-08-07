@@ -50,7 +50,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
         {
             Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.DirtBlock,27);
-			recipe.AddTile(ModContent.TileType<BoneAltarTile>());
+			recipe.AddTile(ModContent.TileType<BoneAltar>());
 			recipe.Register();
 		}
 		

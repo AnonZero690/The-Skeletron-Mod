@@ -11,7 +11,7 @@ namespace TheSkeletronMod.Items.Placeables
 {
 
 
-    public class BoneAltar : ModItem
+    public class BoneAltarItem : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -34,7 +34,7 @@ namespace TheSkeletronMod.Items.Placeables
             Item.maxStack = 999;
             Item.consumable = true;
 
-            Item.createTile = ModContent.TileType<BoneAltarTile>();
+            Item.createTile = ModContent.TileType<BoneAltar>();
 
         }
     }
