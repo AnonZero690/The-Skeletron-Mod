@@ -9,7 +9,7 @@ namespace TheSkeletronMod.Items.Materials
         {
             Item.width = 32;
             Item.height = 32;
-            Item.rare = ItemRarityID.Gray
+            Item.rare = ItemRarityID.Gray;
         }
     }
 }
