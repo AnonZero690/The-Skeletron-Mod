@@ -1,8 +1,7 @@
 ﻿
-using Terraria;
 using Terraria.ModLoader;
 
-namespace TheSkeletronMod.Common.DamageClass
+namespace TheSkeletronMod.Common.DamageClasses
 {
     public class Bonecursed : DamageClass
     {

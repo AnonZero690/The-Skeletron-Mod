@@ -11,12 +11,28 @@ Mods: {
 		Items: {
 			BoneDagger: {
 				DisplayName: Bone Dagger
-				Tooltip: Is made out of bones lol
+				Tooltip: 
+					'''
+					'Now for multitaskers'
+					Right click to charge throw the dagger
+					'''
+				
+				
 			}
 
 			BoneCrossbow: {
 				DisplayName: Bone Crossbow
 				Tooltip: ""
+			}
+
+			AncientBone: {
+				DisplayName: Ancient Bone
+				Tooltip: 
+					'''
+					Tattered old bone,
+					Versatile in bone equipment.
+					Throwing it would most likely shatter it.
+					'''
 			}
 
 			SharpenedBone: {

@@ -4,6 +4,9 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.Projectiles;
+using TheSkeletronMod.Common.DamageClasses;
+using Mono.Cecil;
+using static Terraria.ModLoader.PlayerDrawLayer;
 
 namespace TheSkeletronMod.Items.Weapons.Melee
 {
@@ -26,22 +29,16 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 		}
 		public override bool AltFunctionUse(Player player)
 		{
-            return true;
-        }
-
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+			return true;
+		}
+        public override void RightClick(Player player)
         {
-            if (player.altFunctionUse == 2)
-            {
-                int proj = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BoneDaggerProjectile>(), damage, knockback, player.whoAmI);
-				Main.projectile[proj].friendly = true;
-            }
-            return true;
-            
+            Vector2 direction = (player.Center - Main.MouseWorld).SafeNormalize(Vector2.UnitX);
+            int proj = Projectile.NewProjectile(Item.GetSource_FromThis(), player.position, direction * 13, ModContent.ProjectileType<BoneDaggerProjectile>(), Item.damage, 5f, player.whoAmI);
         }
         public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
+        {
+            Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.DirtBlock,27);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
