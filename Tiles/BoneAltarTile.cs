@@ -23,8 +23,8 @@ namespace TheSkeletronMod.Tiles
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.Height = 4;
-            TileObjectData.newTile.Width = 5;
-            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16 };
+            TileObjectData.newTile.Width = 4;
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16 };
 
             DustType = DustID.WoodFurniture;
             LocalizedText name = CreateMapEntryName();
