@@ -56,6 +56,11 @@ Mods: {
 				DisplayName: Test I Tem
 				Tooltip: ""
 			}
+
+			BoneAltarItem: {
+				Tooltip: ""
+				DisplayName: Bone Altar Item
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -66,6 +71,9 @@ Mods: {
 			TestItemProjectile.DisplayName: Test Item Projectile
 		}
 
-		Tiles.BoneAltarTile.MapEntry: Bone Altar Tile
+		Tiles: {
+			BoneAltarTile.MapEntry: Bone Altar Tile
+			BoneAltar.MapEntry: Bone Altar
+		}
 	}
 }
