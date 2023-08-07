@@ -46,6 +46,11 @@ Mods: {
 					These crossbones bounce for a while then eventually snap
 					'''
 			}
+
+			BoneAltar: {
+				DisplayName: Bone Altar
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -54,5 +59,7 @@ Mods: {
 			BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
 			SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
 		}
+
+		Tiles.BoneAltarTile.MapEntry: Bone Altar Tile
 	}
 }
