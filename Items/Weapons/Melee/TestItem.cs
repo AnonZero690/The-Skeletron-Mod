@@ -11,7 +11,7 @@ namespace TheSkeletronMod.Items.Weapons
         public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BreakerBlade);
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootCustomProjectile(10, 10, 70, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<TestItemProjectile>(), 1, false);
+            Item.ItemDefaultMeleeShootCustomProjectile(10, 10, 30, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<TestItemProjectile>(), 1, false);
             Item.noMelee = true;
             Item.noUseGraphic = true;
         }
@@ -22,6 +22,8 @@ namespace TheSkeletronMod.Items.Weapons
     }
     class TestItemProjectile : ModProjectile
     {
+        int originalDamage = 30; // Change the damage here
+        int damage = 30; // and here
         public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BreakerBlade);
         const int TimeLeftForReal = 9999;
         public override void SetDefaults()
@@ -37,9 +39,12 @@ namespace TheSkeletronMod.Items.Weapons
         int MaxProgress = 360;
         int progress = TimeLeftForReal;
         int direction = 0;
-        int progressReverse = 0;
+        int moveAmount = 0;
+
         public override void AI()
         {
+            damage = originalDamage * ((int)acceleration / 15); // if you change the max acceleration make sure you change it here too. (the number is the max)
+            //yeah the damage variable doesn't do anything because I don't know how to change the projectile's damage from here smh
             if (progress > MaxProgress)
             {
                 player = Main.player[Projectile.owner];
@@ -51,10 +56,12 @@ namespace TheSkeletronMod.Items.Weapons
             player.heldProj = Projectile.whoAmI;
             player.direction = direction;
             if (Main.mouseLeft)
-            {   if (acceleration<15){
+            {
+                if (acceleration < 15)
+                {
                     acceleration += .1f;
                 }
-                float rotation = MathHelper.ToRadians(progressReverse * acceleration);
+                float rotation = MathHelper.ToRadians(direction * moveAmount);
                 Projectile.Center = player.Center + Projectile.velocity.RotatedBy(rotation) * 70f;
                 Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation;
                 if (Projectile.spriteDirection == -1)
@@ -67,9 +74,8 @@ namespace TheSkeletronMod.Items.Weapons
             float rotational = Projectile.rotation - MathHelper.PiOver4 - MathHelper.PiOver2;
             if (Projectile.spriteDirection == -1)
                 rotational -= MathHelper.PiOver2;
-            player.compositeFrontArm = new Player.CompositeArmData(true, Player.CompositeArmStretchAmount.Full,rotational);
-
-            progressReverse += 1 * direction;
+            player.compositeFrontArm = new Player.CompositeArmData(true, Player.CompositeArmStretchAmount.Full, rotational);
+            moveAmount += (int)acceleration;
         }
     }
 }
