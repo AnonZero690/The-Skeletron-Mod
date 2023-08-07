@@ -1,7 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-using TheSkeletronMod.projectiles;
+using TheSkeletronMod.Projectiles;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
