@@ -31,6 +31,7 @@ namespace TheSkeletronMod.Items.Weapons.Ranged
             Item.noMelee = true;
             Item.useAmmo = AmmoID.Stake;
             Item.UseSound = SoundID.Item5;
+            Item.useLimitPerAnimation = 1;
         }
 
         public override void AddRecipes()

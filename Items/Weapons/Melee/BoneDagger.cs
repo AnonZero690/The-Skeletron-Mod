@@ -16,16 +16,17 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 		{
 			Item.damage = 16;
 			Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.useTime = 120;
+            Item.useTime = 140;
 			Item.width = 50;
 			Item.height = 50;
-			Item.useAnimation = 80;
+			Item.useAnimation = 100;
 			Item.useStyle = ItemUseStyleID.Thrust;
 			Item.knockBack = 3;
 			Item.value = 60;
 			Item.rare = ItemRarityID.Green;
 			Item.autoReuse = false;
 			Item.crit = 10;
+			Item.useLimitPerAnimation = 1;
 		}
 		public override bool AltFunctionUse(Player player)
 		{
@@ -34,7 +35,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
         public override void RightClick(Player player)
         {
             Vector2 direction = (player.Center - Main.MouseWorld).SafeNormalize(Vector2.UnitX);
-            int proj = Projectile.NewProjectile(Item.GetSource_FromThis(), player.position, direction * 13, ModContent.ProjectileType<BoneDaggerProjectile>(), Item.damage, 5f, player.whoAmI);
+            Projectile.NewProjectile(Item.GetSource_FromThis(), player.position, direction * 13, ModContent.ProjectileType<BoneDaggerProjectile>(), Item.damage, 5f, player.whoAmI);
         }
         public override void AddRecipes()
         {
