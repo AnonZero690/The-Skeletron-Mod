@@ -1,7 +1,7 @@
 ﻿using Terraria.Audio;
 using Terraria.ModLoader;
 
-namespace TheSkeletronMod.Common.Systems;
+namespace SkellyModYT.Common.Systems;
 
 public class SkelSound : ModSystem
 {
@@ -9,6 +9,6 @@ public class SkelSound : ModSystem
 
     static SkelSound()
     {
-        ModMenuClick = new SoundStyle("TheSkeletronMod/Assets/Sounds/ModMenuClick", (SoundType)0);
+        ModMenuClick = new SoundStyle("SkellyModYT/Assets/Sounds/ModMenuClick", (SoundType)0);
     }
 }

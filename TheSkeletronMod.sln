@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheSkeletronMod", "TheSkeletronMod.csproj", "{1E290AA6-350F-4270-B1B0-6429C953CC1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkellyModYT", "SkellyModYT.csproj", "{1E290AA6-350F-4270-B1B0-6429C953CC1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

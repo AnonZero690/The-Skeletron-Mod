@@ -15,12 +15,12 @@
   <ItemGroup>
     <None Remove="Assets\Textures\Menu\BGPL.png" />
     <None Remove="Assets\Textures\Menu\Logopl.png" />
+    <None Remove="Items\Materials\AncientBone.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Music\" />
     <Folder Include="Minibosses\" />
     <Folder Include="Gores\" />
     <Folder Include="Projectiles\" />

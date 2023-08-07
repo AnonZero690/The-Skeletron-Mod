@@ -1,0 +1,11 @@
+Items: {
+	AncientBone: {
+		DisplayName: Ancient Bone
+		Tooltip: ""
+	}
+
+	BoneDagger: {
+		DisplayName: Bone Dagger
+		Tooltip: ""
+	}
+}

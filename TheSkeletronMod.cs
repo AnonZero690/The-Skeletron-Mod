@@ -1,6 +1,6 @@
 using Terraria.ModLoader;
 
-namespace TheSkeletronMod
+namespace SkellyModYT
 {
 	public class TheSkeletronMod : Mod
 	{
