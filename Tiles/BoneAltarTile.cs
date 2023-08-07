@@ -1,41 +1,38 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+
 using Terraria;
-using Terraria.ObjectData;
-using Terraria.ID;
+using Terraria.Audio;
 using Terraria.DataStructures;
-using TheSkeletronMod.Items.Placeables;
+using Terraria.Enums;
+using Terraria.GameContent.ObjectInteractions;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ObjectData;
 
 namespace TheSkeletronMod.Tiles
 {
-	internal class BoneAltarTile : ModTile
-	{
-		public override void SetStaticDefaults()
-		{
-			Main.tileFrameImportant[Type] = true;
-			Main.tileSolidTop[Type] = true;
-			Main.tileNoAttach[Type] = true;
-			Main.tileLavaDeath[Type] = true;
-			Main.tileTable[Type] = true;
+    public class BoneAltarTile : ModTile
+    {
+        public override void SetStaticDefaults()
+        {
 
-			TileID.Sets.DisableSmartCursor[Type] = true;
-			TileID.Sets.IgnoredByNpcStepUp[Type] = true;
+            Main.tileLavaDeath[Type] = true;
+            Main.tileFrameImportant[Type] = true;
+            Main.tileNoAttach[Type] = true;
 
-			AdjTiles = new int[] { TileID.WorkBenches };
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
+            TileObjectData.newTile.Height = 4;
+            TileObjectData.newTile.Width = 5;
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16 };
 
-			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-			TileObjectData.newTile.CoordinateHeights = new[] { 16,18 };
-			TileObjectData.addTile(Type);
-			AddMapEntry(new Microsoft.Xna.Framework.Color(200, 200, 200), CreateMapEntryName());
-		}
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
-		{
-		int itemType = ModContent.ItemType<BoneAltar>();
-			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, itemType);
-		}
-	}
+            DustType = DustID.WoodFurniture;
+            LocalizedText name = CreateMapEntryName();
+
+            AddMapEntry(new Color(50, 30, 150), name);
+            TileObjectData.addTile(Type);
+        }
+
+
+    }
 }
