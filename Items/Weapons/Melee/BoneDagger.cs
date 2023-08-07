@@ -12,8 +12,8 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 		public override void SetDefaults()
 		{
 			Item.damage = 17;
-			Item.DamageType = DamageClass.Melee;
-			Item.useTime = 10;
+			Item.DamageType = ModContent.GetInstance<Bonecursed>();
+            Item.useTime = 10;
 			Item.width = 50;
 			Item.height = 50;
 			Item.useAnimation = 20;
