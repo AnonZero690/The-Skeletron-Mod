@@ -17,9 +17,14 @@ namespace TheSkeletronMod.Tiles
         public override void SetStaticDefaults()
         {
 
-            Main.tileLavaDeath[Type] = true;
-            Main.tileFrameImportant[Type] = true;
+            Main.tileTable[Type] = true;
+            Main.tileSolidTop[Type] = true;
             Main.tileNoAttach[Type] = true;
+            Main.tileLavaDeath[Type] = true;
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+            Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
+            TileID.Sets.IgnoredByNpcStepUp[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.Height = 4;
