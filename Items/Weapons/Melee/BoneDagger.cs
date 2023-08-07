@@ -1,12 +1,10 @@
-using Terraria.ID;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.Projectiles;
 using TheSkeletronMod.Common.DamageClasses;
-using Mono.Cecil;
-using static Terraria.ModLoader.PlayerDrawLayer;
 
 namespace TheSkeletronMod.Items.Weapons.Melee
 {
@@ -14,29 +12,35 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 	{
 		public override void SetDefaults()
 		{
-			Item.damage = 16;
-			Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.useTime = 140;
-			Item.width = 50;
-			Item.height = 50;
-			Item.useAnimation = 100;
-			Item.useStyle = ItemUseStyleID.Thrust;
-			Item.knockBack = 3;
+			Item.ItemSetDefault(50, 10, 16, 6f, 20, 20, ItemUseStyleID.Shoot, true);
+			Item.ItemSetDefaultSpear(ModContent.ProjectileType<BoneDaggerProjectile>(), 2f);
+
+			Item.crit = 10;
 			Item.value = 60;
 			Item.rare = ItemRarityID.Green;
-			Item.autoReuse = false;
-			Item.crit = 10;
-			Item.useLimitPerAnimation = 1;
+			Item.DamageType = ModContent.GetInstance<Bonecursed>();
 		}
+        public override bool CanUseItem(Player player)
+        {
+			if (player.altFunctionUse == 2)
+				Item.useStyle = ItemUseStyleID.Swing;
+			else 
+				Item.useStyle = ItemUseStyleID.Shoot;
+            return base.CanUseItem(player);
+        }
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+			if(player.altFunctionUse == 2)
+			{
+				Projectile.NewProjectile(source, position, velocity * 7.5f, type, damage, knockback, player.whoAmI, 1);
+				return false;
+			}
+            return base.Shoot(player, source, position, velocity, type, damage, knockback);
+        }
 		public override bool AltFunctionUse(Player player)
 		{
 			return true;
 		}
-        public override void RightClick(Player player)
-        {
-            Vector2 direction = (player.Center - Main.MouseWorld).SafeNormalize(Vector2.UnitX);
-            Projectile.NewProjectile(Item.GetSource_FromThis(), player.position, direction * 13, ModContent.ProjectileType<BoneDaggerProjectile>(), Item.damage, 5f, player.whoAmI);
-        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

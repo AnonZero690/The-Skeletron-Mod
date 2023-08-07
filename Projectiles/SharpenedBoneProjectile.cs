@@ -2,12 +2,13 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using TheSkeletronMod.Items.Ammo;
 
 namespace TheSkeletronMod.Projectiles
 {
     internal class SharpenedBoneProjectile : ModProjectile
     {
-       public override void SetStaticDefaults()
+        public override void SetStaticDefaults()
         {
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 5;

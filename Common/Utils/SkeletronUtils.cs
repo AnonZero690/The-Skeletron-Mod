@@ -10,12 +10,25 @@ namespace TheSkeletronMod
 {
     public static partial class SkeletronUtils
     {
+        /// <summary>
+        /// Use this assuming the code files and texture files are in the same folder and have the same name<br/>
+        /// which is what you should do
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static string GetTheSameTextureAsEntity<T>() where T : class
         {
             var type = typeof(T);
             string NameSpace = type.Namespace;
             return NameSpace.Replace(".", "/") + "/" + type.Name;
         }
+        /// <summary>
+        /// Use this assuming the code files and texture files are in the same folder and have the same name<br/>
+        /// which is what you should do
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="altName"></param>
+        /// <returns></returns>
         public static string GetTheSameTextureAs<T>(string altName = "") where T : class
         {
             var type = typeof(T);
