@@ -11,18 +11,18 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 	{
 		public override void SetDefaults()
 		{
-			Item.damage = 17;
+			Item.damage = 16;
 			Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.useTime = 10;
+            Item.useTime = 120;
 			Item.width = 50;
 			Item.height = 50;
-			Item.useAnimation = 20;
-			Item.useStyle = ItemUseStyleID.Swing;
+			Item.useAnimation = 80;
+			Item.useStyle = ItemUseStyleID.Thrust;
 			Item.knockBack = 3;
 			Item.value = 60;
 			Item.rare = ItemRarityID.Green;
 			Item.autoReuse = false;
-			Item.crit = 15;
+			Item.crit = 10;
 		}
 		public override bool AltFunctionUse(Player player)
 		{

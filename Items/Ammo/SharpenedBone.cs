@@ -16,7 +16,7 @@ namespace TheSkeletronMod.Items.Ammo
             Item.width = 8;
             Item.height = 8;
 
-            Item.damage = 7;
+            Item.damage = 6;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.knockBack = 1f;
             Item.maxStack = 999;
