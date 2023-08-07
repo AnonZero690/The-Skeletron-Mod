@@ -28,14 +28,14 @@ namespace TheSkeletronMod.Tiles
 			AdjTiles = new int[] { TileID.WorkBenches };
 
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-			TileObjectData.newTile.CoordinateHeights = new[] { 48,48 };
+			TileObjectData.newTile.CoordinateHeights = new[] { 16,18 };
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Microsoft.Xna.Framework.Color(200, 200, 200), CreateMapEntryName());
 		}
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 		int itemType = ModContent.ItemType<BoneAltar>();
-			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, itemType);
+			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, itemType);
 		}
 	}
 }
