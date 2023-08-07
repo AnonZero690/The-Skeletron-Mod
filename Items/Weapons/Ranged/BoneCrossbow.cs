@@ -11,7 +11,7 @@ namespace TheSkeletronMod.Items.Weapons.Ranged
     {
         public override void SetDefaults()
         {
-            Item.damage = 6;
+            Item.damage = 3;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.useTime = 120;
             Item.width = 10;
@@ -26,7 +26,7 @@ namespace TheSkeletronMod.Items.Weapons.Ranged
             Item.shootSpeed = 10f;
             Item.autoReuse = false;
             Item.useAnimation = 20;
-            Item.crit = 15;
+            Item.crit = 75;
             Item.noMelee = true;
             Item.useAmmo = AmmoID.Stake;
             Item.UseSound = SoundID.Item5;
