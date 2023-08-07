@@ -11,13 +11,11 @@ Mods: {
 		Items: {
 			BoneDagger: {
 				DisplayName: Bone Dagger
-				Tooltip: 
+				Tooltip:
 					'''
 					'Now for multitaskers'
 					Right click to charge throw the dagger
 					'''
-				
-				
 			}
 
 			BoneCrossbow: {
@@ -27,7 +25,7 @@ Mods: {
 
 			AncientBone: {
 				DisplayName: Ancient Bone
-				Tooltip: 
+				Tooltip:
 					'''
 					Tattered old bone,
 					Versatile in bone equipment.
