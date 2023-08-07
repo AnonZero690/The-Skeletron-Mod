@@ -24,6 +24,6 @@
   <ItemGroup>
     <Folder Include="Minibosses\" />
     <Folder Include="Gores\" />
-    <Folder Include="Projectiles\" />
+    <Folder Include="projectiles\" />
   </ItemGroup>
 </Project>
