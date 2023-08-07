@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
-using TheSkeletronMod.projectiles;
+using TheSkeletronMod.Projectiles;
 using TheSkeletronMod.Common.DamageClasses;
 
 namespace TheSkeletronMod.Items.Weapons.Melee
