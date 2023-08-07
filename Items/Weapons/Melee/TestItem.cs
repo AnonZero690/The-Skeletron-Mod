@@ -23,7 +23,6 @@ namespace TheSkeletronMod.Items.Weapons
     class TestItemProjectile : ModProjectile
     {
         int originalDamage = 30; // Change the damage here
-        int damage = 30; // and here
         public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BreakerBlade);
         const int TimeLeftForReal = 9999;
         public override void SetDefaults()
@@ -43,7 +42,7 @@ namespace TheSkeletronMod.Items.Weapons
 
         public override void AI()
         {
-            damage = originalDamage * ((int)acceleration / 15); // if you change the max acceleration make sure you change it here too. (the number is the max)
+            Projectile.damage = (int)(originalDamage * (acceleration / 15)); // if you change the max acceleration make sure you change it here too. (the number is the max)
             //yeah the damage variable doesn't do anything because I don't know how to change the projectile's damage from here smh
             if (progress > MaxProgress)
             {
