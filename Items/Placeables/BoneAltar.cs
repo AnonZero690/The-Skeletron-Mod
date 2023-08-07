@@ -11,7 +11,7 @@ namespace TheSkeletronMod.Items.Placeables
 {
 
 
-    public class BoneAlter : ModItem
+    public class BoneAltar : ModItem
     {
         public override void SetStaticDefaults()
         {
