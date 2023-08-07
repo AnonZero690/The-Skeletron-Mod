@@ -7,7 +7,7 @@ using TheSkeletronMod.projectiles;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 
-namespace TheSkeletronMod.Items.Weapons.Melee
+namespace TheSkeletronMod.Items.Weapons.Calcium
 {
 	public class BoneDagger : ModItem
 	{

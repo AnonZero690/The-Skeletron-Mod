@@ -7,7 +7,7 @@ using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 
-namespace TheSkeletronMod.Items.Weapons.Ranged
+namespace TheSkeletronMod.Items.Weapons.Calcium
 {
     public class BoneCrossbow : ModItem
     {
