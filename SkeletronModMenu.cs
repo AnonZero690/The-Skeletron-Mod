@@ -40,7 +40,7 @@ namespace SkellyModYT
             Vector2 zero = Vector2.Zero;
             float width = Main.screenWidth / (float)MenuBG.Width;
             _ = Main.screenHeight / (float)MenuBG.Height;
-            spriteBatch.Draw(MenuBG, new Vector2(zero.X + MathHelper.Lerp(-98f, -82f, floatX), zero.Y + MathHelper.Lerp(-50f, -47f, floatY)), null, Color.White, 0f, Vector2.Zero, width * 1.1f, 0, 0f);
+            spriteBatch.Draw(MenuBG, new Vector2(zero.X + MathHelper.Lerp(-98f, -82f, floatX), zero.Y + MathHelper.Lerp(-50f, -47f, floatY)), null, Color.White, 0f, Vector2.Zero, logoScale * 3, 0, 0f);
             return true;
         }
     }
