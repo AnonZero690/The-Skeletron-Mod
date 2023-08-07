@@ -26,6 +26,16 @@ namespace TheSkeletronMod.Projectiles
         public override void AI()
         {
             Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+            if (Projectile.ai[1] > 0)
+            {
+                if (Projectile.penetrate < 3)
+                {
+                    Projectile.maxPenetrate = 3;
+                    Projectile.penetrate = 3;
+                }
+                Projectile.ai[1] = 0;
+                Projectile.ai[0] = -5;
+            }
             Projectile.ai[0]++;
             if (Projectile.ai[0] > 10)
                 Projectile.velocity.Y += .25f;
