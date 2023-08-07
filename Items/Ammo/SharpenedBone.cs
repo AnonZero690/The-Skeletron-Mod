@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
-using TheSkeletronMod.projectiles;
+using TheSkeletronMod.Projectiles;
 using TheSkeletronMod.Common.DamageClasses;
 
 namespace TheSkeletronMod.Items.Ammo
