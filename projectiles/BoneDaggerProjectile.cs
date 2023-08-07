@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using TheSkeletronMod.Items.Weapons.Melee;
 
-namespace TheSkeletronMod.Projectiles
+namespace TheSkeletronMod.projectiles
 {
     public class BoneDaggerProjectile : ModProjectile
     {
