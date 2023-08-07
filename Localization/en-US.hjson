@@ -11,13 +11,11 @@ Mods: {
 		Items: {
 			BoneDagger: {
 				DisplayName: Bone Dagger
-				Tooltip: 
+				Tooltip:
 					'''
 					'Now for multitaskers'
 					Right click to charge throw the dagger
 					'''
-				
-				
 			}
 
 			BoneCrossbow: {
@@ -27,7 +25,7 @@ Mods: {
 
 			AncientBone: {
 				DisplayName: Ancient Bone
-				Tooltip: 
+				Tooltip:
 					'''
 					Tattered old bone,
 					Versatile in bone equipment.
@@ -48,6 +46,16 @@ Mods: {
 					These crossbones bounce for a while then eventually snap
 					'''
 			}
+
+			BoneAltar: {
+				DisplayName: Bone Altar
+				Tooltip: ""
+			}
+
+			TestITem: {
+				DisplayName: Test I Tem
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -55,6 +63,9 @@ Mods: {
 		Projectiles: {
 			BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
 			SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
+			TestItemProjectile.DisplayName: Test Item Projectile
 		}
+
+		Tiles.BoneAltarTile.MapEntry: Bone Altar Tile
 	}
 }
