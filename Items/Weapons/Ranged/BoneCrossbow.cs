@@ -27,7 +27,7 @@ namespace TheSkeletronMod.Items.Weapons.Ranged
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Bone, 40);
             recipe.AddIngredient(ItemID.BoneGlove, 1);
-            recipe.AddTile(ModContent.TileType<BoneAltarTile>());
+            recipe.AddTile(ModContent.TileType<BoneAltar>());
             //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.Register();
         }

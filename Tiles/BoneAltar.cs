@@ -12,7 +12,7 @@ using Terraria.ObjectData;
 
 namespace TheSkeletronMod.Tiles
 {
-    public class BoneAltarTile : ModTile
+    public class BoneAltar : ModTile
     {
         public override void SetStaticDefaults()
         {

@@ -30,7 +30,7 @@ namespace TheSkeletronMod.Items.Ammo
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Bone, 1);
-            recipe.AddTile(ModContent.TileType<BoneAltarTile>());
+            recipe.AddTile(ModContent.TileType<BoneAltar>());
             //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.ReplaceResult(this,5);
             recipe.Register();
