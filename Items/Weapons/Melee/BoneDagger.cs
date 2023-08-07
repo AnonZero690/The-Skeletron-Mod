@@ -13,11 +13,11 @@ namespace TheSkeletronMod.Items.Weapons.Melee
 		{
 			Item.damage = 17;
 			Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.useTime = 10;
+            Item.useTime = 40;
 			Item.width = 50;
 			Item.height = 50;
 			Item.useAnimation = 20;
-			Item.useStyle = ItemUseStyleID.Swing;
+			Item.useStyle = ItemUseStyleID.Thrust;
 			Item.knockBack = 3;
 			Item.value = 60;
 			Item.rare = ItemRarityID.Green;
