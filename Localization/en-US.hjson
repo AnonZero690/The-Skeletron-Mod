@@ -53,7 +53,12 @@ Mods: {
 			}
 
 			TestITem: {
-				DisplayName: Test I Tem
+				DisplayName: Test Item
+				Tooltip: ""
+			}
+
+			TestItem: {
+				DisplayName: Test Item
 				Tooltip: ""
 			}
 

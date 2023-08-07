@@ -6,12 +6,12 @@ using Microsoft.Xna.Framework;
 
 namespace TheSkeletronMod.Items.Weapons
 {
-    internal class TestITem : ModItem
+    internal class TestItem : ModItem
     {
         public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BreakerBlade);
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootCustomProjectile(10, 10, 9000, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<TestItemProjectile>(), 1, false);
+            Item.ItemDefaultMeleeShootCustomProjectile(10, 10, 70, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<TestItemProjectile>(), 1, false);
             Item.noMelee = true;
             Item.noUseGraphic = true;
         }
@@ -51,8 +51,9 @@ namespace TheSkeletronMod.Items.Weapons
             player.heldProj = Projectile.whoAmI;
             player.direction = direction;
             if (Main.mouseLeft)
-            {
+            {   if (acceleration<15){
                     acceleration += .1f;
+                }
                 float rotation = MathHelper.ToRadians(progressReverse * acceleration);
                 Projectile.Center = player.Center + Projectile.velocity.RotatedBy(rotation) * 70f;
                 Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation;
