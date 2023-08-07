@@ -39,6 +39,15 @@ Mods: {
 				DisplayName: Sharpened Bone
 				Tooltip: ""
 			}
+
+			SkeleWand: {
+				DisplayName: Skele-Wand
+				Tooltip:
+					'''
+					Conjures bouncing crossbones
+					These crossbones bounce for a while then eventually snap
+					'''
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage

@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using TheSkeletronMod.Projectiles;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
+using TheSkeletronMod.Common.DamageClasses;
 
 namespace TheSkeletronMod.Items.Weapons.Ranged
 {
