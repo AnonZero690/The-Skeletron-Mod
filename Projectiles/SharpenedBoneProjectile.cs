@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using TheSkeletronMod.Items.Ammo;
 
-namespace TheSkeletronMod.Projectiles
+namespace TheSkeletronMod.projectiles
 {
     internal class SharpenedBoneProjectile : ModProjectile
     {
