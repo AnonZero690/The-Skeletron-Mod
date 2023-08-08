@@ -16,6 +16,7 @@ namespace TheSkeletronMod.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.GetDamage(ModContent.GetInstance<Bonecursed>()) += 0.04f;
+            player.GetCritChance(ModContent.GetInstance<Bonecursed>()) += 2;
         }
         public override void SetDefaults()
         { 
