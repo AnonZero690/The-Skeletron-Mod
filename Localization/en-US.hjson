@@ -39,7 +39,7 @@ Mods: {
 			}
 
 			SkeleWand: {
-				DisplayName: Skele-Wand
+				DisplayName: Skele-cepter
 				Tooltip:
 					'''
 					Conjures bouncing crossbones
@@ -70,6 +70,11 @@ Mods: {
 			TestItem: {
 				DisplayName: Test Item
 				Tooltip: ""
+			}
+
+			AncientBoneHelmet: {
+				DisplayName: Ancient Bone Helmet
+				Tooltip: 5% increased calcium damage
 			}
 		}
 
