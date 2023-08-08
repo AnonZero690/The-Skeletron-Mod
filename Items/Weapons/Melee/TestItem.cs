@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 
-namespace TheSkeletronMod.Items.Weapons
+namespace TheSkeletronMod.Items.Weapons.Melee
 {
     internal class TestItem : ModItem
     {

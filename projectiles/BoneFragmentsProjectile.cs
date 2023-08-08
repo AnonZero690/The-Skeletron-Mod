@@ -8,6 +8,7 @@ namespace TheSkeletronMod.projectiles
 {
     internal class BoneFragmentsProjectile : ModProjectile
     {
+        public override string Texture => SkeletronUtils.GetTheSameTextureAs<BoneFragments>("BoneFragmentsProjectile");
         public override void SetStaticDefaults()
         {
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5;

@@ -51,6 +51,26 @@ Mods: {
 				DisplayName: Clusterbone Shotgun
 				Tooltip: ""
 			}
+
+			BoneFragments: {
+				DisplayName: Bone Fragments
+				Tooltip: ""
+			}
+
+			CalciumOre: {
+				DisplayName: Calcium Ore
+				Tooltip: ""
+			}
+
+			BoneAltarItem: {
+				DisplayName: Bone Altar Item
+				Tooltip: ""
+			}
+
+			TestItem: {
+				DisplayName: Test Item
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -60,6 +80,13 @@ Mods: {
 			SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
 			BigSkull.DisplayName: Big Skull
 			GunBarrelFlash.DisplayName: Gun Barrel Flash
+			TestItemProjectile.DisplayName: Test Item Projectile
+			BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
+		}
+
+		Tiles: {
+			CalciumOreT.MapEntry: Calcium Ore T
+			BoneAltar.MapEntry: Bone Altar
 		}
 	}
 }

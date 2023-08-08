@@ -2,7 +2,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using TheSkeletronMod.Items.Ammo;
 
 namespace TheSkeletronMod.projectiles
 {
@@ -25,7 +24,7 @@ namespace TheSkeletronMod.projectiles
         }
         public override void AI()
         {
-            Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+            Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4;
             if (Projectile.ai[1] > 0)
             {
                 if (Projectile.penetrate < 3)
