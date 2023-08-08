@@ -74,11 +74,11 @@ Mods: {
 
 			AncientBoneHelmet: {
 				DisplayName: Ancient Bone Helmet
-				Tooltip: 
-				'''
-				5% increased calcium damage
-				2% increased calcium critical strike chance
-				'''
+				Tooltip:
+					'''
+					5% increased calcium damage
+					2% increased calcium critical strike chance
+					'''
 			}
 		}
 

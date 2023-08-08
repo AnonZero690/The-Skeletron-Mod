@@ -14,8 +14,7 @@ namespace TheSkeletronMod.projectiles
         }
         public override void SetDefaults()
         {
-            Projectile.width = 8;
-            Projectile.height = 8;
+            Projectile.width = Projectile.height = 32;
             Projectile.penetrate = 1;
             Projectile.timeLeft = 600;
             Projectile.friendly = true;
