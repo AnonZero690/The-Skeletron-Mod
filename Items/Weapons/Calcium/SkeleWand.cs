@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 
-namespace TheSkeletronMod.Items.Weapons.Magic
+namespace TheSkeletronMod.Items.Weapons.Calcium
 {
 
     public class SkeleWand : ModItem
@@ -68,7 +68,7 @@ namespace TheSkeletronMod.Items.Weapons.Magic
             for (int index = 0; index < numberProjectiles; ++index)
             {
                 Vector2 vector2_1 = new Vector2((float)(player.position.X + player.width * 0.5 +
-                             (Main.rand.Next(201) * -player.direction) + (Main.mouseX + Main.screenPosition.X - player.position.X)),
+                             Main.rand.Next(201) * -player.direction + (Main.mouseX + Main.screenPosition.X - player.position.X)),
                     (float)(player.position.Y + player.height * 0.5 -
                              600.0));
                 vector2_1.X = (float)((vector2_1.X + player.Center.X) / 2.0) +
