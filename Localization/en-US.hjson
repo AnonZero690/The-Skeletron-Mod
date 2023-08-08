@@ -81,6 +81,21 @@ Mods: {
 					'''
 			}
 
+			CartilageHelmet: {
+				DisplayName: Cartilage Helmet
+				Tooltip: 2% increased calcium damage
+			}
+
+			CartilageChestplate: {
+				DisplayName: Cartilage Chestplate
+				Tooltip: 2% increased calcium critical strike chance
+			}
+
+			CartilageLeggings: {
+				DisplayName: Cartilage Leggings
+				Tooltip: 2% increased calcium attack speed
+			}
+
 			AncientBoneChestplate: {
 				DisplayName: Ancient Bone Chestplate
 				Tooltip: 6% increased calcium damage
