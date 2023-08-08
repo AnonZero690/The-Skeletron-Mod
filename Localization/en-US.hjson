@@ -95,6 +95,16 @@ Mods: {
 				DisplayName: Cartilage Leggings
 				Tooltip: 2% increased calcium attack speed
 			}
+
+			AncientBoneChestplate: {
+				DisplayName: Ancient Bone Chestplate
+				Tooltip: 6% increased calcium damage
+			}
+
+			AncientBoneLeggings: {
+				DisplayName: Ancient Bone Leggings
+				Tooltip: 10% increased movement speed and acceleration
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
