@@ -15,15 +15,16 @@
   <ItemGroup>
     <None Remove="Assets\Textures\Menu\BGPL.png" />
     <None Remove="Assets\Textures\Menu\Logopl.png" />
+    <None Remove="Gores\GunPellets.png" />
     <None Remove="Items\Ammo\SharpenedBone.png" />
     <None Remove="Items\Materials\AncientBone.png" />
+    <None Remove="Projectiles\GunBarrelFlash.png" />
+    <None Remove="Projectiles\GunBarrelFlash_Glow.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Minibosses\" />
-    <Folder Include="Gores\" />
-    <Folder Include="Projectiles\" />
   </ItemGroup>
 </Project>

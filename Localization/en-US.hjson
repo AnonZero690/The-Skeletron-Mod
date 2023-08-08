@@ -46,6 +46,11 @@ Mods: {
 					These crossbones bounce for a while then eventually snap
 					'''
 			}
+
+			ClusterboneShotgun: {
+				DisplayName: Clusterbone Shotgun
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -53,6 +58,8 @@ Mods: {
 		Projectiles: {
 			BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
 			SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
+			BigSkull.DisplayName: Big Skull
+			GunBarrelFlash.DisplayName: Gun Barrel Flash
 		}
 	}
 }

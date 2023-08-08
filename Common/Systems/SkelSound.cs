@@ -1,14 +1,27 @@
 ﻿using Terraria.Audio;
 using Terraria.ModLoader;
 
-namespace TheSkeletronMod.Common.Systems;
-
-public class SkelSound : ModSystem
+namespace TheSkeletronMod.Common.Systems
 {
-    public static readonly SoundStyle ModMenuClick;
 
-    static SkelSound()
+    public class SkelSound : ModSystem
     {
-        ModMenuClick = new SoundStyle("TheSkeletronMod/Assets/Sounds/ModMenuClick", (SoundType)0);
+        ///<summary>
+        /// Zero, when you're copying over the SoundSystem please do not add the static readonly fields before throwing a new exception, thats why it wasnt working.
+        /// Just to clear that up! 👀👍
+        /// Also .ogg files are much better (they have better quality and you can set whatever file size you want
+        /// </summary>
+        public static readonly SoundStyle ModMenuClick;
+
+        public static readonly SoundStyle BoneCrunchShot;
+
+
+        //Had to change it to a static not a private static.
+        static SkelSound()
+        {
+            ModMenuClick = new SoundStyle("TheSkeletronMod/Assets/Sounds/ModMenuClick", (SoundType)0);
+            BoneCrunchShot = new SoundStyle("TheSkeletronMod/Assets/Sounds/BoneCrunchShot", (SoundType)0);
+
+        }
     }
 }
