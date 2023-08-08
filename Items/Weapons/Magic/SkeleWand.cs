@@ -46,7 +46,7 @@ namespace TheSkeletronMod.Items.Weapons.Magic
             Item.useTime = 25;
             Item.UseSound = SoundID.DD2_SkeletonSummoned;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.value = Item.buyPrice(silver: 11);
+            Item.value = 8000;
 
             Item.shoot = ProjectileID.BoneGloveProj;
         }

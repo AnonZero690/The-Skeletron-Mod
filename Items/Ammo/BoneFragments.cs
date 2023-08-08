@@ -22,7 +22,7 @@ namespace TheSkeletronMod.Items.Ammo
             Item.damage = 4;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.knockBack = 4f;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.consumable = true;
             Item.ammo = AmmoID.Bullet;
             Item.shoot = ModContent.ProjectileType<BoneFragmentsProjectile>();

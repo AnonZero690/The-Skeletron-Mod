@@ -10,8 +10,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.Systems;
 using TheSkeletronMod.projectiles;
-using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
+using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium
 {

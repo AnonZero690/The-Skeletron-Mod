@@ -32,7 +32,7 @@ namespace TheSkeletronMod.Items.Placeables
             Item.autoReuse = true;
             Item.useTurn = true;
 
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.consumable = true;
 
             Item.createTile = ModContent.TileType<BoneAltar>();
