@@ -10,7 +10,8 @@ namespace TheSkeletronMod.Items.Ammo
 {
     internal class BoneFragments : ModItem
     {
-        public override void SetStaticDefaults() {
+        public override void SetStaticDefaults()
+        {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         }
         public override void SetDefaults()
@@ -23,7 +24,7 @@ namespace TheSkeletronMod.Items.Ammo
             Item.knockBack = 4f;
             Item.maxStack = 999;
             Item.consumable = true;
-            Item.ammo = AmmoID.Stake;
+            Item.ammo = AmmoID.Bullet;
             Item.shoot = ModContent.ProjectileType<BoneFragmentsProjectile>();
         }
         public override void AddRecipes()
@@ -31,8 +32,7 @@ namespace TheSkeletronMod.Items.Ammo
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Bone, 1);
             recipe.AddTile(ModContent.TileType<BoneAltar>());
-            //recipe.AddCondition(conditions: Condition.InGraveyard);
-            recipe.ReplaceResult(this,5);
+            recipe.ReplaceResult(this, 5);
             recipe.Register();
         }
     }
