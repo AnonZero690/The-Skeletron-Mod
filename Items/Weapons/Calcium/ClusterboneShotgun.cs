@@ -120,18 +120,17 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             */
             return true;
         }
-
-        /*     public override void AddRecipes()
-             {
-                 Recipe recipe = CreateRecipe();
-                 recipe.AddIngredient(ItemID.Chain, 5);
-                 recipe.AddRecipeGroup("IronBar", 10);
-                 recipe.AddIngredient(ItemID.IllegalGunParts, 1);
-
-                 recipe.AddTile(TileID.Anvils);
-                 recipe.Register();
-             }
-        */
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Chain, 5);
+            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 5);
+            recipe.AddRecipeGroup("IronBar", 10);
+            recipe.AddIngredient(ItemID.IllegalGunParts, 1);
+            recipe.AddTile(ModContent.TileType<BoneAltar>());
+            recipe.Register();
+        }
+        
         public override Vector2? HoldoutOffset()
         {
             var offset = new Vector2(-2, 0);
