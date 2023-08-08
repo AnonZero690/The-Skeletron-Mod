@@ -8,7 +8,7 @@ using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Ammo
 {
-    internal class SharpenedBone : ModItem
+    internal class BoneFragments : ModItem
     {
         public override void SetStaticDefaults() {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
@@ -18,13 +18,13 @@ namespace TheSkeletronMod.Items.Ammo
             Item.width = 8;
             Item.height = 8;
 
-            Item.damage = 6;
+            Item.damage = 4;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.knockBack = 1f;
+            Item.knockBack = 4f;
             Item.maxStack = 999;
             Item.consumable = true;
             Item.ammo = AmmoID.Stake;
-            Item.shoot = ModContent.ProjectileType<SharpenedBoneProjectile>();
+            Item.shoot = ModContent.ProjectileType<BoneFragmentsProjectile>();
         }
         public override void AddRecipes()
         {

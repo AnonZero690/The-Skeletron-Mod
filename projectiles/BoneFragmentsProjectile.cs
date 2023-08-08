@@ -1,4 +1,4 @@
-﻿using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
@@ -6,7 +6,7 @@ using TheSkeletronMod.Items.Ammo;
 
 namespace TheSkeletronMod.projectiles
 {
-    internal class SharpenedBoneProjectile : ModProjectile
+    internal class BoneFragmentsProjectile : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -15,9 +15,9 @@ namespace TheSkeletronMod.projectiles
         }
         public override void SetDefaults()
         {
-            Projectile.width = 8;
-            Projectile.height = 8;
-            Projectile.penetrate = 1;
+            Projectile.width = 16;
+            Projectile.height = 4;
+            Projectile.penetrate = 3;
             Projectile.timeLeft = 600;
             Projectile.friendly = true;
             Projectile.ignoreWater = true;
