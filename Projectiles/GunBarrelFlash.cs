@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ModLoader;
 
-namespace TheSkeletronMod.Projectiles
+namespace TheSkeletronMod.projectiles
 {
 
     public class GunBarrelFlash : ModProjectile

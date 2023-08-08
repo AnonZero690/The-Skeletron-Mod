@@ -18,8 +18,8 @@
     <None Remove="Gores\GunPellets.png" />
     <None Remove="Items\Ammo\SharpenedBone.png" />
     <None Remove="Items\Materials\AncientBone.png" />
-    <None Remove="Projectiles\GunBarrelFlash.png" />
-    <None Remove="Projectiles\GunBarrelFlash_Glow.png" />
+    <None Remove="projectiles\GunBarrelFlash.png" />
+    <None Remove="projectiles\GunBarrelFlash_Glow.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />

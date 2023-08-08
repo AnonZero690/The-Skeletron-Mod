@@ -4,7 +4,7 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TheSkeletronMod.Projectiles
+namespace TheSkeletronMod.projectiles
 {
 
     public class BigSkull : ModProjectile
