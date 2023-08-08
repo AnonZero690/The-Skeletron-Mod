@@ -5,6 +5,7 @@ using TheSkeletronMod.Tiles;
 using Microsoft.Xna.Framework;
 using TheSkeletronMod.Items.Materials;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace TheSkeletronMod.Items.Weapons.Melee
 {
@@ -97,6 +98,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
                         Projectile.rotation -= MathHelper.PiOver4;
                     Projectile.velocity = Projectile.rotation.ToRotationVector2() * acceleration;
                     Projectile.damage *= 2;
+                    Projectile.knockBack = 0;
                     AlreadyRelease = true;
                 }
                 if (Projectile.velocity != Vector2.Zero)
@@ -142,7 +144,20 @@ namespace TheSkeletronMod.Items.Weapons.Melee
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
             if (Projectile.velocity != Vector2.Zero)
+            {
                 Projectile.position += Projectile.velocity;
+                Projectile.Center.LookForHostileNPC(out List<NPC> npclist, 200);
+                foreach (NPC npc in npclist)
+                {
+                    npc.StrikeNPC(npc.CalculateHitInfo(Projectile.damage, -(Projectile.Center.X > npc.Center.X).BoolOne(), false, acceleration));
+                    player.dpsDamage += Projectile.damage;
+                }
+                for (int i = 0; i < 200; i++)
+                {
+                    Vector2 pos = SkeletronUtils.SpawnRanPositionThatIsNotIntoTile(Projectile.Center, 200, 200);
+                    Dust.NewDust(pos, 0, 0, DustID.Dirt);
+                }
+            }
             Projectile.velocity = Vector2.Zero;
             return false;
         }
