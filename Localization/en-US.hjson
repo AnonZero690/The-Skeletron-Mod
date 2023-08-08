@@ -107,5 +107,12 @@ Mods: {
 			CalciumOreT.MapEntry: Calcium Ore T
 			BoneAltar.MapEntry: Bone Altar
 		}
+
+		Buffs: {
+			AncientBoneBuff: {
+				DisplayName: Ancient Bone Buff
+				Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
+			}
+		}
 	}
 }

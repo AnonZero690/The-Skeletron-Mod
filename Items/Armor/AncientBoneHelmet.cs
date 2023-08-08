@@ -7,6 +7,7 @@ using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
+using TheSkeletronMod.Buffs;
 
 namespace TheSkeletronMod.Items.Armor
 {
@@ -43,6 +44,7 @@ namespace TheSkeletronMod.Items.Armor
         {
             player.setBonus="2 defense\nSummons a boney circle around you, that inflicts boned debuff on enemies in range.";
             player.statDefense+=2;
+            player.AddBuff(ModContent.BuffType<AncientBoneBuff>(), 1);
         }
     }
 }
