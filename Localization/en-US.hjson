@@ -61,6 +61,16 @@ Mods: {
 				DisplayName: Calcium Ore
 				Tooltip: '''[c/393b3c:"It's quite strong!"]'''
 			}
+
+			BoneFragments: {
+				DisplayName: Bone Fragments
+				Tooltip: ""
+			}
+
+			ClusterboneShotgun: {
+				DisplayName: Clusterbone Shotgun
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -69,6 +79,7 @@ Mods: {
 			BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
 			SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
 			TestItemProjectile.DisplayName: Test Item Projectile
+			BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
 		}
 
 		Tiles: {

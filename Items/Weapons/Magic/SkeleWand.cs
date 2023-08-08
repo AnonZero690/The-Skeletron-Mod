@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 
-namespace TheSkeletronMod.Items.Weapons.Calcium
+namespace TheSkeletronMod.Items.Weapons.Magic
 {
 
     public class SkeleWand : ModItem
