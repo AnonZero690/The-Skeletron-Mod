@@ -14,7 +14,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
         public override void SetDefaults()
         {
             Item.ItemDefaultRange(56, 2, 14, 2f, 22, 22, ItemUseStyleID.Shoot, ModContent.ProjectileType<SharpenedBoneProjectile>(), 20f, true, AmmoID.Stake);
-            Item.value = 60;
+            Item.value = 10000;
             Item.crit = 5;
             Item.UseSound = SoundID.Item5;
             Item.rare = ItemRarityID.Green;

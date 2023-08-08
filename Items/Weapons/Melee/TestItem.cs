@@ -16,6 +16,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
             Item.ItemDefaultMeleeShootCustomProjectile(10, 10, 30, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<TestItemProjectile>(), 1, false);
             Item.noMelee = true;
             Item.noUseGraphic = true;
+            Item.value=12000;
         }
         public override bool CanUseItem(Player player)
         {

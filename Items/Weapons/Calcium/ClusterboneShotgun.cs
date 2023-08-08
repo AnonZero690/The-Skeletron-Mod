@@ -10,7 +10,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.Systems;
 using TheSkeletronMod.projectiles;
-using static Terraria.ModLoader.ModContent;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 

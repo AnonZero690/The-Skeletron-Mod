@@ -18,7 +18,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
 			Item.ItemSetDefaultSpear(ModContent.ProjectileType<BoneDaggerProjectile>(), 2f);
 
 			Item.crit = 10;
-			Item.value = 60;
+			Item.value = 5000;
 			Item.rare = ItemRarityID.Green;
 			Item.DamageType = ModContent.GetInstance<Bonecursed>();
 		}

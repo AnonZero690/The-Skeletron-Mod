@@ -21,7 +21,7 @@ namespace TheSkeletronMod.Items.Ammo
             Item.damage = 6;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.knockBack = 1f;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.consumable = true;
             Item.ammo = AmmoID.Stake;
             Item.shoot = ModContent.ProjectileType<SharpenedBoneProjectile>();
