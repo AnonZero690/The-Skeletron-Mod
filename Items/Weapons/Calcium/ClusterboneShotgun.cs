@@ -10,8 +10,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.Systems;
 using TheSkeletronMod.projectiles;
-using static Terraria.ModLoader.ModContent;
-
+using TheSkeletronMod.Tiles;
+using TheSkeletronMod.Items.Materials;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium
 {
@@ -85,12 +85,12 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
 
             if (Main.rand.NextBool(10))
             {
-                Projectile.NewProjectile(source, position, velocity, ProjectileType<BigSkull>(), damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BigSkull>(), damage, knockback, player.whoAmI);
 
             }
             Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("GunPellets").Type, 1f);
 
-            Projectile.NewProjectile(player.GetSource_ItemUse(Item), position + muzzleOffset, Vector2.Zero, ProjectileType<GunBarrelFlash>(), 0, 0, player.whoAmI);
+            Projectile.NewProjectile(player.GetSource_ItemUse(Item), position + muzzleOffset, Vector2.Zero, ModContent.ProjectileType<GunBarrelFlash>(), 0, 0, player.whoAmI);
 
 
 
@@ -120,18 +120,17 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             */
             return true;
         }
-
-        /*     public override void AddRecipes()
-             {
-                 Recipe recipe = CreateRecipe();
-                 recipe.AddIngredient(ItemID.Chain, 5);
-                 recipe.AddRecipeGroup("IronBar", 10);
-                 recipe.AddIngredient(ItemID.IllegalGunParts, 1);
-
-                 recipe.AddTile(TileID.Anvils);
-                 recipe.Register();
-             }
-        */
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Chain, 5);
+            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 5);
+            recipe.AddRecipeGroup("IronBar", 10);
+            recipe.AddIngredient(ItemID.IllegalGunParts, 1);
+            recipe.AddTile(ModContent.TileType<BoneAltar>());
+            recipe.Register();
+        }
+        
         public override Vector2? HoldoutOffset()
         {
             var offset = new Vector2(-2, 0);
