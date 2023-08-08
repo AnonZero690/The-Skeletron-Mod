@@ -5,6 +5,7 @@ using Terraria.GameContent;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Placeables
@@ -36,6 +37,14 @@ namespace TheSkeletronMod.Items.Placeables
 
             Item.createTile = ModContent.TileType<BoneAltar>();
 
+        }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 5);
+            recipe.AddIngredient(ItemID.Cobweb, 5);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
         }
     }
 

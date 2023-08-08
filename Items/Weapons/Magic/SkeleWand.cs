@@ -6,6 +6,8 @@ using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSkeletronMod.Items.Materials;
+using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Weapons.Magic
 {
@@ -97,6 +99,14 @@ namespace TheSkeletronMod.Items.Weapons.Magic
         {
             var offset = new Vector2(1, 0);
             return offset;
+        }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 20);
+            recipe.AddIngredient(ItemID.WandofSparking, 1);
+            recipe.AddTile(ModContent.TileType<BoneAltar>());
+            recipe.Register();
         }
     }
 }

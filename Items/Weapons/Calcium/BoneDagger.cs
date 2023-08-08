@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.projectiles;
 using TheSkeletronMod.Common.DamageClasses;
+using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium
@@ -49,10 +50,10 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.DirtBlock,27);
-			recipe.AddTile(ModContent.TileType<BoneAltar>());
-			recipe.Register();
-		}
-		
-	}
+            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 20);
+            recipe.AddTile(ModContent.TileType<BoneAltar>());
+            recipe.Register();
+        }
+
+    }
 }

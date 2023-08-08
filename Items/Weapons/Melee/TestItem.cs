@@ -3,6 +3,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using TheSkeletronMod.Items.Materials;
+using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Weapons
 {
@@ -19,6 +21,14 @@ namespace TheSkeletronMod.Items.Weapons
         {
             return player.ownedProjectileCounts[ModContent.ProjectileType<TestItemProjectile>()] < 1;
         }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 35);
+            recipe.AddTile(ModContent.TileType<BoneAltar>());
+            recipe.Register();
+        }
+
     }
     class TestItemProjectile : ModProjectile
     {
