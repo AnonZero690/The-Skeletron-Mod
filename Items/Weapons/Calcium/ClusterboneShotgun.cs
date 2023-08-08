@@ -14,7 +14,6 @@ using static Terraria.ModLoader.ModContent;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 
-
 namespace TheSkeletronMod.Items.Weapons.Calcium
 {
 
@@ -87,12 +86,12 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
 
             if (Main.rand.NextBool(10))
             {
-                Projectile.NewProjectile(source, position, velocity, ProjectileType<BigSkull>(), damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BigSkull>(), damage, knockback, player.whoAmI);
 
             }
             Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("GunPellets").Type, 1f);
 
-            Projectile.NewProjectile(player.GetSource_ItemUse(Item), position + muzzleOffset, Vector2.Zero, ProjectileType<GunBarrelFlash>(), 0, 0, player.whoAmI);
+            Projectile.NewProjectile(player.GetSource_ItemUse(Item), position + muzzleOffset, Vector2.Zero, ModContent.ProjectileType<GunBarrelFlash>(), 0, 0, player.whoAmI);
 
 
 

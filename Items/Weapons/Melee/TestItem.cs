@@ -1,10 +1,10 @@
-﻿using System;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSkeletronMod.Tiles;
 using Microsoft.Xna.Framework;
 using TheSkeletronMod.Items.Materials;
-using TheSkeletronMod.Tiles;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace TheSkeletronMod.Items.Weapons.Melee
 {
@@ -32,9 +32,13 @@ namespace TheSkeletronMod.Items.Weapons.Melee
     }
     class TestItemProjectile : ModProjectile
     {
-        int originalDamage = 30; // Change the damage here
         public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BreakerBlade);
         const int TimeLeftForReal = 9999;
+        public override void SetStaticDefaults()
+        {
+            ProjectileID.Sets.TrailCacheLength[Type] = 5;
+            ProjectileID.Sets.TrailingMode[Type] = 2;
+        }
         public override void SetDefaults()
         {
             Projectile.width = 80; Projectile.height = 92;
@@ -49,11 +53,11 @@ namespace TheSkeletronMod.Items.Weapons.Melee
         int progress = TimeLeftForReal;
         int direction = 0;
         int moveAmount = 0;
-
+        int originDmg = 0;
+        bool AlreadyRelease = false;
+        bool ActivateRetrieve = false;
         public override void AI()
         {
-            Projectile.damage = (int)(originalDamage * (acceleration / 15)); // if you change the max acceleration make sure you change it here too. (the number is the max)
-            //yeah the damage variable doesn't do anything because I don't know how to change the projectile's damage from here smh
             if (progress > MaxProgress)
             {
                 player = Main.player[Projectile.owner];
@@ -61,11 +65,13 @@ namespace TheSkeletronMod.Items.Weapons.Melee
                 Projectile.velocity = Projectile.velocity.SafeNormalize(Vector2.Zero);
                 direction = Projectile.velocity.X > 0 ? 1 : -1;
                 Projectile.spriteDirection = direction;
+                originDmg = Projectile.damage;
             }
             player.heldProj = Projectile.whoAmI;
-            player.direction = direction;
-            if (Main.mouseLeft)
+            if (Main.mouseLeft && !AlreadyRelease)
             {
+                Projectile.damage = (int)(originDmg * (acceleration / 15));
+                player.direction = direction;
                 if (acceleration < 15)
                 {
                     acceleration += .1f;
@@ -75,16 +81,82 @@ namespace TheSkeletronMod.Items.Weapons.Melee
                 Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation;
                 if (Projectile.spriteDirection == -1)
                     Projectile.rotation += MathHelper.PiOver2;
+                float rotational = Projectile.rotation - MathHelper.PiOver4 - MathHelper.PiOver2;
+                if (Projectile.spriteDirection == -1)
+                    rotational -= MathHelper.PiOver2;
+                player.compositeFrontArm = new Player.CompositeArmData(true, Player.CompositeArmStretchAmount.Full, rotational);
             }
             else
             {
+                if (!AlreadyRelease)
+                {
+                    Projectile.tileCollide = true;
+                    if (Projectile.spriteDirection == -1)
+                        Projectile.rotation += MathHelper.PiOver4 + MathHelper.Pi;
+                    else
+                        Projectile.rotation -= MathHelper.PiOver4;
+                    Projectile.velocity = Projectile.rotation.ToRotationVector2() * acceleration;
+                    Projectile.damage *= 2;
+                    AlreadyRelease = true;
+                }
+                if (Projectile.velocity != Vector2.Zero)
+                {
+                    Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4;
+                    if (Projectile.spriteDirection == -1)
+                        Projectile.rotation += MathHelper.PiOver2;
+                    Projectile.velocity.Y += .5f;
+                }
+                else
+                {
+                    if (++Projectile.ai[0] >= 10)
+                    {
+                        Projectile.damage -= 1;
+                        Projectile.ai[0] = 0;
+                    }
+                }
+                if (Main.mouseRight && !ActivateRetrieve)
+                {
+                    Projectile.tileCollide = false;
+                    ActivateRetrieve = true;
+                }
+                if (ActivateRetrieve)
+                {
+                    Vector2 distance = player.Center - Projectile.Center;
+                    float length = distance.Length();
+                    if (length > 5)
+                    {
+                        length = 5;
+                    }
+                    Projectile.velocity -= Projectile.velocity * .08f;
+                    Projectile.velocity += distance.SafeNormalize(Vector2.Zero) * length;
+                    Projectile.velocity = Projectile.velocity.LimitingVelocity(20);
+
+                }
+            }
+            if ((Projectile.velocity == Vector2.Zero || ActivateRetrieve) && ((player.Center - Projectile.Center).LengthSquared() < new Vector2(Projectile.width, Projectile.height).LengthSquared() * .5f || Projectile.damage <= 1))
+            {
                 Projectile.Kill();
             }
-            float rotational = Projectile.rotation - MathHelper.PiOver4 - MathHelper.PiOver2;
-            if (Projectile.spriteDirection == -1)
-                rotational -= MathHelper.PiOver2;
-            player.compositeFrontArm = new Player.CompositeArmData(true, Player.CompositeArmStretchAmount.Full, rotational);
             moveAmount += (int)acceleration;
+        }
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+            if (Projectile.velocity != Vector2.Zero)
+                Projectile.position += Projectile.velocity;
+            Projectile.velocity = Vector2.Zero;
+            return false;
+        }
+        public override bool PreDraw(ref Color lightColor)
+        {
+            Projectile.ProjectileDefaultDrawInfo(out Texture2D texture, out Vector2 origin);
+            //The utils code do not support custom sprite direction so yea, or rather I just outright don't do it
+            for (int k = 0; k < Projectile.oldPos.Length; k++)
+            {
+                Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + origin + new Vector2(0f, Projectile.gfxOffY);
+                Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
+                Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.oldRot[k], origin, Projectile.scale, direction == 1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally, 0);
+            }
+            return base.PreDraw(ref lightColor);
         }
     }
 }
