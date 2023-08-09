@@ -21,6 +21,7 @@ namespace TheSkeletronMod.Tiles
             Main.tileSolidTop[Type] = true;
             Main.tileNoAttach[Type] = true;
             Main.tileLavaDeath[Type] = true;
+            Main.tileSolidTop[Type] = false;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             Main.tileFrameImportant[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;

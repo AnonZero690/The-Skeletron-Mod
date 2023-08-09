@@ -1,4 +1,4 @@
-﻿using Terraria.ID;
+using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 using TheSkeletronMod.projectiles;
@@ -7,23 +7,22 @@ using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
-using TheSkeletronMod.Buffs;
 
 namespace TheSkeletronMod.Items.Armor
 {
-    [AutoloadEquip(EquipType.Head)]
-    public class AncientBoneHelmet : ModItem
+    [AutoloadEquip(EquipType.Legs)]
+    public class AncientBoneLeggings : ModItem
     {
         public override void UpdateEquip(Player player)
         {
             player.GetDamage(ModContent.GetInstance<Bonecursed>()) += 0.04f;
-            player.GetCritChance(ModContent.GetInstance<Bonecursed>()) += 2;
+            player.moveSpeed+=0.1f;
         }
         public override void SetDefaults()
         { 
             Item.value = 6000;
             Item.rare = ItemRarityID.Green;
-            Item.defense = 2;
+            Item.defense = 1;
             
         }
 
@@ -35,16 +34,6 @@ namespace TheSkeletronMod.Items.Armor
             //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.Register();
         }
-
-        public override bool IsArmorSet(Item head, Item body, Item legs)
-        {
-            return body.type==ModContent.ItemType<AncientBoneChestplate>() && legs.type==ModContent.ItemType<AncientBoneLeggings>();
-        }
-        public override void UpdateArmorSet(Player player)
-        {
-            player.setBonus="2 defense\nSummons a boney circle around you, that inflicts boned debuff on enemies in range.";
-            player.statDefense+=2;
-            player.AddBuff(ModContent.BuffType<AncientBoneBuff>(), 1);
-        }
+       
     }
 }

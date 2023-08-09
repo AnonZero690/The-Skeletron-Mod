@@ -74,11 +74,36 @@ Mods: {
 
 			AncientBoneHelmet: {
 				DisplayName: Ancient Bone Helmet
-				Tooltip: 
-				'''
-				5% increased calcium damage
-				2% increased calcium critical strike chance
-				'''
+				Tooltip:
+					'''
+					5% increased calcium damage
+					2% increased calcium critical strike chance
+					'''
+			}
+
+			CartilageHelmet: {
+				DisplayName: Cartilage Helmet
+				Tooltip: 2% increased calcium damage
+			}
+
+			CartilageChestplate: {
+				DisplayName: Cartilage Chestplate
+				Tooltip: 2% increased calcium critical strike chance
+			}
+
+			CartilageLeggings: {
+				DisplayName: Cartilage Leggings
+				Tooltip: 2% increased calcium attack speed
+			}
+
+			AncientBoneChestplate: {
+				DisplayName: Ancient Bone Chestplate
+				Tooltip: 6% increased calcium damage
+			}
+
+			AncientBoneLeggings: {
+				DisplayName: Ancient Bone Leggings
+				Tooltip: 10% increased movement speed and acceleration
 			}
 		}
 
@@ -96,6 +121,18 @@ Mods: {
 		Tiles: {
 			CalciumOreT.MapEntry: Calcium Ore T
 			BoneAltar.MapEntry: Bone Altar
+		}
+
+		Buffs: {
+			AncientBoneBuff: {
+				DisplayName: Ancient Bone Buff
+				Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
+			}
+
+			BonedDebuff: {
+				DisplayName: Boned Debuff
+				Description: Mods.TheSkeletronMod.Buffs.BonedDebuff.Description
+			}
 		}
 	}
 }
