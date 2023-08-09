@@ -15,6 +15,7 @@
   <ItemGroup>
     <None Remove="Assets\Textures\Menu\BGPL.png" />
     <None Remove="Assets\Textures\Menu\Logopl.png" />
+    <None Remove="Buffs\CartilageBuff.png" />
     <None Remove="Gores\GunPellets.png" />
     <None Remove="Items\Ammo\SharpenedBone.png" />
     <None Remove="Items\Materials\AncientBone.png" />

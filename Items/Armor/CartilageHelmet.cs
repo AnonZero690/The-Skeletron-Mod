@@ -1,13 +1,11 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-using TheSkeletronMod.projectiles;
 using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
-using TheSkeletronMod;
+using TheSkeletronMod.Buffs;
 
 namespace TheSkeletronMod.Items.Armor
 {
@@ -35,6 +33,16 @@ namespace TheSkeletronMod.Items.Armor
             //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.Register();
         }
-       
+
+        public override bool IsArmorSet(Item head, Item body, Item legs)
+        {
+            return (body.type == ModContent.ItemType<CartilageChestplate>() && legs.type == ModContent.ItemType<CartilageLeggings>());
+        }
+
+        public override void UpdateArmorSet(Player player)
+        {
+            player.GetDamage<Bonecursed>() += 0.1f;
+            player.AddBuff(ModContent.BuffType<CartilageBuff>(), 1);
+        }
     }
 }
