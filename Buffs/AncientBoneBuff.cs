@@ -27,9 +27,7 @@ namespace TheSkeletronMod.Buffs
             }
             for (int i = 0; i<200; i++){
                 if (((Main.npc[i].Center.X-player.Center.X)*(Main.npc[i].Center.X-player.Center.X))+((Main.npc[i].Center.Y-player.Center.Y)*(Main.npc[i].Center.Y-player.Center.Y))<(dist*dist)){
-                    if(!Main.npc[i].friendly){
-                        Main.npc[i].AddBuff(ModContent.BuffType<BonedDebuff>(),180);
-                    }
+                    Main.npc[i].AddBuff(ModContent.BuffType<BonedDebuff>(),180);
                 }
             }
         }

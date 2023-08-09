@@ -12,7 +12,7 @@ namespace TheSkeletronMod.Buffs
         {
             Random random=new();
             Dust.NewDust(new Vector2(npc.Center.X, npc.Center.Y), 1, 1, DustID.Stone, (float)(random.NextDouble()-0.5)*5, (float)(random.NextDouble()-0.5)*5, 30);
-            npc.defense-=10;
+            npc.defense = npc.defDefense - 5;
         }
     }
 }
