@@ -105,6 +105,11 @@ Mods: {
 				DisplayName: Ancient Bone Leggings
 				Tooltip: 10% increased movement speed and acceleration
 			}
+
+			CartilageSpear: {
+				DisplayName: Cartilage Spear
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -117,6 +122,7 @@ Mods: {
 			TestItemProjectile.DisplayName: Test Item Projectile
 			BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
 			CartilageArmorSetMinion.DisplayName: Cartilage Armor Set Minion
+			CartilageSpearProjectile.DisplayName: Cartilage Spear Projectile
 		}
 
 		Tiles: {
