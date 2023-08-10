@@ -91,7 +91,7 @@ namespace TheSkeletronMod
             {
                 counter++;
                 pos = positionCurrent + Main.rand.NextVector2Circular(halfwidth, halfheight).RotatedBy(rotation);
-            } while (!Collision.CanHitLine(positionCurrent, 0, 0, pos, 0, 0) || counter > 50);
+            } while (!Collision.CanHitLine(positionCurrent, 0, 0, pos, 0, 0) || counter < 50);
             return pos;
         }
         public static bool IsCloseToPosition(this Vector2 CurrentPosition, Vector2 Position, float distance) => (Position - CurrentPosition).Length() <= distance;

@@ -116,11 +116,29 @@ Mods: {
 			GunBarrelFlash.DisplayName: Gun Barrel Flash
 			TestItemProjectile.DisplayName: Test Item Projectile
 			BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
+			CartilageArmorSetMinion.DisplayName: Cartilage Armor Set Minion
 		}
 
 		Tiles: {
 			CalciumOreT.MapEntry: Calcium Ore T
 			BoneAltar.MapEntry: Bone Altar
+		}
+
+		Buffs: {
+			AncientBoneBuff: {
+				DisplayName: Ancient Bone Buff
+				Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
+			}
+
+			BonedDebuff: {
+				DisplayName: Boned Debuff
+				Description: Mods.TheSkeletronMod.Buffs.BonedDebuff.Description
+			}
+
+			CartilageBuff: {
+				DisplayName: Cartilage Buff
+				Description: Mods.TheSkeletronMod.Buffs.CartilageBuff.Description
+			}
 		}
 	}
 }
