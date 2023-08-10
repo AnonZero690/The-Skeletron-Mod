@@ -43,6 +43,7 @@ namespace TheSkeletronMod.Items.Armor
         {
             player.GetDamage<Bonecursed>() += 0.1f;
             player.AddBuff(ModContent.BuffType<CartilageBuff>(), 1);
+            player.setBonus = "Summons a skull above your head to launch projectiles at your enemies";
         }
     }
 }
