@@ -14,20 +14,26 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
         public override void SetDefaults()
         {
             Item.shoot = ModContent.ProjectileType<CartilageSpearProjectile>();
-            Item.value = 16000;
-            Item.crit = 5;
-            Item.UseSound = SoundID.Item1;
-            Item.rare = ItemRarityID.Green;
+            
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.noMelee = true;
-            Item.noUseGraphic = true;
-            Item.damage = 4;
-            Item.width = 58;
-            Item.height = 58;
+            Item.damage = 6;
+            
+            Item.width = 24;
+            Item.height = 24;
+            Item.useTime = 22;
             Item.useAnimation = 22;
             Item.useStyle = ItemUseStyleID.Swing;
+            Item.knockBack = 1f;
+            Item.value = 10000;
+            Item.rare = ItemRarityID.Blue;
+            Item.UseSound = SoundID.Item1;
+            Item.autoReuse = true;
+            Item.maxStack = 999;
+            
             Item.shootSpeed = 11f;
-            Item.damage = 19;
+            Item.noMelee = true;
+            Item.noUseGraphic = true;
+            
 
         }
 

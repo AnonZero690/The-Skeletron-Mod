@@ -20,7 +20,7 @@ namespace TheSkeletronMod.projectiles
             Projectile.height = 18;
             Projectile.aiStyle = ProjAIStyleID.Arrow;
             Projectile.friendly = true;
-            Projectile.penetrate = 2;
+            Projectile.penetrate = 100;
             Projectile.timeLeft = 600;
             Projectile.extraUpdates = 1;
             Projectile.light = 0;
@@ -37,6 +37,18 @@ namespace TheSkeletronMod.projectiles
         public override void Kill(int timeleft)
 
         {
+            for (int i = 0; i < 130; i++)
+            {
+                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                var d = Dust.NewDustPerfect(Projectile.Center, DustID.Bone, speed * 8, Scale: 1f);
+                ;
+                d.noGravity = true;
+            }
+            Player player = Main.player[Projectile.owner];
+
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 40, 0, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, -40, 0, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, -40, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
 
             for (int i = 0; i < 17; i++)
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Stone, 0f, 0f, 50, default, 2f);

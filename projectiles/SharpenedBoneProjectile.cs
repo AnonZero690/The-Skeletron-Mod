@@ -43,5 +43,19 @@ namespace TheSkeletronMod.projectiles
             Projectile.DrawTrail(lightColor);
             return base.PreDraw(ref lightColor);
         }
+        public override void Kill(int timeleft)
+        {
+            Projectile.ownerHitCheck = true;
+
+            
+
+            
+            
+
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("SharpenedBoneGore1").Type, 1f);
+            
+
+            
+        }
     }
 }
