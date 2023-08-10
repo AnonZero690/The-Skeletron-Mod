@@ -110,6 +110,16 @@ Mods: {
 				DisplayName: Cartilage Spear
 				Tooltip: ""
 			}
+
+			AncientBoneDirk: {
+				DisplayName: Ancient Bone Dirk
+				Tooltip: ""
+			}
+
+			AncientBoneDart: {
+				DisplayName: Ancient Bone Dart
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -123,6 +133,8 @@ Mods: {
 			BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
 			CartilageArmorSetMinion.DisplayName: Cartilage Armor Set Minion
 			CartilageSpearProjectile.DisplayName: Cartilage Spear Projectile
+			AncientBoneDirkProjectile.DisplayName: Ancient Bone Dirk Projectile
+			AncientBoneDartProjectile.DisplayName: Ancient Bone Dart Projectile
 		}
 
 		Tiles: {
