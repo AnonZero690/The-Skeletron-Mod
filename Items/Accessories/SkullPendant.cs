@@ -22,7 +22,9 @@ namespace TheSkeletronMod.Items.Accessories
             Item.material = true;
             Item.accessory = true;
         }
-        public override void UpdateEquip(Player player)
+        bool alreadySpawned = false;
+
+        public override void AddRecipes()
         {
             Lighting.AddLight(player.position, r: 0.6f, 0.3f, b: 1f);
         }

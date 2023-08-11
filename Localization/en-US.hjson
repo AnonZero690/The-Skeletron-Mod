@@ -125,6 +125,11 @@ Mods: {
 				DisplayName: Skull Pendant
 				Tooltip: "[c/702963:A useless strange keepsake. It gives you deathly reassurance...]"
 			}
+
+			SkullNecklace: {
+				DisplayName: Skull Necklace
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
