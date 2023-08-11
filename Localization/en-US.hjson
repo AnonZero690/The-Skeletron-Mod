@@ -120,6 +120,11 @@ Mods: {
 				DisplayName: Ancient Bone Dart
 				Tooltip: ""
 			}
+
+			SkullPendant: {
+				DisplayName: Skull Pendant
+				Tooltip: Useless for now, but can be upgraded...
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
