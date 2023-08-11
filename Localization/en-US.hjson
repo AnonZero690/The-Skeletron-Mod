@@ -120,6 +120,12 @@ Mods: {
 				DisplayName: Ancient Bone Dart
 				Tooltip: ""
 			}
+			SkullPendant: {
+				DisplayName: Skull Pendant
+				Tooltip: '''
+						 [c/702963:A strange keepsake. It gives you deathly reassurance...]
+						 '''
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
