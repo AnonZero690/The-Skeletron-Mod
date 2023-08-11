@@ -22,15 +22,11 @@ namespace TheSkeletronMod.Items.Accessories
             Item.material = true;
             Item.accessory = true;
         }
-        bool alreadySpawned = false;
 
-        public override void AddRecipes()
+        public override void UpdateEquip(Player player)
         {
             Lighting.AddLight(player.position, r: 0.6f, 0.3f, b: 1f);
         }
-        bool alreadySpawned = false;
         // Not supposed to be craftable
-        //public override void AddRecipes()
-
     }
 }
