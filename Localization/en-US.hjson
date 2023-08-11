@@ -123,7 +123,7 @@ Mods: {
 
 			SkullPendant: {
 				DisplayName: Skull Pendant
-				Tooltip: Useless for now, but can be upgraded...
+				Tooltip: "[c/702963:A useless strange keepsake. It gives you deathly reassurance...]"
 			}
 
 			SkullNecklace: {

@@ -9,23 +9,28 @@ using System.Collections.Generic;
 
 namespace TheSkeletronMod.Items.Accessories
 {
-    internal class SkullPendant : ModItem
+    [AutoloadEquip(EquipType.Neck)]
+    public class SkullPendant : ModItem
     {
-        public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BandofRegeneration);
+        
         public override void SetDefaults()
-        {   
+        {
+            Item.width = 12;
+            Item.height = 20;
             Item.value = 12000;
-            Item.rare = 1;
+            Item.rare = 2;
+            Item.material = true;
             Item.accessory = true;
         }
+        bool alreadySpawned = false;
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 5);
-            recipe.AddTile(ModContent.TileType<BoneAltar>());
-            recipe.Register();
+            Lighting.AddLight(player.position, r: 0.6f, 0.3f, b: 1f);
         }
+        bool alreadySpawned = false;
+        // Not supposed to be craftable
+        //public override void AddRecipes()
 
     }
 }
