@@ -125,6 +125,11 @@ Mods: {
 				DisplayName: Skull Pendant
 				Tooltip: Useless for now, but can be upgraded...
 			}
+
+			SkullNecklace: {
+				DisplayName: Skull Necklace
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
