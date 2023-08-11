@@ -22,8 +22,9 @@ namespace TheSkeletronMod.Buffs
                 double rad = (deg) * (Math.PI / 180);
                 float x2 = player.Center.X - (float)(Math.Cos(rad) * dist);
                 float y2 = player.Center.Y - (float)(Math.Sin(rad) * dist);
-                int dust = Dust.NewDust(new Vector2(x2, y2), 3, 3, DustID.Stone, 0f, 0f, 0, new Color(175, 160, 120), 1f);
+                int dust = Dust.NewDust(new Vector2(x2, y2), 3, 3, DustID.BoneTorch, 0f, 0f, 0, new Color(175, 160, 120), 1f);
                 Main.dust[dust].noGravity = true;
+                
             }
             for (int i = 0; i<200; i++){
                 if (((Main.npc[i].Center.X-player.Center.X)*(Main.npc[i].Center.X-player.Center.X))+((Main.npc[i].Center.Y-player.Center.Y)*(Main.npc[i].Center.Y-player.Center.Y))<(dist*dist)){

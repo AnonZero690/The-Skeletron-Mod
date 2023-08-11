@@ -149,6 +149,7 @@ Mods: {
 			CartilageSpearProjectile.DisplayName: Cartilage Spear Projectile
 			AncientBoneDirkProjectile.DisplayName: Ancient Bone Dirk Projectile
 			AncientBoneDartProjectile.DisplayName: Ancient Bone Dart Projectile
+			CartilageSpearShrapnelProj.DisplayName: Cartilage Spear Shrapnel Proj
 		}
 
 		Tiles: {

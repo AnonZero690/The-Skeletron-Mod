@@ -29,7 +29,5 @@ namespace TheSkeletronMod.Items.Accessories
             Lighting.AddLight(player.position, r: 0.6f, 0.3f, b: 1f);
         }
         // Not supposed to be craftable
-        //public override void AddRecipes()
-
     }
 }
