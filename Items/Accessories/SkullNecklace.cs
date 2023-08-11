@@ -17,13 +17,14 @@ namespace TheSkeletronMod.Items.Accessories
         public override void SetDefaults()
         {   
             Item.value = 12000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Green;
             Item.accessory = true;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetDamage(ModContent.GetInstance<Bonecursed>()) += 0.05f;
-            player.endurance += 0.05f;  
+            player.endurance += 0.05f;
+            Lighting.AddLight(player.position, r: 0.6f, 0.3f, b: 1f);
         }
         public override void AddRecipes()
         {

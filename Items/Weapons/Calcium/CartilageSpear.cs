@@ -17,7 +17,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             Item.shoot = ModContent.ProjectileType<CartilageSpearProjectile>();
             
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.damage = 6;
+            Item.damage = 14;
             
             Item.width = 24;
             Item.height = 24;
@@ -31,7 +31,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             Item.autoReuse = true;
             Item.maxStack = 3;
             
-            Item.shootSpeed = 11f;
+            Item.shootSpeed = 12f;
             Item.noMelee = true;
             Item.noUseGraphic = true;
             

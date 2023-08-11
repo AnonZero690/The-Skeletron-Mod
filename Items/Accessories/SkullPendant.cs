@@ -18,17 +18,16 @@ namespace TheSkeletronMod.Items.Accessories
             Item.width = 12;
             Item.height = 20;
             Item.value = 12000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Gray;
             Item.material = true;
             Item.accessory = true;
         }
-        bool alreadySpawned = false;
 
-        public override void AddRecipes()
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
         {
             Lighting.AddLight(player.position, r: 0.6f, 0.3f, b: 1f);
         }
-        bool alreadySpawned = false;
         // Not supposed to be craftable
         //public override void AddRecipes()
 

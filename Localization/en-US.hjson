@@ -128,7 +128,11 @@ Mods: {
 
 			SkullNecklace: {
 				DisplayName: Skull Necklace
-				Tooltip: ""
+				Tooltip:
+					'''
+					[c/702963:Increases calcium damage by 5% and Damage Reduction by 5%.] 
+					[c/702963:Its power grows.]
+					'''
 			}
 		}
 

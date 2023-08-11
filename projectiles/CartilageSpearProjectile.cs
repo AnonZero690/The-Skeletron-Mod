@@ -46,9 +46,9 @@ namespace TheSkeletronMod.projectiles
             }
             Player player = Main.player[Projectile.owner];
 
-            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 40, 0, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, -40, 0, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, -40, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 40, 0, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage/2, Projectile.knockBack, Projectile.owner);
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, -40, 0, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage/2, Projectile.knockBack, Projectile.owner);
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, -40, ModContent.ProjectileType<AncientBoneDartProjectile>(), Projectile.damage / 2, Projectile.knockBack, Projectile.owner);
 
             for (int i = 0; i < 17; i++)
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Stone, 0f, 0f, 50, default, 2f);
