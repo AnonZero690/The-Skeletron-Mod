@@ -143,6 +143,11 @@ Mods: {
 					You get an uneasy feeling just looking at it.
 					'''
 			}
+
+			TrueBloodgemBoneScepter: {
+				DisplayName: True Bloodgem Bone Scepter
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage

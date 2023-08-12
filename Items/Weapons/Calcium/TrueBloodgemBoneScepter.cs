@@ -7,14 +7,15 @@ using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using System;
 using Terraria.Utilities;
+using TheSkeletronMod.Items.Materials;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium
 {
-    public class BloodgemBoneScepter : ModItem
+    public class TrueBloodgemBoneScepter : ModItem
     {
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeCustomProjectile(12, 12, 17, 2f, 20, 20, ItemUseStyleID.Shoot, ProjectileID.BloodArrow, true);
+            Item.ItemDefaultMeleeCustomProjectile(12, 12, 20, 2f, 18, 18, ItemUseStyleID.Shoot, ProjectileID.BloodArrow, true);
             Item.value = 10000;
             Item.crit = 5;
             Item.shootSpeed = 7;
@@ -32,22 +33,9 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Ruby, 5);
-            recipe.AddIngredient(ItemID.Diamond, 3);
-            recipe.AddIngredient(ItemID.Bone, 25);
-            recipe.AddIngredient(ItemID.ViciousPowder, 10);
-            recipe.AddIngredient(ItemID.SoulofNight, 5);
+            recipe.AddIngredient(ModContent.ItemType<BloodgemBoneScepter>(), 1);
             recipe.AddTile(ModContent.TileType<BoneAltar>());
             recipe.Register();
-
-            Recipe recipe2 = CreateRecipe();
-            recipe2.AddIngredient(ItemID.Ruby, 5);
-            recipe2.AddIngredient(ItemID.Diamond, 3);
-            recipe2.AddIngredient(ItemID.Bone, 25);
-            recipe2.AddIngredient(ItemID.VilePowder, 10);
-            recipe2.AddIngredient(ItemID.SoulofNight, 5);
-            recipe2.AddTile(ModContent.TileType<BoneAltar>());
-            recipe2.Register();
         }
         public override Vector2? HoldoutOffset()
         {
@@ -59,16 +47,13 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             base.ModifyShootStats(player, ref newPos, ref velocity, ref type, ref damage, ref knockback);
             position = position.PositionOFFSET(velocity, 50);
         }
-        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            target.AddBuff(BuffID.OnFire, 500);
-        }
+
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            int randomNumber = Main.rand.Next(2,5);
+            int randomNumber = Main.rand.Next(2,7);
             for (int i = 1; i < randomNumber; i++)
             {
-                Vector2 vec = velocity.Vector2Evenly(randomNumber, 30, i);
+                Vector2 vec = velocity.Vector2Evenly(randomNumber, 50, i);
                 Projectile.NewProjectile(source, position, vec, type, damage, knockback, player.whoAmI, 0, 1);
             }
 
