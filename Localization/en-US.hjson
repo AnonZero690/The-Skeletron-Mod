@@ -169,7 +169,7 @@ Mods: {
 		Buffs: {
 			AncientBoneBuff: {
 				DisplayName: Ancient Bone Buff
-				Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
+				Description: "[c/f5e33a:A circle forms around you giving the boned debuff to your enemies]"
 			}
 
 			BonedDebuff: {
@@ -179,7 +179,7 @@ Mods: {
 
 			CartilageBuff: {
 				DisplayName: Cartilage Buff
-				Description: Mods.TheSkeletronMod.Buffs.CartilageBuff.Description
+				Description: "[c/f5e33a:A cranium is summoned above your head to shoot projectiles on your foes]"
 			}
 		}
 	}
