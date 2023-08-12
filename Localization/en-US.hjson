@@ -13,8 +13,8 @@ Mods: {
 				DisplayName: Bone Dagger
 				Tooltip:
 					'''
+					Hold right click to charge throw the dagger
 					'Now for multitaskers'
-					Right click to charge throw the dagger
 					'''
 			}
 
@@ -159,6 +159,9 @@ Mods: {
 			AncientBoneDirkProjectile.DisplayName: Ancient Bone Dirk Projectile
 			AncientBoneDartProjectile.DisplayName: Ancient Bone Dart Projectile
 			CartilageSpearShrapnelProj.DisplayName: Cartilage Spear Shrapnel Proj
+			BoneDaggerShort.DisplayName: Bone Dagger Short
+			BoneHeld.DisplayName: Bone Held
+			BoneSwingHeld.DisplayName: Bone Swing Held
 		}
 
 		Tiles: {
@@ -169,7 +172,7 @@ Mods: {
 		Buffs: {
 			AncientBoneBuff: {
 				DisplayName: Ancient Bone Buff
-				Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
+				Description: "[c/f5e33a:A circle forms around you giving the boned debuff to your enemies]"
 			}
 
 			BonedDebuff: {
@@ -179,7 +182,12 @@ Mods: {
 
 			CartilageBuff: {
 				DisplayName: Cartilage Buff
-				Description: Mods.TheSkeletronMod.Buffs.CartilageBuff.Description
+				Description: "[c/f5e33a:A cranium is summoned above your head to shoot projectiles on your foes]"
+			}
+
+			BoneDaggerr: {
+				DisplayName: Bone Daggerr
+				Description: Mods.TheSkeletronMod.Buffs.BoneDaggerr.Description
 			}
 		}
 	}

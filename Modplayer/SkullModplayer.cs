@@ -1,7 +1,10 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Items.Accessories;
 
@@ -16,6 +19,33 @@ namespace TheSkeletronMod.Modplayer
             {
                 new Item(ModContent.ItemType<SkullPendant>(), 1, 0),
             };
+        }
+
+        public int cc;
+
+        public const int ccMMM = 100;
+
+        public int ccM;
+
+        public int ccMM;
+
+        internal int ccT = 0;
+
+        public bool ShowChargeBar = false;
+
+        public override void PostUpdateMiscEffects()
+        {
+            cc = Utils.Clamp(cc, 0, ccMM);
+        }
+
+        public override void Initialize()
+        {
+            ccM = ccMMM;
+        }
+
+        public override void ResetEffects()
+        {
+            ccMM = ccM;
         }
     }
 }
