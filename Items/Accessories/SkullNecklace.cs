@@ -13,7 +13,7 @@ namespace TheSkeletronMod.Items.Accessories
 {
     internal class SkullNecklace : ModItem
     {
-        public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BandofRegeneration);
+        
         public override void SetDefaults()
         {   
             Item.value = 12000;
