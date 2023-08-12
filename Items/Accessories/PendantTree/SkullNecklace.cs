@@ -6,16 +6,15 @@ using Microsoft.Xna.Framework;
 using TheSkeletronMod.Items.Materials;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
-using TheSkeletronMod.Items.Accessories;
 using TheSkeletronMod.Common.DamageClasses;
 
-namespace TheSkeletronMod.Items.Accessories
+namespace TheSkeletronMod.Items.Accessories.PendantTree
 {
     internal class SkullNecklace : ModItem
     {
-        
+
         public override void SetDefaults()
-        {   
+        {
             Item.value = 12000;
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
@@ -30,6 +29,8 @@ namespace TheSkeletronMod.Items.Accessories
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<SkullPendant>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 25);
+            recipe.AddIngredient(ItemID.Cobweb, 10);
             recipe.AddTile(ModContent.TileType<BoneAltar>());
             recipe.Register();
         }

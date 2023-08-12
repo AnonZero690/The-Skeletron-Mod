@@ -7,12 +7,12 @@ using TheSkeletronMod.Items.Materials;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
-namespace TheSkeletronMod.Items.Accessories
+namespace TheSkeletronMod.Items.Accessories.PendantTree
 {
     [AutoloadEquip(EquipType.Neck)]
     public class SkullPendant : ModItem
     {
-        
+
         public override void SetDefaults()
         {
             Item.width = 12;
