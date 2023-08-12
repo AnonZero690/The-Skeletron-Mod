@@ -134,6 +134,15 @@ Mods: {
 					[c/702963:Its power grows.]
 					'''
 			}
+
+			BloodgemBoneScepter: {
+				DisplayName: Bloodgem Bone Scepter
+				Tooltip:
+					'''
+					This gem drove its previous owner to madness and uncontrolled destruction. 
+					You get an uneasy feeling just looking at it.
+					'''
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
