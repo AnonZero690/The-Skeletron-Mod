@@ -6,6 +6,7 @@ using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 
@@ -36,7 +37,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
             Item.useTurn = true;
             Item.mana = 5;
             Item.damage = 20;
-            Item.DamageType = DamageClass.Magic;
+            Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.knockBack = 1f;
             Item.noMelee = true;
             Item.rare = ItemRarityID.Blue;
