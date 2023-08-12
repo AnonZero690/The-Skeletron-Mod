@@ -1,12 +1,13 @@
-﻿using Terraria;
-using Terraria.ID;
+using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using TheSkeletronMod.Items.Weapons.Calcium;
+using Terraria.ID;
 using Terraria.Audio;
 
-namespace TheSkeletronMod.projectiles
+namespace TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj
 {
-    internal class CartilageSpearProjectile : ModProjectile
+    internal class AncientBoneDartProjectile : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -20,7 +21,7 @@ namespace TheSkeletronMod.projectiles
             Projectile.height = 18;
             Projectile.aiStyle = ProjAIStyleID.Arrow;
             Projectile.friendly = true;
-            Projectile.penetrate = 100;
+            Projectile.penetrate = 2;
             Projectile.timeLeft = 600;
             Projectile.extraUpdates = 1;
             Projectile.light = 0;
@@ -37,18 +38,6 @@ namespace TheSkeletronMod.projectiles
         public override void Kill(int timeleft)
 
         {
-            for (int i = 0; i < 130; i++)
-            {
-                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-                var d = Dust.NewDustPerfect(Projectile.Center, DustID.Bone, speed * 8, Scale: 1f);
-                ;
-                d.noGravity = true;
-            }
-            Player player = Main.player[Projectile.owner];
-
-            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 40, 0, ModContent.ProjectileType<CartilageSpearShrapnelProj>(), Projectile.damage/2, Projectile.knockBack, Projectile.owner);
-            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, -40, 0, ModContent.ProjectileType<CartilageSpearShrapnelProj>(), Projectile.damage/2, Projectile.knockBack, Projectile.owner);
-            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, -40, ModContent.ProjectileType<CartilageSpearShrapnelProj>(), Projectile.damage/2, Projectile.knockBack, Projectile.owner);
 
             for (int i = 0; i < 17; i++)
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Stone, 0f, 0f, 50, default, 2f);

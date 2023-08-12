@@ -5,9 +5,9 @@ using TheSkeletronMod.Items.Weapons.Calcium;
 using Terraria.ID;
 using Terraria.Audio;
 
-namespace TheSkeletronMod.projectiles
+namespace TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj
 {
-    internal class AncientBoneDartProjectile : ModProjectile
+    internal class CartilageSpearShrapnelProj : ModProjectile
     {
         public override void SetStaticDefaults()
         {

@@ -1,13 +1,12 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-using TheSkeletronMod.projectiles;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
-
+using TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj;
 
 namespace TheSkeletronMod.Items.Weapons.Range
 {

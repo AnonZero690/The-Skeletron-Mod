@@ -8,7 +8,6 @@ using Terraria.Enums;
 using Terraria.ID;
 using Terraria.Map;
 using Terraria.ModLoader;
-using TheSkeletronMod.Items.Weapons.Calcium;
 using TheSkeletronMod.Common.Systems;
 using Mono.Cecil;
 using static Terraria.ModLoader.PlayerDrawLayer;
@@ -16,8 +15,9 @@ using System.Collections.Generic;
 using static tModPorter.ProgressUpdate;
 using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
+using TheSkeletronMod.Items.Weapons.Calcium.CalcMelee;
 
-namespace TheSkeletronMod.projectiles
+namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
     public class BoneSwingHeld : ModProjectile
     {
@@ -34,7 +34,7 @@ namespace TheSkeletronMod.projectiles
 
         public override void SetStaticDefaults()
         {
-            
+
         }
 
         public override void SetDefaults()

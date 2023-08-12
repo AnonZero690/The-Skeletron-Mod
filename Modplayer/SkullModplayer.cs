@@ -6,7 +6,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheSkeletronMod.Items.Accessories;
+using TheSkeletronMod.Items.Accessories.PendantTree;
 
 namespace TheSkeletronMod.Modplayer
 {

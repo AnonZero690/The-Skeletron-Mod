@@ -8,7 +8,7 @@ using TheSkeletronMod.Tiles;
 using System;
 using Terraria.Utilities;
 
-namespace TheSkeletronMod.Items.Weapons.Calcium
+namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
 {
     public class BloodgemBoneScepter : ModItem
     {
@@ -26,7 +26,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             Item.maxStack = 1;
             Item.mana = 10;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            
+
         }
 
         public override void AddRecipes()
@@ -51,7 +51,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
         }
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(0,-1);
+            return new Vector2(0, -1);
         }
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
@@ -62,7 +62,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            int randomNumber = Main.rand.Next(2,5);
+            int randomNumber = Main.rand.Next(2, 5);
             for (int i = 1; i < randomNumber; i++)
             {
                 Vector2 vec = velocity.Vector2Evenly(randomNumber, 30, i);

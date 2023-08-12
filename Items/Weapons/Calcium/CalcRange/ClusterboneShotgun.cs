@@ -9,11 +9,11 @@ using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.Systems;
-using TheSkeletronMod.projectiles;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
+using TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj;
 
-namespace TheSkeletronMod.Items.Weapons.Calcium
+namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
 {
 
     public class ClusterboneShotgun : ModItem
@@ -130,7 +130,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             recipe.AddTile(ModContent.TileType<BoneAltar>());
             recipe.Register();
         }
-        
+
         public override Vector2? HoldoutOffset()
         {
             var offset = new Vector2(-2, 0);

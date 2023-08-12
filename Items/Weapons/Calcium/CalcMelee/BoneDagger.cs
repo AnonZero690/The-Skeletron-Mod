@@ -3,22 +3,22 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
-using TheSkeletronMod.projectiles;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Common.Systems;
+using TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj;
 
-namespace TheSkeletronMod.Items.Weapons.Calcium
+namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
-	public class BoneDagger : ModItem
-	{
+    public class BoneDagger : ModItem
+    {
         public override void SetDefaults()
         {
             Item.useAnimation = 8;
             Item.useTime = 8;
             Item.reuseDelay = 1;
-            
+
             Item.useStyle = 1;
             Item.width = 16;
             Item.height = 16;
@@ -56,7 +56,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
         }
         public override bool MeleePrefix()
         {
-			return true;
+            return true;
         }
         /*public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
@@ -67,10 +67,10 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
 			}
             return base.Shoot(player, source, position, velocity, type, damage, knockback);
         }*/
-		public override bool AltFunctionUse(Player player)
-		{
-			return true;
-		}
+        public override bool AltFunctionUse(Player player)
+        {
+            return true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.Enums;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheSkeletronMod.Items.Weapons.Calcium;
+using TheSkeletronMod.Items.Weapons.Calcium.CalcMelee;
 
-namespace TheSkeletronMod.projectiles
+namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
     public class BoneDaggerShort : ModProjectile
     {
@@ -14,7 +14,7 @@ namespace TheSkeletronMod.projectiles
         {
             Projectile.width = 16;
             Projectile.height = 16;
-            Projectile.aiStyle = ProjAIStyleID.ShortSword; 
+            Projectile.aiStyle = ProjAIStyleID.ShortSword;
             Projectile.friendly = true;
             Projectile.penetrate = -1;
             Projectile.tileCollide = false;

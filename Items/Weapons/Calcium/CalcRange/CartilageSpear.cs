@@ -1,24 +1,24 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-using TheSkeletronMod.projectiles;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using System;
+using TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj;
 
-namespace TheSkeletronMod.Items.Weapons.Calcium
+namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
 {
     public class CartilageSpear : ModItem
     {
         public override void SetDefaults()
         {
             Item.shoot = ModContent.ProjectileType<CartilageSpearProjectile>();
-            
+
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.damage = 14;
-            
+
             Item.width = 24;
             Item.height = 24;
             Item.useTime = 22;
@@ -30,11 +30,11 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.maxStack = 3;
-            
+
             Item.shootSpeed = 12f;
             Item.noMelee = true;
             Item.noUseGraphic = true;
-            
+
 
         }
 

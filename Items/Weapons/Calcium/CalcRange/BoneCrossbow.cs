@@ -1,13 +1,13 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-using TheSkeletronMod.projectiles;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
+using TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj;
 
-namespace TheSkeletronMod.Items.Weapons.Calcium
+namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
 {
     public class BoneCrossbow : ModItem
     {
@@ -19,7 +19,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             Item.UseSound = SoundID.Item5;
             Item.rare = ItemRarityID.Green;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            
+
         }
 
         public override void AddRecipes()
@@ -33,7 +33,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
         }
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(-6,0);
+            return new Vector2(-6, 0);
         }
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {

@@ -4,7 +4,8 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using TheSkeletronMod.Items.Ammo;
 using System;
-namespace TheSkeletronMod.projectiles
+
+namespace TheSkeletronMod.projectiles.Calcprojs.CartArmour
 {
     class CartilageArmorSetMinion : ModProjectile
     {
@@ -26,14 +27,15 @@ namespace TheSkeletronMod.projectiles
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    Main.projectile[Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, new Vector2((float)Math.Cos(i * Math.PI / 2) * 10, (float)Math.Sin(i * Math.PI / 2) * 10), ProjectileID.FlaironBubble, 15, 3)].aiStyle=ProjAIStyleID.FlaironBubble;
+                    Main.projectile[Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, new Vector2((float)Math.Cos(i * Math.PI / 2) * 10, (float)Math.Sin(i * Math.PI / 2) * 10), ProjectileID.FlaironBubble, 15, 3)].aiStyle = ProjAIStyleID.FlaironBubble;
                     Projectile.ai[0] = 20;
                 }
             }
-            else {
+            else
+            {
                 Projectile.ai[0]--;
             }
-            
+
         }
     }
 }

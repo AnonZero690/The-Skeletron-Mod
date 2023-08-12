@@ -8,15 +8,15 @@ using Terraria.Enums;
 using Terraria.ID;
 using Terraria.Map;
 using Terraria.ModLoader;
-using TheSkeletronMod.Items.Weapons.Calcium;
 using TheSkeletronMod.Common.Systems;
 using Mono.Cecil;
 using static Terraria.ModLoader.PlayerDrawLayer;
 using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Modplayer;
+using TheSkeletronMod.Items.Weapons.Calcium.CalcMelee;
 
-namespace TheSkeletronMod.projectiles
+namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
     public class BoneHeld : ModProjectile
     {
@@ -80,12 +80,12 @@ namespace TheSkeletronMod.projectiles
             if (player.GetModPlayer<SkullModplayer>().cc > 20 && player.GetModPlayer<SkullModplayer>().cc < 30)
             {
                 velocity = 5f;
-                
+
             }
             if (player.GetModPlayer<SkullModplayer>().cc > 30 && player.GetModPlayer<SkullModplayer>().cc < 40)
             {
                 velocity = 6f;
-                Projectile.damage = (int)dmg * 2;
+                Projectile.damage = dmg * 2;
             }
             if (player.GetModPlayer<SkullModplayer>().cc > 40 && player.GetModPlayer<SkullModplayer>().cc < 50)
             {
@@ -94,17 +94,17 @@ namespace TheSkeletronMod.projectiles
             if (player.GetModPlayer<SkullModplayer>().cc > 50 && player.GetModPlayer<SkullModplayer>().cc < 60)
             {
                 velocity = 8f;
-                
+
             }
             if (player.GetModPlayer<SkullModplayer>().cc > 60 && player.GetModPlayer<SkullModplayer>().cc < 70)
             {
                 velocity = 9f;
-                Projectile.damage = (int)dmg * 3;
+                Projectile.damage = dmg * 3;
             }
             if (player.GetModPlayer<SkullModplayer>().cc > 70 && player.GetModPlayer<SkullModplayer>().cc < 80)
             {
                 velocity = 10f;
-                
+
             }
             if (player.GetModPlayer<SkullModplayer>().cc > 80 && player.GetModPlayer<SkullModplayer>().cc < 90)
             {
@@ -117,7 +117,7 @@ namespace TheSkeletronMod.projectiles
             if (player.GetModPlayer<SkullModplayer>().cc >= 100)
             {
                 velocity = 13f;
-                Projectile.damage = (int)dmg * 4;
+                Projectile.damage = dmg * 4;
             }
             SoundEngine.PlaySound(SoundID.Item1);
             for (int i = 0; i < 100; i++)
@@ -231,7 +231,7 @@ namespace TheSkeletronMod.projectiles
             {
                 spriteEffects = SpriteEffects.FlipHorizontally;
             }
-            
+
 
 
             var texture = (Texture2D)ModContent.Request<Texture2D>(Texture);
