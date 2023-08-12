@@ -1,4 +1,4 @@
-﻿using Terraria.ID;
+using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 using TheSkeletronMod.projectiles;
@@ -7,24 +7,23 @@ using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
-using TheSkeletronMod;
 
-namespace TheSkeletronMod.Items.Armor
+namespace TheSkeletronMod.Items.Armor.AncientBoneArmour
 {
     [AutoloadEquip(EquipType.Legs)]
-    public class CartilageLeggings : ModItem
+    public class AncientBoneLeggings : ModItem
     {
-
         public override void UpdateEquip(Player player)
         {
-            player.GetAttackSpeed(ModContent.GetInstance<Bonecursed>()) += 0.02f;
+            player.GetDamage(ModContent.GetInstance<Bonecursed>()) += 0.04f;
+            player.moveSpeed += 0.1f;
         }
         public override void SetDefaults()
-        { 
-            Item.value = 60;
+        {
+            Item.value = 6000;
             Item.rare = ItemRarityID.Green;
-            Item.defense = 4;
-            
+            Item.defense = 1;
+
         }
 
         public override void AddRecipes()
@@ -35,6 +34,6 @@ namespace TheSkeletronMod.Items.Armor
             //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.Register();
         }
-       
+
     }
 }

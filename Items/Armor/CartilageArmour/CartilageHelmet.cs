@@ -7,7 +7,7 @@ using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Buffs;
 
-namespace TheSkeletronMod.Items.Armor
+namespace TheSkeletronMod.Items.Armor.CartilageArmour
 {
     [AutoloadEquip(EquipType.Head)]
     public class CartilageHelmet : ModItem
@@ -18,11 +18,11 @@ namespace TheSkeletronMod.Items.Armor
             player.GetDamage(ModContent.GetInstance<Bonecursed>()) += 0.02f;
         }
         public override void SetDefaults()
-        { 
+        {
             Item.value = 60;
             Item.rare = ItemRarityID.Green;
             Item.defense = 4;
-            
+
         }
 
         public override void AddRecipes()
@@ -36,7 +36,7 @@ namespace TheSkeletronMod.Items.Armor
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
-            return (body.type == ModContent.ItemType<CartilageChestplate>() && legs.type == ModContent.ItemType<CartilageLeggings>());
+            return body.type == ModContent.ItemType<CartilageChestplate>() && legs.type == ModContent.ItemType<CartilageLeggings>();
         }
 
         public override void UpdateArmorSet(Player player)

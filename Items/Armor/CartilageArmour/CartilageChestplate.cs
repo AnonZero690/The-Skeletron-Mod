@@ -7,9 +7,8 @@ using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
-using TheSkeletronMod;
 
-namespace TheSkeletronMod.Items.Armor
+namespace TheSkeletronMod.Items.Armor.CartilageArmour
 {
     [AutoloadEquip(EquipType.Body)]
     public class CartilageChestplate : ModItem
@@ -20,11 +19,11 @@ namespace TheSkeletronMod.Items.Armor
             player.GetCritChance(ModContent.GetInstance<Bonecursed>()) += 0.02f;
         }
         public override void SetDefaults()
-        { 
+        {
             Item.value = 60;
             Item.rare = ItemRarityID.Green;
             Item.defense = 5;
-            
+
         }
 
         public override void AddRecipes()
@@ -35,6 +34,6 @@ namespace TheSkeletronMod.Items.Armor
             //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.Register();
         }
-       
+
     }
 }
