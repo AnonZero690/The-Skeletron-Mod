@@ -15,16 +15,13 @@
   <ItemGroup>
     <None Remove="Assets\Textures\Menu\BGPL.png" />
     <None Remove="Assets\Textures\Menu\Logopl.png" />
-    <None Remove="Buffs\BoneDaggerr.png" />
     <None Remove="Buffs\CartilageBuff.png" />
-    <None Remove="Common\UI\ChargingBone.png" />
     <None Remove="Gores\GunPellets.png" />
     <None Remove="Items\Accessories\SkullPendant.png" />
     <None Remove="Items\Accessories\SkullPendant_Neck.png" />
     <None Remove="Items\Ammo\SharpenedBone.png" />
     <None Remove="Items\Materials\AncientBone.png" />
-    <None Remove="projectiles\BoneHeld.png" />
-    <None Remove="projectiles\BoneSwingHeld.png" />
+    <None Remove="Items\Weapons\Calcium\bloodgemBoneScepter.png" />
     <None Remove="projectiles\GunBarrelFlash.png" />
     <None Remove="projectiles\GunBarrelFlash_Glow.png" />
   </ItemGroup>
