@@ -5,17 +5,20 @@ using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
-using TheSkeletronMod.Items.Materials;
+using System;
 using TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj;
 
-namespace TheSkeletronMod.Items.Weapons.Range
+namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
 {
-    public class AncientBoneDart : ModItem
+    public class CartilageSpear : ModItem
     {
         public override void SetDefaults()
         {
-            Item.damage = 6;
-            Item.DamageType = DamageClass.Ranged;
+            Item.shoot = ModContent.ProjectileType<CartilageSpearProjectile>();
+
+            Item.DamageType = ModContent.GetInstance<Bonecursed>();
+            Item.damage = 14;
+
             Item.width = 24;
             Item.height = 24;
             Item.useTime = 22;
@@ -26,27 +29,25 @@ namespace TheSkeletronMod.Items.Weapons.Range
             Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
-            Item.maxStack = 999;
-            Item.shoot = ModContent.ProjectileType<AncientBoneDartProjectile>();
-            Item.shootSpeed = 11f;
+            Item.maxStack = 3;
+
+            Item.shootSpeed = 12f;
             Item.noMelee = true;
             Item.noUseGraphic = true;
-            Item.consumable = true;
+
+
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 1);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.ReplaceResult(this, 3);
+            recipe.AddIngredient(ItemID.Bone, 36);
+            recipe.AddTile(ModContent.TileType<BoneAltar>());
+            //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.Register();
         }
         public override void PostUpdate()
         {
-
-            
-
             if (Item.timeSinceItemSpawned % 12 == 0)
             {
                 Vector2 center = Item.Center + new Vector2(0f, Item.height * -0.1f);
@@ -62,6 +63,28 @@ namespace TheSkeletronMod.Items.Weapons.Range
                 dust.noLight = false;
                 dust.alpha = 0;
             }
+        }
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            if (Item.stack > 1)
+            {
+                for (int i = 1; i < Item.stack; i++)
+                {
+                    int p = Projectile.NewProjectile(player.GetSource_FromThis(), player.position, velocity.RotatedBy(i * Math.PI / 32), type, damage, knockback);
+                }
+                for (int i = 1; i < Item.stack; i++)
+                {
+                    int p = Projectile.NewProjectile(player.GetSource_FromThis(), player.position, velocity.RotatedBy(-i * Math.PI / 32), type, damage, knockback);
+                }
+
+            }
+            return true;
+        }
+
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
+            damage = damage + damage * (Item.stack - 2) / 2;
         }
 
     }

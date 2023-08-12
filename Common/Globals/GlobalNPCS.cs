@@ -4,6 +4,7 @@ using log4net.Appender;
 using Terraria.ID;
 using Terraria.GameContent.ItemDropRules;
 using TheSkeletronMod.Items.Materials;
+using TheSkeletronMod.Items.Accessories;
 
 namespace TheSkeletronMod.Common.Globals
 {
@@ -21,6 +22,9 @@ namespace TheSkeletronMod.Common.Globals
                     break;
                 case NPCID.DoctorBones:
                     npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AncientBone>(), 1, 1, 1));
+                    break;
+                case NPCID.WallofFlesh:
+                    npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BoneEmblem>(), 4, 1, 1));
                     break;
             }
         }

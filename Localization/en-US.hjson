@@ -13,14 +13,17 @@ Mods: {
 				DisplayName: Bone Dagger
 				Tooltip:
 					'''
+					Hold right click to charge throw the dagger
 					'Now for multitaskers'
-					Right click to charge throw the dagger
 					'''
 			}
 
 			BoneCrossbow: {
 				DisplayName: Bone Crossbow
-				Tooltip: ""
+				Tooltip: '''
+						 "Arghh! It pierced the ship!"
+						 Fires a spread of piercing sharpened bones every 5th shot
+						 '''
 			}
 
 			AncientBone: {
@@ -35,7 +38,9 @@ Mods: {
 
 			SharpenedBone: {
 				DisplayName: Sharpened Bone
-				Tooltip: ""
+				Tooltip: '''
+						 "Oops... I didn't mean to stab you"
+						 '''
 			}
 
 			SkeleWand: {
@@ -49,27 +54,39 @@ Mods: {
 
 			ClusterboneShotgun: {
 				DisplayName: Clusterbone Shotgun
-				Tooltip: ""
+				Tooltip: '''
+						 BOOM! BOOM!! BOOM!!!
+						 Fires a large skull every 
+						 '''
 			}
 
 			BoneFragments: {
 				DisplayName: Bone Fragments
-				Tooltip: ""
+				Tooltip: '''
+						 Fragmens of bone. They're suprisingly good for shooting at people!
+						 '''
 			}
 
 			CalciumOre: {
 				DisplayName: Calcium Ore
-				Tooltip: ""
+				Tooltip: '''
+						 "100% Pure Calci- Oh, that wasn't my line?"
+						 '''
 			}
 
 			BoneAltarItem: {
 				DisplayName: Bone Altar Item
-				Tooltip: ""
+				Tooltip: '''
+						 The voices emanating from it make you feel uneasy...As if you're being watched...
+						 Helps you craft special items!
+						 '''
 			}
 
 			TestItem: {
 				DisplayName: Test Item
-				Tooltip: ""
+				Tooltip: '''
+						 You can also test deez nuts :skull:
+						 '''
 			}
 
 			AncientBoneHelmet: {
@@ -108,17 +125,25 @@ Mods: {
 
 			CartilageSpear: {
 				DisplayName: Cartilage Spear
-				Tooltip: ""
+				Tooltip: '''
+						 Shoots out a spear which breaks off into bone shards
+						 Adding another shoots out more bone shards!
+						 (Max is three)
+						 '''
 			}
 
 			AncientBoneDirk: {
 				DisplayName: Ancient Bone Dirk
-				Tooltip: ""
+				Tooltip: '''
+						 Don't get shanked, innit bruv
+						 '''
 			}
 
 			AncientBoneDart: {
 				DisplayName: Ancient Bone Dart
-				Tooltip: ""
+				Tooltip: '''
+						 "Who keeps sharpening them? I just wanna talk!"
+						 '''
 			}
 
 			SkullPendant: {
@@ -164,6 +189,9 @@ Mods: {
 			AncientBoneDirkProjectile.DisplayName: Ancient Bone Dirk Projectile
 			AncientBoneDartProjectile.DisplayName: Ancient Bone Dart Projectile
 			CartilageSpearShrapnelProj.DisplayName: Cartilage Spear Shrapnel Proj
+			BoneDaggerShort.DisplayName: Bone Dagger Short
+			BoneHeld.DisplayName: Bone Held
+			BoneSwingHeld.DisplayName: Bone Swing Held
 		}
 
 		Tiles: {
@@ -174,17 +202,22 @@ Mods: {
 		Buffs: {
 			AncientBoneBuff: {
 				DisplayName: Ancient Bone Buff
-				Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
+				Description: "[c/f5e33a:A circle forms around you giving the boned debuff to your enemies!]"
 			}
 
 			BonedDebuff: {
 				DisplayName: Boned Debuff
-				Description: Mods.TheSkeletronMod.Buffs.BonedDebuff.Description
+				Description: Okay but like imagine being bones
 			}
 
 			CartilageBuff: {
 				DisplayName: Cartilage Buff
-				Description: Mods.TheSkeletronMod.Buffs.CartilageBuff.Description
+				Description: "[c/f5e33a:A cranium is summoned above your head to shoot projectiles on your foes]"
+			}
+
+			BoneDaggerr: {
+				DisplayName: Bone Daggerr
+				Description: BONE DAGGERRRR
 			}
 		}
 	}

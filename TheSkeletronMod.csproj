@@ -31,6 +31,10 @@
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Items\Weapons\Calcium\CalcSumm\" />
+    <Folder Include="Items\Weapons\Magic\" />
     <Folder Include="Minibosses\" />
+    <Folder Include="projectiles\Calcprojs\CalcMageproj\" />
+    <Folder Include="projectiles\Calcprojs\CalcSummProj\" />
   </ItemGroup>
 </Project>

@@ -2,9 +2,9 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
-using TheSkeletronMod.projectiles;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
+using TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj;
 
 namespace TheSkeletronMod.Items.Ammo
 {
