@@ -168,14 +168,17 @@ Mods: {
 
 			BoneEmblem: {
 				DisplayName: Bone Emblem
-				Tooltip: '''
-						 15% Increased Calcium Damage
-						 '''
+				Tooltip: 15% Increased Calcium Damage
 			}
 
 			BoneBasher: {
 				DisplayName: Bone Basher
 				Tooltip: '''"Bash his skull in!"'''
+			}
+
+			SawboneSword: {
+				DisplayName: Sawbone Sword
+				Tooltip: ""
 			}
 		}
 
@@ -198,6 +201,8 @@ Mods: {
 			BoneSwingHeld.DisplayName: Bone Swing Held
 			bloodProjectile.DisplayName: blood Projectile
 			ClonedBloodArrow.DisplayName: Cloned Blood Arrow
+			SawboneSwordP.DisplayName: Sawbone Sword P
+			SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
 		}
 
 		Tiles: {

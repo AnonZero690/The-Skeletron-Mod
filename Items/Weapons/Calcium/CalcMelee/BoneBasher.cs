@@ -7,13 +7,18 @@ using Terraria.Enums;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using Terraria.ID;
+using TheSkeletronMod.Common.Globals;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
-    internal class BoneBasher : ModItem
+    internal class BoneBasher : ModItem, MeleeWeaponWithImprovedSwing
     {
+        public float swingDegree => 120;
+
         public override void SetDefaults()
         {
+            Item.width = 63; 
+            Item.height = 65;
             Item.damage = 70;
             Item.crit = 40;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
