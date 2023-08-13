@@ -40,9 +40,5 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
            Projectile.position = new(player.position.X + offset.X, player.position.Y + offset.Y);
            Projectile.rotation = d.ToRotation() + MathHelper.ToRadians(23);
        }
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            target.HealEffect(damageDone * -1);
-        }
     }
 }
