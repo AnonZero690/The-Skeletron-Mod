@@ -175,6 +175,11 @@ Mods: {
 				DisplayName: Bone Basher
 				Tooltip: '''"Bash his skull in!"'''
 			}
+
+			SawboneSword: {
+				DisplayName: Sawbone Sword
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -197,6 +202,8 @@ Mods: {
 			bloodProjectile.DisplayName: blood Projectile
 			ClonedBloodArrow.DisplayName: Cloned Blood Arrow
 			BoneBasherProjectile.DisplayName: Bone Basher Projectile
+			SawboneSwordP.DisplayName: Sawbone Sword P
+			SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
 		}
 
 		Tiles: {

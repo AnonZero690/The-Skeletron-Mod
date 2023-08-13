@@ -66,7 +66,7 @@ namespace TheSkeletronMod
             if (ProjectileAmount > 1)
             {
                 rotation = MathHelper.ToRadians(rotation);
-                return vec.RotatedBy(MathHelper.Lerp(rotation * .5f, rotation * -.5f, i / (ProjectileAmount - 1f)));
+                return vec.RotatedBy(MathHelper.Lerp(rotation * .5f, rotation * -.5f, i / ProjectileAmount));
             }
             return vec;
         }
