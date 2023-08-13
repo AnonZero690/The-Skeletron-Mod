@@ -180,6 +180,11 @@ Mods: {
 				DisplayName: Sawbone Sword
 				Tooltip: ""
 			}
+
+			Miniskull: {
+				DisplayName: Miniskull
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -204,6 +209,7 @@ Mods: {
 			BoneBasherProjectile.DisplayName: Bone Basher Projectile
 			SawboneSwordP.DisplayName: Sawbone Sword P
 			SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
+			ClonedSkull.DisplayName: Cloned Skull
 		}
 
 		Tiles: {
