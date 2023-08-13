@@ -20,10 +20,11 @@ Mods: {
 
 			BoneCrossbow: {
 				DisplayName: Bone Crossbow
-				Tooltip: '''
-						 "Arghh! It pierced the ship!"
-						 Fires a spread of piercing sharpened bones every 5th shot
-						 '''
+				Tooltip:
+					'''
+					"Arghh! It pierced the ship!"
+					Fires a spread of piercing sharpened bones every 5th shot
+					'''
 			}
 
 			AncientBone: {
@@ -38,9 +39,7 @@ Mods: {
 
 			SharpenedBone: {
 				DisplayName: Sharpened Bone
-				Tooltip: '''
-						 "Oops... I didn't mean to stab you"
-						 '''
+				Tooltip: '''"Oops... I didn't mean to stab you"'''
 			}
 
 			SkeleWand: {
@@ -54,39 +53,35 @@ Mods: {
 
 			ClusterboneShotgun: {
 				DisplayName: Clusterbone Shotgun
-				Tooltip: '''
-						 BOOM! BOOM!! BOOM!!!
-						 Fires a large skull every 
-						 '''
+				Tooltip:
+					'''
+					BOOM! BOOM!! BOOM!!!
+					Fires a large skull every 
+					'''
 			}
 
 			BoneFragments: {
 				DisplayName: Bone Fragments
-				Tooltip: '''
-						 Fragmens of bone. They're suprisingly good for shooting at people!
-						 '''
+				Tooltip: Fragmens of bone. They're suprisingly good for shooting at people!
 			}
 
 			CalciumOre: {
 				DisplayName: Calcium Ore
-				Tooltip: '''
-						 "100% Pure Calci- Oh, that wasn't my line?"
-						 '''
+				Tooltip: '''"100% Pure Calci- Oh, that wasn't my line?"'''
 			}
 
 			BoneAltarItem: {
 				DisplayName: Bone Altar Item
-				Tooltip: '''
-						 The voices emanating from it make you feel uneasy...As if you're being watched...
-						 Helps you craft special items!
-						 '''
+				Tooltip:
+					'''
+					The voices emanating from it make you feel uneasy...As if you're being watched...
+					Helps you craft special items!
+					'''
 			}
 
 			TestItem: {
 				DisplayName: Test Item
-				Tooltip: '''
-						 You can also test deez nuts :skull:
-						 '''
+				Tooltip: You can also test deez nuts :skull:
 			}
 
 			AncientBoneHelmet: {
@@ -125,25 +120,22 @@ Mods: {
 
 			CartilageSpear: {
 				DisplayName: Cartilage Spear
-				Tooltip: '''
-						 Shoots out a spear which breaks off into bone shards
-						 Adding another shoots out more bone shards!
-						 (Max is three)
-						 '''
+				Tooltip:
+					'''
+					Shoots out a spear which breaks off into bone shards
+					Adding another shoots out more bone shards!
+					(Max is three)
+					'''
 			}
 
 			AncientBoneDirk: {
 				DisplayName: Ancient Bone Dirk
-				Tooltip: '''
-						 Don't get shanked, innit bruv
-						 '''
+				Tooltip: Don't get shanked, innit bruv
 			}
 
 			AncientBoneDart: {
 				DisplayName: Ancient Bone Dart
-				Tooltip: '''
-						 "Who keeps sharpening them? I just wanna talk!"
-						 '''
+				Tooltip: '''"Who keeps sharpening them? I just wanna talk!"'''
 			}
 
 			SkullPendant: {
@@ -173,6 +165,16 @@ Mods: {
 				DisplayName: True Bloodgem Bone Scepter
 				Tooltip: ""
 			}
+
+			BoneEmblem: {
+				DisplayName: Bone Emblem
+				Tooltip: ""
+			}
+
+			BoneBasher: {
+				DisplayName: Bone Basher
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -192,6 +194,8 @@ Mods: {
 			BoneDaggerShort.DisplayName: Bone Dagger Short
 			BoneHeld.DisplayName: Bone Held
 			BoneSwingHeld.DisplayName: Bone Swing Held
+			bloodProjectile.DisplayName: blood Projectile
+			ClonedBloodArrow.DisplayName: Cloned Blood Arrow
 		}
 
 		Tiles: {

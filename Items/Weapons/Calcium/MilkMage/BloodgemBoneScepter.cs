@@ -14,17 +14,17 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
     {
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeCustomProjectile(12, 12, 17, 2f, 20, 20, ItemUseStyleID.Shoot, ProjectileID.BloodArrow, true);
+            Item.ItemDefaultMeleeCustomProjectile(12, 12, 50, 2f, 20, 20, ItemUseStyleID.Shoot, ProjectileID.BloodArrow, true);
             Item.value = 10000;
             Item.crit = 5;
-            Item.shootSpeed = 7;
+            Item.shootSpeed = 9;
             Item.noUseGraphic = false;
-            Item.scale = 0.1f;
+            //Item.scale = 0.1f;
             Item.noMelee = true;
             Item.UseSound = SoundID.Item5;
             Item.rare = ItemRarityID.Green;
             Item.maxStack = 1;
-            Item.mana = 10;
+            Item.mana = 7;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
 
         }
@@ -59,17 +59,14 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
             base.ModifyShootStats(player, ref newPos, ref velocity, ref type, ref damage, ref knockback);
             position = position.PositionOFFSET(velocity, 50);
         }
-        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            target.AddBuff(BuffID.OnFire, 500);
-        }
+        
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            int randomNumber = Main.rand.Next(2, 5);
+            int randomNumber = Main.rand.Next(2, 10);
             for (int i = 1; i < randomNumber; i++)
             {
-                Vector2 vec = velocity.Vector2Evenly(randomNumber, 30, i);
-                Projectile.NewProjectile(source, position, vec, type, damage, knockback, player.whoAmI, 0, 1);
+                Vector2 vec = velocity.Vector2Evenly(randomNumber + 1, 80, i);
+                Projectile.NewProjectile(source, position, vec, type, (int)(damage / (randomNumber * 0.8 / 2)), knockback, player.whoAmI, 0, 1);
             }
 
 

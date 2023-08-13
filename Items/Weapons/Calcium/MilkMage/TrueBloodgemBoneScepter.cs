@@ -8,14 +8,15 @@ using TheSkeletronMod.Tiles;
 using System;
 using Terraria.Utilities;
 using TheSkeletronMod.Items.Materials;
+using TheSkeletronMod.projectiles.Calcprojs.CalcMageproj;
 
-namespace TheSkeletronMod.Items.Weapons.Calcium
+namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
 {
     public class TrueBloodgemBoneScepter : ModItem
     {
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeCustomProjectile(12, 12, 20, 2f, 18, 18, ItemUseStyleID.Shoot, ProjectileID.BloodArrow, true);
+            Item.ItemDefaultMeleeCustomProjectile(12, 12, 70, 2f, 17, 17, ItemUseStyleID.Shoot, ModContent.ProjectileType<ClonedBloodArrow>(), true);
             Item.value = 10000;
             Item.crit = 5;
             Item.shootSpeed = 7;
@@ -27,7 +28,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
             Item.maxStack = 1;
             Item.mana = 10;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            
+
         }
 
         public override void AddRecipes()
@@ -39,7 +40,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
         }
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(0,-1);
+            return new Vector2(0, -1);
         }
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
@@ -50,11 +51,21 @@ namespace TheSkeletronMod.Items.Weapons.Calcium
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            int randomNumber = Main.rand.Next(2,7);
-            for (int i = 1; i < randomNumber; i++)
+            int randomNumber = 2;
+            for (int y = 0; y < Main.rand.Next(1,26);y++)
             {
-                Vector2 vec = velocity.Vector2Evenly(randomNumber, 50, i);
-                Projectile.NewProjectile(source, position, vec, type, damage, knockback, player.whoAmI, 0, 1);
+                int otherRandom = Main.rand.Next(0, 2);
+                randomNumber += otherRandom;
+                if (otherRandom == 0)
+                {
+                    y = 100;
+                }
+            }
+            
+            for (int i = 0; i < randomNumber; i++)
+            {
+                Vector2 vec = velocity.Vector2Evenly(randomNumber + 1, 50, i);
+                Projectile.NewProjectile(source, position, vec, ModContent.ProjectileType<ClonedBloodArrow>(), (int)(damage / (randomNumber * 0.8 / 2)), knockback, player.whoAmI, 0, 1);
             }
 
 

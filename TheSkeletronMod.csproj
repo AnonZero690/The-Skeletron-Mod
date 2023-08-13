@@ -22,6 +22,8 @@
     <None Remove="Items\Ammo\SharpenedBone.png" />
     <None Remove="Items\Materials\AncientBone.png" />
     <None Remove="Items\Weapons\Calcium\bloodgemBoneScepter.png" />
+    <None Remove="Items\Weapons\Calcium\CalcMelee\BoneBasher.png" />
+    <None Remove="Items\Weapons\Calcium\MilkMage\TrueBloodgemBoneScepter.png" />
     <None Remove="Items\Weapons\Calcium\TrueBloodgemBoneScepter.png" />
     <None Remove="projectiles\bloodProjectile.png" />
     <None Remove="projectiles\GunBarrelFlash.png" />
@@ -34,7 +36,6 @@
     <Folder Include="Items\Weapons\Calcium\CalcSumm\" />
     <Folder Include="Items\Weapons\Magic\" />
     <Folder Include="Minibosses\" />
-    <Folder Include="projectiles\Calcprojs\CalcMageproj\" />
     <Folder Include="projectiles\Calcprojs\CalcSummProj\" />
   </ItemGroup>
 </Project>
