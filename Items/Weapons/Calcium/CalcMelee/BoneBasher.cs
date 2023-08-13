@@ -23,7 +23,9 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.rare = ItemRarityID.Green;
             Item.useAnimation = 70;
             Item.useTime = 70;
-            Item.useStyle = ItemUseStyleID.Swing;
+            //Item.holdStyle = ItemHoldStyleID.HoldUp;
+
+            Item.useStyle = ItemUseStyleID.Thrust;
             Item.shoot = ModContent.ProjectileType<BoneBasherProjectile>();
             Item.noUseGraphic = true;
             Item.noMelee = true;

@@ -21,7 +21,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
             Item.crit = 5;
             Item.shootSpeed = 7;
             Item.noUseGraphic = false;
-            Item.scale = 0.1f;
             Item.noMelee = true;
             Item.UseSound = SoundID.Item5;
             Item.rare = ItemRarityID.Green;
