@@ -7,6 +7,8 @@ using Terraria.Enums;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using Terraria.ID;
+using Terraria;
+using TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
@@ -22,7 +24,9 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.useAnimation = 70;
             Item.useTime = 70;
             Item.useStyle = ItemUseStyleID.Swing;
-
+            Item.shoot = ModContent.ProjectileType<BoneBasherProjectile>();
+            Item.noUseGraphic = true;
+            Item.noMelee = true;
         }
     }
 }
