@@ -20,7 +20,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
         {
             Projectile.width = 32;
             Projectile.height = 64;
-            Projectile.gfxOffY = -12;
+            Projectile.gfxOffY = (float)100.2;
         }
        public override void AI()
        {
@@ -29,7 +29,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
            float shootToX = Main.mouseX - Projectile.Center.X;
            float shootToY = Main.mouseY - Projectile.Center.Y;
            Vector2 d = (Main.MouseWorld - player.position).SafeNormalize(Vector2.UnitX);
-            //Projectile.position = new(player.position.X + offset.X, player.position.Y + offset.Y);
+           Projectile.position = new(player.position.X + offset.X, player.position.Y + offset.Y);
            Projectile.rotation = d.ToRotation() + MathHelper.ToRadians(23);
        }
     }
