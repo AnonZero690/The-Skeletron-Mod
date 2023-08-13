@@ -163,17 +163,19 @@ Mods: {
 
 			TrueBloodgemBoneScepter: {
 				DisplayName: True Bloodgem Bone Scepter
-				Tooltip: ""
+				Tooltip: The Psychopathic Antics finally seep into your mind
 			}
 
 			BoneEmblem: {
 				DisplayName: Bone Emblem
-				Tooltip: ""
+				Tooltip: '''
+						 15% Increased Calcium Damage
+						 '''
 			}
 
 			BoneBasher: {
 				DisplayName: Bone Basher
-				Tooltip: ""
+				Tooltip: '''"Bash his skull in!"'''
 			}
 		}
 
