@@ -16,7 +16,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
     {
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeCustomProjectile(12, 12, 70, 2f, 17, 17, ItemUseStyleID.Shoot, ModContent.ProjectileType<ClonedBloodArrow>(), true);
+            Item.ItemDefaultMeleeCustomProjectile(22, 38, 70, 2f, 17, 17, ItemUseStyleID.Shoot, ModContent.ProjectileType<ClonedBloodArrow>(), true);
             Item.value = 10000;
             Item.crit = 5;
             Item.shootSpeed = 7;
