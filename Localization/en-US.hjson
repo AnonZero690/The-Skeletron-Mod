@@ -247,7 +247,7 @@ Mods: {
 
 			CalciumBar: {
 				DisplayName: Calcium Bar
-				Tooltip: ""
+				Tooltip: Its full of it!
 			}
 		}
 
@@ -290,7 +290,7 @@ Mods: {
 
 			BonedDebuff: {
 				DisplayName: Boned Debuff
-				Description: Okay but like imagine being bones
+				Description: Okay but like imagine being boned
 			}
 
 			CartilageBuff: {
