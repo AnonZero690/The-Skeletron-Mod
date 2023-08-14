@@ -17,13 +17,16 @@ namespace TheSkeletronMod.Items.Accessories.PendantTree
         {
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 14));
             ItemID.Sets.AnimatesAsSoul[Item.type] = true;
-            ItemID.Sets.ItemIconPulse[Item.type] = true;
         }
+
         public override void SetDefaults()
         {
+            Item.width = 23;
+            Item.height = 30;
             Item.value = 60000;
             Item.rare = ItemRarityID.Yellow;
             Item.accessory = true;
+            Lighting.AddLight(Item.position, r: 112f, 39f, b: 41f);
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

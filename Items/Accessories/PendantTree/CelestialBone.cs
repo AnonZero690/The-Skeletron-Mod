@@ -11,7 +11,7 @@ using Terraria.DataStructures;
 
 namespace TheSkeletronMod.Items.Accessories.PendantTree
 {
-    internal class SkullTablet : ModItem
+    internal class CelestialBone : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -21,6 +21,8 @@ namespace TheSkeletronMod.Items.Accessories.PendantTree
         }
         public override void SetDefaults()
         {
+            Item.width = 233;
+            Item.height = 47;
             Item.value = 69000;
             Item.rare = ItemRarityID.Yellow;
             Item.accessory = true;

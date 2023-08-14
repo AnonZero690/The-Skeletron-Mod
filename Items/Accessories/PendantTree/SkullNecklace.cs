@@ -15,6 +15,8 @@ namespace TheSkeletronMod.Items.Accessories.PendantTree
 
         public override void SetDefaults()
         {
+            Item.width = 16;
+            Item.height = 19;
             Item.value = 12000;
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
