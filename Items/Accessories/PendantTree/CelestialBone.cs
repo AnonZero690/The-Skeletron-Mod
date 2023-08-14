@@ -21,10 +21,11 @@ namespace TheSkeletronMod.Items.Accessories.PendantTree
         }
         public override void SetDefaults()
         {
-            Item.width = 233;
+            Item.scale = 1.5f;
+            Item.width = 23;
             Item.height = 47;
             Item.value = 69000;
-            Item.rare = ItemRarityID.Yellow;
+            Item.rare = ItemRarityID.Purple;
             Item.accessory = true;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
