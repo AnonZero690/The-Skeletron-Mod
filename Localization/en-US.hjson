@@ -148,8 +148,26 @@ Mods: {
 				Tooltip:
 					'''
 					[c/702963:Increases calcium damage by 5% and Damage Reduction by 5%.] 
-					[c/702963:Its power grows.]
+					[c/702963:Its power grows...]
 					'''
+			}
+			
+			SkullLocket: {
+				DisplayName: Skull Locket
+				Tooltip: '''
+						 [c/702963:Increases calcium damage by 10% and Damage Reduction by 5%.]
+						 [c/702963:Summons a miniature skeleton to protect you.](Don Work)
+						 [c/702963: The fear seeps into you...]
+						 '''
+			}
+
+			SkullToken: {
+				DisplayName: Skull Token
+				Tooltip: '''
+						 [c/702963:Increases clacium damage by 15% and Damage Reduction by 10%.]
+						 [c/702963:Summons a bigger skeleton to protect you.](Don Work)
+						 [c/702963:It contains the power of wailing souls...]
+						 '''
 			}
 
 			BloodgemBoneScepter: {
@@ -190,6 +208,7 @@ Mods: {
 				DisplayName: Bone Wand
 				Tooltip: ""
 			}
+
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
