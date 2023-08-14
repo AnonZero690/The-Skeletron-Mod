@@ -32,6 +32,7 @@
     <None Remove="Items\Weapons\Calcium\MilkMage\TrueBloodgemBoneScepter.png" />
     <None Remove="Items\Weapons\Calcium\TrueBloodgemBoneScepter.png" />
     <None Remove="projectiles\bloodProjectile.png" />
+    <None Remove="projectiles\Calcprojs\CalcMageproj\ClonedSkull.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\BoneBasherProjectile.png" />
     <None Remove="projectiles\GunBarrelFlash.png" />
     <None Remove="projectiles\GunBarrelFlash_Glow.png" />

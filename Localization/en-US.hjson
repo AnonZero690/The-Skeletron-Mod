@@ -185,6 +185,11 @@ Mods: {
 				DisplayName: Miniskull
 				Tooltip: ""
 			}
+
+			BoneWand: {
+				DisplayName: Bone Wand
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage

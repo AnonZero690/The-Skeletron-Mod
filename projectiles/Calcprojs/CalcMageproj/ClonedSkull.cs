@@ -24,7 +24,11 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMageproj
             Projectile.hostile = false;
             Projectile.penetrate = 10;
         }
-        public override string Texture => SkeletronUtils.GetVanillaTexture<Projectile>(ProjectileID.Skull);
+        public override void AI()
+        {
+            int newDust = Dust.NewDust(Projectile.position,Projectile.width,Projectile.height,DustID.GiantCursedSkullBolt,Projectile.velocity.X/2,-1,0,Color.White,0.2f);
+        }
+        //public override string Texture => SkeletronUtils.GetVanillaTexture<Projectile>(ProjectileID.Skull);
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.OnFire, 500);
