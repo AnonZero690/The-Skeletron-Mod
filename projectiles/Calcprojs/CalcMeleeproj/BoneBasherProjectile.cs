@@ -25,7 +25,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
        public override void AI()
        {
            Player player = Main.LocalPlayer;
-           Vector2 offset = new Vector2(-35,1);
+           Vector2 offset = new Vector2(-35,40);
             if (Main.mouseX > 800)
             {
                 offset.X += 28;
@@ -38,7 +38,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
            offset.Y += (Main.mouseY - 300) / 10;
            Vector2 d = (Main.MouseWorld - player.position).SafeNormalize(Vector2.UnitX).SafeNormalize(Vector2.UnitY);
            Projectile.position = new(player.position.X + offset.X, player.position.Y + offset.Y);
-           Projectile.rotation = d.ToRotation() + MathHelper.ToRadians(23);
+           Projectile.rotation = d.ToRotation() + MathHelper.ToRadians(40);
        }
     }
 }
