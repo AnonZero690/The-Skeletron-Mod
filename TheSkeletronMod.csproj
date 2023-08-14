@@ -8,15 +8,6 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AdditionalFiles Remove="Items\Weapons\Calcium\CalcSumm\**" />
-    <Compile Remove="Items\Weapons\Calcium\CalcSumm\**" />
-    <Compile Remove="Weapons\**" />
-    <EmbeddedResource Remove="Items\Weapons\Calcium\CalcSumm\**" />
-    <EmbeddedResource Remove="Weapons\**" />
-    <None Remove="Items\Weapons\Calcium\CalcSumm\**" />
-    <None Remove="Weapons\**" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="Assets\Textures\Menu\BGPL.png" />
     <None Remove="Assets\Textures\Menu\Logopl.png" />
     <None Remove="Buffs\CartilageBuff.png" />

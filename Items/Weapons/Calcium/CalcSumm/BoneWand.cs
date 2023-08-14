@@ -24,9 +24,10 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcSumm
             Item.knockBack = 5f;
             Item.value = 12000;
             Item.useAnimation = 10;
-            Item.useTime = 10;
+            Item.useTime = 20;
             Item.shootSpeed = 20;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.mana = 10;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.shoot = ModContent.ProjectileType<BoneWandSummon>();
             Item.UseSound = SoundID.AbigailSummon;
