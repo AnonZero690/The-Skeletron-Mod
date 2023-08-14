@@ -210,6 +210,7 @@ Mods: {
 			SawboneSwordP.DisplayName: Sawbone Sword P
 			SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
 			ClonedSkull.DisplayName: Cloned Skull
+			BoneWandSummon.DisplayName: Bone Wand Summon
 		}
 
 		Tiles: {
@@ -236,6 +237,11 @@ Mods: {
 			BoneDaggerr: {
 				DisplayName: Bone Daggerr
 				Description: BONE DAGGERRRR
+			}
+
+			BoneWandBuff: {
+				DisplayName: Bone Wand Buff
+				Description: Mods.TheSkeletronMod.Buffs.BoneWandBuff.Description
 			}
 		}
 	}
