@@ -1,38 +1,37 @@
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using TheSkeletronMod.Tiles;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using TheSkeletronMod.Items.Materials;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using TheSkeletronMod.Common.DamageClasses;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria;
+using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Accessories.PendantTree
 {
-    internal class SkullNecklace : ModItem
+    internal class SkullToken : ModItem
     {
 
         public override void SetDefaults()
         {
-            Item.width = 16;
-            Item.height = 19;
-            Item.value = 12000;
-            Item.rare = ItemRarityID.Green;
+            Item.width = 19;
+            Item.height = 20;
+            Item.value = 40000;
+            Item.rare = ItemRarityID.Pink;
             Item.accessory = true;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetDamage(ModContent.GetInstance<Bonecursed>()) += 0.05f;
-            player.endurance += 0.05f;
+            player.GetDamage(ModContent.GetInstance<Bonecursed>()) += 0.15f;
+            player.endurance += 0.10f;
             Lighting.AddLight(player.position, r: 0.6f, 0.3f, b: 1f);
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<SkullPendant>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 25);
-            recipe.AddIngredient(ItemID.Cobweb, 10);
+            recipe.AddIngredient(ModContent.ItemType<SkullLocket>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<BoneEmblem>(), 1);
             recipe.AddTile(ModContent.TileType<BoneAltar>());
             recipe.Register();
         }
