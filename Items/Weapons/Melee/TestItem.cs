@@ -1,11 +1,21 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using TheSkeletronMod.Tiles;
-using Microsoft.Xna.Framework;
-using TheSkeletronMod.Items.Materials;
-using Microsoft.Xna.Framework.Graphics;
+﻿using TheSkeletronMod.Items.Materials;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria.Enums;
+using Terraria.ModLoader;
+using Terraria;
+using TheSkeletronMod.Common.DamageClasses;
+using TheSkeletronMod.Tiles;
+using Terraria.ID;
+//using System.Numerics;
+using Microsoft.Xna.Framework;
+using Microsoft.CodeAnalysis;
+using static tModPorter.ProgressUpdate;
+using Microsoft.Xna.Framework.Graphics;
+
 
 namespace TheSkeletronMod.Items.Weapons.Melee
 {
