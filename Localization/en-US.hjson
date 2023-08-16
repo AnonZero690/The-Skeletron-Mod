@@ -249,6 +249,11 @@ Mods: {
 				DisplayName: Calcium Bar
 				Tooltip: Its full of it!
 			}
+
+			WhittledBone: {
+				DisplayName: Whittled Bone
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
@@ -275,6 +280,7 @@ Mods: {
 			SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
 			ClonedSkull.DisplayName: Cloned Skull
 			BoneWandSummon.DisplayName: Bone Wand Summon
+			WhittledBoneP.DisplayName: Whittled Bone P
 		}
 
 		Tiles: {
