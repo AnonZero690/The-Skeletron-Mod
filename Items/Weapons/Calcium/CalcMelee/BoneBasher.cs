@@ -55,7 +55,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Projectile.penetrate = -1;
         }
         Player player;
-        float acceleration = 1;
         int direction = 0;
         int originDmg = 0;
         bool AlreadyRelease = false;
@@ -64,20 +63,19 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 
             player = Main.player[Projectile.owner];
             Projectile.velocity = Projectile.velocity.SafeNormalize(Vector2.Zero);
-            if (Main.MouseWorld.X < 750) {
+            if (Main.MouseWorld.X < 750)
+            {
                 direction = -1;
-            }else
+            }
+            else
             {
                 direction = 1;
             }
-            //Projectile.spriteDirection = direction;
             originDmg = Projectile.damage;
 
             player.heldProj = Projectile.whoAmI;
             if (Main.mouseLeft && !AlreadyRelease)
             {
-                Projectile.damage = (int)(originDmg * (acceleration / 15));
-                //player.direction = direction;
                 float rotation = (Main.MouseWorld - player.position).SafeNormalize(Vector2.UnitX).SafeNormalize(Vector2.UnitY).ToRotation();
                 Projectile.Center = player.Center + Projectile.velocity.RotatedBy(rotation) * 70f;
                 Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation;
@@ -100,7 +98,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             {
                 Projectile.Kill();
             }
-            //moveAmount += (int)acceleration;
         }
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
@@ -110,7 +107,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 Projectile.Center.LookForHostileNPC(out List<NPC> npclist, 200);
                 foreach (NPC npc in npclist)
                 {
-                    npc.StrikeNPC(npc.CalculateHitInfo(Projectile.damage, -(Projectile.Center.X > npc.Center.X).BoolOne(), false, acceleration));
+                    npc.StrikeNPC(npc.CalculateHitInfo(Projectile.damage, -(Projectile.Center.X > npc.Center.X).BoolOne(), false));
                     player.dpsDamage += Projectile.damage;
                 }
                 for (int i = 0; i < 200; i++)
