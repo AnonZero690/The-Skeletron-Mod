@@ -56,104 +56,47 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         Player player;
         float acceleration = 1;
-        int MaxProgress = 360;
-        int progress = TimeLeftForReal;
         int direction = 0;
-        int moveAmount = 0;
         int originDmg = 0;
         bool AlreadyRelease = false;
-        bool ActivateRetrieve = false;
         public override void AI()
         {
-            if (progress > MaxProgress)
+
+            player = Main.player[Projectile.owner];
+            Projectile.velocity = Projectile.velocity.SafeNormalize(Vector2.Zero);
+            if (Main.MouseWorld.X < 750) {
+                direction = -1;
+            }else
             {
-                player = Main.player[Projectile.owner];
-                progress = MaxProgress;
-                Projectile.velocity = Projectile.velocity.SafeNormalize(Vector2.Zero);
-                direction = Projectile.velocity.X > 0 ? 1 : -1;
-                Projectile.spriteDirection = direction;
-                originDmg = Projectile.damage;
+                direction = 1;
             }
+            //Projectile.spriteDirection = direction;
+            originDmg = Projectile.damage;
+
             player.heldProj = Projectile.whoAmI;
             if (Main.mouseLeft && !AlreadyRelease)
             {
                 Projectile.damage = (int)(originDmg * (acceleration / 15));
-                player.direction = direction;
-                //float rotation = MathHelper.ToRadians(direction * moveAmount);
-                Vector2 vectorRoatation = (Main.MouseWorld - player.position).SafeNormalize(Vector2.UnitX).SafeNormalize(Vector2.UnitY);
-                float rotation;
-                if (Main.MouseWorld.X <= 750)
-                 {
-                     rotation = vectorRoatation.ToRotation();
-                    
-                }
-                else
-                {
-                     rotation = vectorRoatation.ToRotation() + MathHelper.Pi;
-                }
-                
+                //player.direction = direction;
+                float rotation = (Main.MouseWorld - player.position).SafeNormalize(Vector2.UnitX).SafeNormalize(Vector2.UnitY).ToRotation();
                 Projectile.Center = player.Center + Projectile.velocity.RotatedBy(rotation) * 70f;
                 Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation;
                 if (Projectile.spriteDirection == -1)
+                {
                     Projectile.rotation += MathHelper.PiOver2;
+                }
                 float rotational = Projectile.rotation - MathHelper.PiOver4 - MathHelper.PiOver2;
                 if (Projectile.spriteDirection == -1)
+                {
                     rotational -= MathHelper.PiOver2;
+                }
                 player.compositeFrontArm = new Player.CompositeArmData(true, Player.CompositeArmStretchAmount.Full, rotational);
             }
             else
             {
                 Projectile.Kill();
             }
-            //else
-            //{
-            //    if (!AlreadyRelease)
-            //    {
-            //        Projectile.tileCollide = true;
-            //        if (Projectile.spriteDirection == -1)
-            //            Projectile.rotation += MathHelper.PiOver4 + MathHelper.Pi;
-            //        else
-            //            Projectile.rotation -= MathHelper.PiOver4;
-            //        Projectile.velocity = Projectile.rotation.ToRotationVector2() * acceleration;
-            //        Projectile.damage *= 2;
-            //        Projectile.knockBack = 0;
-            //        AlreadyRelease = true;
-            //    }
-            //    if (Projectile.velocity != Vector2.Zero)
-            //    {
-            //        Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4;
-            //        if (Projectile.spriteDirection == -1)
-            //            Projectile.rotation += MathHelper.PiOver2;
-            //        Projectile.velocity.Y += .5f;
-            //    }
-            //    else
-            //    {
-            //        if (++Projectile.ai[0] >= 10)
-             //       {
-            //            Projectile.damage -= 1;
-            //            Projectile.ai[0] = 0;
-            //        }
-            //    }
-            //    if (Main.mouseRight && !ActivateRetrieve)
-            //    {
-            //        Projectile.tileCollide = false;
-            //        ActivateRetrieve = true;
-            //    }
-            //    if (ActivateRetrieve)
-            //    {
-            //        Vector2 distance = player.Center - Projectile.Center;
-            //        float length = distance.Length();
-            //        if (length > 5)
-            //        {
-            //            length = 5;
-             //       }
-            //        Projectile.velocity -= Projectile.velocity * .08f;
-            //        Projectile.velocity += distance.SafeNormalize(Vector2.Zero) * length;
-            //        Projectile.velocity = Projectile.velocity.LimitingVelocity(20);
-
-            //    }
-            //}
-            if ((Projectile.velocity == Vector2.Zero || ActivateRetrieve) && ((player.Center - Projectile.Center).LengthSquared() < new Vector2(Projectile.width, Projectile.height).LengthSquared() * .5f || Projectile.damage <= 1))
+            if ((Projectile.velocity == Vector2.Zero) && ((player.Center - Projectile.Center).LengthSquared() < new Vector2(Projectile.width, Projectile.height).LengthSquared() * .5f || Projectile.damage <= 1))
             {
                 Projectile.Kill();
             }
