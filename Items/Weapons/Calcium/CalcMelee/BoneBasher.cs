@@ -81,11 +81,17 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 player.direction = direction;
                 //float rotation = MathHelper.ToRadians(direction * moveAmount);
                 Vector2 vectorRoatation = (Main.MouseWorld - player.position).SafeNormalize(Vector2.UnitX).SafeNormalize(Vector2.UnitY);
-                //if (Main.MouseWorld.X <= 750)
-               // {
-                //    vectorRoatation.X *= -1;
-                //}
-                float rotation = vectorRoatation.ToRotation();
+                float rotation;
+                if (Main.MouseWorld.X <= 750)
+                 {
+                     rotation = vectorRoatation.ToRotation();
+                    
+                }
+                else
+                {
+                     rotation = vectorRoatation.ToRotation() + MathHelper.Pi;
+                }
+                
                 Projectile.Center = player.Center + Projectile.velocity.RotatedBy(rotation) * 70f;
                 Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation;
                 if (Projectile.spriteDirection == -1)
