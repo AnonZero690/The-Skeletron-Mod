@@ -1,33 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Enums;
-using Terraria.ModLoader;
-using TheSkeletronMod.Common.DamageClasses;
+﻿using Terraria;
 using Terraria.ID;
-using Terraria;
-using TheSkeletronMod.Common.Globals;
-using Microsoft.Xna.Framework.Graphics;
+using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-//using System.Numerics;
-using Microsoft.CodeAnalysis;
-using static tModPorter.ProgressUpdate;
-using TheSkeletronMod.Items.Weapons.Melee;
-using Microsoft.Xna.Framework.Input;
-using Terraria.Utilities.Terraria.Utilities;
+using Microsoft.Xna.Framework.Graphics;
+using TheSkeletronMod.Common.DamageClasses;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
     internal class BoneBasher : ModItem
     {
-        //public float swingDegree => 120;
-
-
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootCustomProjectile(10, 10, 30, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<BoneBasherProjectile>(), 1, false);
+            Item.ItemDefaultMeleeShootCustomProjectile(10, 10, 30, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<BoneBasherProjectile>(), 10, false);
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.noMelee = true;
             Item.noUseGraphic = true;
@@ -40,6 +24,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     }
     internal class BoneBasherProjectile : ModProjectile
     {
+        public override string Texture => SkeletronUtils.GetTheSameTextureAsEntity<BoneBasher>();
         const int TimeLeftForReal = 9999;
         public override void SetStaticDefaults()
         {
@@ -48,7 +33,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         public override void SetDefaults()
         {
-            Projectile.width = 80; Projectile.height = 92;
+            Projectile.width = 63; Projectile.height = 65;
             Projectile.friendly = true;
             Projectile.timeLeft = TimeLeftForReal;
             Projectile.tileCollide = false;
@@ -56,67 +41,50 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         Player player;
         int direction = 0;
-        int originDmg = 0;
-        bool AlreadyRelease = false;
         public override void AI()
         {
-
-            player = Main.player[Projectile.owner];
-            Projectile.velocity = Projectile.velocity.SafeNormalize(Vector2.Zero);
-            if (Main.MouseWorld.X < 750)
+            if (Projectile.timeLeft == TimeLeftForReal)
             {
-                direction = -1;
+                player = Main.player[Projectile.owner];
+                Projectile.velocity = Projectile.velocity.SafeNormalize(Vector2.Zero);
+                direction = Projectile.velocity.X > 0 ? 1 : -1;
+                Projectile.spriteDirection = Projectile.velocity.X > 0 ? 1 : -1;
+                player.heldProj = Projectile.whoAmI;
             }
-            else
+            if (Main.mouseLeft)
             {
-                direction = 1;
-            }
-            originDmg = Projectile.damage;
-
-            player.heldProj = Projectile.whoAmI;
-            if (Main.mouseLeft && !AlreadyRelease)
-            {
-                float rotation = (Main.MouseWorld - player.position).SafeNormalize(Vector2.UnitX).SafeNormalize(Vector2.UnitY).ToRotation();
-                Projectile.Center = player.Center + Projectile.velocity.RotatedBy(rotation) * 70f;
-                Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation;
-                if (Projectile.spriteDirection == -1)
-                {
-                    Projectile.rotation += MathHelper.PiOver2;
-                }
+                float rotation = (Main.MouseWorld - player.Center).ToRotation();
                 float rotational = Projectile.rotation - MathHelper.PiOver4 - MathHelper.PiOver2;
-                if (Projectile.spriteDirection == -1)
+                Projectile.rotation = MathHelper.PiOver4 + rotation;
+                if(direction == -1)
                 {
                     rotational -= MathHelper.PiOver2;
+                    Projectile.rotation += MathHelper.PiOver2;
                 }
+                Projectile.Center = player.Center.IgnoreTilePositionOFFSET(Vector2.UnitX.RotatedBy(rotation), 50);
                 player.compositeFrontArm = new Player.CompositeArmData(true, Player.CompositeArmStretchAmount.Full, rotational);
+                Projectile.timeLeft = TimeLeftForReal - 10;
             }
             else
-            {
-                Projectile.Kill();
-            }
-            if ((Projectile.velocity == Vector2.Zero) && ((player.Center - Projectile.Center).LengthSquared() < new Vector2(Projectile.width, Projectile.height).LengthSquared() * .5f || Projectile.damage <= 1))
             {
                 Projectile.Kill();
             }
         }
+        public override void ModifyDamageHitbox(ref Rectangle hitbox)
+        {
+            Vector2 handPos = Vector2.UnitY.RotatedBy(player.compositeFrontArm.rotation);
+            float length = new Vector2(Projectile.width, Projectile.height).Length() * player.GetAdjustedItemScale(player.HeldItem);
+            Vector2 endPos = handPos;
+            Vector2 offsetVector = handPos * 4 - handPos;
+            endPos *= length;
+            handPos += player.MountedCenter + offsetVector;
+            endPos += player.MountedCenter + offsetVector;
+            (int X1, int X2) XVals = SkeletronUtils.Order(handPos.X, endPos.X);
+            (int Y1, int Y2) YVals = SkeletronUtils.Order(handPos.Y, endPos.Y);
+            hitbox = new Rectangle(XVals.X1 - 2, YVals.Y1 - 2, XVals.X2 - XVals.X1 + 2, YVals.Y2 - YVals.Y1 + 2);
+        }
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
-            if (Projectile.velocity != Vector2.Zero)
-            {
-                Projectile.position += Projectile.velocity;
-                Projectile.Center.LookForHostileNPC(out List<NPC> npclist, 200);
-                foreach (NPC npc in npclist)
-                {
-                    npc.StrikeNPC(npc.CalculateHitInfo(Projectile.damage, -(Projectile.Center.X > npc.Center.X).BoolOne(), false));
-                    player.dpsDamage += Projectile.damage;
-                }
-                for (int i = 0; i < 200; i++)
-                {
-                    Vector2 pos = SkeletronUtils.SpawnRanPositionThatIsNotIntoTile(Projectile.Center, 200, 200);
-                    Dust.NewDust(pos, 0, 0, DustID.Dirt);
-                }
-            }
-            Projectile.velocity = Vector2.Zero;
             return false;
         }
         public override bool PreDraw(ref Color lightColor)

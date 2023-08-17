@@ -16,7 +16,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
-
         public override void SetDefaults()
         {
             Item.ItemDefaultMeleeShootCustomProjectile(54, 66, 50, 7f, 25, 25, ItemUseStyleID.Swing, ModContent.ProjectileType<SawboneSwordP>(), 1, true);
@@ -24,12 +23,10 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.rare = ItemRarityID.Orange;
             Item.value = Item.sellPrice(0, 10, 10);
         }
-
         public override bool AltFunctionUse(Player player)
         {
             return true;
         }
-
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             Vector2 direction = new Vector2(70 * player.direction, 0);
@@ -46,18 +43,14 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                         , Vector2.Zero, ModContent.ProjectileType<SawboneSwordSpawnSpikeP>(), damage, knockback, player.whoAmI, i, player.direction);
                 }
             }
-
             return false;
         }
-
         public override void MeleeEffects(Player player, Rectangle hitbox)
         {
             Vector2 hitboxCenter = new Vector2(hitbox.X, hitbox.Y);
-
             int dust = Dust.NewDust(hitboxCenter, hitbox.Width, hitbox.Height, DustID.Blood, 0, 0, 0, Color.Red, Main.rand.NextFloat(1.25f, 1.75f));
             Main.dust[dust].noGravity = true;
         }
-
         public override void AddRecipes()
         {
             CreateRecipe()
@@ -79,7 +72,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
         }
-
         int timer = 0;
         bool isAlreadyInTile = false;
         public override bool PreAI()
@@ -89,10 +81,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 Projectile.Kill();
                 return false;
             }
-
             return true;
         }
-
         public override void AI()
         {
             if (timer >= 20 + 10 * Projectile.ai[0])

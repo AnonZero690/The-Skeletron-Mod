@@ -254,6 +254,33 @@ Mods: {
 				DisplayName: Whittled Bone
 				Tooltip: ""
 			}
+
+			NecromancerRobe: {
+				DisplayName: Necromancer Robe
+				Tooltip:
+					'''
+					10% more calcium damage
+					8% more calcium crit chance
+					'''
+			}
+
+			NecromancerHood: {
+				DisplayName: Necromancer Hood
+				Tooltip:
+					'''
+					20% reduced mana cost
+					14% bone damage
+					'''
+			}
+
+			NecromancerLeggings: {
+				DisplayName: Necromancer Leggings
+				Tooltip:
+					'''
+					20 extra max mana
+					8% more calcium crit chance
+					'''
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
