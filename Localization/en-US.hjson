@@ -281,6 +281,11 @@ Mods: {
 					8% more calcium crit chance
 					'''
 			}
+
+			SkeletalRelicShield: {
+				DisplayName: Skeletal Relic Shield
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
