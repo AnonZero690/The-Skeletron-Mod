@@ -286,6 +286,11 @@ Mods: {
 				DisplayName: Skeletal Relic Shield
 				Tooltip: ""
 			}
+
+			BoneToiletItem: {
+				DisplayName: Bone Toilet Item
+				Tooltip: ""
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
