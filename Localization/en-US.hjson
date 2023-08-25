@@ -297,6 +297,12 @@ Mods: {
 			}
 		}
 
+			BadToTheMusicBox: {
+				DisplayName: Bad To The Music Box
+				Tooltip: ""
+			}
+		}
+
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
 
 		Projectiles: {
@@ -322,11 +328,13 @@ Mods: {
 			ClonedSkull.DisplayName: Cloned Skull
 			BoneWandSummon.DisplayName: Bone Wand Summon
 			WhittledBoneP.DisplayName: Whittled Bone P
+			BoneToiletThrow.DisplayName: Bone Toilet Throw
 		}
 
 		Tiles: {
 			CalciumOreT.MapEntry: Calcium Ore
 			BoneAltar.MapEntry: Bone Altar
+			BadToTheMusicBoxT.MapEntry: Bad To The Music Box T
 		}
 
 		Buffs: {
@@ -353,6 +361,11 @@ Mods: {
 			BoneWandBuff: {
 				DisplayName: Bone Wand Buff
 				Description: Mods.TheSkeletronMod.Buffs.BoneWandBuff.Description
+			}
+
+			OstropotosisBuff: {
+				DisplayName: Ostropotosis Buff
+				Description: Mods.TheSkeletronMod.Buffs.OstropotosisBuff.Description
 			}
 		}
 	}

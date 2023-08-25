@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Items\Tools\" />
+    <Folder Include="Items\Armor\Misc\" />
     <Folder Include="Items\Weapons\Magic\" />
     <Folder Include="Minibosses\" />
     <Folder Include="projectiles\Calcprojs\CalcSummProj\" />
