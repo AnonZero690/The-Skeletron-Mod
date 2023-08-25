@@ -23,8 +23,10 @@
     <None Remove="Items\Armor\NecromancerArmour\NecromancerRobe.png" />
     <None Remove="Items\Armor\NecromancerArmour\NecromancerRobe_Body.png" />
     <None Remove="Items\Materials\AncientBone.png" />
+    <None Remove="Items\Tools\GuardiansPickaxe.png" />
     <None Remove="Items\Weapons\Calcium\bloodgemBoneScepter.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\BoneBasher.png" />
+    <None Remove="Items\Weapons\Calcium\CalcMelee\GuardiansMattock.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SawboneSword.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\Miniskull.png" />
     <None Remove="Items\Weapons\Calcium\MilkMage\TrueBloodgemBoneScepter.png" />
@@ -38,7 +40,6 @@
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Items\Tools\" />
     <Folder Include="Items\Armor\Misc\" />
     <Folder Include="Items\Weapons\Magic\" />
     <Folder Include="Minibosses\" />
