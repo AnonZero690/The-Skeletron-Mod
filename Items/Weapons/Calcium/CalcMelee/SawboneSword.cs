@@ -9,7 +9,7 @@ using TheSkeletronMod.Common.Globals;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
-    internal class SawboneSword : ModItem, MeleeWeaponWithImprovedSwing
+    internal class GuardiansMattock : ModItem, MeleeWeaponWithImprovedSwing
     {
         public float swingDegree => 150;
         public override void SetStaticDefaults()
@@ -62,7 +62,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     }
     public class SawboneSwordSpawnSpikeP : ModProjectile
     {
-        public override string Texture => SkeletronUtils.GetTheSameTextureAsEntity<SawboneSword>();
+        public override string Texture => SkeletronUtils.GetTheSameTextureAsEntity<GuardiansMattock>();
         public override void SetDefaults()
         {
             Projectile.width = 10;
@@ -150,7 +150,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 
     public class SawboneSwordP : ModProjectile
     {
-        public override string Texture => SkeletronUtils.GetTheSameTextureAsEntity<SawboneSword>();
+        public override string Texture => SkeletronUtils.GetTheSameTextureAsEntity<GuardiansMattock>();
         public override void SetStaticDefaults()
         {
             ProjectileID.Sets.DontAttachHideToAlpha[Projectile.type] = true;

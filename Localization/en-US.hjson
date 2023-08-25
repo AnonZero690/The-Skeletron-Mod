@@ -291,6 +291,10 @@ Mods: {
 				DisplayName: Bone Toilet Item
 				Tooltip: ""
 			}
+			GuardiansMattock: {
+			DisplayName: Guardian's Mattock
+			Tooltip: "very cool pickaxe"
+			}
 		}
 
 		DamageClasses.Bonecursed.DisplayName: Calcium Damage
