@@ -38,6 +38,7 @@
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Items\Armor\Misc\" />
     <Folder Include="Items\Weapons\Magic\" />
     <Folder Include="Minibosses\" />
     <Folder Include="projectiles\Calcprojs\CalcSummProj\" />
