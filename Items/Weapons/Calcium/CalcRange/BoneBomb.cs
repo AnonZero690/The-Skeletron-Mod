@@ -5,11 +5,16 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
+using Terraria.GameContent.Creative;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
 {
     internal class BoneBomb : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 99;
+        }
         public override void SetDefaults()
         {
             Item.ItemDefaultRange(30, 36, 34, 5f, 40, 40, ItemUseStyleID.Swing, ModContent.ProjectileType<BoneBombProjectile>(), 7, true);
