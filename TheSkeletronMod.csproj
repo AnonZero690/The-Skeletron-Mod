@@ -25,10 +25,13 @@
     <None Remove="Items\Materials\AncientBone.png" />
     <None Remove="Items\Tools\GuardiansPickaxe.png" />
     <None Remove="Items\Weapons\Calcium\bloodgemBoneScepter.png" />
+    <None Remove="Items\Weapons\Calcium\BoneYoyoItem.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\BoneBasher.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\GuardiansMattock.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SawboneSword.png" />
+    <None Remove="Items\Weapons\Calcium\CalcRange\BoneBomb.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\Miniskull.png" />
+    <None Remove="Items\Weapons\Calcium\image.png" />
     <None Remove="Items\Weapons\Calcium\MilkMage\TrueBloodgemBoneScepter.png" />
     <None Remove="Items\Weapons\Calcium\TrueBloodgemBoneScepter.png" />
     <None Remove="projectiles\bloodProjectile.png" />

@@ -306,6 +306,16 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Bad To The Music Box
 			}
+
+			BoneYoyo: {
+				DisplayName: Bone Yoyo
+				Tooltip: ""
+			}
+
+			BoneBomb: {
+				DisplayName: Bone Bomb
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -336,6 +346,8 @@ Mods: {
 			SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
 			SawboneSwordP.DisplayName: Sawbone Sword P
 			BoneBasherProjectile.DisplayName: Bone Basher Projectile
+			BoneYoyoProjectile.DisplayName: Bone Yoyo Projectile
+			BoneBombProjectile.DisplayName: Bone Bomb Projectile
 		}
 
 		Buffs: {
