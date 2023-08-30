@@ -26,7 +26,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
         }
         public override void AI()
         {
-            Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2 - 8;
+            Projectile.rotation = Projectile.velocity.ToRotation();
         }
     }
 }
