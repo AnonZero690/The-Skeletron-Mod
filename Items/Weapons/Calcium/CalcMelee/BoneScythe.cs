@@ -15,8 +15,12 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     {
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootCustomProjectile(54, 33, 50, 7f, 25, 25, ItemUseStyleID.Swing, ModContent.ProjectileType<BoneScytheP>(), 10, true);
+            Item.ItemDefaultMeleeShootCustomProjectile(54, 33, 70, 7f, 25, 25, ItemUseStyleID.Swing, ModContent.ProjectileType<BoneScytheP>(), 10, false);
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
+        }
+        public override bool MeleePrefix()
+        {
+            return true;
         }
     }
 }

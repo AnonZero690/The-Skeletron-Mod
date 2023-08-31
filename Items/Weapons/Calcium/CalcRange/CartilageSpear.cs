@@ -57,7 +57,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
                 var velocity = new Vector2(0f, -Main.rand.NextFloat() * 0.3f - 1.5f);
 
                 var dust = Dust.NewDustPerfect(center + direction * distance, DustID.Bone, velocity);
-                dust.scale = 0.5f;
+                dust.scale = 0.25f;
                 dust.fadeIn = 0.4f;
                 dust.noGravity = true;
                 dust.noLight = false;
