@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Terraria;
+using TheSkeletronMod.Common.DamageClasses;
 
 namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
@@ -23,6 +24,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             Projectile.ignoreWater = true;
             Projectile.damage = 1;
             Projectile.light = 10f;
+            Projectile.DamageType = ModContent.GetInstance<Bonecursed>();
         }
         public override void AI()
         {
