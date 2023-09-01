@@ -321,6 +321,11 @@ Mods: {
 				DisplayName: Bone Scythe
 				Tooltip: ""
 			}
+
+			SkeletalReaper: {
+				DisplayName: Skeletal Reaper
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -354,6 +359,7 @@ Mods: {
 			BoneYoyoProjectile.DisplayName: Bone Yoyo Projectile
 			BoneBombProjectile.DisplayName: Bone Bomb Projectile
 			BoneScytheP.DisplayName: Bone Scythe P
+			SkeletalReaperP.DisplayName: Skeletal Reaper P
 		}
 
 		Buffs: {
