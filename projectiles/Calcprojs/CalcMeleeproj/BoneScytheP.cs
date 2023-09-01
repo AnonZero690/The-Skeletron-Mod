@@ -44,7 +44,9 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
                 Projectile.damage -= 55;
                 damageReduced = true;
             }
-            
+            Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+            Dust d = Dust.NewDustPerfect(Main.LocalPlayer.Center, DustID.Bone, speed * 10, Scale: 1f); ;
+            d.noGravity = true;
             Projectile.rotation = Projectile.velocity.ToRotation();
             if (++Projectile.frameCounter >= 3f)//the amount of ticks the game spends on each frame
             {
