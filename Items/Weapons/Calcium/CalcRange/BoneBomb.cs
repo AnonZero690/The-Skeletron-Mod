@@ -1,11 +1,10 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSkeletronMod.Tiles;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
-using Terraria.GameContent.Creative;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
 {
@@ -72,7 +71,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
             {
                 Player player = Main.player[Projectile.owner];
                 Projectile.Center.LookForHostileNPC(out List<NPC> npclist, 200f);
-                int direction;
                 foreach (NPC npc in npclist)
                 {
                     npc.StrikeNPC(npc.CalculateHitInfo(Projectile.damage, 1));
