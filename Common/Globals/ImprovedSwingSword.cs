@@ -14,10 +14,10 @@ namespace TheSkeletronMod.Common.Globals
         {
             if (item.ModItem is MeleeWeaponWithImprovedSwing itemswing && !item.noMelee)
             {
-                SwipeAttack(player, player.GetModPlayer<ImprovedSwingGlobalItemPlayer>(), itemswing.swingDegree, 1);
+                SwipeAttack(player, player.GetModPlayer<ImprovedSwingGlobalItemPlayer>(), itemswing.swingDegree, itemswing.Offset, 1);
             }
         }
-        private void SwipeAttack(Player player, ImprovedSwingGlobalItemPlayer modplayer, float swingdegree, int direct)
+        private void SwipeAttack(Player player, ImprovedSwingGlobalItemPlayer modplayer, float swingdegree, float offset, int direct)
         {
             float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
             float baseAngle = modplayer.data.ToRotation();
@@ -28,7 +28,7 @@ namespace TheSkeletronMod.Common.Globals
             player.itemRotation = currentAngle;
             player.itemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 * 3f;
             player.compositeFrontArm = new Player.CompositeArmData(true, Player.CompositeArmStretchAmount.Full, currentAngle - MathHelper.PiOver2);
-            player.itemLocation = player.MountedCenter + Vector2.UnitX.RotatedBy(currentAngle) * PLAYERARMLENGTH;
+            player.itemLocation = player.MountedCenter + Vector2.UnitX.RotatedBy(currentAngle) * offset;
         }
         //Credit hitbox code to Stardust
         public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
@@ -50,6 +50,7 @@ namespace TheSkeletronMod.Common.Globals
     interface MeleeWeaponWithImprovedSwing
     {
         float swingDegree { get; }
+        float Offset { get; }
     }
     public class ImprovedSwingGlobalItemPlayer : ModPlayer
     {
