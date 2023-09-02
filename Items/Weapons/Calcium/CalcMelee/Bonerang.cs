@@ -16,8 +16,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.value = 10000;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.shoot = ModContent.ProjectileType<BonerangProjectile>();
-            Item.shootSpeed = 8f;
             Item.noMelee = true;
+            Item.shootSpeed = 4f;
             Item.noUseGraphic = true;
             Item.useTime = 30;
             Item.useAnimation = 30;

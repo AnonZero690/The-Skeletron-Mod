@@ -17,6 +17,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             Projectile.damage = 15;
             Projectile.DamageType = ModContent.GetInstance<Bonecursed>();
             Projectile.penetrate = -1;
+            Projectile.tileCollide = false;
         }
         public override void AI()
         {
@@ -24,8 +25,9 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             if (Vector2.Distance(Projectile.position, target) < 64f) Projectile.Kill();
             else
             {
-                target = Vector2.Normalize(Projectile.position - target);
-                Projectile.position += target * 6f;
+                target = Vector2.Normalize(target - Projectile.position);
+                Projectile.velocity += target * 3f;
+                Projectile.velocity *= 0.95f;
             }
         }
     }
