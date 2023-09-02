@@ -326,6 +326,11 @@ Mods: {
 				DisplayName: Skeletal Reaper
 				Tooltip: ""
 			}
+
+			WishboneRang: {
+				DisplayName: Wishbone Rang
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -360,6 +365,8 @@ Mods: {
 			BoneBombProjectile.DisplayName: Bone Bomb Projectile
 			BoneScytheP.DisplayName: Bone Scythe P
 			SkeletalReaperP.DisplayName: Skeletal Reaper P
+			WishboneRangP.DisplayName: Wishbone Rang P
+			WishboneRangPOne.DisplayName: Wishbone Rang P One
 		}
 
 		Buffs: {
