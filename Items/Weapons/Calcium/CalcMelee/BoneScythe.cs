@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
@@ -16,6 +17,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     internal class BoneScythe : ModItem, MeleeWeaponWithImprovedSwing
     {
         public float swingDegree => 150;
+        public float Offset => 0f;
 
         public override void SetDefaults()
         {

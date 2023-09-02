@@ -333,6 +333,12 @@ Mods: {
 			}
 		}
 
+			Bonerang: {
+				DisplayName: Bonerang
+				Tooltip: ""
+			}
+		}
+
 		BadToTheMusicBox: {
 			DisplayName: Bad To The Music Box
 			Tooltip: ""
@@ -368,6 +374,8 @@ Mods: {
 			WishboneRangP.DisplayName: Wishbone Rang P
 			WishboneRangPOne.DisplayName: Wishbone Rang P One
 			WishboneRangPTwo.DisplayName: Wishbone Rang P Two
+			BonerangProjectile.DisplayName: Bonerang Projectile
+			BonerangReturnProjectile.DisplayName: Bonerang Return Projectile
 		}
 
 		Buffs: {
