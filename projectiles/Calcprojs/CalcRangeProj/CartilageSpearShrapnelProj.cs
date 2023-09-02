@@ -31,7 +31,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj
             if (Main.rand.NextBool(1))
             {
                 int dust = Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Bone, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f);
-                Main.dust[dust].scale *= 1f;
+                Main.dust[dust].scale *= 0.25f;
                 Main.dust[dust].noGravity = true;
             }
         }
