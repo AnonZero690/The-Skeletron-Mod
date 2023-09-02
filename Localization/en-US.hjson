@@ -367,6 +367,7 @@ Mods: {
 			SkeletalReaperP.DisplayName: Skeletal Reaper P
 			WishboneRangP.DisplayName: Wishbone Rang P
 			WishboneRangPOne.DisplayName: Wishbone Rang P One
+			WishboneRangPTwo.DisplayName: Wishbone Rang P Two
 		}
 
 		Buffs: {
