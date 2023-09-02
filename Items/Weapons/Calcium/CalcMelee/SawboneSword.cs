@@ -12,6 +12,9 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     internal class GuardiansMattock : ModItem, MeleeWeaponWithImprovedSwing
     {
         public float swingDegree => 150;
+
+        public float Offset => 12;
+
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

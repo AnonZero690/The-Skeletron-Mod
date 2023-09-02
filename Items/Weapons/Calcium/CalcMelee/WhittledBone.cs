@@ -2,11 +2,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using TheSkeletronMod.Items.Materials;
-using TheSkeletronMod.Tiles;
-using System.Collections.Generic;
-using TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj;
-using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using TheSkeletronMod.Common.Globals;
 using TheSkeletronMod.Common.DamageClasses;
@@ -16,6 +11,9 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     internal class WhittledBone : ModItem, MeleeWeaponWithImprovedSwing
     {
         public float swingDegree => 150;
+
+        public float Offset => 12;
+
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
