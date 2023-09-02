@@ -331,10 +331,19 @@ Mods: {
 				DisplayName: Wishbone Rang
 				Tooltip: ""
 			}
-		}
 
 			Bonerang: {
 				DisplayName: Bonerang
+				Tooltip: ""
+			}
+
+			BagOfBoneDust: {
+				DisplayName: Bag Of Bone Dust
+				Tooltip: ""
+			}
+
+			BagOfSkullDust: {
+				DisplayName: Bag Of Skull Dust
 				Tooltip: ""
 			}
 		}

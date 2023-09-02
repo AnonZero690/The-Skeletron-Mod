@@ -32,6 +32,8 @@
     <None Remove="Items\Weapons\Calcium\CalcMelee\SawboneSword.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SkeletalReaper.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\WishboneRang.png" />
+    <None Remove="Items\Weapons\Calcium\CalcOther\BagOfBoneDust.png" />
+    <None Remove="Items\Weapons\Calcium\CalcOther\BagOfSkullDust.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\BoneBomb.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\Miniskull.png" />
     <None Remove="Items\Weapons\Calcium\image.png" />
