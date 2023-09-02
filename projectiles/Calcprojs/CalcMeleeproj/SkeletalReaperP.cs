@@ -10,6 +10,7 @@ using Terraria;
 using TheSkeletronMod.Common.DamageClasses;
 using System.Security.Cryptography.X509Certificates;
 using Terraria.Utilities;
+using Terraria.Audio;
 
 namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
@@ -60,19 +61,60 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             //dust.color = Color.Purple;
             //dust.alpha = 0;
         }
+        public override void Kill(int timeleft)
+        {
+            Projectile.ownerHitCheck = true;
+
+            int radius = 140;
+
+            // Damage enemies within the splash radius
+            for (int i = 0; i < Main.npc.Length; i++)
+            {
+                NPC target = Main.npc[i];
+                if (target.active && !target.friendly && Vector2.Distance(Projectile.Center, target.Center) < radius)
+                {
+                    int damage = Projectile.damage * 3; // Deal half the projectile's damage as splash damage
+                    target.SimpleStrikeNPC(50, 0);
+                }
+            }
+
+            for (int a = 0; a < 80; a++)
+            {
+                Vector2 speed = Main.rand.NextVector2CircularEdge(3f, 3f);
+                var d = Dust.NewDustPerfect(Projectile.Center, DustID.WhiteTorch, speed * 5, Scale: 4f);
+                ;
+                d.noGravity = true;
+            }
+            for (int b = 0; b < 80; b++)
+            {
+                Vector2 speed = Main.rand.NextVector2CircularEdge(3f, 3f);
+                var d = Dust.NewDustPerfect(Projectile.Center, DustID.PurpleTorch, speed * 5, Scale: 6f);
+                ;
+                d.noGravity = true;
+            }
+            for (int i = 0; i < 80; i++)
+            {
+                Vector2 speed = Main.rand.NextVector2CircularEdge(3f, 3f);
+                var d = Dust.NewDustPerfect(Projectile.Center, DustID.Bone, speed * 5, Scale: 3f);
+                ;
+                d.noGravity = true;
+            }
+
+            SoundEngine.PlaySound(SoundID.DD2_SkeletonDeath);
+        }
         //public override void Kill(int timeLeft)
         //{
-         //   for (int  i = 0;  i < 10;  i++)
-         //   {
-         //       var dust = Dust.NewDustPerfect(Projectile.position + new Vector2(0,100), DustID.TintableDust, new Vector2(-1, -1));
-         //       dust.scale = 2.5f;
+        //   for (int  i = 0;  i < 10;  i++)
+        //   {
+        //       var dust = Dust.NewDustPerfect(Projectile.position + new Vector2(0,100), DustID.TintableDust, new Vector2(-1, -1));
+        //       dust.scale = 2.5f;
         //        dust.fadeIn = 0.4f;
         //        dust.noGravity = true;
         //        dust.noLight = false;
         //        dust.color = Color.Purple;
         //        dust.alpha = 0;
         //    }
-            
-       // }
+
+        // }
     }
 }
