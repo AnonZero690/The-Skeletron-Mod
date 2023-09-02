@@ -27,7 +27,8 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             {
                 target = Vector2.Normalize(target - Projectile.position);
                 Projectile.velocity += target * 3f;
-                Projectile.velocity *= 0.95f;
+                Projectile.velocity *= 0.85f;
+                if (Projectile.velocity.Length() > 24f) Projectile.velocity = Vector2.Normalize(Projectile.velocity) * 24f;
             }
         }
     }

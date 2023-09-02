@@ -17,7 +17,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             Projectile.height = 30;
             Projectile.damage = 25;
             Projectile.DamageType = ModContent.GetInstance<Bonecursed>();
-            Projectile.penetrate = 3;
+            Projectile.penetrate = -1;
             Projectile.friendly = true;
         }
         public override void OnSpawn(IEntitySource source)
@@ -27,23 +27,26 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             vectormove.Normalize();
             Projectile.ai[1] = vectormove.X;
             Projectile.ai[2] = vectormove.Y;
+            Projectile.velocity = new Vector2(Projectile.ai[1], Projectile.ai[2]) * 9f;
+        }
+        private void ReturnFunction(Vector2 v)
+        {
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, -v.RotatedBy(Math.PI / 10), ModContent.ProjectileType<BonerangReturnProjectile>(), 15, 4f, Projectile.owner);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, -v.RotatedBy(-Math.PI / 10), ModContent.ProjectileType<BonerangReturnProjectile>(), 15, 4f, Projectile.owner);
+            Projectile.Kill();
         }
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, -oldVelocity.RotatedBy(Math.PI / 10), ModContent.ProjectileType<BonerangReturnProjectile>(), 15, 4f, Projectile.owner);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, -oldVelocity.RotatedBy(-Math.PI / 10), ModContent.ProjectileType<BonerangReturnProjectile>(), 15, 4f, Projectile.owner);
-            Projectile.Kill();
+            ReturnFunction(oldVelocity);
             return false;
         }
         public override void AI()
         {
             Projectile.ai[0]--;
-            Projectile.velocity = new Vector2(Projectile.ai[1], Projectile.ai[2]) * 9f;
             Projectile.rotation += 0.17f;
-            if (Projectile.ai[0] < 1 || Projectile.penetrate < 2)
+            if (Projectile.ai[0] < 1)
             {
-                OnTileCollide(Projectile.velocity);
-                Projectile.Kill();
+                ReturnFunction(Projectile.velocity);
             }
         }
     }
