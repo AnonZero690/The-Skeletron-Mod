@@ -16,6 +16,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     public class SkeletalReaper : ModItem, MeleeWeaponWithImprovedSwing
     {
         public float swingDegree => 360;
+        public float Offset => 0f;
         public override void SetDefaults()
         {
             Item.ItemDefaultMeleeShootCustomProjectile(54, 33, 130, 7f, 400, 400, ItemUseStyleID.Swing, ModContent.ProjectileType<SkeletalReaperP>(), 10, true);
