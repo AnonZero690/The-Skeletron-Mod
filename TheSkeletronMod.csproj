@@ -28,6 +28,7 @@
     <None Remove="Items\Weapons\Calcium\BoneYoyoItem.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\BoneBasher.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\Bonerang.png" />
+    <None Remove="Items\Weapons\Calcium\CalcMelee\BoneSword.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\GuardiansMattock.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SawboneSword.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SkeletalReaper.png" />
@@ -42,6 +43,7 @@
     <None Remove="projectiles\bloodProjectile.png" />
     <None Remove="projectiles\Calcprojs\CalcMageproj\ClonedSkull.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\BoneScytheP.png" />
+    <None Remove="projectiles\Calcprojs\CalcMeleeproj\BoneSwordP.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\SkeletalReaperP.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\WishboneRangP.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\WishboneRangPOne.png" />

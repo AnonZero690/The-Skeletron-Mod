@@ -346,6 +346,11 @@ Mods: {
 				DisplayName: Bag Of Skull Dust
 				Tooltip: ""
 			}
+
+			BoneSword: {
+				DisplayName: Bone Sword
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -385,6 +390,7 @@ Mods: {
 			WishboneRangPTwo.DisplayName: Wishbone Rang P Two
 			BonerangProjectile.DisplayName: Bonerang Projectile
 			BonerangReturnProjectile.DisplayName: Bonerang Return Projectile
+			BoneSwordP.DisplayName: Bone Sword P
 		}
 
 		Buffs: {
