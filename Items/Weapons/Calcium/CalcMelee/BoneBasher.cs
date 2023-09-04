@@ -11,7 +11,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     {
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootCustomProjectile(10, 10, 30, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<BoneBasherProjectile>(), 10, false);
+            Item.ItemDefaultMeleeShootProjectile(10, 10, 30, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<BoneBasherProjectile>(), 10, false);
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.noMelee = true;
             Item.noUseGraphic = true;

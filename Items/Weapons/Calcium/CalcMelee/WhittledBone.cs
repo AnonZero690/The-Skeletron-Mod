@@ -21,7 +21,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootCustomProjectile(54, 66, 50, 7f, 25, 25, ItemUseStyleID.Swing, ModContent.ProjectileType<WhittledBoneP>(), 0, true);
+            Item.ItemDefaultMeleeShootProjectile(54, 66, 50, 7f, 25, 25, ItemUseStyleID.Swing, ModContent.ProjectileType<WhittledBoneP>(), 0, true);
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
             Item.damage = 10;
             Item.rare = ItemRarityID.Orange;

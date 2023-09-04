@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.Globals;
@@ -15,15 +16,13 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     {
         public float swingDegree => 360;
         public float Offset => 0;
-        public override void SetDefaults()
-        {
-            Item.ItemDefaultMeleeCustomProjectile(12,12,17,0,10,10,ItemUseStyleID.Swing, ModContent.ProjectileType<BoneSwordP>(), false);
-            Item.shootSpeed = 6f;
-        }
         public override void SetStaticDefaults()
         {
-
-            Main.itemFrameCounter[Item.type] = 8;
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(3, 8));
+        }
+        public override void SetDefaults()
+        {
+            Item.ItemDefaultMeleeShootProjectile(114, 114, 17, 0, 100, 100, ItemUseStyleID.Swing, ModContent.ProjectileType<BoneSwordP>(), 6f, false);
         }
     }
 }
