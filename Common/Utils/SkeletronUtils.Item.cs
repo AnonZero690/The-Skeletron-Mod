@@ -65,7 +65,7 @@ namespace TheSkeletronMod
             item.shootSpeed = shootspeed;
         }
         /// <summary>
-        /// Use this if you are making a custom melee projectile
+        /// Use this if you are making a custom melee projectile like a spear or boomerang
         /// </summary>
         /// <param name="item"></param>
         /// <param name="width"></param>
