@@ -330,8 +330,28 @@ Mods: {
 				Tooltip: ""
 			}
 
+			WishboneRang: {
+				DisplayName: Wishbone Rang
+				Tooltip: ""
+			}
+
 			Bonerang: {
 				DisplayName: Bonerang
+				Tooltip: ""
+			}
+
+			BagOfBoneDust: {
+				DisplayName: Bag Of Bone Dust
+				Tooltip: ""
+			}
+
+			BagOfSkullDust: {
+				DisplayName: Bag Of Skull Dust
+				Tooltip: ""
+			}
+
+			BoneSword: {
+				DisplayName: Bone Sword
 				Tooltip: ""
 			}
 		}
@@ -370,6 +390,10 @@ Mods: {
 			SkeletalReaperP.DisplayName: Skeletal Reaper P
 			BonerangProjectile.DisplayName: Bonerang Projectile
 			BonerangReturnProjectile.DisplayName: Bonerang Return Projectile
+			BoneSwordP.DisplayName: Bone Sword P
+			WishboneRangP.DisplayName: Wishbone Rang P
+			WishboneRangPOne.DisplayName: Wishbone Rang P One
+			WishboneRangPTwo.DisplayName: Wishbone Rang P Two
 			BloodArrow2.DisplayName: Blood Arrow2
 		}
 
@@ -410,6 +434,8 @@ Mods: {
 			BoneAltar.MapEntry: Bone Altar
 			CalciumOreT.MapEntry: Calcium Ore T
 		}
+
+		NPCs.UndeadHand.DisplayName: Undead Hand
 	}
 
 	DamageClasses.Bonecursed.DisplayName: Calcium Damage
