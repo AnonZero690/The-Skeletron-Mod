@@ -430,6 +430,8 @@ Mods: {
 			BoneAltar.MapEntry: Bone Altar
 			CalciumOreT.MapEntry: Calcium Ore T
 		}
+
+		NPCs.UndeadHand.DisplayName: Undead Hand
 	}
 
 	DamageClasses.Bonecursed.DisplayName: Calcium Damage
