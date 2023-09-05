@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using TheSkeletronMod.Common.DamageClasses;
-using Terraria.DataStructures;
 
 namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
@@ -11,8 +10,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
     {
         public override void SetDefaults()
         {
-            Projectile.width = 32;
-            Projectile.height = 32;
+            Projectile.width = Projectile.height = 32;
             Projectile.friendly = true;
             Projectile.damage = 15;
             Projectile.DamageType = ModContent.GetInstance<Bonecursed>();
@@ -21,14 +19,20 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
         }
         public override void AI()
         {
-            Vector2 target = Main.player[Projectile.owner].position;
-            if (Vector2.Distance(Projectile.position, target) < 64f) Projectile.Kill();
+            Vector2 target = Main.player[Projectile.owner].Center;
+            if (Projectile.Center.IsCloseToPosition(target, 64))
+            {
+                Projectile.Kill();
+            }
             else
             {
-                target = Vector2.Normalize(target - Projectile.position);
+                target = Vector2.Normalize(target - Projectile.Center);
                 Projectile.velocity += target * 3f;
                 Projectile.velocity *= 0.85f;
-                if (Projectile.velocity.Length() > 24f) Projectile.velocity = Vector2.Normalize(Projectile.velocity) * 24f;
+                if(Projectile.velocity.IsLimitReached(24))
+                {
+                    Projectile.velocity = Vector2.Normalize(Projectile.velocity) * 24f;
+                }
             }
         }
     }

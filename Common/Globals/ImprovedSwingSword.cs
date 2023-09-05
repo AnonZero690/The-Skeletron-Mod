@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 using Terraria;
+using Terraria.ID;
 
 namespace TheSkeletronMod.Common.Globals
 {
