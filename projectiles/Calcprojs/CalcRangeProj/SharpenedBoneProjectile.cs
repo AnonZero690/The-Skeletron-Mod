@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Terraria.Audio;
 
 namespace TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj
 {
@@ -48,12 +49,12 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj
             Projectile.ownerHitCheck = true;
 
 
-
+            SoundEngine.PlaySound(SoundID.Dig);
 
 
 
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("SharpenedBoneGore1").Type, 1f);
-
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("SharpenedBoneGore1").Type, 1f);
 
 
         }

@@ -23,6 +23,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMageproj
         }
         public override void AI()
         {
+            Dust.NewDustPerfect(Projectile.Center, DustID.Blood);
             for (int i = 0; i < 200; i++)
             {
                 NPC target = Main.npc[i];

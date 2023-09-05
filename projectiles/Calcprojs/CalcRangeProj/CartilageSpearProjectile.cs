@@ -40,7 +40,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj
             for (int i = 0; i < 130; i++)
             {
                 Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-                var d = Dust.NewDustPerfect(Projectile.Center, DustID.Bone, speed * 8, Scale: 1f);
+                var d = Dust.NewDustPerfect(Projectile.Center, DustID.Bone, speed * 8, Scale: 0.8f);
                 ;
                 d.noGravity = true;
             }
@@ -51,19 +51,19 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj
             Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, -40, ModContent.ProjectileType<CartilageSpearShrapnelProj>(), Projectile.damage / 2, Projectile.knockBack, Projectile.owner);
 
             for (int i = 0; i < 17; i++)
-                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Stone, 0f, 0f, 50, default, 2f);
+                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Stone, 0f, 0f, 50, default, 0.8f);
 
             Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
             SoundEngine.PlaySound(SoundID.Item1, Projectile.position);
 
 
-            int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.Bone, 0f, 0f, 100, default, 1f);
+            int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.Bone, 0f, 0f, 100, default, 0.8f);
 
             Main.dust[dustIndex].noGravity = false;
             Main.dust[dustIndex].position = Projectile.Center + new Vector2(0f, (float)(-(float)Projectile.height / 2)).RotatedBy(Projectile.rotation, default) * 1.1f;
             Main.dust[dustIndex].noLight = false;
 
-            int dustIndex1 = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.Bone, 0f, 0f, 255, default, 3f);
+            int dustIndex1 = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.Bone, 0f, 0f, 255, default, 0.8f);
 
             Main.dust[dustIndex1].noGravity = true;
             Main.dust[dustIndex1].position = Projectile.Center + new Vector2(0f, (float)(-(float)Projectile.height / 2)).RotatedBy(Projectile.rotation, default) * 1.1f;

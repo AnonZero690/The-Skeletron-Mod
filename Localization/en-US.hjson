@@ -1,5 +1,7 @@
 Mods: {
 	TheSkeletronMod: {
+		DamageClasses.Bonecursed.DisplayName: calcium damage
+
 		GameTips: {
 			ExampleTip0: Skeletron Kawaii
 			ExampleTip1: Rattle em Bois!!!
@@ -24,6 +26,7 @@ Mods: {
 					'''
 					"Arghh! It pierced the ship!"
 					Fires a spread of piercing sharpened bones every 5th shot
+					Uses sharpened bone as ammo
 					'''
 			}
 
@@ -259,8 +262,8 @@ Mods: {
 				DisplayName: Necromancer Robe
 				Tooltip:
 					'''
-					10% more calcium damage
-					8% more calcium crit chance
+					10% increased calcium damage
+					8% increased calcium critical strike chance
 					'''
 			}
 
@@ -269,7 +272,7 @@ Mods: {
 				Tooltip:
 					'''
 					20% reduced mana cost
-					14% bone damage
+					14% increased calcium damage
 					'''
 			}
 
@@ -277,8 +280,8 @@ Mods: {
 				DisplayName: Necromancer Leggings
 				Tooltip:
 					'''
-					20 extra max mana
-					8% more calcium crit chance
+					+20 increased mana
+					8% increased calcium critical strike chance
 					'''
 			}
 
@@ -367,6 +370,7 @@ Mods: {
 			SkeletalReaperP.DisplayName: Skeletal Reaper P
 			BonerangProjectile.DisplayName: Bonerang Projectile
 			BonerangReturnProjectile.DisplayName: Bonerang Return Projectile
+			BloodArrow2.DisplayName: Blood Arrow2
 		}
 
 		Buffs: {

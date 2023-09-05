@@ -11,7 +11,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         public override void SetStaticDefaults()
         {
             ItemID.Sets.Yoyo[Item.type] = true;
-            ItemID.Sets.GamepadExtraRange[Item.type] = 15;
+            ItemID.Sets.GamepadExtraRange[Item.type] = 7;
             ItemID.Sets.GamepadSmartQuickReach[Item.type] = true;
         }
 
@@ -24,7 +24,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.useTime = 25;
             Item.shootSpeed = 16f;
             Item.knockBack = 2.5f;
-            Item.damage = 22;
+            Item.damage = 16;
             Item.rare = 6;
 
             Item.DamageType = DamageClass.Melee;
@@ -58,8 +58,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         public override void SetDefaults()
         {
-            ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 400f;
-            ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 15;
+            ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 200f;
+            ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 11;
             Projectile.friendly = true;
             Projectile.penetrate = -1;
             Projectile.aiStyle = 99;
@@ -74,9 +74,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 return;
             }
 
-            if(Main.rand.NextBool(10))
-                Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, Main.rand.NextVector2Circular(7f, 7f), ProjectileID.Bone, (int)(Projectile.damage * .35f), Projectile.knockBack, Projectile.owner);
-            if (Main.rand.NextBool(20))
+           
+            if (Main.rand.NextBool(25))
                 Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, Main.rand.NextVector2Circular(7f, 7f), ProjectileID.BoneGloveProj, (int)(Projectile.damage * .65f), Projectile.knockBack, Projectile.owner);
 
         }
