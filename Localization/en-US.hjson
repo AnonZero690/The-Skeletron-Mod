@@ -354,6 +354,21 @@ Mods: {
 				DisplayName: Bone Sword
 				Tooltip: ""
 			}
+
+			SkullSplitterAxe: {
+				DisplayName: Skull Splitter Axe
+				Tooltip: ""
+			}
+
+			BoneLongbow: {
+				DisplayName: Bone Longbow
+				Tooltip: ""
+			}
+
+			SkeletonBlunderBlaster: {
+				DisplayName: Skeleton Blunder Blaster
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
