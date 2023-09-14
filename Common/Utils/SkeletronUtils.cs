@@ -183,19 +183,12 @@ namespace TheSkeletronMod
         }
         public static void LookForHostileNPC(this Vector2 position, out List<NPC> npc, float distance)
         {
-            List<NPC> localNPC = new List<NPC>();
-            for (int i = 0; i < Main.maxNPCs; i++)
-            {
-                NPC npcLocal = Main.npc[i];
-                if (npcLocal.active
-                    && CompareSquareFloatValue(npcLocal.Center, position, distance)
-                    && npcLocal.CanBeChasedBy()
-                    && !npcLocal.friendly)
-                {
-                    localNPC.Add(npcLocal);
-                }
-            }
-            npc = localNPC;
+            npc = Main.npc.Where(npc =>
+            npc.active
+            && npc.type != NPCID.TargetDummy
+            && npc.CanBeChasedBy()
+            && !npc.friendly
+            && CompareSquareFloatValueWithHitbox(position, npc.position, npc.Hitbox, distance)).ToList();
         }
         public static float InExpo(float t) => (float)Math.Pow(2, 5 * (t - 1));
         public static float OutExpo(float t) => 1 - InExpo(1 - t);
@@ -246,6 +239,59 @@ namespace TheSkeletronMod
                 DistanceY = value1Y - value2Y,
                 maxDistanceDouble = maxDistance * maxDistance;
             return (DistanceX * DistanceX + DistanceY * DistanceY) < maxDistanceDouble;
+        }
+        public static bool CompareSquareFloatValueWithHitbox(Vector2 position, Vector2 positionEntity, Rectangle hitboxEntity, float maxDis)
+        {
+            float maxDistanceDouble = maxDis * maxDis;
+
+            float disX = position.X - positionEntity.X;
+            float disXWidth = disX - hitboxEntity.Width;
+            float disXhalfWidth = disX - hitboxEntity.Width * .5f;
+
+            float disY = position.Y - positionEntity.Y;
+            float disYHeight = disY - hitboxEntity.Height;
+            float disYhalfHeight = disX - hitboxEntity.Height * .5f;
+            //|-|
+            //0-|
+            //|-|
+            if (disX * disX + disYhalfHeight * disYhalfHeight < maxDistanceDouble)
+                return true;
+            //|O|
+            //|-|
+            //|-|
+            if (disXhalfWidth * disXhalfWidth + disY * disY < maxDistanceDouble)
+                return true;
+            //|-|
+            //|-O
+            //|-|
+            if (disXWidth * disXWidth + disYhalfHeight * disYhalfHeight < maxDistanceDouble)
+                return true;
+            //|-|
+            //|-|
+            //|O|
+            if (disXhalfWidth * disXhalfWidth + disYHeight * disYHeight < maxDistanceDouble)
+                return true;
+            //0-|
+            //|-|
+            //|-|
+            if (disX * disX + disY * disY < maxDistanceDouble)
+                return true;
+            //|-0
+            //|-|
+            //|-|
+            if (disXWidth * disXWidth + disY * disY < maxDistanceDouble)
+                return true;
+            //|-|
+            //|-|
+            //0-|
+            if (disX * disX + disYHeight * disYHeight < maxDistanceDouble)
+                return true;
+            //|-|
+            //|-|
+            //|-0
+            if (disXWidth * disXWidth + disYHeight * disYHeight < maxDistanceDouble)
+                return true;
+            return false;
         }
         public static List<int> RemoveDupeInList(this List<int> flag)
         {
