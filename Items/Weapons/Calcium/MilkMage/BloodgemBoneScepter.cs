@@ -7,6 +7,7 @@ using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using System;
 using Terraria.Utilities;
+using TheSkeletronMod.projectiles.Calcprojs.CalcMageproj;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
 {
@@ -14,14 +15,14 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
     {
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeCustomProjectile(12, 12, 50, 2f, 20, 20, ItemUseStyleID.Shoot, ProjectileID.BloodArrow, true);
+            Item.ItemDefaultMeleeCustomProjectile(12, 12, 50, 2f, 20, 20, ItemUseStyleID.Shoot, ModContent.ProjectileType<BloodArrow2>(), true);
             Item.value = 10000;
             Item.crit = 5;
             Item.shootSpeed = 9;
             Item.noUseGraphic = false;
             //Item.scale = 0.1f;
             Item.noMelee = true;
-            Item.UseSound = SoundID.Item5;
+            Item.UseSound = SoundID.Item8;
             Item.rare = ItemRarityID.Green;
             Item.maxStack = 1;
             Item.mana = 7;

@@ -14,7 +14,7 @@ using TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
-    internal class BoneScythe : ModItem, MeleeWeaponWithImprovedSwing
+    internal class BoneScythe : ModItem//, MeleeWeaponWithImprovedSwing
     {
         public float swingDegree => 150;
         public float Offset => 0f;

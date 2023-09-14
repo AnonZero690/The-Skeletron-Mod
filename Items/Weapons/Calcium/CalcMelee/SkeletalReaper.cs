@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
-    public class SkeletalReaper : ModItem, MeleeWeaponWithImprovedSwing
+    public class SkeletalReaper : ModItem//, MeleeWeaponWithImprovedSwing
     {
         public float swingDegree => 360;
         public float Offset => 0f;

@@ -36,6 +36,7 @@
     <None Remove="Items\Weapons\Calcium\CalcOther\BagOfBoneDust.png" />
     <None Remove="Items\Weapons\Calcium\CalcOther\BagOfSkullDust.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\BoneBomb.png" />
+    <None Remove="Items\Weapons\Calcium\CalcRange\BoneLongbow.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\Miniskull.png" />
     <None Remove="Items\Weapons\Calcium\image.png" />
     <None Remove="Items\Weapons\Calcium\MilkMage\TrueBloodgemBoneScepter.png" />

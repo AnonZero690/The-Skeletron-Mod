@@ -22,7 +22,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
             Item.shootSpeed = 7;
             Item.noUseGraphic = false;
             Item.noMelee = true;
-            Item.UseSound = SoundID.Item5;
+            Item.UseSound = SoundID.DD2_BetsySummon;
             Item.rare = ItemRarityID.Green;
             Item.maxStack = 1;
             Item.mana = 10;
