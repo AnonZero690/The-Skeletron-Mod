@@ -369,6 +369,11 @@ Mods: {
 				DisplayName: Skeleton Blunder Blaster
 				Tooltip: ""
 			}
+
+			BoneTome: {
+				Tooltip: ""
+				DisplayName: Bone Tome
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -410,6 +415,7 @@ Mods: {
 			WishboneRangPOne.DisplayName: Wishbone Rang P One
 			WishboneRangPTwo.DisplayName: Wishbone Rang P Two
 			BloodArrow2.DisplayName: Blood Arrow2
+			CircleBone.DisplayName: Circle Bone
 		}
 
 		Buffs: {
