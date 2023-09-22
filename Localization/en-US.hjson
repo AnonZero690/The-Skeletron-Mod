@@ -354,6 +354,26 @@ Mods: {
 				DisplayName: Bone Sword
 				Tooltip: ""
 			}
+
+			SkullSplitterAxe: {
+				DisplayName: Skull Splitter Axe
+				Tooltip: ""
+			}
+
+			BoneLongbow: {
+				DisplayName: Bone Longbow
+				Tooltip: ""
+			}
+
+			SkeletonBlunderBlaster: {
+				DisplayName: Skeleton Blunder Blaster
+				Tooltip: ""
+			}
+
+			BoneTome: {
+				Tooltip: ""
+				DisplayName: Bone Tome
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -397,6 +417,7 @@ Mods: {
 			BloodArrow2.DisplayName: Blood Arrow2
 			Beam.DisplayName: Beam
 			CartilageSkull.DisplayName: Cartilage Skull
+			CircleBone.DisplayName: Circle Bone
 		}
 
 		Buffs: {
