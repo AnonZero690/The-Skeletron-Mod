@@ -17,7 +17,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
             Item.shoot = ModContent.ProjectileType<CartilageSpearProjectile>();
 
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.damage = 14;
+            Item.damage = 16;
 
             Item.width = 24;
             Item.height = 24;
@@ -73,10 +73,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
                 {
                     int p = Projectile.NewProjectile(player.GetSource_FromThis(), player.position, velocity.RotatedBy(i * Math.PI / 32), type, damage, knockback);
                 }
-                for (int i = 1; i < Item.stack; i++)
-                {
-                    int p = Projectile.NewProjectile(player.GetSource_FromThis(), player.position, velocity.RotatedBy(-i * Math.PI / 32), type, damage, knockback);
-                }
+               
 
             }
             return true;

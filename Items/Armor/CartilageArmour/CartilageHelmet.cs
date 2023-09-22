@@ -6,6 +6,7 @@ using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Tiles;
 using TheSkeletronMod.Items.Materials;
 using TheSkeletronMod.Buffs;
+using TheSkeletronMod.projectiles.Calcprojs.CartArmour;
 
 namespace TheSkeletronMod.Items.Armor.CartilageArmour
 {
@@ -42,8 +43,12 @@ namespace TheSkeletronMod.Items.Armor.CartilageArmour
         public override void UpdateArmorSet(Player player)
         {
             player.GetDamage<Bonecursed>() += 0.1f;
-            player.AddBuff(ModContent.BuffType<CartilageBuff>(), 1);
-            player.setBonus = "Summons a skull above your head to launch projectiles at your enemies";
+            player.AddBuff(ModContent.BuffType<DeadlySkull>(), 1);
+            player.setBonus = "10% increased calcium damage\nSummons a skull that conjures cursed beams towards enemies";
+            if (player.ownedProjectileCounts[ModContent.ProjectileType<CartilageSkull>()] < 1)
+            {
+                Projectile.NewProjectile(player.GetSource_FromThis(), new Vector2(player.position.X, player.position.Y - 75), new Vector2(0, 0), ModContent.ProjectileType<CartilageSkull>(), 0, 0, player.whoAmI);
+            }
         }
     }
 }

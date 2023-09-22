@@ -127,7 +127,7 @@ Mods: {
 					'''
 					Shoots out a spear which breaks off into bone shards
 					Adding another shoots out more bone shards!
-					(Max is three)
+					'Do not underestimate its low damage'
 					'''
 			}
 
@@ -395,6 +395,8 @@ Mods: {
 			WishboneRangPOne.DisplayName: Wishbone Rang P One
 			WishboneRangPTwo.DisplayName: Wishbone Rang P Two
 			BloodArrow2.DisplayName: Blood Arrow2
+			Beam.DisplayName: Beam
+			CartilageSkull.DisplayName: Cartilage Skull
 		}
 
 		Buffs: {
@@ -426,6 +428,11 @@ Mods: {
 			AncientBoneBuff: {
 				Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
 				DisplayName: Ancient Bone Buff
+			}
+
+			DeadlySkull: {
+				DisplayName: Deadly Skull
+				Description: Mods.TheSkeletronMod.Buffs.DeadlySkull.Description
 			}
 		}
 
