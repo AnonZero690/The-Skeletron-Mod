@@ -43,7 +43,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Bone, 36);
             recipe.AddTile(ModContent.TileType<BoneAltar>());
-            //recipe.AddCondition(conditions: Condition.InGraveyard);
+            recipe.AddCondition(Condition.InGraveyard);
             recipe.Register();
         }
         public override void PostUpdate()
