@@ -141,66 +141,76 @@ Mods: {
 				Tooltip: '''"Who keeps sharpening them? I just wanna talk!"'''
 			}
 
-			SkullPendant: {
-				DisplayName: Skull Pendant
-				Tooltip: "[c/702963:A useless strange keepsake. It gives you deathly reassurance...]"
+			CranialPendant: {
+				DisplayName: Cranial Pendant
+				Tooltip: 
+					'''
+					[c/702963:+2 Def]
+					[c/702963:A useless strange keepsake. It gives you deathly reassurance...]
+					'''
 			}
 
 			SkullNecklace: {
 				DisplayName: Skull Necklace
 				Tooltip:
 					'''
-					[c/702963:Increases calcium damage by 5% and Damage Reduction by 5%.] 
+					[c/702963:Increases calcium damage and Calcium Crit by 4%.] 
+					[c/702963:+2 Def]
 					[c/702963:Its power grows...]
 					'''
 			}
 
-			SkullLocket: {
-				DisplayName: Skull Locket
+			BoneLocket: {
+				DisplayName: Bone Locket
 				Tooltip:
 					'''
-					[c/702963:Increases calcium damage by 10% and Damage Reduction by 5%.]
-					[c/702963:Summons a miniature skeletron head to protect you.](Don Work)
+					[c/702963:Increases calcium damage by 7% and Calcium Crit by 4%.]
+					[c/702963:+3 Def]
+					[c/702963:Summons a miniature skeletron head to protect you. When it hits an enemy, it gives you a stackable buff lasting 3 seconds which increases Calcium Crit by 3%. Stackable 4 times.](Don Work)
 					[c/702963: The fear seeps into you...]
 					'''
 			}
 
-			SkullToken: {
-				DisplayName: Skull Token
+			UndeadToken: {
+				DisplayName: Undead Token
 				Tooltip:
 					'''
-					[c/702963:Increases calcium damage by 15% and Damage Reduction by 10%.]
-					[c/702963:Summons a bigger skeleton head to protect you.](Don Work)
+					[c/702963:Increases calcium damage by 17%, Calcium crit by 8%.]
+					[c/702963:+3 Def]
+					[c/702963:Releases souls that seek enemies when you recieve damage. Each hit increases Calcium damage by 2% with no limit.](Don Work)
 					[c/702963:It contains the power of wailing souls...]
 					'''
 			}
 
-			SkullMetal: {
-				DisplayName: Metal Skull
+			MechanicalSkull: {
+				DisplayName: Mechanical Skull
 				Tooltip:
 					'''
-					[c/702963:Increases calcium damage by 15% and Damage Reduction by 10%.]
-					[c/702963:Summons a small 4-armed Skeletron Prime to protect you.](Don Work)
+					[c/702963:Increases Calcium damage by 20%, Calcium crit by 12% and Damage Reduction by 5%.]
+					[c/702963:+6 Def]
+					[c/702963:Four Skeletron Prime arms surround you.](Don Work)
 					[c/702963:It grows stronger...]
 					'''
 			}
 
-			BoneTablet: {
-				DisplayName: Bone Tablet
+			AncientCartilageTablet: {
+				DisplayName: Ancient Cartilage Tablet
 				Tooltip:
 					'''
-					[c/DA70D6:Increases calcium damage by 20% and Damage Reduction by 15%.]
-					[c/DA70D6:Summons a skeletal Golem head above you to shoot lasers and a Skeletron Prime.](Don Work)
-					[c/DA70D6:The dreams of a fallen civilization fuel this tablet. The inscriptions could drive you into madness...]
+					[c/DA70D6:Increases Calcium damage by 15%, Calcium crit by 20% and Damage Reduction by 8%.]
+					[c/DA70D6:+5 Def]
+					[c/DA70D6:A miniature skeletron prime demolishes enemies. Bone locket effect applied when enemies are hit. Now has 6 arms!](Don Work)
+					[c/DA70D6:A mechanic's twisted delights were fulfilled...]
 					'''
 			}
 
-			CelestialBone: {
+			TheCelestialBone: {
 				DisplayName: The Celestial Bone
 				Tooltip:
 					'''
-					[c/C3B1E1:Increases calcium damage by 15% and Damage Reduction by 10%.]
-					[c/C3B1E1:Summons a Celestial Skeletron with 4 arms to help you. Does massive damage.](Don Work)
+					[c/C3B1E1:Increases calcium damage by 25%, Calcium crit by 12% and Damage Reduction by 12%.]
+					[c/C3B1E1:+4 Def]
+					[c/C3B1E1:Summons a celestial skeletron to demolish the enemy. Grants both Bone Locket and Undead Token effects and has multiple arms.](Don Work)
 					[c/C3B1E1:The stabilized horrors of the bone grant you unimaginable energy...]
 					'''
 			}
