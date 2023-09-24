@@ -18,7 +18,7 @@ namespace TheSkeletronMod.Modplayer
 
             return (IEnumerable<Item>)(object)new Item[1]
             {
-                new Item(ModContent.ItemType<SkullPendant>(), 1, 0),
+                new Item(ModContent.ItemType<CranialPendant>(), 1, 0),
             };
         }
 

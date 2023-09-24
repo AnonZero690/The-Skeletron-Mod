@@ -25,7 +25,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMageproj
         }
         public override void SetDefaults()
         {
-            Projectile.width = 80; Projectile.height = 92;
+            Projectile.width = 80; Projectile.height = 80;
             Projectile.friendly = true;
             Projectile.timeLeft = TimeLeftForReal;
             Projectile.tileCollide = false;
@@ -68,7 +68,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMageproj
                 acceleration += .1f;
             }
             float rotation = MathHelper.ToRadians(direction * moveAmount);
-            Projectile.Center = player.Center;// + Projectile.velocity.RotatedBy(rotation) * 70f;
+            Projectile.Center = player.Center - new Vector2(25 * direction, 0);// + Projectile.velocity.RotatedBy(rotation) * 70f;
             Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation + Projectile.ai[0];
             if (Projectile.spriteDirection == -1)
             { Projectile.rotation += MathHelper.PiOver2; }

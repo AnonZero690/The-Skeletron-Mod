@@ -143,7 +143,7 @@ Mods: {
 
 			CranialPendant: {
 				DisplayName: Cranial Pendant
-				Tooltip: 
+				Tooltip:
 					'''
 					[c/702963:+2 Def]
 					[c/702963:A useless strange keepsake. It gives you deathly reassurance...]
