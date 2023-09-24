@@ -8,7 +8,6 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Insignia.Helpers;
 
 namespace TheSkeletronMod.Common.Systems
 {
@@ -69,7 +68,7 @@ namespace TheSkeletronMod.Common.Systems
                     {
                         for (float k = 0; k <= pointCount; k++)
                         {
-                            returnPoints.Add(EasingFunctions.Bezier(coordsForColorData.ToArray(), k / pointCount));
+                            returnPoints.Add(SkeletronUtils.Bezier(coordsForColorData.ToArray(), k / pointCount));
                         }
                         return returnPoints;
                     }
@@ -99,7 +98,7 @@ namespace TheSkeletronMod.Common.Systems
 
                                 Vector2 center = new((coordsForColorData[coordsForColorData.Count - 1].X + coordsForColorData[0].X) / 2, (coordsForColorData[coordsForColorData.Count - 1].Y + coordsForColorData[0].Y) / 2); //average of the two points 
                                 float maxRotation = center.AngleTo(coordsForColorData[i + 1]) - center.AngleTo(coordsForColorData[i]);
-                                returnPoints.Add(EasingFunctions.Slerp(coordsForColorData[i], coordsForColorData[i + 1], k / (pointCount / coordsForColorData.Count) * maxRotation, center ,radius));
+                                returnPoints.Add(SkeletronUtils.Slerp(coordsForColorData[i], coordsForColorData[i + 1], k / (pointCount / coordsForColorData.Count) * maxRotation, center ,radius));
                             }
                         }
                         return returnPoints;
