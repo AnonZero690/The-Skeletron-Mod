@@ -38,6 +38,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Bone, 40);
+            recipe.AddIngredient(ItemID.IllegalGunParts, 1);
+            recipe.AddIngredient(ItemID.Minishark, 1);
             recipe.AddIngredient(ItemID.BoneGlove, 1);
             recipe.AddTile(ModContent.TileType<BoneAltar>());
             //recipe.AddCondition(conditions: Condition.InGraveyard);

@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using Terraria;
 using Terraria.Audio;
@@ -33,6 +34,10 @@ namespace TheSkeletronMod.Modplayer
 
         public bool ShowChargeBar = false;
 
+        public Projectile proj;
+
+        public NPC npc;
+
         public override void PostUpdateMiscEffects()
         {
             cc = Utils.Clamp(cc, 0, ccMM);
@@ -46,6 +51,11 @@ namespace TheSkeletronMod.Modplayer
         public override void ResetEffects()
         {
             ccMM = ccM;
+        }
+
+        public override void PostUpdate()
+        {
+            
         }
     }
 }

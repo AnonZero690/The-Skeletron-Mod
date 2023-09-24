@@ -11,6 +11,7 @@
     <None Remove="Assets\Textures\Menu\BGPL.png" />
     <None Remove="Assets\Textures\Menu\Logopl.png" />
     <None Remove="Buffs\CartilageBuff.png" />
+    <None Remove="Buffs\DeadlySkull.png" />
     <None Remove="Gores\GunPellets.png" />
     <None Remove="Items\Accessories\DashItems\SkeletalRelicShield.png" />
     <None Remove="Items\Accessories\SkullPendant.png" />
@@ -52,6 +53,9 @@
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\WishboneRangPTwo.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\BonerangProjectile.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\BonerangReturnProjectile.png" />
+    <None Remove="projectiles\Calcprojs\CartArmour\Beam.png" />
+    <None Remove="projectiles\Calcprojs\CartArmour\CartilageSkull.png" />
+    <None Remove="projectiles\Calcprojs\CartArmour\CartilageSkull2.png" />
     <None Remove="projectiles\GunBarrelFlash.png" />
     <None Remove="projectiles\GunBarrelFlash_Glow.png" />
   </ItemGroup>
