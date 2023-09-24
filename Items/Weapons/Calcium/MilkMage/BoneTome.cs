@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
+//using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
@@ -26,6 +27,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
         bool HasBones = false;
         int waitTime = 120;
         const int waitTimeMax = 120;
+        int rotAmt = 0;
         public override void UpdateInventory(Player player)
         {
             if (player.HeldItem == Item)
@@ -34,10 +36,20 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
                 {
                     if (waitTime == 0)
                     {
-                        Projectile.NewProjectile(Projectile.GetSource_None(), new Microsoft.Xna.Framework.Vector2(player.position.X, player.position.Y), new Microsoft.Xna.Framework.Vector2(0, 0), ModContent.ProjectileType<CircleBone>(), 10, 0);
+                        for (int i = 0; i < 4; i++)
+                        {
+                            int projectileIndex = Projectile.NewProjectile(Projectile.GetSource_None(), new Vector2(player.position.X, player.position.Y), new Vector2(0, 0), ModContent.ProjectileType<CircleBone>(), 10, 0,-1);
+                            Projectile myProjectile = Main.projectile[projectileIndex];
+                            myProjectile.ai[0] = rotAmt;
+                            rotAmt += 90;
+                            //myProjectile.rotation = MathHelper.ToRadians(rotAmt);
+                            //player.Heal(1);
+                        }
                         HasBones = true;
                         waitTime = waitTimeMax;
-                    }else
+                        rotAmt = 0;
+                    }
+                    else
                     {
                         waitTime -= 1;
                     }
