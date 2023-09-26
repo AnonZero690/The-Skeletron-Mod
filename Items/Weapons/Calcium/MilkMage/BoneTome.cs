@@ -1,13 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-//using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
-using TheSkeletronMod.Items.Weapons.Melee;
+using Microsoft.Xna.Framework;
 using TheSkeletronMod.projectiles.Calcprojs.CalcMageproj;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage

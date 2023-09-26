@@ -384,6 +384,11 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Bone Tome
 			}
+
+			BoneCrusher: {
+				DisplayName: Bone Crusher
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -428,6 +433,7 @@ Mods: {
 			Beam.DisplayName: Beam
 			CartilageSkull.DisplayName: Cartilage Skull
 			CircleBone.DisplayName: Circle Bone
+			SkeletalReaperProjectile.DisplayName: Skeletal Reaper Projectile
 		}
 
 		Buffs: {

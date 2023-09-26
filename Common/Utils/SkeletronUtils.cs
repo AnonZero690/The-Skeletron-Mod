@@ -250,7 +250,7 @@ namespace TheSkeletronMod
 
             float disY = position.Y - positionEntity.Y;
             float disYHeight = disY - hitboxEntity.Height;
-            float disYhalfHeight = disX - hitboxEntity.Height * .5f;
+            float disYhalfHeight = disY - hitboxEntity.Height * .5f;
             //|-|
             //0-|
             //|-|
