@@ -391,6 +391,12 @@ Mods: {
 			}
 		}
 
+			BoneCrusher: {
+				DisplayName: Bone Crusher
+				Tooltip: ""
+			}
+		}
+
 		BadToTheMusicBox: {
 			DisplayName: Bad To The Music Box
 			Tooltip: ""
@@ -433,7 +439,6 @@ Mods: {
 			Beam.DisplayName: Beam
 			CartilageSkull.DisplayName: Cartilage Skull
 			CircleBone.DisplayName: Circle Bone
-			FloatingBone.DisplayName: Floating Bone
 		}
 
 		Buffs: {

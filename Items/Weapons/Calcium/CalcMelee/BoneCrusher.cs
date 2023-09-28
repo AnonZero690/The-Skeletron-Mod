@@ -1,33 +1,23 @@
-﻿using TheSkeletronMod.Items.Materials;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.Enums;
-using Terraria.ModLoader;
-using Terraria;
-using TheSkeletronMod.Common.DamageClasses;
-using TheSkeletronMod.Tiles;
+﻿using Terraria;
 using Terraria.ID;
-//using System.Numerics;
+using Terraria.ModLoader;
+using TheSkeletronMod.Tiles;
 using Microsoft.Xna.Framework;
-using Microsoft.CodeAnalysis;
-using static tModPorter.ProgressUpdate;
+using System.Collections.Generic;
+using TheSkeletronMod.Items.Materials;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace TheSkeletronMod.Items.Weapons.Melee
+namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
-    internal class TestItem : ModItem
+    internal class BoneCrusher : ModItem
     {
-        public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BreakerBlade);
         public override void SetDefaults()
         {
             Item.ItemDefaultMeleeShootProjectile(10, 10, 30, 1, 10, 10, ItemUseStyleID.Shoot, ModContent.ProjectileType<TestItemProjectile>(), 1, false);
             Item.noMelee = true;
             Item.noUseGraphic = true;
-            Item.value=12000;
+            Item.value = 12000;
         }
         public override bool CanUseItem(Player player)
         {
@@ -44,7 +34,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
     }
     class TestItemProjectile : ModProjectile
     {
-        public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.BreakerBlade);
+        public override string Texture => SkeletronUtils.GetTheSameTextureAsEntity<BoneCrusher>();
         const int TimeLeftForReal = 9999;
         public override void SetStaticDefaults()
         {
@@ -53,7 +43,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
         }
         public override void SetDefaults()
         {
-            Projectile.width = 80; Projectile.height = 92;
+            Projectile.width = 74; Projectile.height = 82;
             Projectile.friendly = true;
             Projectile.timeLeft = TimeLeftForReal;
             Projectile.tileCollide = false;
@@ -89,7 +79,7 @@ namespace TheSkeletronMod.Items.Weapons.Melee
                     acceleration += .1f;
                 }
                 float rotation = MathHelper.ToRadians(direction * moveAmount);
-                Projectile.Center = player.Center + Projectile.velocity.RotatedBy(rotation) * 70f;
+                Projectile.Center = player.Center + Projectile.velocity.RotatedBy(rotation) * 60f;
                 Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4 + rotation;
                 if (Projectile.spriteDirection == -1)
                     Projectile.rotation += MathHelper.PiOver2;

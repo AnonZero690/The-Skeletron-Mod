@@ -29,11 +29,13 @@
     <None Remove="Items\Weapons\Calcium\bloodgemBoneScepter.png" />
     <None Remove="Items\Weapons\Calcium\BoneYoyoItem.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\BoneBasher.png" />
+    <None Remove="Items\Weapons\Calcium\CalcMelee\BoneCrusher.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\Bonerang.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\BoneSword.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\GuardiansMattock.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SawboneSword.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SkeletalReaper.png" />
+    <None Remove="Items\Weapons\Calcium\CalcMelee\SkeletalReaperProjectile.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\WishboneRang.png" />
     <None Remove="Items\Weapons\Calcium\CalcOther\BagOfBoneDust.png" />
     <None Remove="Items\Weapons\Calcium\CalcOther\BagOfSkullDust.png" />
@@ -66,6 +68,7 @@
   <ItemGroup>
     <Folder Include="Items\Armor\Misc\" />
     <Folder Include="Items\Weapons\Magic\" />
+    <Folder Include="Items\Weapons\Melee\" />
     <Folder Include="Minibosses\" />
   </ItemGroup>
 </Project>
