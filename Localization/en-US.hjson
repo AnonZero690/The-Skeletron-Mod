@@ -1,6 +1,6 @@
 Mods: {
 	TheSkeletronMod: {
-		DamageClasses.Bonecursed.DisplayName: calcium damage
+		DamageClasses.Bonecursed.DisplayName: Calcium Damage
 
 		GameTips: {
 			ExampleTip0: Skeletron Kawaii
@@ -316,8 +316,8 @@ Mods: {
 			}
 
 			BadToTheMusicBox: {
-				Tooltip: ""
 				DisplayName: Bad To The Music Box
+				Tooltip: ""
 			}
 
 			BoneYoyo: {
@@ -389,87 +389,179 @@ Mods: {
 				DisplayName: Summon Wand
 				Tooltip: ""
 			}
-		}
 
 			BoneCrusher: {
 				DisplayName: Bone Crusher
 				Tooltip: ""
 			}
-		}
 
-		BadToTheMusicBox: {
-			DisplayName: Bad To The Music Box
-			Tooltip: ""
+			Projectiles: {
+				CartilageArmorSetMinion.DisplayName: Cartilage Armor Set Minion
+				BoneWandSummon.DisplayName: Bone Wand Summon
+				SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
+				GunBarrelFlash.DisplayName: Gun Barrel Flash
+				CartilageSpearShrapnelProj.DisplayName: Cartilage Spear Shrapnel Proj
+				CartilageSpearProjectile.DisplayName: Cartilage Spear Projectile
+				BigSkull.DisplayName: Big Skull
+				AncientBoneDartProjectile.DisplayName: Ancient Bone Dart Projectile
+				BoneSwingHeld.DisplayName: Bone Swing Held
+				BoneHeld.DisplayName: Bone Held
+				BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
+				BoneDaggerShort.DisplayName: Bone Dagger Short
+				BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
+				AncientBoneDirkProjectile.DisplayName: Ancient Bone Dirk Projectile
+				ClonedSkull.DisplayName: Cloned Skull
+				ClonedBloodArrow.DisplayName: Cloned Blood Arrow
+				BoneToiletThrow.DisplayName: Bone Toilet Throw
+				TestItemProjectile.DisplayName: Test Item Projectile
+				WhittledBoneP.DisplayName: Whittled Bone P
+				SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
+				SawboneSwordP.DisplayName: Sawbone Sword P
+				BoneBasherProjectile.DisplayName: Bone Basher Projectile
+				BoneYoyoProjectile.DisplayName: Bone Yoyo Projectile
+				BoneBombProjectile.DisplayName: Bone Bomb Projectile
+				BoneScytheP.DisplayName: Bone Scythe P
+				SkeletalReaperP.DisplayName: Skeletal Reaper P
+				BonerangProjectile.DisplayName: Bonerang Projectile
+				BonerangReturnProjectile.DisplayName: Bonerang Return Projectile
+				BoneSwordP.DisplayName: Bone Sword P
+				WishboneRangP.DisplayName: Wishbone Rang P
+				WishboneRangPOne.DisplayName: Wishbone Rang P One
+				WishboneRangPTwo.DisplayName: Wishbone Rang P Two
+				BloodArrow2.DisplayName: Blood Arrow2
+				Beam.DisplayName: Beam
+				CartilageSkull.DisplayName: Cartilage Skull
+				CircleBone.DisplayName: Circle Bone
+			}
+
+			Buffs: {
+				OstropotosisBuff: {
+					Description: Mods.TheSkeletronMod.Buffs.OstropotosisBuff.Description
+					DisplayName: Ostropotosis Buff
+				}
+
+				CartilageBuff: {
+					Description: Mods.TheSkeletronMod.Buffs.CartilageBuff.Description
+					DisplayName: Cartilage Buff
+				}
+
+				BoneWandBuff: {
+					Description: Mods.TheSkeletronMod.Buffs.BoneWandBuff.Description
+					DisplayName: Bone Wand Buff
+				}
+
+				BonedDebuff: {
+					Description: Mods.TheSkeletronMod.Buffs.BonedDebuff.Description
+					DisplayName: Boned Debuff
+				}
+
+				BoneDaggerr: {
+					Description: Mods.TheSkeletronMod.Buffs.BoneDaggerr.Description
+					DisplayName: Bone Daggerr
+				}
+
+				AncientBoneBuff: {
+					Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
+					DisplayName: Ancient Bone Buff
+				}
+
+				DeadlySkull: {
+					DisplayName: Deadly Skull
+					Description: Mods.TheSkeletronMod.Buffs.DeadlySkull.Description
+				}
+
+				FloatingBoneMinionBuff: {
+					DisplayName: Floating Bone Minion Buff
+					Description: Mods.TheSkeletronMod.Buffs.FloatingBoneMinionBuff.Description
+				}
+			}
+
+			Tiles: {
+				BadToTheMusicBoxT.MapEntry: Bad To The Music Box T
+				BoneAltar.MapEntry: Bone Altar
+				CalciumOreT.MapEntry: Calcium Ore T
+			}
+
+			NPCs.UndeadHand.DisplayName: Undead Hand
 		}
 
 		Projectiles: {
-			CartilageArmorSetMinion.DisplayName: Cartilage Armor Set Minion
-			BoneWandSummon.DisplayName: Bone Wand Summon
-			SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
-			GunBarrelFlash.DisplayName: Gun Barrel Flash
-			CartilageSpearShrapnelProj.DisplayName: Cartilage Spear Shrapnel Proj
-			CartilageSpearProjectile.DisplayName: Cartilage Spear Projectile
-			BigSkull.DisplayName: Big Skull
-			AncientBoneDartProjectile.DisplayName: Ancient Bone Dart Projectile
-			BoneSwingHeld.DisplayName: Bone Swing Held
-			BoneHeld.DisplayName: Bone Held
-			BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
-			BoneDaggerShort.DisplayName: Bone Dagger Short
 			BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
-			AncientBoneDirkProjectile.DisplayName: Ancient Bone Dirk Projectile
-			ClonedSkull.DisplayName: Cloned Skull
-			ClonedBloodArrow.DisplayName: Cloned Blood Arrow
-			BoneToiletThrow.DisplayName: Bone Toilet Throw
+			SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
+			BigSkull.DisplayName: Big Skull
+			GunBarrelFlash.DisplayName: Gun Barrel Flash
 			TestItemProjectile.DisplayName: Test Item Projectile
-			WhittledBoneP.DisplayName: Whittled Bone P
-			SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
-			SawboneSwordP.DisplayName: Sawbone Sword P
+			BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
+			CartilageArmorSetMinion.DisplayName: Cartilage Armor Set Minion
+			CartilageSpearProjectile.DisplayName: Cartilage Spear Projectile
+			AncientBoneDirkProjectile.DisplayName: Ancient Bone Dirk Projectile
+			AncientBoneDartProjectile.DisplayName: Ancient Bone Dart Projectile
+			CartilageSpearShrapnelProj.DisplayName: Cartilage Spear Shrapnel Proj
+			BoneDaggerShort.DisplayName: Bone Dagger Short
+			BoneHeld.DisplayName: Bone Held
+			BoneSwingHeld.DisplayName: Bone Swing Held
+			bloodProjectile.DisplayName: blood Projectile
+			ClonedBloodArrow.DisplayName: Cloned Blood Arrow
 			BoneBasherProjectile.DisplayName: Bone Basher Projectile
+			SawboneSwordP.DisplayName: Sawbone Sword P
+			SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
+			ClonedSkull.DisplayName: Cloned Skull
+			BoneWandSummon.DisplayName: Bone Wand Summon
+			WhittledBoneP.DisplayName: Whittled Bone P
+			BoneToiletThrow.DisplayName: Bone Toilet Throw
 			BoneYoyoProjectile.DisplayName: Bone Yoyo Projectile
-			BoneBombProjectile.DisplayName: Bone Bomb Projectile
-			BoneScytheP.DisplayName: Bone Scythe P
+			SkeletalReaperProjectile.DisplayName: Skeletal Reaper Projectile
 			SkeletalReaperP.DisplayName: Skeletal Reaper P
+			BoneBombProjectile.DisplayName: Bone Bomb Projectile
+			BloodArrow2.DisplayName: Blood Arrow2
+			CircleBone.DisplayName: Circle Bone
 			BonerangProjectile.DisplayName: Bonerang Projectile
 			BonerangReturnProjectile.DisplayName: Bonerang Return Projectile
+			BoneScytheP.DisplayName: Bone Scythe P
 			BoneSwordP.DisplayName: Bone Sword P
 			WishboneRangP.DisplayName: Wishbone Rang P
 			WishboneRangPOne.DisplayName: Wishbone Rang P One
 			WishboneRangPTwo.DisplayName: Wishbone Rang P Two
-			BloodArrow2.DisplayName: Blood Arrow2
+			FloatingBone.DisplayName: Floating Bone
 			Beam.DisplayName: Beam
 			CartilageSkull.DisplayName: Cartilage Skull
-			CircleBone.DisplayName: Circle Bone
+		}
+
+		Tiles: {
+			CalciumOreT.MapEntry: Calcium Ore
+			BoneAltar.MapEntry: Bone Altar
+			BadToTheMusicBoxT.MapEntry: Bad To The Music Box T
 		}
 
 		Buffs: {
-			OstropotosisBuff: {
-				Description: Mods.TheSkeletronMod.Buffs.OstropotosisBuff.Description
-				DisplayName: Ostropotosis Buff
-			}
-
-			CartilageBuff: {
-				Description: Mods.TheSkeletronMod.Buffs.CartilageBuff.Description
-				DisplayName: Cartilage Buff
-			}
-
-			BoneWandBuff: {
-				Description: Mods.TheSkeletronMod.Buffs.BoneWandBuff.Description
-				DisplayName: Bone Wand Buff
+			AncientBoneBuff: {
+				DisplayName: Ancient Bone Buff
+				Description: "[c/f5e33a:A circle forms around you giving the boned debuff to your enemies!]"
 			}
 
 			BonedDebuff: {
-				Description: Mods.TheSkeletronMod.Buffs.BonedDebuff.Description
 				DisplayName: Boned Debuff
+				Description: Okay but like imagine being boned
+			}
+
+			CartilageBuff: {
+				DisplayName: Cartilage Buff
+				Description: "[c/f5e33a:A cranium is summoned above your head to shoot projectiles on your foes]"
 			}
 
 			BoneDaggerr: {
-				Description: Mods.TheSkeletronMod.Buffs.BoneDaggerr.Description
 				DisplayName: Bone Daggerr
+				Description: BONE DAGGERRRR
 			}
 
-			AncientBoneBuff: {
-				Description: Mods.TheSkeletronMod.Buffs.AncientBoneBuff.Description
-				DisplayName: Ancient Bone Buff
+			BoneWandBuff: {
+				DisplayName: Bone Wand Buff
+				Description: Mods.TheSkeletronMod.Buffs.BoneWandBuff.Description
+			}
+
+			OstropotosisBuff: {
+				DisplayName: Ostropotosis Buff
+				Description: Mods.TheSkeletronMod.Buffs.OstropotosisBuff.Description
 			}
 
 			DeadlySkull: {
@@ -483,78 +575,6 @@ Mods: {
 			}
 		}
 
-		Tiles: {
-			BadToTheMusicBoxT.MapEntry: Bad To The Music Box T
-			BoneAltar.MapEntry: Bone Altar
-			CalciumOreT.MapEntry: Calcium Ore T
-		}
-
 		NPCs.UndeadHand.DisplayName: Undead Hand
-	}
-
-	DamageClasses.Bonecursed.DisplayName: Calcium Damage
-
-	Projectiles: {
-		BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
-		SharpenedBoneProjectile.DisplayName: Sharpened Bone Projectile
-		BigSkull.DisplayName: Big Skull
-		GunBarrelFlash.DisplayName: Gun Barrel Flash
-		TestItemProjectile.DisplayName: Test Item Projectile
-		BoneFragmentsProjectile.DisplayName: Bone Fragments Projectile
-		CartilageArmorSetMinion.DisplayName: Cartilage Armor Set Minion
-		CartilageSpearProjectile.DisplayName: Cartilage Spear Projectile
-		AncientBoneDirkProjectile.DisplayName: Ancient Bone Dirk Projectile
-		AncientBoneDartProjectile.DisplayName: Ancient Bone Dart Projectile
-		CartilageSpearShrapnelProj.DisplayName: Cartilage Spear Shrapnel Proj
-		BoneDaggerShort.DisplayName: Bone Dagger Short
-		BoneHeld.DisplayName: Bone Held
-		BoneSwingHeld.DisplayName: Bone Swing Held
-		bloodProjectile.DisplayName: blood Projectile
-		ClonedBloodArrow.DisplayName: Cloned Blood Arrow
-		BoneBasherProjectile.DisplayName: Bone Basher Projectile
-		SawboneSwordP.DisplayName: Sawbone Sword P
-		SawboneSwordSpawnSpikeP.DisplayName: Sawbone Sword Spawn Spike P
-		ClonedSkull.DisplayName: Cloned Skull
-		BoneWandSummon.DisplayName: Bone Wand Summon
-		WhittledBoneP.DisplayName: Whittled Bone P
-		BoneToiletThrow.DisplayName: Bone Toilet Throw
-	}
-
-	Tiles: {
-		CalciumOreT.MapEntry: Calcium Ore
-		BoneAltar.MapEntry: Bone Altar
-		BadToTheMusicBoxT.MapEntry: Bad To The Music Box T
-	}
-
-	Buffs: {
-		AncientBoneBuff: {
-			DisplayName: Ancient Bone Buff
-			Description: "[c/f5e33a:A circle forms around you giving the boned debuff to your enemies!]"
-		}
-
-		BonedDebuff: {
-			DisplayName: Boned Debuff
-			Description: Okay but like imagine being boned
-		}
-
-		CartilageBuff: {
-			DisplayName: Cartilage Buff
-			Description: "[c/f5e33a:A cranium is summoned above your head to shoot projectiles on your foes]"
-		}
-
-		BoneDaggerr: {
-			DisplayName: Bone Daggerr
-			Description: BONE DAGGERRRR
-		}
-
-		BoneWandBuff: {
-			DisplayName: Bone Wand Buff
-			Description: Mods.TheSkeletronMod.Buffs.BoneWandBuff.Description
-		}
-
-		OstropotosisBuff: {
-			DisplayName: Ostropotosis Buff
-			Description: Mods.TheSkeletronMod.Buffs.OstropotosisBuff.Description
-		}
 	}
 }
