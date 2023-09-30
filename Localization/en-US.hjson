@@ -145,7 +145,6 @@ Mods: {
 				DisplayName: Cranial Pendant
 				Tooltip:
 					'''
-					[c/702963:+2 Def]
 					[c/702963:A useless strange keepsake. It gives you deathly reassurance...]
 					'''
 			}
@@ -155,7 +154,6 @@ Mods: {
 				Tooltip:
 					'''
 					[c/702963:Increases calcium damage and Calcium Crit by 4%.] 
-					[c/702963:+2 Def]
 					[c/702963:Its power grows...]
 					'''
 			}
@@ -165,7 +163,6 @@ Mods: {
 				Tooltip:
 					'''
 					[c/702963:Increases calcium damage by 7% and Calcium Crit by 4%.]
-					[c/702963:+3 Def]
 					[c/702963:Summons a miniature skeletron head to protect you. When it hits an enemy, it gives you a stackable buff lasting 3 seconds which increases Calcium Crit by 3%. Stackable 4 times.](Don Work)
 					[c/702963: The fear seeps into you...]
 					'''
@@ -176,7 +173,6 @@ Mods: {
 				Tooltip:
 					'''
 					[c/702963:Increases calcium damage by 17%, Calcium crit by 8%.]
-					[c/702963:+3 Def]
 					[c/702963:Releases souls that seek enemies when you recieve damage. Each hit increases Calcium damage by 2% with no limit.](Don Work)
 					[c/702963:It contains the power of wailing souls...]
 					'''
@@ -187,7 +183,6 @@ Mods: {
 				Tooltip:
 					'''
 					[c/702963:Increases Calcium damage by 20%, Calcium crit by 12% and Damage Reduction by 5%.]
-					[c/702963:+6 Def]
 					[c/702963:Four Skeletron Prime arms surround you.](Don Work)
 					[c/702963:It grows stronger...]
 					'''
@@ -198,7 +193,6 @@ Mods: {
 				Tooltip:
 					'''
 					[c/DA70D6:Increases Calcium damage by 15%, Calcium crit by 20% and Damage Reduction by 8%.]
-					[c/DA70D6:+5 Def]
 					[c/DA70D6:A miniature skeletron prime demolishes enemies. Bone locket effect applied when enemies are hit. Now has 6 arms!](Don Work)
 					[c/DA70D6:A mechanic's twisted delights were fulfilled...]
 					'''
@@ -209,7 +203,6 @@ Mods: {
 				Tooltip:
 					'''
 					[c/C3B1E1:Increases calcium damage by 25%, Calcium crit by 12% and Damage Reduction by 12%.]
-					[c/C3B1E1:+4 Def]
 					[c/C3B1E1:Summons a celestial skeletron to demolish the enemy. Grants both Bone Locket and Undead Token effects and has multiple arms.](Don Work)
 					[c/C3B1E1:The stabilized horrors of the bone grant you unimaginable energy...]
 					'''
@@ -389,7 +382,6 @@ Mods: {
 				DisplayName: Summon Wand
 				Tooltip: ""
 			}
-		}
 
 			BoneCrusher: {
 				DisplayName: Bone Crusher
@@ -439,6 +431,8 @@ Mods: {
 			Beam.DisplayName: Beam
 			CartilageSkull.DisplayName: Cartilage Skull
 			CircleBone.DisplayName: Circle Bone
+			SkeletalReaperProjectile.DisplayName: Skeletal Reaper Projectile
+			FloatingBone.DisplayName: Floating Bone
 		}
 
 		Buffs: {
