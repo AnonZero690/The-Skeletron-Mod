@@ -12,7 +12,7 @@ namespace TheSkeletronMod
     {
         private const string menuAssetPath = "TheSkeletronMod/Assets/Textures/Menu"; // Creates a constant variable representing the texture path, so we don't have to write it out multiple times
 
-        public override Asset<Texture2D> Logo => ModContent.Request<Texture2D>($"{menuAssetPath}/Logopl", (AssetRequestMode)2);
+        public override Asset<Texture2D> Logo => ModContent.Request<Texture2D>($"{menuAssetPath}/bod_logo", (AssetRequestMode)2);
 
         public override Asset<Texture2D> SunTexture => ModContent.Request<Texture2D>($"{menuAssetPath}/SkullSun");
 
@@ -34,7 +34,7 @@ namespace TheSkeletronMod
         public override bool PreDrawLogo(SpriteBatch spriteBatch, ref Vector2 logoDrawCenter, ref float logoRotation, ref float logoScale, ref Color drawColor)
         {
 
-            logoScale = 0.6f;
+            logoScale = 1.5f;
             Texture2D MenuBG = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Assets/Textures/Menu/BGPL", (AssetRequestMode)2);
             Vector2 zero = Vector2.Zero;
             float width = Main.screenWidth / (float)MenuBG.Width;
