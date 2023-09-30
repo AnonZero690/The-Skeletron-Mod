@@ -71,6 +71,5 @@
     <Folder Include="Items\Weapons\Magic\" />
     <Folder Include="Items\Weapons\Melee\" />
     <Folder Include="Minibosses\" />
-    <Folder Include="projectiles\Calcprojs\CalcSummProj\" />
   </ItemGroup>
 </Project>
