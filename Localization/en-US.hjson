@@ -434,6 +434,7 @@ Mods: {
 			CartilageSkull.DisplayName: Cartilage Skull
 			CircleBone.DisplayName: Circle Bone
 			SkeletalReaperProjectile.DisplayName: Skeletal Reaper Projectile
+			SkullsplitterAxeProjectile.DisplayName: Skullsplitter Axe Projectile
 		}
 
 		Buffs: {

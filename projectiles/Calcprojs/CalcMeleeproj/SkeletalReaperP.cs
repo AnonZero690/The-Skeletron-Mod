@@ -17,7 +17,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             Projectile.timeLeft = 600;
             Projectile.friendly = true;
             Projectile.hostile = false;
-            Projectile.penetrate = 2;
+            Projectile.penetrate = 8;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
             Projectile.light = 10f;

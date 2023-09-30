@@ -48,6 +48,7 @@
     <None Remove="Items\Weapons\Calcium\TrueBloodgemBoneScepter.png" />
     <None Remove="projectiles\bloodProjectile.png" />
     <None Remove="projectiles\Calcprojs\CalcMageproj\ClonedSkull.png" />
+    <None Remove="projectiles\Calcprojs\CalcMageproj\SkullsplitterAxeProjectile.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\BoneScytheP.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\BoneSwordP.png" />
     <None Remove="projectiles\Calcprojs\CalcMeleeproj\SkeletalReaperP.png" />

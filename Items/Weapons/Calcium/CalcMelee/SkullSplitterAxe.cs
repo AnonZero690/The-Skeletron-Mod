@@ -1,11 +1,8 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
-using TheSkeletronMod.Items.Placeables.Block;
-using TheSkeletronMod.Buffs;
+using TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
@@ -13,28 +10,14 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     {
         public override void SetDefaults()
         {
-            Item.damage = 22;
+            Item.ItemDefaultMeleeCustomProjectile(52, 54, 22, 3f, 20, 20, ItemUseStyleID.Shoot, ModContent.ProjectileType<SkullsplitterAxeProjectile>(), true);
+
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
-            Item.useStyle = 1;
-            Item.useAnimation = 20;
-            Item.useTime = 12;
-            Item.UseSound = SoundID.Critter;
             Item.axe = 50;
         }
-        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+        public override bool CanUseItem(Player player)
         {
-            switch (Main.rand.Next(0,6))
-            {
-                case 0:
-                    Item.NewItem(target.GetSource_FromThis(), target.getRect(), ItemID.Wood, Main.rand.Next(5,10));
-                    break;
-                case 1:
-                    Item.NewItem(target.GetSource_FromThis(), target.getRect(), ModContent.ItemType<CalciumOre>(), Main.rand.Next(5, 10));
-                    break;
-                case 2:
-                    target.AddBuff(ModContent.BuffType<BonedDebuff>(), 240);
-                    break;
-            }
+            return player.ownedProjectileCounts[ModContent.ProjectileType<SkullsplitterAxeProjectile>()] < 1;
         }
     }
 }
