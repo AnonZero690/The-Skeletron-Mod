@@ -36,7 +36,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcSummProj.BloominBones
 
         public override bool MinionContactDamage() => false;
 
-        public override void AI()
+        /*public override void AI()
         {
             float detectionRadius = 750f;
             Vector2 targetCenter = Projectile.position;
@@ -92,5 +92,6 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcSummProj.BloominBones
                 }
             }
         }
+        */
     }
 }
