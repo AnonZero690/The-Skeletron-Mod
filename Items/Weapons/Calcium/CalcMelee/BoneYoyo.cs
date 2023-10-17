@@ -55,11 +55,11 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         public override void SetStaticDefaults()
         {
             ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = 25f;
+            ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 200f;
+            ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 11;
         }
         public override void SetDefaults()
         {
-            ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 200f;
-            ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 11;
             Projectile.friendly = true;
             Projectile.penetrate = -1;
             Projectile.aiStyle = 99;
@@ -70,11 +70,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         public override void PostAI()
         {
             if (Projectile.ai[2] != 1)
-            {
                 return;
-            }
-
-           
             if (Main.rand.NextBool(25))
                 Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, Main.rand.NextVector2Circular(7f, 7f), ProjectileID.BoneGloveProj, (int)(Projectile.damage * .65f), Projectile.knockBack, Projectile.owner);
 

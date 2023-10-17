@@ -7,7 +7,7 @@ namespace TheSkeletronMod.Common.DamageClasses
     {
         public override StatInheritanceData GetModifierInheritance(DamageClass damageClass)
         {
-            if (damageClass == DamageClass.Generic)
+            if (damageClass == Generic)
                 return StatInheritanceData.Full;
 
             return new StatInheritanceData(
