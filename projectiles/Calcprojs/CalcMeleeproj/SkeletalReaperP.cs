@@ -28,19 +28,12 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 
         public override void SetStaticDefaults()
         {
-            
             Main.projFrames[Projectile.type] = 7;
             ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true;
         }
         public bool damageReduced = false;
         public override void AI()
         {
-            if (damageReduced == false)
-            {
-                Projectile.damage -= 55;
-                damageReduced = true;
-            }
-
             for (int i = 0; i < 5; i++)
             {
                 int dust = Dust.NewDust(Projectile.position, 150, 150, DustID.Shadowflame);

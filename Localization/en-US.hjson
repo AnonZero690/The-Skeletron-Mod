@@ -389,6 +389,11 @@ Mods: {
 				DisplayName: Bone Crusher
 				Tooltip: ""
 			}
+
+			SummonWand: {
+				DisplayName: Summon Wand
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -435,6 +440,7 @@ Mods: {
 			CircleBone.DisplayName: Circle Bone
 			SkeletalReaperProjectile.DisplayName: Skeletal Reaper Projectile
 			SkullsplitterAxeProjectile.DisplayName: Skullsplitter Axe Projectile
+			FloatingBone.DisplayName: Floating Bone
 		}
 
 		Buffs: {
@@ -471,6 +477,11 @@ Mods: {
 			DeadlySkull: {
 				DisplayName: Deadly Skull
 				Description: Mods.TheSkeletronMod.Buffs.DeadlySkull.Description
+			}
+
+			FloatingBoneMinionBuff: {
+				DisplayName: Floating Bone Minion Buff
+				Description: Mods.TheSkeletronMod.Buffs.FloatingBoneMinionBuff.Description
 			}
 		}
 

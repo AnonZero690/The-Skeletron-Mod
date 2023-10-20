@@ -25,7 +25,7 @@ namespace TheSkeletronMod.Common.Globals
             float angle = MathHelper.ToRadians(baseAngle + swingdegree) * player.direction;
             float start = baseAngle + angle * direct;
             float end = baseAngle - angle * direct;
-            float currentAngle = MathHelper.SmoothStep(start, end, percentDone);
+            float currentAngle = MathHelper.Lerp(start, end, SkeletronUtils.InExpo(percentDone));
             player.itemRotation = currentAngle;
             player.itemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 * 3f;
             player.compositeFrontArm = new Player.CompositeArmData(true, Player.CompositeArmStretchAmount.Full, currentAngle - MathHelper.PiOver2);
