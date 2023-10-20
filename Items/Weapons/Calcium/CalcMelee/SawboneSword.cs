@@ -21,7 +21,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootProjectile(54, 66, 50, 7f, 25, 25, -1, ModContent.ProjectileType<SawboneSwordP>(), 1, true);
+            Item.ItemDefaultMeleeShootProjectile(54, 64, 50, 7f, 25, 25, -1, ModContent.ProjectileType<SawboneSwordP>(), 1, true);
             Item.DamageType = DamageClass.Melee;
             Item.rare = ItemRarityID.Orange;
             Item.value = Item.sellPrice(0, 10, 10);
