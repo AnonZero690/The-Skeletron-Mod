@@ -45,7 +45,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         public override bool PreAI()
         {
-
             Player player = Main.player[Projectile.owner];
             int projlong = player.itemAnimationMax;
 
