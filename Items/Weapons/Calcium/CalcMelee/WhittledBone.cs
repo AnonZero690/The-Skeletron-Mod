@@ -8,10 +8,8 @@ using TheSkeletronMod.Common.DamageClasses;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
-    internal class WhittledBone : ModItem, MeleeWeaponWithImprovedSwing
+    internal class WhittledBone : ModItem
     {
-        public float swingDegree => 150;
-        public float Offset => 12;
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -26,6 +24,16 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.width = 46;
             Item.height = 78;
             Item.autoReuse = false;
+            if (Item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
+            {
+                meleeItem.ArrayOfAttack =
+                    new CustomAttack[]
+                    {
+                        new CustomAttack(CustomUseStyle.PokeAttack, true),
+                        new CustomAttack(CustomUseStyle.PokeAttack, false)
+                    };
+                meleeItem.ItemSwingDegree = 150;
+            }
         }
         public override void AddRecipes()
         {

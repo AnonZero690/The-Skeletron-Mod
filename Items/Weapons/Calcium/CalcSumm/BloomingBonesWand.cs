@@ -3,8 +3,6 @@ using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using static Humanizer.In;
-using Terraria.WorldBuilding;
 using TheSkeletronMod.Buffs.SummonBuffs;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.projectiles.Calcprojs.CalcSummProj.BloominBones;
@@ -13,7 +11,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcSumm
 {
     public class BloomingBonesWand : ModItem
     {
-    public override void SetDefaults()
+        public override string Texture => SkeletronUtils.GetVanillaTexture<Item>(ItemID.Safe);
+        public override void SetDefaults()
         {
             Item.Size = new Vector2(58, 62);
             Item.DamageType = ModContent.GetInstance<Bonecursed>();

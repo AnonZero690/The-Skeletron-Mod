@@ -9,12 +9,8 @@ using TheSkeletronMod.Common.Globals;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
-    internal class SawboneSword : ModItem, MeleeWeaponWithImprovedSwing
+    internal class SawboneSword : ModItem
     {
-        public float swingDegree => 120;
-
-        public float Offset => 12;
-
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -25,6 +21,16 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.DamageType = DamageClass.Melee;
             Item.rare = ItemRarityID.Orange;
             Item.value = Item.sellPrice(0, 10, 10);
+            if (Item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
+            {
+                meleeItem.ArrayOfAttack =
+                    new CustomAttack[]
+                    {
+                        new CustomAttack(CustomUseStyle.PokeAttack, true),
+                        new CustomAttack(CustomUseStyle.PokeAttack, false)
+                    };
+                meleeItem.ItemSwingDegree = 150;
+            }
         }
         public override bool AltFunctionUse(Player player)
         {

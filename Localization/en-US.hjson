@@ -394,6 +394,11 @@ Mods: {
 				DisplayName: Summon Wand
 				Tooltip: ""
 			}
+
+			BloomingBonesWand: {
+				DisplayName: Blooming Bones Wand
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -441,6 +446,8 @@ Mods: {
 			SkeletalReaperProjectile.DisplayName: Skeletal Reaper Projectile
 			SkullsplitterAxeProjectile.DisplayName: Skullsplitter Axe Projectile
 			FloatingBone.DisplayName: Floating Bone
+			BloomingBonesBigProj.DisplayName: Blooming Bones Big Proj
+			BloomingBonesSProj.DisplayName: Blooming Bones S Proj
 		}
 
 		Buffs: {
@@ -482,6 +489,11 @@ Mods: {
 			FloatingBoneMinionBuff: {
 				DisplayName: Floating Bone Minion Buff
 				Description: Mods.TheSkeletronMod.Buffs.FloatingBoneMinionBuff.Description
+			}
+
+			FullCursedBloom: {
+				DisplayName: Full Cursed Bloom
+				Description: Mods.TheSkeletronMod.Buffs.FullCursedBloom.Description
 			}
 		}
 
