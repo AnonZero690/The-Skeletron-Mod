@@ -17,7 +17,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootProjectile(54, 66, 50, 7f, 25, 25, -1, ModContent.ProjectileType<SawboneSwordP>(), 1, true);
+            Item.ItemDefaultMeleeShootProjectile(54, 64, 50, 7f, 25, 25, -1, ModContent.ProjectileType<SawboneSwordP>(), 1, true);
             Item.DamageType = DamageClass.Melee;
             Item.rare = ItemRarityID.Orange;
             Item.value = Item.sellPrice(0, 10, 10);
@@ -57,16 +57,22 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         public override void MeleeEffects(Player player, Rectangle hitbox)
         {
             Vector2 hitboxCenter = new Vector2(hitbox.X, hitbox.Y);
-            int dust = Dust.NewDust(hitboxCenter, hitbox.Width, hitbox.Height, DustID.Blood, 0, 0, 0, Color.Red, Main.rand.NextFloat(1.25f, 1.75f));
+            int dust = Dust.NewDust(hitboxCenter, hitbox.Width, hitbox.Height, DustID.Blood, 0, 0, 0, Color.Purple, Main.rand.NextFloat(1.25f, 1.75f));
             Main.dust[dust].noGravity = true;
         }
         public override void AddRecipes()
         {
-            CreateRecipe()
-                .AddIngredient(ItemID.CrimtaneBar, 12)
-                .AddIngredient(ItemID.Bone, 20)
-                .AddTile(TileID.Anvils)
-                .Register();
+            Recipe recipe = CreateRecipe();
+                recipe.AddIngredient(ItemID.CrimtaneBar, 12);
+                recipe.AddIngredient(ItemID.Bone, 20);
+                recipe.AddTile(TileID.Anvils);
+                recipe.Register();
+
+            Recipe recipe2 = CreateRecipe();
+                recipe2.AddIngredient(ItemID.DemoniteBar, 12);
+                recipe2.AddIngredient(ItemID.Bone, 20);
+                recipe2.AddTile(TileID.Anvils);
+                recipe2.Register();
         }
     }
     public class SawboneSwordSpawnSpikeP : ModProjectile
@@ -140,7 +146,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 
             for (int i = 0; i < 40; i++)
             {
-                int dust = Dust.NewDust(Projectile.Center + new Vector2(-2, 20), 0, 0, DustID.Blood, 0, 0, 0, default, Main.rand.NextFloat(1.3f, 2.35f));
+                int dust = Dust.NewDust(Projectile.Center + new Vector2(-2, 20), 0, 0, DustID.Blood, 0, 0, 0, Color.Purple, Main.rand.NextFloat(1.3f, 2.35f));
                 Main.dust[dust].noGravity = true;
                 Vector2 dustVelocity = Main.rand.NextVector2Unit(-MathHelper.PiOver2 - MathHelper.PiOver4, MathHelper.PiOver4 * (Main.rand.NextFloat(.5f, .7f) + i * .03f)) * Main.rand.Next(3, 15);
                 dustVelocity.X *= Projectile.ai[1];
@@ -208,7 +214,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             }
             else
             {
-                dust = Dust.NewDust(Projectile.Center + Main.rand.NextVector2Circular(20, 10), 0, 0, DustID.Blood, 0, 0, 0, default, Main.rand.NextFloat(1.25f, 2.1f));
+                dust = Dust.NewDust(Projectile.Center + Main.rand.NextVector2Circular(20, 10), 0, 0, DustID.Blood, 0, 0, 0, Color.Purple, Main.rand.NextFloat(1.25f, 2.1f));
                 Main.dust[dust].noGravity = true;
                 Main.dust[dust].fadeIn = 1.5f;
                 Projectile.velocity -= Projectile.velocity * .097f;
@@ -288,14 +294,14 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 for (int i = 0; i < 15; i++)
                 {
                     pos = Main.rand.NextVector2Circular(20, 20);
-                    Dust.NewDust(Projectile.Center + pos, 0, 0, DustID.Blood, 0, .5f, 0, Color.Red, Main.rand.NextFloat(1.25f, 1.75f));
+                    Dust.NewDust(Projectile.Center + pos, 0, 0, DustID.Blood, 0, .5f, 0, Color.Purple, Main.rand.NextFloat(1.25f, 1.75f));
                     Dust.NewDust(Projectile.Center + pos, 0, 0, DustID.Bone, 0, .5f, 0, default, Main.rand.NextFloat(1f, 1.25f));
                 }
                 return;
             }
             for (int i = 0; i < 15; i++)
             {
-                Dust.NewDust(Projectile.Center - pos, 30, 60, DustID.Blood, 0, .5f, 0, Color.Red, Main.rand.NextFloat(1.25f, 1.75f));
+                Dust.NewDust(Projectile.Center - pos, 30, 60, DustID.Blood, 0, .5f, 0, Color.Purple, Main.rand.NextFloat(1.25f, 1.75f));
                 Dust.NewDust(Projectile.Center - pos, 30, 60, DustID.Bone, 0, .5f, 0, default, Main.rand.NextFloat(1f, 1.25f));
             }
         }

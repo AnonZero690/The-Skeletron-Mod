@@ -241,7 +241,12 @@ Mods: {
 
 			SawboneSword: {
 				DisplayName: Sawbone Sword
-				Tooltip: ""
+				Tooltip:
+					'''
+					'Its Sharp!'
+					Left-Click swings the sword, summoning more behind to shoot at enemies!
+					Right-Click swings the sword, but makes swords arise from the ground!
+					'''
 			}
 
 			Miniskull: {
@@ -265,7 +270,7 @@ Mods: {
 
 			WhittledBone: {
 				DisplayName: Whittled Bone
-				Tooltip: ""
+				Tooltip: "'Used By Indigenous Skeletons!'"
 			}
 
 			NecromancerRobe: {
@@ -301,7 +306,7 @@ Mods: {
 			}
 
 			BoneToiletItem: {
-				DisplayName: Bone Toilet Item
+				DisplayName: Bone Toilet
 				Tooltip: ""
 			}
 
@@ -322,12 +327,17 @@ Mods: {
 
 			BoneYoyo: {
 				DisplayName: Bone Yoyo
-				Tooltip: ""
+				Tooltip: Spews out an assortment of bones as it spins!
 			}
 
 			BoneBomb: {
 				DisplayName: Bone Bomb
-				Tooltip: ""
+				Tooltip:
+					'''
+					'Its all bones?' 
+					'Always Has Been'
+					Explodes into various bones!
+					'''
 			}
 
 			BoneScythe: {
@@ -342,12 +352,16 @@ Mods: {
 
 			WishboneRang: {
 				DisplayName: Wishbone Rang
-				Tooltip: ""
+				Tooltip:
+					'''
+					'Break it! Only then shall your wish come true'
+					When thrown, splits into two seperate boomerangs!
+					'''
 			}
 
 			Bonerang: {
 				DisplayName: Bonerang
-				Tooltip: ""
+				Tooltip: "'Tibia honest I dont know who decided to make a boomerang out of a bone.'"
 			}
 
 			BagOfBoneDust: {
@@ -381,8 +395,13 @@ Mods: {
 			}
 
 			BoneTome: {
-				Tooltip: ""
 				DisplayName: Bone Tome
+				Tooltip:
+					'''
+					When held, a circle of bones appears and spins around you.
+					Pressing left click fires more bones in the direction of your cursor with a spread!
+					Pressing right click makes all the bonesfire outwards!
+					'''
 			}
 
 			BoneCrusher: {
@@ -392,6 +411,11 @@ Mods: {
 
 			SummonWand: {
 				DisplayName: Summon Wand
+				Tooltip: ""
+			}
+
+			RattleboneRapier: {
+				DisplayName: Rattlebone Rapier
 				Tooltip: ""
 			}
 
@@ -446,6 +470,7 @@ Mods: {
 			SkeletalReaperProjectile.DisplayName: Skeletal Reaper Projectile
 			SkullsplitterAxeProjectile.DisplayName: Skullsplitter Axe Projectile
 			FloatingBone.DisplayName: Floating Bone
+			RattleboneRapierProj.DisplayName: Rattlebone Rapier Proj
 			BloomingBonesBigProj.DisplayName: Blooming Bones Big Proj
 			BloomingBonesSProj.DisplayName: Blooming Bones S Proj
 		}

@@ -24,8 +24,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.useStyle = ItemUseStyleID.Rapier;
             Item.useAnimation = 8;
             Item.useTime = 8;
-            Item.width = 32;
-            Item.height = 32;
+            Item.width = 48;
+            Item.height = 48;
             Item.UseSound = SoundID.Item1;
             Item.DamageType = DamageClass.MeleeNoSpeed;
             Item.autoReuse = false;

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Terraria;
 using Terraria.ModLoader;
+using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Tools
 {
-    public class GuardiansPickaxe : ModItem
+    public class GuardiansMattock : ModItem
     {
         public override void SetDefaults()
         {

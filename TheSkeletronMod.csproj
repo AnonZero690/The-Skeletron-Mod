@@ -14,7 +14,6 @@
     <None Remove="Buffs\DeadlySkull.png" />
     <None Remove="Gores\GunPellets.png" />
     <None Remove="Items\Accessories\DashItems\SkeletalRelicShield.png" />
-    <None Remove="Items\Accessories\PendantTree\CranialPendant_Neck.png" />
     <None Remove="Items\Accessories\SkullPendant.png" />
     <None Remove="Items\Accessories\SkullPendant_Neck.png" />
     <None Remove="Items\Ammo\SharpenedBone.png" />
@@ -33,6 +32,7 @@
     <None Remove="Items\Weapons\Calcium\CalcMelee\Bonerang.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\BoneSword.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\GuardiansMattock.png" />
+    <None Remove="Items\Weapons\Calcium\CalcMelee\RattleboneRapierProj.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SawboneSword.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SkeletalReaper.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SkeletalReaperProjectile.png" />

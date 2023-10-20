@@ -50,7 +50,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Projectile.penetrate = -1;
         }
         Player player;
-        float acceleration = 1;
+        float acceleration = 2;
         int MaxProgress = 360;
         int progress = TimeLeftForReal;
         int direction = 0;
