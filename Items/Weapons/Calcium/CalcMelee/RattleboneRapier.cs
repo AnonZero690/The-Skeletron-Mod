@@ -41,19 +41,11 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         protected virtual float HoldoutRangeMax => 96f;
         public override void SetDefaults()
         {
-            Projectile.width = 84;
-            Projectile.height = 76;
-            Projectile.aiStyle = -1;
-            Projectile.friendly = true;
-            Projectile.penetrate = -1;
-            Projectile.tileCollide = false;
-            Projectile.scale = 1f;
-            Projectile.hide = true;
-            Projectile.ownerHitCheck = true;
-            Projectile.DamageType = DamageClass.Melee;
+            Projectile.CloneDefaults(ProjectileID.Spear);
         }
         public override bool PreAI()
         {
+
             Player player = Main.player[Projectile.owner];
             int projlong = player.itemAnimationMax;
 
