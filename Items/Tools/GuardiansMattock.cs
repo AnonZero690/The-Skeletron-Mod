@@ -4,7 +4,7 @@ using TheSkeletronMod.Tiles;
 
 namespace TheSkeletronMod.Items.Tools
 {
-    public class GuardiansPickaxe : ModItem
+    public class GuardiansMattock : ModItem
     {
         public override void SetDefaults()
         {

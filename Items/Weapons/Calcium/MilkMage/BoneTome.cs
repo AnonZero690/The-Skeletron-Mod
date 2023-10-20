@@ -2,6 +2,8 @@
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using TheSkeletronMod.projectiles.Calcprojs.CalcMageproj;
+using Terraria.ID;
+using TheSkeletronMod.Items.Materials;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
 {
@@ -10,12 +12,21 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
         public override void SetDefaults()
         {
             Item.damage = 20;
-            Item.width = 20;
-            Item.height = 20;
+            Item.width = 33;
+            Item.height = 35;
             Item.noMelee = true;
             Item.useAnimation = 120;
             Item.useTime = 120;
 
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Book, 1);
+            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 20);
+            recipe.AddTile(TileID.Bookcases);
+            recipe.Register();
         }
         bool HasBones = false;
         int waitTime = 120;
@@ -54,5 +65,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.MilkMage
                 waitTime = waitTimeMax;
             }
         }
-    }
+        
+    } 
 }
