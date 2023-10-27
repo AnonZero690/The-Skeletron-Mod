@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
+using System;
 
 namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
@@ -14,28 +11,45 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
     {
         public override void SetDefaults()
         {
-            Projectile.width = 20;
-            Projectile.height = 200;
-            Projectile.timeLeft = 60;
+            Projectile.width = 130;
+            Projectile.height = 142;
+            Projectile.timeLeft = 600;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.penetrate = -1;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
-            Projectile.light = 10f;
+            Projectile.light = 2f;
             Projectile.DamageType = ModContent.GetInstance<Bonecursed>();
+            Projectile.stopsDealingDamageAfterPenetrateHits = true;
         }
-
-        int progress = 0;
-        int maxProgress = 30;
         public override void AI()
         {
-            Projectile.rotation = Projectile.velocity.ToRotation();
-            progress += 1;
-            if (progress > maxProgress)
+            if (Projectile.timeLeft > 100)
             {
-                Projectile.velocity = Projectile.velocity * -1;
-                progress = -10000;
+                Projectile.timeLeft = 100;
+            }
+            float progress = (100 - Projectile.timeLeft) / 100f;
+            Projectile.alpha = (int)MathHelper.Lerp(0, 255, progress);
+            Projectile.rotation = Projectile.velocity.ToRotation();
+            Vector2 vel = -Projectile.velocity.SafeNormalize(Vector2.Zero);
+            float scaling = MathHelper.Lerp(2.5f, .25f, progress);
+            for (int i = 0; i < 7; i++)
+            {
+                int dust = Dust.NewDust(Projectile.Center.PositionOFFSET(vel, Main.rand.Next(-75, -60)) + Main.rand.NextVector2Circular(10, 10), 0, 0, DustID.WhiteTorch);
+                Main.dust[dust].noGravity = true;
+                Main.dust[dust].velocity = 
+                    vel.RotatedBy(MathHelper.PiOver2 * Main.rand.NextBool().BoolOne()) * Main.rand.NextFloat(1f, 20f);
+                Main.dust[dust].scale = Math.Clamp(Main.rand.NextFloat(.5f, 1.5f), 0, scaling);
+                int dust1 = Dust.NewDust(Projectile.Center.PositionOFFSET(vel, Main.rand.Next(-75, -60)) + Main.rand.NextVector2Circular(10, 10), 0, 0, DustID.PurpleTorch);
+                Main.dust[dust1].noGravity = true;
+                Main.dust[dust1].velocity = 
+                    vel.RotatedBy(MathHelper.PiOver2 * Main.rand.NextBool().BoolOne()) * Main.rand.NextFloat(1f, 20f);
+                Main.dust[dust1].scale = Math.Clamp(Main.rand.NextFloat(.5f, 1.5f), 0, scaling);
+                int dust2 = Dust.NewDust(Projectile.Center + Main.rand.NextVector2Circular(70, 70), 0, 0, DustID.WhiteTorch, newColor: Color.Black);
+                Main.dust[dust2].noGravity = true;
+                Main.dust[dust2].velocity = vel;
+                Main.dust[dust2].scale = Math.Clamp(Main.rand.NextFloat(1, 2.5f), 0, scaling);
             }
         }
     }

@@ -44,37 +44,57 @@ namespace TheSkeletronMod.Common.Globals
         /// <summary>
         /// Don't mess with this fr
         /// </summary>
-        public int AttackIndex = 0;
         public override bool? UseItem(Item item, Player player)
         {
-            if (item.ownTime == 0)
+            if (ArrayOfAttack == null)
+                return base.UseItem(item, player);
+            if (ArrayOfAttack.Length <= 0)
+                return base.UseItem(item, player);
+            if (item.type != player.HeldItem.type)
+                return base.UseItem(item, player);
+            if (player.ItemAnimationJustStarted)
             {
-                if (++AttackIndex >= ArrayOfAttack.Length)
+                ImprovedSwingGlobalItemPlayer modplayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
+                if (++modplayer.AttackIndex >= ArrayOfAttack.Length)
                 {
-                    AttackIndex = 0;
+                    modplayer.AttackIndex = 0;
                 }
             }
             return base.UseItem(item, player);
         }
         public override void UseStyle(Item item, Player player, Rectangle heldItemFrame)
         {
-            if (AttackIndex >= ArrayOfAttack.Length)
+            if (ArrayOfAttack == null)
+                return;
+            if (ArrayOfAttack.Length <= 0)
+                return;
+            if (item.type != player.HeldItem.type)
+                return;
+            ImprovedSwingGlobalItemPlayer modPlayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
+            if (modPlayer.AttackIndex >= ArrayOfAttack.Length)
                 return;
             ImprovedSwingGlobalItemPlayer modplayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
-            if (ArrayOfAttack[AttackIndex].style == CustomUseStyle.SwipeAttack)
+            if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.SwipeAttack)
             {
-                SwipeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[AttackIndex].SwingDownWard.BoolOne());
+                SwipeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
             }
-            if (ArrayOfAttack[AttackIndex].style == CustomUseStyle.PokeAttack)
+            if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.PokeAttack)
             {
-                PokeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[AttackIndex].SwingDownWard.BoolOne());
+                PokeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
             }
         }
         public override void ModifyItemScale(Item item, Player player, ref float scale)
         {
-            if (AttackIndex >= ArrayOfAttack.Length)
+            ImprovedSwingGlobalItemPlayer modPlayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
+            if (ArrayOfAttack == null)
                 return;
-            if (ArrayOfAttack[AttackIndex].style != CustomUseStyle.DefaultNoCustomSwing)
+            if (ArrayOfAttack.Length <= 0)
+                return;
+            if (item.type != player.HeldItem.type)
+                return;
+            if (modPlayer.AttackIndex >= ArrayOfAttack.Length)
+                return;
+            if (ArrayOfAttack[modPlayer.AttackIndex].style != CustomUseStyle.DefaultNoCustomSwing)
             {
                 int duration = player.itemAnimationMax;
                 float thirdduration = duration / 3;
@@ -133,9 +153,16 @@ namespace TheSkeletronMod.Common.Globals
         //Credit hitbox code to Stardust
         public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
         {
-            if (AttackIndex >= ArrayOfAttack.Length)
+            if (ArrayOfAttack == null)
                 return;
-            if (ArrayOfAttack[AttackIndex].style != CustomUseStyle.DefaultNoCustomSwing)
+            if (ArrayOfAttack.Length <= 0)
+                return;
+            if (item.type != player.HeldItem.type)
+                return;
+            ImprovedSwingGlobalItemPlayer modPlayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
+            if (modPlayer.AttackIndex >= ArrayOfAttack.Length)
+                return;
+            if (ArrayOfAttack[modPlayer.AttackIndex].style != CustomUseStyle.DefaultNoCustomSwing)
             {
                 Vector2 handPos = Vector2.UnitY.RotatedBy(player.compositeFrontArm.rotation);
                 float length = new Vector2(item.width, item.height).Length() * player.GetAdjustedItemScale(player.HeldItem);
@@ -168,9 +195,9 @@ namespace TheSkeletronMod.Common.Globals
             {
                 if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
                 {
-                    if (meleeItem.AttackIndex < meleeItem.ArrayOfAttack.Length)
+                    if (modplayer.AttackIndex < meleeItem.ArrayOfAttack.Length)
                     {
-                        if (meleeItem.ArrayOfAttack[meleeItem.AttackIndex].style == CustomUseStyle.PokeAttack && !meleeItem.ArrayOfAttack[meleeItem.AttackIndex].SwingDownWard)
+                        if (meleeItem.ArrayOfAttack[modplayer.AttackIndex].style == CustomUseStyle.PokeAttack && !meleeItem.ArrayOfAttack[modplayer.AttackIndex].SwingDownWard)
                         {
                             for (int i = 0; i < drawinfo.DrawDataCache.Count; i++)
                             {
@@ -181,7 +208,7 @@ namespace TheSkeletronMod.Common.Globals
                                     drawdata.sourceRect = null;
                                     drawdata.ignorePlayerRotation = true;
                                     drawdata.rotation = modplayer.CustomItemRotation;
-                                    drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * (origin.Length() * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH) * -player.direction;
+                                    drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * ((origin.Length() + ImprovedSwingSword.PLAYERARMLENGTH) * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH) * -player.direction;
                                     drawinfo.DrawDataCache[i] = drawdata;
                                 }
                             }
@@ -198,14 +225,21 @@ namespace TheSkeletronMod.Common.Globals
         public Vector2 data = Vector2.Zero;
         public Vector2 mouseLastPosition = Vector2.Zero;
         public float CustomItemRotation = 0;
+        public int AttackIndex = 0;
         public override void PostUpdate()
         {
             Item item = Player.HeldItem;
             if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
-                if (meleeItem.AttackIndex >= meleeItem.ArrayOfAttack.Length)
+                if (meleeItem.ArrayOfAttack == null)
                     return;
-                if (meleeItem.ArrayOfAttack[meleeItem.AttackIndex].style == CustomUseStyle.DefaultNoCustomSwing || Player.HeldItem.noMelee)
+                if (meleeItem.ArrayOfAttack.Length <= 0)
+                    return;
+                if (item.type != Player.HeldItem.type)
+                    return;
+                if (AttackIndex >= meleeItem.ArrayOfAttack.Length)
+                    return;
+                if (meleeItem.ArrayOfAttack[AttackIndex].style == CustomUseStyle.DefaultNoCustomSwing || Player.HeldItem.noMelee)
                     return;
             }
             if (Player.ItemAnimationJustStarted)
@@ -231,9 +265,9 @@ namespace TheSkeletronMod.Common.Globals
             Item item = Player.HeldItem;
             if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
-                if (meleeItem.AttackIndex < meleeItem.ArrayOfAttack.Length)
+                if (AttackIndex < meleeItem.ArrayOfAttack.Length)
                 {
-                    if (meleeItem.ArrayOfAttack[meleeItem.AttackIndex].style == CustomUseStyle.PokeAttack && !meleeItem.ArrayOfAttack[meleeItem.AttackIndex].SwingDownWard)
+                    if (meleeItem.ArrayOfAttack[AttackIndex].style == CustomUseStyle.PokeAttack && !meleeItem.ArrayOfAttack[AttackIndex].SwingDownWard)
                     {
                         if (Player.direction == -1)
                         {
