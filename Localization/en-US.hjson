@@ -483,6 +483,16 @@ Mods: {
 				DisplayName: Elemental Claymore
 				Tooltip: ""
 			}
+
+			AccursedSoil: {
+				DisplayName: Accursed Soil
+				Tooltip: ""
+			}
+
+			Hexstone: {
+				DisplayName: Hexstone
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -587,6 +597,9 @@ Mods: {
 			BadToTheMusicBoxT.MapEntry: Bad To The Music Box T
 			BoneAltar.MapEntry: Bone Altar
 			CalciumOreT.MapEntry: Calcium Ore T
+			AccursedGrassT.MapEntry: Accursed Grass T
+			AccursedSoilT.MapEntry: Accursed Soil T
+			HexstoneT.MapEntry: Hexstone T
 		}
 
 		NPCs.UndeadHand.DisplayName: Undead Hand
