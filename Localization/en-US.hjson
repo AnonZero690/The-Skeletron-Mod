@@ -423,6 +423,66 @@ Mods: {
 				DisplayName: Blooming Bones Wand
 				Tooltip: ""
 			}
+
+			CopperBone: {
+				DisplayName: Copper Bone
+				Tooltip: ""
+			}
+
+			CrimtaneBone: {
+				DisplayName: Crimtane Bone
+				Tooltip: ""
+			}
+
+			DemoniteBone: {
+				DisplayName: Demonite Bone
+				Tooltip: ""
+			}
+
+			GoldBone: {
+				DisplayName: Gold Bone
+				Tooltip: ""
+			}
+
+			IronBone: {
+				DisplayName: Iron Bone
+				Tooltip: ""
+			}
+
+			LeadBone: {
+				DisplayName: Lead Bone
+				Tooltip: ""
+			}
+
+			PlatinumBone: {
+				DisplayName: Platinum Bone
+				Tooltip: ""
+			}
+
+			StoneBone: {
+				DisplayName: Stone Bone
+				Tooltip: ""
+			}
+
+			TinBone: {
+				DisplayName: Tin Bone
+				Tooltip: ""
+			}
+
+			WoodenBone: {
+				DisplayName: Wooden Bone
+				Tooltip: ""
+			}
+
+			ElementalBlade: {
+				DisplayName: Elemental Blade
+				Tooltip: ""
+			}
+
+			ElementalClaymore: {
+				DisplayName: Elemental Claymore
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {

@@ -27,7 +27,7 @@ namespace TheSkeletronMod.Items.Materials.OreBones
             Recipe recipe2 = CreateRecipe();
             recipe2.AddIngredient(ModContent.ItemType<CrimtaneBone>(), 1);
             recipe2.AddTile(ModContent.TileType<BoneAltar>());
-            recipe.Register();
+            recipe2.Register();
         }
     }
 }

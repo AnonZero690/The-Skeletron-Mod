@@ -31,6 +31,8 @@
     <None Remove="Items\Weapons\Calcium\CalcMelee\BoneCrusher.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\Bonerang.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\BoneSword.png" />
+    <None Remove="Items\Weapons\Calcium\CalcMelee\ElementalBlade.png" />
+    <None Remove="Items\Weapons\Calcium\CalcMelee\ElementalClaymore.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\GuardiansMattock.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\RattleboneRapierProj.png" />
     <None Remove="Items\Weapons\Calcium\CalcMelee\SawboneSword.png" />
