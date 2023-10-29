@@ -24,6 +24,9 @@
     <None Remove="Items\Armor\NecromancerArmour\NecromancerRobe.png" />
     <None Remove="Items\Armor\NecromancerArmour\NecromancerRobe_Body.png" />
     <None Remove="Items\Materials\AncientBone.png" />
+    <None Remove="Items\Placeables\Biome\AccursedInfection\Blocks\AccursedSoil.png" />
+    <None Remove="Items\Placeables\Biome\AccursedInfection\Blocks\CursegrassSeeds.png" />
+    <None Remove="Items\Placeables\Biome\AccursedInfection\Blocks\Hexstone.png" />
     <None Remove="Items\Tools\GuardiansPickaxe.png" />
     <None Remove="Items\Weapons\Calcium\bloodgemBoneScepter.png" />
     <None Remove="Items\Weapons\Calcium\BoneYoyoItem.png" />
@@ -64,6 +67,9 @@
     <None Remove="projectiles\Calcprojs\CartArmour\CartilageSkull2.png" />
     <None Remove="projectiles\GunBarrelFlash.png" />
     <None Remove="projectiles\GunBarrelFlash_Glow.png" />
+    <None Remove="Tiles\Blocks\Biomes\AccursedInfection\AccursedGrassT.png" />
+    <None Remove="Tiles\Blocks\Biomes\AccursedInfection\AccursedSoilT.png" />
+    <None Remove="Tiles\Blocks\Biomes\AccursedInfection\HexstoneT.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
