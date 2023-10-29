@@ -11,6 +11,7 @@ using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Buffs;
 using Terraria.DataStructures;
+using TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
@@ -22,13 +23,11 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         public override void SetDefaults()
         {
-            Item.damage = 60;
-            Item.useTime = 30;
-            Item.useAnimation = 30;
-            Item.useStyle = ItemUseStyleID.Swing; 
-            Item.width = 16;
-            Item.height = 16;
+            Item.ItemDefaultMeleeCustomProjectile(16, 16, 60, 4, 30, 30, ItemUseStyleID.Swing, ModContent.ProjectileType<ElementalClaymoreP>(), true);
+            Item.shootSpeed = 10;
             Item.crit = 20;
+            Item.noMelee = false;
+            Item.noUseGraphic = false;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
         }
         int repeatTimes = 2;
