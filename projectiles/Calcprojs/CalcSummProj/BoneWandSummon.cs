@@ -23,6 +23,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcSummProj
             Projectile.penetrate = -1;
             Projectile.friendly = true;
             Projectile.timeLeft = 10;
+            Projectile.tileCollide = false;
         }
         public override void SetStaticDefaults()
         {
