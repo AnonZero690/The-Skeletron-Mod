@@ -64,7 +64,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
                     Projectile.frame = 0;
             }
         }
-        public override void Kill(int timeleft)
+        public override void OnKill(int timeleft)
         {
             Player player = Main.player[Projectile.owner];
             // Damage enemies within the splash radius

@@ -67,7 +67,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
                 Projectile.velocity.Y = -oldVelocity.Y * .8f;
                 return false;
             }
-            public override void Kill(int timeLeft)
+            public override void OnKill(int timeLeft)
             {
                 Player player = Main.player[Projectile.owner];
                 Projectile.Center.LookForHostileNPC(out List<NPC> npclist, 200f);

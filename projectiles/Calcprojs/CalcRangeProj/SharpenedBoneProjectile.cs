@@ -44,7 +44,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcRangeProj
             Projectile.DrawTrail(lightColor);
             return base.PreDraw(ref lightColor);
         }
-        public override void Kill(int timeleft)
+        public override void OnKill(int timeleft)
         {
             Projectile.ownerHitCheck = true;
 
