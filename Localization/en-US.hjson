@@ -423,6 +423,76 @@ Mods: {
 				DisplayName: Blooming Bones Wand
 				Tooltip: ""
 			}
+
+			CopperBone: {
+				DisplayName: Copper Bone
+				Tooltip: ""
+			}
+
+			CrimtaneBone: {
+				DisplayName: Crimtane Bone
+				Tooltip: ""
+			}
+
+			DemoniteBone: {
+				DisplayName: Demonite Bone
+				Tooltip: ""
+			}
+
+			GoldBone: {
+				DisplayName: Gold Bone
+				Tooltip: ""
+			}
+
+			IronBone: {
+				DisplayName: Iron Bone
+				Tooltip: ""
+			}
+
+			LeadBone: {
+				DisplayName: Lead Bone
+				Tooltip: ""
+			}
+
+			PlatinumBone: {
+				DisplayName: Platinum Bone
+				Tooltip: ""
+			}
+
+			StoneBone: {
+				DisplayName: Stone Bone
+				Tooltip: ""
+			}
+
+			TinBone: {
+				DisplayName: Tin Bone
+				Tooltip: ""
+			}
+
+			WoodenBone: {
+				DisplayName: Wooden Bone
+				Tooltip: ""
+			}
+
+			ElementalBlade: {
+				DisplayName: Elemental Blade
+				Tooltip: ""
+			}
+
+			ElementalClaymore: {
+				DisplayName: Elemental Claymore
+				Tooltip: ""
+			}
+
+			AccursedSoil: {
+				DisplayName: Accursed Soil
+				Tooltip: ""
+			}
+
+			Hexstone: {
+				DisplayName: Hexstone
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -473,6 +543,7 @@ Mods: {
 			RattleboneRapierProj.DisplayName: Rattlebone Rapier Proj
 			BloomingBonesBigProj.DisplayName: Blooming Bones Big Proj
 			BloomingBonesSProj.DisplayName: Blooming Bones S Proj
+			ElementalClaymoreP.DisplayName: Elemental Claymore P
 		}
 
 		Buffs: {
@@ -526,6 +597,9 @@ Mods: {
 			BadToTheMusicBoxT.MapEntry: Bad To The Music Box T
 			BoneAltar.MapEntry: Bone Altar
 			CalciumOreT.MapEntry: Calcium Ore T
+			AccursedGrassT.MapEntry: Accursed Grass T
+			AccursedSoilT.MapEntry: Accursed Soil T
+			HexstoneT.MapEntry: Hexstone T
 		}
 
 		NPCs.UndeadHand.DisplayName: Undead Hand

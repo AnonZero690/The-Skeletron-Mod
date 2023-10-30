@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
@@ -9,6 +10,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
         public override void SetStaticDefaults()
         {
             Main.projFrames[Projectile.type] = 19;
+            //sobbing time
         }
         public override void SetDefaults()
         {
@@ -17,19 +19,32 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             Projectile.penetrate = -1;
             Projectile.tileCollide = false;
             Projectile.timeLeft = 999;
+            Projectile.damage = 100;
+            Projectile.knockBack = 10;
         }
-
-        public void frameCounter()
+        const int maxFramesPerAnimFrame = 5;
+        int framesPerAnimFrame = 0;
+        public override void AI()
         {
-            if (++Projectile.frameCounter >= 3)
+            int player = Projectile.owner;
+            framesPerAnimFrame++;
+            if (framesPerAnimFrame ==  maxFramesPerAnimFrame)
             {
-                Projectile.frameCounter = 0;
-                Projectile.frame += 1;
-                if (Projectile.frame >= Main.projFrames[Projectile.type])
+                if (Projectile.frame == 19)
                 {
-                    Projectile.frame = 0;
+                    Projectile.Kill();
                 }
+                framesPerAnimFrame = 0;
+                Projectile.frame++;
             }
+
+            Projectile.position = Main.player[player].position - new Vector2(60,45);
+
+        }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            //no u
+            target.AddBuff(BuffID.BrokenArmor, 100);
         }
     }
 }

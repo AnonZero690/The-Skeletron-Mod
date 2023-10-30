@@ -4,10 +4,11 @@ using Terraria;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using System;
+using TheSkeletronMod.Buffs;
 
 namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
 {
-    public class BoneSwordP : ModProjectile
+    public class ElementalClaymoreP : ModProjectile
     {
         public override void SetDefaults()
         {
@@ -50,6 +51,51 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
                 Main.dust[dust2].noGravity = true;
                 Main.dust[dust2].velocity = vel;
                 Main.dust[dust2].scale = Math.Clamp(Main.rand.NextFloat(1, 2.5f), 0, scaling);
+            }
+        }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            int timeToDebuff = 100;
+            for (int i = 0; i < 1; i++)
+            {
+                int randomNumber = Main.rand.Next(1, 10);
+                if (randomNumber == 1)
+                {
+                    target.AddBuff(BuffID.Burning, timeToDebuff);
+                }
+                if (randomNumber == 2)
+                {
+                    target.AddBuff(BuffID.CursedInferno, timeToDebuff);
+                }
+                if (randomNumber == 3)
+                {
+                    target.AddBuff(BuffID.Frostburn, timeToDebuff);
+                }
+                if (randomNumber == 4)
+                {
+                    target.AddBuff(BuffID.Venom, timeToDebuff);
+                }
+                if (randomNumber == 5)
+                {
+                    target.AddBuff(ModContent.BuffType<BonedDebuff>(), timeToDebuff); //change this to dungeon curse when it is added
+                }
+                if (randomNumber == 6)
+                {
+                    target.AddBuff(BuffID.Stinky, timeToDebuff);
+                    i++;
+                }
+                if (randomNumber == 7)
+                {
+                    target.AddBuff(BuffID.WitheredWeapon, timeToDebuff);
+                }
+                if (randomNumber == 8)
+                {
+                    target.AddBuff(BuffID.ShadowFlame, timeToDebuff);
+                }
+                if (randomNumber == 9)
+                {
+                    target.AddBuff(BuffID.Electrified, timeToDebuff);
+                }
             }
         }
     }

@@ -15,7 +15,14 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         public override void SetDefaults()
         {
-            Item.ItemDefaultMeleeShootProjectile(114, 114, 17, 0, 100, 100, ItemUseStyleID.Swing, ModContent.ProjectileType<BoneSwordP>(), 6f, false);
+            Item.width = 114;
+            Item.height = 114;
+            Item.damage = 17;
+            Item.knockBack = 0;
+            Item.useTime = 100;
+            Item.useAnimation = 100;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.autoReuse = false;
             if (Item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
                 meleeItem.ArrayOfAttack =
