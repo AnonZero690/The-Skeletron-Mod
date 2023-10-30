@@ -16,7 +16,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         }
         public override void SetDefaults()
         {
-            Item.ItemSetDefault(84, 75, 40, 2.5f, 22, 22, ItemUseStyleID.Thrust, true);
+            Item.ItemSetDefault(84, 75, 40, 2.5f, 15, 15, ItemUseStyleID.Shoot, true);
             Item.ItemSetDefaultSpear(ModContent.ProjectileType<RattleboneRapierProj>(), 22);
         }
         public override bool CanUseItem(Player player)
@@ -37,47 +37,43 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
     public class RattleboneRapierProj : ModProjectile
     {
         //who knew this'd be annoying to make ♥
-        protected virtual float HoldoutRangeMin => 24f;
+        protected virtual float HoldoutRangeMin => 74f;
         protected virtual float HoldoutRangeMax => 96f;
         public override void SetDefaults()
         {
-            Projectile.CloneDefaults(ProjectileID.Spear);
+            Projectile.width = Projectile.height = 30;
+            Projectile.penetrate = -1;
+            Projectile.aiStyle = 19;
+
+            Projectile.hide = true;
+            Projectile.ownerHitCheck = true;
+            Projectile.DamageType = DamageClass.Melee;
+            Projectile.tileCollide = false;
+            Projectile.friendly = true;
         }
         public override bool PreAI()
         {
             Player player = Main.player[Projectile.owner];
-            int projlong = player.itemAnimationMax;
-
+            int duration = player.itemAnimationMax;
             player.heldProj = Projectile.whoAmI;
-            if (Projectile.timeLeft > projlong)
+            if (Projectile.timeLeft > duration)
             {
-                Projectile.timeLeft = projlong;
+                Projectile.timeLeft = duration;
+                Projectile.velocity = Vector2.Normalize(Projectile.velocity).Vector2RotateByRandom(10);
             }
-
-            Projectile.velocity = Vector2.Normalize(Projectile.velocity); // Velocity isn't used in this spear implementation, but we use the field to store the spear's attack direction.
-
-            float halfprojlong = projlong * 0.5f;
+            float halfDuration = duration * 0.5f;
             float progress;
 
-            // Here 'progress' is set to a value that goes from 0.0 to 1.0 and back during the item use animation.
-            if (Projectile.timeLeft < halfprojlong)
+            if (Projectile.timeLeft < halfDuration)
             {
-                progress = Projectile.timeLeft / halfprojlong;
+                progress = Projectile.timeLeft / halfDuration;
             }
             else
             {
-                progress = (projlong - Projectile.timeLeft) / halfprojlong;
+                progress = (duration - Projectile.timeLeft) / halfDuration;
             }
             Projectile.Center = player.MountedCenter + Vector2.SmoothStep(Projectile.velocity * HoldoutRangeMin, Projectile.velocity * HoldoutRangeMax, progress);
-            if (Projectile.spriteDirection == -1)
-            {
-
-                Projectile.rotation += MathHelper.ToRadians(45f);
-            }
-            else
-            {
-                Projectile.rotation += MathHelper.ToRadians(135f);
-            }
+            Projectile.rotation += Projectile.spriteDirection == -1 ? MathHelper.PiOver4 : MathHelper.PiOver4 + MathHelper.PiOver2;
             return false;
         }
     }
