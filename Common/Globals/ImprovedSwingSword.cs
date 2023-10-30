@@ -31,6 +31,7 @@ namespace TheSkeletronMod.Common.Globals
     /// </summary>
     internal class ImprovedSwingSword : GlobalItem
     {
+        public float PokeAttackOffset = 0;
         public override bool InstancePerEntity => true;
         public float ItemSwingDegree = 120;
         public const float PLAYERARMLENGTH = 12f;
@@ -208,7 +209,7 @@ namespace TheSkeletronMod.Common.Globals
                                     drawdata.sourceRect = null;
                                     drawdata.ignorePlayerRotation = true;
                                     drawdata.rotation = modplayer.CustomItemRotation;
-                                    drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * ((origin.Length() + ImprovedSwingSword.PLAYERARMLENGTH) * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH) * -player.direction;
+                                    drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * ((origin.Length() + ImprovedSwingSword.PLAYERARMLENGTH + meleeItem.PokeAttackOffset) * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH) * -player.direction;
                                     drawinfo.DrawDataCache[i] = drawdata;
                                 }
                             }
@@ -226,9 +227,18 @@ namespace TheSkeletronMod.Common.Globals
         public Vector2 mouseLastPosition = Vector2.Zero;
         public float CustomItemRotation = 0;
         public int AttackIndex = 0;
+        public Item item = null;
         public override void PostUpdate()
         {
-            Item item = Player.HeldItem;
+            if (item == null)
+            {
+                item = Player.HeldItem;
+            }
+            else if(item.type != Player.HeldItem.type)
+            {
+                AttackIndex = 0;
+                item = Player.HeldItem;
+            }
             if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
                 if (meleeItem.ArrayOfAttack == null)
