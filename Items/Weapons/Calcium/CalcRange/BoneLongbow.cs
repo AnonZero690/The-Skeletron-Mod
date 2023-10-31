@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
             Item.UseSound = SoundID.Item5;
             Item.value = 1000;
             Item.rare = ItemRarityID.Blue;
+            Item.noUseGraphic = false;
+            Item.useTurn = true;
         }
         private bool isCharging = false;
         private int chargeTimer = 0;
@@ -57,6 +60,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
                 int projType = ModContent.ProjectileType<SharpenedBoneProjectile>();
                 float knockback = Item.knockBack;
 
+                
+
                 float chargeSpeed = 10f; // Adjust the charge speed as needed
                 Vector2 velocity = Main.MouseWorld - player.Center; // Direction towards the cursor
                 velocity.Normalize(); // Normalize to get a unit vector
@@ -70,5 +75,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
                     
             }
         }
+
     }
 }
