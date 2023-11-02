@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,7 +48,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
             {
                 isCharging = true;
                 chargeTimer++;
-            }else if(isCharging)
+           }
+            else if(isCharging)
             {
                 isCharging = false;
                 int damage = chargeTimer / 2;
