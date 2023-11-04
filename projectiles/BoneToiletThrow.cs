@@ -41,7 +41,7 @@ namespace TheSkeletronMod.projectiles
 
         }
 
-        public override void Kill(int timeleft)
+        public override void OnKill(int timeleft)
 
         {
 

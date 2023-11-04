@@ -41,7 +41,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
             }
         }
 
-        public override void Kill(int timeleft)
+        public override void OnKill(int timeleft)
         {
             for (int i = 0; i < 17; i++)
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Bone, 0f, 0f, 50, default, 1f);

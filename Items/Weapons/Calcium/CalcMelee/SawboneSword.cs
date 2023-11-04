@@ -116,7 +116,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             }
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             if (timer < 20)
             {
@@ -286,7 +286,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Projectile.velocity = Projectile.velocity.LimitingVelocity(20);
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             Vector2 pos = new Vector2(0, 60);
             if (Projectile.ai[1] == 2)

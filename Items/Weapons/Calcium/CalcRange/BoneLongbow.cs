@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +19,15 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
     {
         public override void SetDefaults()
         {
-            Item.ItemDefaultRange(56, 2, 64, 2f, 40, 40, ItemUseStyleID.Shoot, ProjectileID.BoneArrow, 120f, false, AmmoID.Arrow);
+            Item.width = 56;
+            Item.height = 2;
+            Item.damage = 64;
+            Item.knockBack = 2f;
+            Item.useTime = 40;
+            Item.useAnimation = 40;
+            Item.shootSpeed = 120f;
+            Item.autoReuse = false;
+            Item.ammo = AmmoID.Arrow;
             Item.noMelee = true;
             Item.ArmorPenetration = 2;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
@@ -26,13 +36,47 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
             Item.UseSound = SoundID.Item5;
             Item.value = 1000;
             Item.rare = ItemRarityID.Blue;
+            Item.noUseGraphic = false;
+            Item.useTurn = true;
         }
-
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        private bool isCharging = false;
+        private int chargeTimer = 0;
+        private int projectiles = 1;
+        public override void HoldItem(Player player)
         {
+           if (Main.mouseLeft)
+            {
+                isCharging = true;
+                chargeTimer++;
+           }
+            else if(isCharging)
+            {
+                isCharging = false;
+                int damage = chargeTimer / 2;
+                if (damage > 100)
+                {
+                    damage = 100;
+                }
+                projectiles = 1 + chargeTimer / 300;
+                chargeTimer = 0;
+                int projType = ModContent.ProjectileType<SharpenedBoneProjectile>();
+                float knockback = Item.knockBack;
 
-            Projectile.NewProjectile(source, position, velocity * new Vector2(2,1), type, damage, knockback, player.whoAmI, 0, 1);
-            return true;
+                
+
+                float chargeSpeed = 10f; // Adjust the charge speed as needed
+                Vector2 velocity = Main.MouseWorld - player.Center; // Direction towards the cursor
+                velocity.Normalize(); // Normalize to get a unit vector
+                velocity *= chargeSpeed;
+                for (int i = 0; i < projectiles; i++)
+                {
+                    Vector2 vec = velocity.Vector2Evenly(projectiles, 40, i);
+                    Projectile.NewProjectile(null, player.Center, vec, projType, damage, knockback);
+                }
+
+                    
+            }
         }
+
     }
 }

@@ -16,10 +16,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
     public class ElementalBlade : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(3, 8));
-        }
         public override void SetDefaults()
         {
             Item.damage = 20;

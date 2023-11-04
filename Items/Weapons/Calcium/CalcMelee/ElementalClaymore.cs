@@ -17,10 +17,6 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
     public class ElementalClaymore : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(3, 8));
-        }
         public override void SetDefaults()
         {
             Item.ItemDefaultMeleeCustomProjectile(16, 16, 60, 4, 30, 30, ItemUseStyleID.Swing, ModContent.ProjectileType<ElementalClaymoreP>(), true);

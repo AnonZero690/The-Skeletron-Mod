@@ -54,7 +54,7 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
                     Projectile.frame = 0;
             }
         }
-        public override void Kill(int timeleft)
+        public override void OnKill(int timeleft)
         {
             Projectile.Center.LookForHostileNPC(out List<NPC> npclist, 140);
             foreach (NPC npc in npclist)
