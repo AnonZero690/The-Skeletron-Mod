@@ -493,6 +493,11 @@ Mods: {
 				DisplayName: Hexstone
 				Tooltip: ""
 			}
+
+			BoneConvertor: {
+				DisplayName: Bone Convertor
+				Tooltip: Your projectile will leave bone train that shoot in random direction !
+			}
 		}
 
 		BadToTheMusicBox: {
