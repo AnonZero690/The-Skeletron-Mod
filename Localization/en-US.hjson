@@ -620,7 +620,38 @@ Mods: {
 			TaintedSoilT.MapEntry: Tainted Soil T
 		}
 
-		NPCs.UndeadHand.DisplayName: Undead Hand
+		NPCs: {
+			UndeadHand.DisplayName: Undead Hand
+
+			DetectiveNPC: {
+				DisplayName: Detective
+
+				Dialogue: {
+				
+				
+				}
+
+				TownNPCMood: {
+					Content: Honestly my mind is at peace. I can relax a bit.
+					NoHome: I dont have a goddamn base of operations? Come on chap, show me to where I should set up!
+					FarFromHome: This outing has extended far too long and I am far from home...
+					LoveSpace: Ah yes, the peace and quiet helps me think.
+					DislikeCrowded: There are too many people. I cant conduct my investigations nor think here!
+					HateCrowded: I swear to the deities if they dont shut up, I'll have murder cases to investigate very soon.
+					LoveSnow: The snow is quite peaceful. I feel a strange connection to it from a long, long time ago.
+					LikeForest: The Forest is a good place to live. Basic and refreshing!
+					LikeTainted: These Tainted lands give me a bad feeling... In a good way haha!
+					DislikeBiome: I cant bear with the {BiomeName}.
+					HateBiome: The {BiomeName} is bad for my bones.
+					LoveNPC: "{NPCName} is enchanting. My ribs shudder at the thought of them!"
+					LikeNPC: "{NPCName} is quite interesting."
+					LikeNPC_Princess: "{NPCName} is so likeable its unbelievable."
+					DislikeNPC: I have to put on a fake smile in front of {NPCName} everytime. They're annoying.
+					HateNPC: I think {NPCName} can move to a different country. Their mere presence in this world is disturbing.
+					Princess_LovesNPC: {NPCName} really helps the community with his investigations! So cool!
+				}
+			}
+		}
 	}
 
 	DamageClasses.Bonecursed.DisplayName: Calcium Damage
