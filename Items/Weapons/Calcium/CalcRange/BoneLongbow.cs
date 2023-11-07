@@ -95,7 +95,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
         public override void AI()
         {
             player = Main.player[Projectile.owner];
-            Projectile.rotation = (Main.MouseWorld - player.Center).ToRotation() + MathHelper.PiOver4;
+            Projectile.rotation = (Main.MouseWorld - player.Center).ToRotation();
+            Projectile.position = player.position;
             if (!Main.mouseLeft)
             {
                 Projectile.Kill();

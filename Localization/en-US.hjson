@@ -544,6 +544,7 @@ Mods: {
 			BloomingBonesBigProj.DisplayName: Blooming Bones Big Proj
 			BloomingBonesSProj.DisplayName: Blooming Bones S Proj
 			ElementalClaymoreP.DisplayName: Elemental Claymore P
+			BoneLongbowP.DisplayName: Bone Longbow P
 		}
 
 		Buffs: {
