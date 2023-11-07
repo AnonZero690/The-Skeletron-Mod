@@ -498,6 +498,16 @@ Mods: {
 				DisplayName: Bone Convertor
 				Tooltip: Your projectile will leave bone train that shoot in random direction !
 			}
+
+			TaintedSoil: {
+				DisplayName: Tainted Soil
+				Tooltip: ""
+			}
+
+			TaintedSeeds: {
+				DisplayName: Tainted Seeds
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -606,6 +616,8 @@ Mods: {
 			AccursedGrassT.MapEntry: Accursed Grass T
 			AccursedSoilT.MapEntry: Accursed Soil T
 			HexstoneT.MapEntry: Hexstone T
+			TaintedGrassT.MapEntry: Tainted Grass T
+			TaintedSoilT.MapEntry: Tainted Soil T
 		}
 
 		NPCs.UndeadHand.DisplayName: Undead Hand

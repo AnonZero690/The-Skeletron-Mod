@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 
-namespace TheSkeletronMod.NPCs
+namespace TheSkeletronMod.NPCs.Enemies
 {
     class UndeadHand : ModNPC
     {
