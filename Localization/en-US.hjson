@@ -627,8 +627,8 @@ Mods: {
 				DisplayName: Detective
 
 				Dialogue: {
-				
-				
+
+
 				}
 
 				TownNPCMood: {
@@ -648,7 +648,7 @@ Mods: {
 					LikeNPC_Princess: "{NPCName} is so likeable its unbelievable."
 					DislikeNPC: I have to put on a fake smile in front of {NPCName} everytime. They're annoying.
 					HateNPC: I think {NPCName} can move to a different country. Their mere presence in this world is disturbing.
-					Princess_LovesNPC: {NPCName} really helps the community with his investigations! So cool!
+					Princess_LovesNPC: "{NPCName} really helps the community with his investigations! So cool!"
 				}
 			}
 		}
