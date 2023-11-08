@@ -627,6 +627,60 @@ Mods: {
 				DisplayName: Detective
 
 				Dialogue: {
+					Tainted1:
+					Tainted2:
+					Tainted3:
+					Tainted4: Its strange but I now have the ability to sense the presence of the cursed. Maybe its because of this place?
+					Tainted5: These Tainted lands give me a bad feeling... In a good way haha!
+					Casual1: Ah I love bing a detective. You do the most questionable things and no one really cares
+					Casual2: I remember a certain woman who was distraught at the loss of her children. I wonder how she's doing now...
+					Casual3: Self-awareness? Ah yes, i've studied that when diving into these strange games filled with cupcakes and eyes. It was JUST fine though.
+					Casual4: Most of my cases involved investigating murders to find out whodunnit. Thank god it pays enough.
+					Casual5: Y'know there's no harm in taking a break and enjoying the scenery. But who am i to speak when your goal is killing a god.
+					Casual6: I collect cassette tapes because they're sprawled around this land. Some in monstrous entities. 
+					Snow1: The snow is quite peaceful. It brings back memories long forgotten.
+					Snow2: Usually I'd have a cup of coffee with me in this cold weather. How do I consume and taste it? That's a secret!
+					Snow3: Oooh I remember this time I found a rat in the snow which had the fingerprints of the person I was tracking down so I had to chase it all around the place. I swear that rat drove me Crazy!	
+					Forest1: Fun fact, Forests are where many murders occur, but they're also beautiful and simple for relaxation!
+					Forest2: The critters here are lively. And tasty!
+					Forest3: People should't love nature too much even if its beautiful. Theres danger in beauty after all.
+					Underground1: My kind is here but they lack cognitive function. They're not bright.
+					Underground2: The seclusion does wonders for my brain, really.
+					Underground3: It's a very bad idea to smoke down here. I imagine the arms dealer and demolitionist would be mad at me, haha!
+					Ocean1: This place is as terrible as the Angler... And thats saying something!
+					Ocean2: Fun fact: Barnacles can grow in bones! I hate it here, haha! Move me out.
+					Hallow1: Eugh the happiness of this place is suffocating.
+					Hallow2: Yes I absolutely hate my stay here. It would be nice if I could live in the snow!
+					Desert1: This place is so hot a skeleton could sweat! I HATE this atmosphere1
+					Desert2: I feel my ribs cracking because of the heat... Why am I here? Just to suffer?!
+					Jungle1: Agh the humidity puts my bones in danger of growing mold!
+					Jungle2: The thick foliage is terrible for spotting any assailants. Get me out of this place now!
+					Bloodmoon1: That red moon stirrs emotions in monsters. Its interesting, truly.
+					Bloodmoon2: Go outside and fight the dreadful night!
+					Bloodmoon3: The anger caused by the moon has been researched and it is incurable. Although they leave once its day once more.
+					Pumpmoon1: How the tables turn. I wonder if people still dress up like skeletons.
+					Pumpmoon2: I've seen many pumpkin pies in my time. Anyways, fight the hallowed night.
+					Pumpmoon3: And so the moon smiled a cruel smile as the world returned to nothing.
+					Frostmoon1: I'd really rather the world be covered in darkness instead of this but a trio of teens would stop me.
+					Frostmoon2: Oh my spine is getting chilly!
+					Frostmoon3: This reminds me of the time the criminal was someone disguised in a santa costume.
+					PirateInv1: If you ask me, both internet and real pirates are annoying.
+					PirateInv2: Why do they always want to blow our brains out?
+					PirateInv3: Oh i bid farewell to the port and the land, and i travel away from brave England's white sands, To sarch for my long ago forgotten friend, To search for the place i hear all sailors end.
+					PirateInv4: As the souls of the dead fill the space of my mind, I'll search without sleeping 'til peace i can find, I fear not the weather I fear not the sea. I remember the fallen, do they think of me?
+					PirateInv5: When their bones in the ocean forever will be. Oh you're here? Just go finish the pirates of haha!
+					GoblinInv1: That shadow magic feels familiar.
+					GoblinInv2: Why do they have the ability to coordinate attacks and break down doors? Such nuisances!
+					GoblinInv3: If I was a goblin then i'd stay in my little cave my whole life instead of pillaging 'peaceful' people!
+					MartianInv1: Where I come from, the government hides that these guys exist! Its funny honestly.
+					MartianInv2: Maybe they're tied to the Tainted Lands?
+					MartianInv3: If I was a scientist, i'd be crazy to get one of these guys for tests.
+					GangstaInv1: I'm sorry who even does this event lmao. Had to break the fourth wall for that fr.
+					DownedPreSkele1: Oh you took the giant skeleton down?! Amazing! Go into the dungeon and see what you can find!
+					DownedPreSkele2: If i had a nickel for everytime i witnessed a giant skeleton use magic i'd have two nickels. Which isn't alot but its weird it happened twice.
+					DownedWOF1: A great power surges through me! I can see it, new land is near the dungeon! Go, quick!
+					DownedWOF2: The death of a guardian releasing a world of its chains? What a cliche...
+					FoundBrokenCasette: Wh-whats that in your hand? A cassette tape! Here you go, these might help. They contain useful and forgotten information depending on their colour.
 
 
 				}
@@ -638,9 +692,6 @@ Mods: {
 					LoveSpace: Ah yes, the peace and quiet helps me think.
 					DislikeCrowded: There are too many people. I cant conduct my investigations nor think here!
 					HateCrowded: I swear to the deities if they dont shut up, I'll have murder cases to investigate very soon.
-					LoveSnow: The snow is quite peaceful. I feel a strange connection to it from a long, long time ago.
-					LikeForest: The Forest is a good place to live. Basic and refreshing!
-					LikeTainted: These Tainted lands give me a bad feeling... In a good way haha!
 					DislikeBiome: I cant bear with the {BiomeName}.
 					HateBiome: The {BiomeName} is bad for my bones.
 					LoveNPC: "{NPCName} is enchanting. My ribs shudder at the thought of them!"

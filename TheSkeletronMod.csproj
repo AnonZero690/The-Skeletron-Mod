@@ -13,6 +13,9 @@
     <None Remove="Buffs\CartilageBuff.png" />
     <None Remove="Buffs\DeadlySkull.png" />
     <None Remove="Gores\GunPellets.png" />
+    <None Remove="Gores\NPC\Town\DetectiveGoreArm.png" />
+    <None Remove="Gores\NPC\Town\DetectiveGoreHead.png" />
+    <None Remove="Gores\NPC\Town\DetectiveGoreLeg.png" />
     <None Remove="Items\Accessories\DashItems\SkeletalRelicShield.png" />
     <None Remove="Items\Accessories\SkullPendant.png" />
     <None Remove="Items\Accessories\SkullPendant_Neck.png" />

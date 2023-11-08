@@ -15,12 +15,15 @@ namespace TheSkeletronMod.Common.Systems
 
         public static readonly SoundStyle BoneCrunchShot;
 
+        public static readonly SoundStyle DetectiveDeath;
+
 
         //Had to change it to a static not a private static.
         static SkelSound()
         {
             ModMenuClick = new SoundStyle("TheSkeletronMod/Assets/Sounds/ModMenuClick", (SoundType)0);
             BoneCrunchShot = new SoundStyle("TheSkeletronMod/Assets/Sounds/BoneCrunchShot", (SoundType)0);
+            DetectiveDeath = new SoundStyle("TheSkeletronMod/Assets/Sounds/DetectiveDeath", (SoundType)0);
 
         }
     }
