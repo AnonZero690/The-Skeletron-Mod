@@ -12,6 +12,7 @@
     <None Remove="Assets\Textures\Menu\Logopl.png" />
     <None Remove="Buffs\CartilageBuff.png" />
     <None Remove="Buffs\DeadlySkull.png" />
+    <None Remove="Common\UI\SoulResourceFrame.png" />
     <None Remove="Gores\GunPellets.png" />
     <None Remove="Gores\NPC\Town\DetectiveGoreArm.png" />
     <None Remove="Gores\NPC\Town\DetectiveGoreHead.png" />
@@ -50,6 +51,7 @@
     <None Remove="Items\Weapons\Calcium\CalcRange\BoneBomb.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\BoneLongbow.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\BoneLongbowP.png" />
+    <None Remove="Items\Weapons\Calcium\CalcRange\MarrowMelter.png" />
     <None Remove="Items\Weapons\Calcium\CalcRange\Miniskull.png" />
     <None Remove="Items\Weapons\Calcium\image.png" />
     <None Remove="Items\Weapons\Calcium\MilkMage\BoneTome.png" />

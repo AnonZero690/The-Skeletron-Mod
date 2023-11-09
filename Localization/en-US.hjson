@@ -350,6 +350,17 @@ Mods: {
 				Tooltip: ""
 			}
 
+			MarrowMelter: {
+				DisplayName: Marrow Melter
+				Tooltip:
+					'''
+					[c/00FFFF:Uses Soul Energy (top right)]
+					[c/00FFFF:Souls recharge over time]
+					[c/00FFFF:Shoots Fire]
+					[c/FF0000:***WIP*** ~ ask jazzi for soul ui and system help]
+					'''
+			}
+
 			WishboneRang: {
 				DisplayName: Wishbone Rang
 				Tooltip:
@@ -620,8 +631,6 @@ Mods: {
 			TaintedSoilT.MapEntry: Tainted Soil T
 		}
 
-		Bestiary.DetectiveNPC: A serious and thorough skeletal detective. His goal; to find out the cause behind various anomalies through the casette tapes left around mysteriously in the world. He sports an Ulster Coat and a Deerstalker Cap after his favourite British Detective.
-
 		NPCs: {
 			UndeadHand.DisplayName: Undead Hand
 
@@ -703,6 +712,8 @@ Mods: {
 				}
 			}
 		}
+
+		UI.SoulResource: Mods.TheSkeletronMod.UI.SoulResource
 	}
 
 	DamageClasses.Bonecursed.DisplayName: Calcium Damage

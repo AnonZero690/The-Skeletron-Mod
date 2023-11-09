@@ -6,7 +6,6 @@ using Terraria.Utilities;
 using Terraria.Localization;
 using Terraria.Audio;
 using TheSkeletronMod.Common.Systems;
-using Terraria.GameContent.Bestiary;
 
 namespace TheSkeletronMod.NPCs.TownNPCs
 {
@@ -15,15 +14,6 @@ namespace TheSkeletronMod.NPCs.TownNPCs
     {
         public override void SetStaticDefaults()
         {
-
-            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new(0)
-            {
-                Velocity = 1f,
-                Direction = -1
-            };
-
-            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
-
             Main.npcFrameCount[Type] = 25;
 
             NPCID.Sets.ExtraFramesCount[Type] = 9;
@@ -144,19 +134,19 @@ namespace TheSkeletronMod.NPCs.TownNPCs
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.Bloodmoon2"), 1);
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.Bloodmoon3"), 1);
             }
-            if (Main.snowMoon)
+            if(Main.snowMoon)
             {
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.Frostmoon1"), 1);
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.Frostmoon2"), 1);
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.Frostmoon3"), 1);
             }
-            if (Main.pumpkinMoon)
+            if(Main.pumpkinMoon)
             {
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.Pumpmoon1"), 1);
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.Pumpmoon2"), 1);
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.Pumpmoon3"), 1);
             }
-            if (Main.invasionType == InvasionID.GoblinArmy)
+            if(Main.invasionType == InvasionID.GoblinArmy)
             {
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.GoblinInv1"), 1);
                 chat.Add(Language.GetTextValue("Mods.TheSkeletronMod.NPCs.DetectiveNPC.Dialogue.GoblinInv2"), 1);
@@ -194,13 +184,6 @@ namespace TheSkeletronMod.NPCs.TownNPCs
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("DetectiveGoreLeg").Type);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("DetectiveGoreLeg").Type);
             }
-        } public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-        {
-            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-        BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Snow,
-        new FlavorTextBestiaryInfoElement("Mods.TheSkeletronMod.Beastiary.DetectiveNPC")
-            });
         }
     }
 }
-

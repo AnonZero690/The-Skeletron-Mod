@@ -7,9 +7,10 @@ The Current Developers of this mod
 
 Owner: Zero
 
+All Rounder: Jazzi, Ina, Mr Liquid, anonzero960,  
 
-Lead Developer: !!Magma!!
+Coders: Quarzz, Lqtxinim, Nurby, ChadBroski01, blcktwo, lunispang, scoutfrost,     
 
-Coders: Quarzz
+Spriters: Mr Liquid, scoutfrost, Soncak, Dominick, Fallenknight Elwyn, Hannya, RAZORXTFX, scoutfrost, Skeletron, The Possum    
 
-Spriters: Mr Liquid, scoutfrost
+Music: Asvaltich, denam0, p3xy7, The Possum  
