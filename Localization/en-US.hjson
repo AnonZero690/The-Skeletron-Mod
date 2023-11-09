@@ -620,6 +620,8 @@ Mods: {
 			TaintedSoilT.MapEntry: Tainted Soil T
 		}
 
+		Bestiary.DetectiveNPC: A serious and thorough skeletal detective. His goal; to find out the cause behind various anomalies through the casette tapes left around mysteriously in the world. He sports an Ulster Coat and a Deerstalker Cap after his favourite British Detective.
+
 		NPCs: {
 			UndeadHand.DisplayName: Undead Hand
 
@@ -627,20 +629,18 @@ Mods: {
 				DisplayName: Detective
 
 				Dialogue: {
-					Tainted1:
-					Tainted2:
-					Tainted3:
-					Tainted4: Its strange but I now have the ability to sense the presence of the cursed. Maybe its because of this place?
+					Tainted1: Tainted2:
+					Tainted3: Tainted4: Its strange but I now have the ability to sense the presence of the cursed. Maybe its because of this place?
 					Tainted5: These Tainted lands give me a bad feeling... In a good way haha!
 					Casual1: Ah I love bing a detective. You do the most questionable things and no one really cares
 					Casual2: I remember a certain woman who was distraught at the loss of her children. I wonder how she's doing now...
 					Casual3: Self-awareness? Ah yes, i've studied that when diving into these strange games filled with cupcakes and eyes. It was JUST fine though.
 					Casual4: Most of my cases involved investigating murders to find out whodunnit. Thank god it pays enough.
 					Casual5: Y'know there's no harm in taking a break and enjoying the scenery. But who am i to speak when your goal is killing a god.
-					Casual6: I collect cassette tapes because they're sprawled around this land. Some in monstrous entities. 
+					Casual6: I collect cassette tapes because they're sprawled around this land. Some in monstrous entities.
 					Snow1: The snow is quite peaceful. It brings back memories long forgotten.
 					Snow2: Usually I'd have a cup of coffee with me in this cold weather. How do I consume and taste it? That's a secret!
-					Snow3: Oooh I remember this time I found a rat in the snow which had the fingerprints of the person I was tracking down so I had to chase it all around the place. I swear that rat drove me Crazy!	
+					Snow3: Oooh I remember this time I found a rat in the snow which had the fingerprints of the person I was tracking down so I had to chase it all around the place. I swear that rat drove me Crazy!
 					Forest1: Fun fact, Forests are where many murders occur, but they're also beautiful and simple for relaxation!
 					Forest2: The critters here are lively. And tasty!
 					Forest3: People should't love nature too much even if its beautiful. Theres danger in beauty after all.
@@ -681,8 +681,6 @@ Mods: {
 					DownedWOF1: A great power surges through me! I can see it, new land is near the dungeon! Go, quick!
 					DownedWOF2: The death of a guardian releasing a world of its chains? What a cliche...
 					FoundBrokenCasette: Wh-whats that in your hand? A cassette tape! Here you go, these might help. They contain useful and forgotten information depending on their colour.
-
-
 				}
 
 				TownNPCMood: {
@@ -700,6 +698,8 @@ Mods: {
 					DislikeNPC: I have to put on a fake smile in front of {NPCName} everytime. They're annoying.
 					HateNPC: I think {NPCName} can move to a different country. Their mere presence in this world is disturbing.
 					Princess_LovesNPC: "{NPCName} really helps the community with his investigations! So cool!"
+					LoveBiome: I love {BiomeName}.
+					LikeBiome: I like {BiomeName}.
 				}
 			}
 		}
