@@ -13,7 +13,6 @@ namespace TheSkeletronMod.Tiles.Blocks.Biomes.AccursedInfection
         public override void SetStaticDefaults()
         {
             Main.tileMergeDirt[Type] = true;
-            TheSkeletronMod.tileMerge[Type, Mod.Find<ModTile>("TaintedGrassT").Type] = true;
             TheSkeletronMod.tileMerge[Type, Mod.Find<ModTile>("TaintedSoilT").Type] = true;
             TheSkeletronMod.tileMerge[Type, Mod.Find<ModTile>("HexstoneT").Type] = true;
             Main.tileSolid[Type] = true;

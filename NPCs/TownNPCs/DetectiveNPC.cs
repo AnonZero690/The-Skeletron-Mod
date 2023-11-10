@@ -1,10 +1,11 @@
-﻿using Terraria.ModLoader;
+﻿using System.Collections.Generic;
 using Terraria;
-using Terraria.ID;
-using Terraria.GameContent.Personalities;
-using Terraria.Utilities;
-using Terraria.Localization;
 using Terraria.Audio;
+using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.Utilities;
 using TheSkeletronMod.Common.Systems;
 
 namespace TheSkeletronMod.NPCs.TownNPCs
@@ -63,6 +64,7 @@ namespace TheSkeletronMod.NPCs.TownNPCs
 
             AnimationType = NPCID.ArmsDealer;
         }
+
         public override bool CanGoToStatue(bool toKingStatue)
         {
             return toKingStatue;
@@ -184,6 +186,14 @@ namespace TheSkeletronMod.NPCs.TownNPCs
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("DetectiveGoreLeg").Type);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("DetectiveGoreLeg").Type);
             }
+        }
+        public override List<string> SetNPCNameList()
+        {
+            return new List<string>() {
+                "Sherlock Bones",
+                "Bones",
+                "Skelelock Bones"
+            };
         }
     }
 }
