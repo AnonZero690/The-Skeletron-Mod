@@ -1,16 +1,9 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Steamworks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Buffs;
-using Terraria.DataStructures;
+using TheSkeletronMod.Common.Globals;
+using TheSkeletronMod.Common.DamageClasses;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
 {
@@ -22,10 +15,18 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
             Item.useTime = 30;
             Item.useAnimation = 30;
             Item.useStyle = ItemUseStyleID.Swing; 
-            Item.width = 16;
-            Item.height = 16;
+            Item.width = 60;
+            Item.height = 60;
             Item.crit = 10;
             Item.DamageType = ModContent.GetInstance<Bonecursed>();
+            if (Item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
+            {
+                meleeItem.ArrayOfAttack =
+                    new CustomAttack[]
+                    {
+                        new CustomAttack(CustomUseStyle.CircleAttack, true)
+                    };
+            }
         }
         int repeatTimes = 2;
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)

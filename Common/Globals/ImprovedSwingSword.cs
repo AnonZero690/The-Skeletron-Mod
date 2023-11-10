@@ -8,11 +8,16 @@ using TheSkeletronMod.Items.Weapons.Calcium.CalcMelee;
 
 namespace TheSkeletronMod.Common.Globals
 {
+    /// <summary>
+    /// When using this, please set ItemUseStyle to -1
+    /// </summary>
     public enum CustomUseStyle
     {
         DefaultNoCustomSwing,
         SwipeAttack,
         PokeAttack,
+        CircleAttack,
+        SpearAttack,
     }
     public struct CustomAttack
     {
@@ -83,6 +88,10 @@ namespace TheSkeletronMod.Common.Globals
             {
                 PokeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
             }
+            if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.CircleAttack)
+            {
+                CircleSwingAttack(player);
+            }
         }
         public override void ModifyItemScale(Item item, Player player, ref float scale)
         {
@@ -111,6 +120,13 @@ namespace TheSkeletronMod.Common.Globals
                 scale += MathHelper.SmoothStep(-.5f, .25f, progress);
             }
         }
+        private void CircleSwingAttack(Player player)
+        {
+            float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
+            float end = (MathHelper.TwoPi + MathHelper.Pi) * -player.direction;
+            float addition = player.direction > 0 ? MathHelper.Pi : 0;
+            Swipe(addition, end + addition, percentDone, player);
+        }
         private void SwipeAttack(Player player, ImprovedSwingGlobalItemPlayer modplayer, float swingdegree, int direct)
         {
             float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
@@ -118,9 +134,9 @@ namespace TheSkeletronMod.Common.Globals
             float angle = MathHelper.ToRadians(baseAngle + swingdegree) * player.direction;
             float start = baseAngle + angle * direct;
             float end = baseAngle - angle * direct;
-            Swipe(start, end, percentDone, player, modplayer, direct);
+            Swipe(start, end, percentDone, player);
         }
-        private void Swipe(float start, float end, float percentDone, Player player, ImprovedSwingGlobalItemPlayer modplayer, int direct)
+        private void Swipe(float start, float end, float percentDone, Player player)
         {
             float currentAngle = MathHelper.SmoothStep(start, end, percentDone);
             player.itemRotation = currentAngle;
