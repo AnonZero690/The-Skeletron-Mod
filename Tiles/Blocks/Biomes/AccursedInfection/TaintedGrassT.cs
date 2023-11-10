@@ -17,7 +17,7 @@ namespace TheSkeletronMod.Tiles.Blocks.Biomes.AccursedInfection
             TheSkeletronMod.tileMerge[Type, Mod.Find<ModTile>("HexstoneT").Type] = true;
             Main.tileSolid[Type] = true;
             Main.tileBlendAll[Type] = true;
-            Main.tileSolid[Type] = true;
+            Main.tileSolid[Type] = true; 
             Main.tileBrick[Type] = true;
             Main.tileBlockLight[Type] = true;
             TileID.Sets.Grass[Type] = true;
