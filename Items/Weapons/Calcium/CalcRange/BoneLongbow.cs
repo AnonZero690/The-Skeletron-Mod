@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,11 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
         public override void HoldItem(Player player)
         {
            if (Main.mouseLeft)
-            {
+           {
+                if (isCharging == false)
+                {
+                    Projectile.NewProjectile(Item.GetSource_FromThis(), player.position, player.velocity, ModContent.ProjectileType<BoneLongbowP>(), 0, 0);
+                }
                 isCharging = true;
                 chargeTimer++;
            }
@@ -78,5 +83,24 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
             }
         }
 
+    }
+    public class BoneLongbowP : ModProjectile
+    {
+        public override void SetDefaults()
+        {
+            Projectile.width = 16;
+            Projectile.height = 16;
+        }
+        Player player;
+        public override void AI()
+        {
+            player = Main.player[Projectile.owner];
+            Projectile.rotation = (Main.MouseWorld - player.Center).ToRotation();
+            Projectile.position = player.position;
+            if (!Main.mouseLeft)
+            {
+                Projectile.Kill();
+            }
+        }
     }
 }

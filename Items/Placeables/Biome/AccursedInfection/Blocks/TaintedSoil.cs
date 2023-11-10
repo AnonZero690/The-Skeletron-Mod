@@ -5,7 +5,7 @@ using TheSkeletronMod.Tiles.Blocks.Biomes.AccursedInfection;
 
 namespace TheSkeletronMod.Items.Placeables.Biome.AccursedInfection.Blocks
 {
-    public class AccursedSoil : ModItem
+    public class TaintedSoil : ModItem
     {
         public override void SetDefaults()
         {
@@ -23,7 +23,7 @@ namespace TheSkeletronMod.Items.Placeables.Biome.AccursedInfection.Blocks
             Item.maxStack = 9999;
             Item.rare = ItemRarityID.LightPurple;
 
-            Item.createTile = ModContent.TileType<AccursedSoilT>();
+            Item.createTile = ModContent.TileType<TaintedSoilT>();
         }
         public override void SetStaticDefaults()
         {
