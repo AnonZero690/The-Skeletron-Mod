@@ -35,11 +35,11 @@ namespace TheSkeletronMod.Items.Placeables.Bars
             Item.ResearchUnlockCount = 99;
             ItemID.Sets.SortingPriorityMaterials[Item.type] = 58;
         }
-        public override void AddRecipes()
+        public override void AddRecipes()       
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<CalciumOre>(), 3);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile(TileID.Furnaces);
             recipe.Register();
         }
     }

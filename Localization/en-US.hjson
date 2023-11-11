@@ -10,6 +10,8 @@ Mods: {
 			DisabledExampleTip: Get back in the dungeon, follower of skeletron!
 		}
 
+		MapObject.CalciumOreT: Calcium Ore
+
 		Items: {
 			BoneDagger: {
 				DisplayName: Bone Dagger
