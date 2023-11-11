@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace TheSkeletronMod.Biome.TaintedLandsBiome
+namespace TheSkeletronMod.Biomes.TaintedLandsBiome
 {
     public class TaintedWaterfallStyle : ModWaterfallStyle
     {

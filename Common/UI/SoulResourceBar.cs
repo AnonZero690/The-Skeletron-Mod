@@ -26,7 +26,7 @@ namespace TheSkeletronMod.Common.UI
 
         //private UIText text;
         private UIElement area;
-        private UIAnimatedImage barFrame;
+        private UIImage barFrame;
         private Color gradientA;
         private Color gradientB;
 
@@ -40,7 +40,7 @@ namespace TheSkeletronMod.Common.UI
             area.Width.Set(90, 0f); // We will be placing the following 2 UIElements within this 182x60 area.
             area.Height.Set(60, 0f);
 
-            barFrame = new UIAnimatedImage(ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame"));
+            barFrame = new UIImage(ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame"));
 
 
             //barFrame = new UIAnimatedImage { Width = area.Width, Height = area.Height };
@@ -48,7 +48,7 @@ namespace TheSkeletronMod.Common.UI
             // Frame of our resource bar
             barFrame.Left.Set(22, 0f);
             barFrame.Top.Set(0, 0f);       //height on the screen (both assests)
-            barFrame.Width.Set(13);
+            barFrame.Width.Set(13, 20);
             barFrame.Height.Set(30, 0f);    //height of resource bar
 
             //text = new UIText("0/0", 0.8f); // text to show stat
@@ -68,8 +68,8 @@ namespace TheSkeletronMod.Common.UI
         public override void Draw(SpriteBatch spriteBatch)
         {
             // This prevents drawing unless we are using an ExampleCustomResourceWeapon
-            if (Main.LocalPlayer.HeldItem.ModItem is not MarrowMelter)
-                return;
+            //if (Main.LocalPlayer.HeldItem.ModItem is not MarrowMelter)
+                //return;
 
             base.Draw(spriteBatch);
         }
@@ -79,19 +79,19 @@ namespace TheSkeletronMod.Common.UI
         protected override void DrawSelf(SpriteBatch spriteBatch)
         { 
 
-            int frame = 0;
-            int framecount;
+            //int frame = 0;
+            //int framecount;
 
-            const int X = 958;
-            const int Y = 530;
+            //const int X = 958;
+            //const int Y = 530;
 
-            Vector2 locc = new Vector2(X, Y);
+            //Vector2 locc = new Vector2(X, Y);
 
-            Texture2D texture = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame");
+            //Texture2D texture = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame");
 
-            Rectangle sourceRect = new Rectangle(0, frame, texture.Width, 136);
+            //Rectangle sourceRect = new Rectangle(0, frame, texture.Width, 136);
 
-            Main.EntitySpriteDraw(texture, locc, sourceRect, Color.White, 0f, sourceRect.Size() / 2f, 1f, SpriteEffects.None, 0);
+            //Main.EntitySpriteDraw(texture, locc, sourceRect, Color.White, 0f, sourceRect.Size() / 2f, 1f, SpriteEffects.None, 0);
 
 
 

@@ -17,6 +17,7 @@
     <None Remove="Biomes\TaintedLandsBiome\TaintedWaterStyle_Slope.png" />
     <None Remove="Buffs\CartilageBuff.png" />
     <None Remove="Buffs\DeadlySkull.png" />
+    <None Remove="Common\UI\SoulBarFrame-Sheet.png" />
     <None Remove="Common\UI\SoulResourceFrame.png" />
     <None Remove="Dusts\TaintedSplash.png" />
     <None Remove="Gores\GunPellets.png" />

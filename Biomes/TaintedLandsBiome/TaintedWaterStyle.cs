@@ -6,7 +6,7 @@ using TheSkeletronMod.Dusts;
 using Terraria.ModLoader;
 using SteelSeries.GameSense;
 
-namespace TheSkeletronMod.Biome.TaintedLandsBiome
+namespace TheSkeletronMod.Biomes.TaintedLandsBiome
 {
     public class TaintedWaterStyle : ModWaterStyle
     {
