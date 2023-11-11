@@ -10,13 +10,20 @@
   <ItemGroup>
     <None Remove="Assets\Textures\Menu\BGPL.png" />
     <None Remove="Assets\Textures\Menu\Logopl.png" />
+    <None Remove="Biomes\TaintedLandsBiome\TaintedRain.png" />
+    <None Remove="Biomes\TaintedLandsBiome\TaintedWaterfallStyle.png" />
+    <None Remove="Biomes\TaintedLandsBiome\TaintedWaterStyle.png" />
+    <None Remove="Biomes\TaintedLandsBiome\TaintedWaterStyle_Block.png" />
+    <None Remove="Biomes\TaintedLandsBiome\TaintedWaterStyle_Slope.png" />
     <None Remove="Buffs\CartilageBuff.png" />
     <None Remove="Buffs\DeadlySkull.png" />
     <None Remove="Common\UI\SoulResourceFrame.png" />
+    <None Remove="Dusts\TaintedSplash.png" />
     <None Remove="Gores\GunPellets.png" />
     <None Remove="Gores\NPC\Town\DetectiveGoreArm.png" />
     <None Remove="Gores\NPC\Town\DetectiveGoreHead.png" />
     <None Remove="Gores\NPC\Town\DetectiveGoreLeg.png" />
+    <None Remove="Gores\SplashGores.png" />
     <None Remove="Items\Accessories\DashItems\SkeletalRelicShield.png" />
     <None Remove="Items\Accessories\SkullPendant.png" />
     <None Remove="Items\Accessories\SkullPendant_Neck.png" />
