@@ -13,6 +13,8 @@ using Terraria.UI;
 using Terraria;
 using TheSkeletronMod.Items.Weapons.Calcium.CalcRange;
 using TheSkeletronMod.Common.Systems;
+using Terraria.ModLoader.UI;
+using System.Formats.Asn1;
 
 namespace TheSkeletronMod.Common.UI
 {
@@ -21,9 +23,10 @@ namespace TheSkeletronMod.Common.UI
     {
         // For this bar we'll be using a frame texture and then a gradient inside bar, as it's one of the more simpler approaches while still looking decent.
         // Once this is all set up make sure to go and do the required stuff for most UI's in the ModSystem class.
-        private UIText text;
+
+        //private UIText text;
         private UIElement area;
-        private UIImage barFrame;
+        private UIAnimatedImage barFrame;
         private Color gradientA;
         private Color gradientB;
 
@@ -32,27 +35,32 @@ namespace TheSkeletronMod.Common.UI
             // Create a UIElement for all the elements to sit on top of, this simplifies the numbers as nested elements can be positioned relative to the top left corner of this element. 
             // UIElement is invisible and has no padding.
             area = new UIElement();
-            area.Left.Set(-area.Width.Pixels - 600, 1f); // Place the resource bar to the left of the hearts.
-            area.Top.Set(30, 0f); // Placing it just a bit below the top of the screen.
-            area.Width.Set(182, 0f); // We will be placing the following 2 UIElements within this 182x60 area.
+            area.Left.Set(-area.Width.Pixels - 600, 1f); // Place the resource bar to the left of the hearts.         //done
+            area.Top.Set(20, 0f); // Placing it just a bit below the top of the screen.                          //done
+            area.Width.Set(90, 0f); // We will be placing the following 2 UIElements within this 182x60 area.
             area.Height.Set(60, 0f);
 
-            barFrame = new UIImage(ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame")); // Frame of our resource bar
+            barFrame = new UIAnimatedImage(ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame"));
+
+
+            //barFrame = new UIAnimatedImage { Width = area.Width, Height = area.Height };
+            
+            // Frame of our resource bar
             barFrame.Left.Set(22, 0f);
-            barFrame.Top.Set(0, 0f);
-            barFrame.Width.Set(138, 0f);
-            barFrame.Height.Set(34, 0f);
+            barFrame.Top.Set(0, 0f);       //height on the screen (both assests)
+            barFrame.Width.Set(13);
+            barFrame.Height.Set(30, 0f);    //height of resource bar
 
-            text = new UIText("0/0", 0.8f); // text to show stat
-            text.Width.Set(138, 0f);
-            text.Height.Set(34, 0f);
-            text.Top.Set(40, 0f);
-            text.Left.Set(0, 0f);
+            //text = new UIText("0/0", 0.8f); // text to show stat
+            //text.Width.Set(138, 0f);
+            //text.Height.Set(34, 0f);
+            //text.Top.Set(70, 0f);
+            //text.Left.Set(0, 0f);
 
-            gradientA = new Color(123, 25, 138); // A dark purple
-            gradientB = new Color(187, 91, 201); // A light purple
+            gradientA = new Color(56, 255, 255); // A dark cyan
+            gradientB = new Color(206, 254, 255); // A light purple
 
-            area.Append(text);
+            //area.Append(text);
             area.Append(barFrame);
             Append(area);
         }
@@ -66,9 +74,30 @@ namespace TheSkeletronMod.Common.UI
             base.Draw(spriteBatch);
         }
 
+
         // Here we draw our UI
         protected override void DrawSelf(SpriteBatch spriteBatch)
-        {
+        { 
+
+            int frame = 0;
+            int framecount;
+
+            const int X = 958;
+            const int Y = 530;
+
+            Vector2 locc = new Vector2(X, Y);
+
+            Texture2D texture = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame");
+
+            Rectangle sourceRect = new Rectangle(0, frame, texture.Width, 136);
+
+            Main.EntitySpriteDraw(texture, locc, sourceRect, Color.White, 0f, sourceRect.Size() / 2f, 1f, SpriteEffects.None, 0);
+
+
+
+
+
+
             base.DrawSelf(spriteBatch);
 
             var modPlayer = Main.LocalPlayer.GetModPlayer<SoulResourcePlayer>();
@@ -79,9 +108,9 @@ namespace TheSkeletronMod.Common.UI
 
             // Here we get the screen dimensions of the barFrame element, then tweak the resulting rectangle to arrive at a rectangle within the barFrame texture that we will draw the gradient. These values were measured in a drawing program.
             Rectangle hitbox = barFrame.GetInnerDimensions().ToRectangle();
-            hitbox.X += 12;
+            hitbox.X += 18;
             hitbox.Width -= 24;
-            hitbox.Y += 8;
+            hitbox.Y += 30;
             hitbox.Height -= 16;
 
             // Now, using this hitbox, we draw a gradient by drawing vertical lines while slowly interpolating between the 2 colors.
@@ -96,16 +125,16 @@ namespace TheSkeletronMod.Common.UI
             }
         }
 
-        public override void Update(GameTime gameTime)
-        {
-            if (Main.LocalPlayer.HeldItem.ModItem is not MarrowMelter)
-                return;
+        //public override void Update(GameTime gameTime)
+        //{
+            //if (Main.LocalPlayer.HeldItem.ModItem is not MarrowMelter)
+                //return;
 
-            var modPlayer = Main.LocalPlayer.GetModPlayer<SoulResourcePlayer>();
+            //var modPlayer = Main.LocalPlayer.GetModPlayer<SoulResourcePlayer>();
             // Setting the text per tick to update and show our resource values.
-            text.SetText(SoulResourceUISystem.SoulResourceText.Format(modPlayer.SoulResourceCurrent, modPlayer.SoulResourceMax2));
-            base.Update(gameTime);
-        }
+            //text.SetText(SoulResourceUISystem.SoulResourceText.Format(modPlayer.SoulResourceCurrent, modPlayer.SoulResourceMax2));
+            //base.Update(gameTime);
+        //}
     }
 
     // This class will only be autoloaded/registered if we're not loading on a server
@@ -148,5 +177,7 @@ namespace TheSkeletronMod.Common.UI
                 );
             }
         }
+
     }
+
 }
