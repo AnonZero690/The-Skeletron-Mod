@@ -31,15 +31,28 @@ namespace TheSkeletronMod
 
         }
 
-        public override bool PreDrawLogo(SpriteBatch spriteBatch, ref Vector2 logoDrawCenter, ref float logoRotation, ref float logoScale, ref Color drawColor)
+public override bool PreDrawLogo(SpriteBatch spriteBatch, ref Vector2 logoDrawCenter, ref float logoRotation, ref float logoScale, ref Color drawColor)
         {
-
-            logoScale = 1.5f;
-            Texture2D MenuBG = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Assets/Textures/Menu/BGPL", (AssetRequestMode)2);
-            Vector2 zero = Vector2.Zero;
-            float width = Main.screenWidth / (float)MenuBG.Width;
-            _ = Main.screenHeight / (float)MenuBG.Height;
-            spriteBatch.Draw(MenuBG, new Vector2(zero.X + MathHelper.Lerp(-98f, -82f, floatX), zero.Y + MathHelper.Lerp(-50f, -47f, floatY)), null, Color.White, 0f, Vector2.Zero, width * 1.1f, 0, 0f);
+            logoScale = 2f;
+            Vector2 OffsetVector = Vector2.Zero;
+            Texture2D backTexture = ModContent.Request<Texture2D>("TheSkeletronMod/Assets/Textures/Menu/BGPL").Value;
+            Vector2 TextureSize = backTexture.Size();
+            float WidthScalar = (float)Main.ScreenSize.X / (float)backTexture.Width;
+            float HeightScalar = (float)Main.ScreenSize.Y / (float)backTexture.Height;
+            float OverallScalar;
+            if (WidthScalar > HeightScalar)
+            {
+                OverallScalar = WidthScalar;
+                OffsetVector.Y -= ((float)backTexture.Height * OverallScalar - (float)Main.ScreenSize.Y) * 0.5f;
+            }
+            else
+            {
+                OverallScalar = HeightScalar;
+                OffsetVector.X -= ((float)backTexture.Width * OverallScalar - (float)Main.ScreenSize.X) * 0.5f;
+            }
+            spriteBatch.Draw(backTexture, OffsetVector, null, Color.White, 0f, Vector2.Zero, OverallScalar, SpriteEffects.None, 0f);
+            Main.dayTime = true;
+            Main.time = 27000;
             return true;
         }
     }
