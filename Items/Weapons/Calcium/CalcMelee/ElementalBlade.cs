@@ -45,7 +45,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 }
                 if (randomNumber == 2)
                 {
-                    target.AddBuff(BuffID.CursedInferno, timeToDebuff);
+                    target.AddBuff(BuffID.Electrified, timeToDebuff);
                 }
                 if (randomNumber == 3)
                 {
@@ -53,7 +53,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 }
                 if (randomNumber == 4)
                 {
-                    target.AddBuff(BuffID.Venom, timeToDebuff);
+                    target.AddBuff(BuffID.Poisoned, timeToDebuff);
                 }
                 if (randomNumber == 5)
                 {
