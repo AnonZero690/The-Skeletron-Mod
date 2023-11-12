@@ -9,7 +9,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Assets\Textures\Menu\BGPL.png" />
-    <None Remove="Assets\Textures\Menu\Logopl.png" />
     <None Remove="Biomes\TaintedLandsBiome\TaintedRain.png" />
     <None Remove="Biomes\TaintedLandsBiome\TaintedWaterfallStyle.png" />
     <None Remove="Biomes\TaintedLandsBiome\TaintedWaterStyle.png" />
