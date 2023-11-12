@@ -22,6 +22,11 @@ Mods: {
 					'''
 			}
 
+			SoulFlameBar: {
+				DisplayName: Soulflame Bar
+				Tooltip: "[c/00FFFF:Coarsing with lost souls energy...]"
+			}
+
 			BoneCrossbow: {
 				DisplayName: Bone Crossbow
 				Tooltip:

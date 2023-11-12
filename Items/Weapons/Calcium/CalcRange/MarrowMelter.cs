@@ -9,6 +9,7 @@ using Terraria;
 using TheSkeletronMod.Tiles;
 using Terraria.GameContent.Creative;
 using TheSkeletronMod.Common.Systems;
+using TheSkeletronMod.Items.Placeables.Bars;
 
 namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
 {
@@ -49,9 +50,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Bone, 40);
-            recipe.AddIngredient(ItemID.BoneGlove, 1);
-            recipe.AddTile(ModContent.TileType<BoneAltar>());
+            recipe.AddIngredient(ItemID.Flamethrower, 1);
+            recipe.AddIngredient(ModContent.ItemType<SoulFlameBar>(), 15);
             //recipe.AddCondition(conditions: Condition.InGraveyard);
             recipe.Register();
         }
