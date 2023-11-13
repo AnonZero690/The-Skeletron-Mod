@@ -19,29 +19,7 @@ namespace TheSkeletronMod.Common.Systems
                 return;
             }
             RemoveNormalTasks(tasks);
-            //int PassID = tasks.Count();
-            //tasks.Insert
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //int shiniesIndex = tasks.FindIndex(t => t.Name.Equals("Shinies"));
-            //if (shiniesIndex != -1)
-            //{
-            //    tasks.Insert(shiniesIndex + 1, new OreGenPass("Ore Pass", 320f));
-            //}
+            tasks.Add(new PlatformGenPass("Platform Gen Pass", 0.1f));
         }
 
         private void RemoveNormalTasks(List<GenPass> tasks)
