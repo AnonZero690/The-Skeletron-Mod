@@ -526,6 +526,11 @@ Mods: {
 				DisplayName: Tainted Seeds
 				Tooltip: ""
 			}
+
+			PointyBoneWeapon: {
+				Tooltip: ""
+				DisplayName: Pointy Bone Weapon
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -578,6 +583,7 @@ Mods: {
 			BloomingBonesSProj.DisplayName: Blooming Bones S Proj
 			ElementalClaymoreP.DisplayName: Elemental Claymore P
 			BoneLongbowP.DisplayName: Bone Longbow P
+			PointyBoneWeaponProjectile.DisplayName: Pointy Bone Weapon Projectile
 		}
 
 		Buffs: {
