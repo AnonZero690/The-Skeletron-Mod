@@ -1,12 +1,6 @@
-﻿
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Runtime.InteropServices;
+﻿using System.Collections.Generic;
 using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Items.Accessories.PendantTree;
 

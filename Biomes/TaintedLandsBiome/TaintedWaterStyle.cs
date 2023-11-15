@@ -4,7 +4,6 @@ using ReLogic.Content;
 using Terraria;
 using TheSkeletronMod.Dusts;
 using Terraria.ModLoader;
-using SteelSeries.GameSense;
 
 namespace TheSkeletronMod.Biomes.TaintedLandsBiome
 {

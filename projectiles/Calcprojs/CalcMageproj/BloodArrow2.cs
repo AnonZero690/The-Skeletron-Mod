@@ -1,10 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using TheSkeletronMod.Items.Weapons.Calcium;
 using Terraria.ID;
-using Terraria.Audio;
-using Microsoft.CodeAnalysis;
 
 namespace TheSkeletronMod.projectiles.Calcprojs.CalcMageproj
 {

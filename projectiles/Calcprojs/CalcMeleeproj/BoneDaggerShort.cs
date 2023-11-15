@@ -1,7 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.Enums;
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Items.Weapons.Calcium.CalcMelee;
 

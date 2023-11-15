@@ -1,16 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Reflection.Emit;
-using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.Enums;
 using Terraria.ID;
-using Terraria.Map;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.Systems;
-using Mono.Cecil;
-using static Terraria.ModLoader.PlayerDrawLayer;
 using Terraria.DataStructures;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Modplayer;

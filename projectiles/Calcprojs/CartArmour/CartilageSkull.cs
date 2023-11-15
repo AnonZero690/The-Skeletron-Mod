@@ -2,13 +2,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using TheSkeletronMod.Items.Ammo;
-using System;
 using TheSkeletronMod.Buffs;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
-using Microsoft.CodeAnalysis.Host.Mef;
-using Terraria.GameContent.UI.States;
 using TheSkeletronMod.Modplayer;
 using Terraria.Audio;
 

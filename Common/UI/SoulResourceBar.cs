@@ -1,20 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria.GameContent.UI.Elements;
 using Terraria.GameContent;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria;
-using TheSkeletronMod.Items.Weapons.Calcium.CalcRange;
 using TheSkeletronMod.Common.Systems;
-using Terraria.ModLoader.UI;
-using System.Formats.Asn1;
 
 namespace TheSkeletronMod.Common.UI
 {

@@ -1,7 +1,7 @@
-﻿using System;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
+
 namespace TheSkeletronMod.Buffs
 {
     class OstropotosisBuff : ModBuff

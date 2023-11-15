@@ -3,8 +3,6 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
-using System.Collections.Generic;
-using TheSkeletronMod;
 
 namespace TheSkeletronMod.Tiles.Blocks.Biomes.AccursedInfection
 {
