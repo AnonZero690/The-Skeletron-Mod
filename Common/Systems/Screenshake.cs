@@ -15,12 +15,10 @@ namespace TheSkeletronMod.Common.Systems
 
         public override void ModifyScreenPosition()
         {
-            //screenshake
             if (ScreenShake > 0)
             {
                 Main.screenPosition += new Vector2(Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
                 ScreenShake--;
-
             }
 
             if (SmallScreenshake == true)

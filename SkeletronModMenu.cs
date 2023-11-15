@@ -31,7 +31,7 @@ namespace TheSkeletronMod
 
         }
 
-public override bool PreDrawLogo(SpriteBatch spriteBatch, ref Vector2 logoDrawCenter, ref float logoRotation, ref float logoScale, ref Color drawColor)
+        public override bool PreDrawLogo(SpriteBatch spriteBatch, ref Vector2 logoDrawCenter, ref float logoRotation, ref float logoScale, ref Color drawColor)
         {
             logoScale = 2f;
             Vector2 OffsetVector = Vector2.Zero;

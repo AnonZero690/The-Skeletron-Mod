@@ -4,7 +4,8 @@ using Terraria.GameContent;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using TheSkeletronMod.Items.Weapons.Calcium.CalcMelee;
+using TheSkeletronMod.Common.Utils;
+using TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee;
 
 namespace TheSkeletronMod.Common.Globals
 {
@@ -82,11 +83,11 @@ namespace TheSkeletronMod.Common.Globals
             ImprovedSwingGlobalItemPlayer modplayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
             if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.SwipeAttack)
             {
-                SwipeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
+                SwipeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.ToDirectionInt());
             }
             if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.PokeAttack)
             {
-                PokeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
+                PokeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.ToDirectionInt());
             }
             if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.CircleAttack)
             {
@@ -107,7 +108,7 @@ namespace TheSkeletronMod.Common.Globals
             if (ArrayOfAttack[modPlayer.AttackIndex].style != CustomUseStyle.DefaultNoCustomSwing)
             {
                 int duration = player.itemAnimationMax;
-                float thirdduration = duration / 3;
+                float thirdduration = duration / 3f;
                 float progress;
                 if (player.itemAnimation < thirdduration)
                 {

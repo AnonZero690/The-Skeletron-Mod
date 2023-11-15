@@ -23,7 +23,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23a57c34d985429c938ac4f5b0e227801484000/20/c8b489d1/NPC.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23a57c34d985429c938ac4f5b0e227801484000/7a/190083a8/Utils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ac2b70e76cf445ea4754166921d09c51484000/9c/a17fc7c2/StatModifier.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Common/Systems/GenPasses/OreGenPass.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,6 +106,7 @@
       <workItem from="1700018019888" duration="473000" />
       <workItem from="1700018522466" duration="810000" />
       <workItem from="1700020539743" duration="21000" />
+      <workItem from="1700058886349" duration="5159000" />
     </task>
     <servers />
   </component>

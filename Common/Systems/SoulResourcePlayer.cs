@@ -68,7 +68,7 @@ namespace TheSkeletronMod.Common.Systems
             }
 
             // Limit exampleResourceCurrent from going over the limit imposed by exampleResourceMax.
-            SoulResourceCurrent = Utils.Clamp(SoulResourceCurrent, 0, SoulResourceMax2);
+            SoulResourceCurrent = (int)MathHelper.Clamp(SoulResourceCurrent, 0, SoulResourceMax2);
         }
 
         private void CapResourceGodMode()

@@ -8,92 +8,13 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Assets\Textures\Menu\BGPL.png" />
-    <None Remove="Biomes\TaintedLandsBiome\TaintedRain.png" />
-    <None Remove="Biomes\TaintedLandsBiome\TaintedWaterfallStyle.png" />
-    <None Remove="Biomes\TaintedLandsBiome\TaintedWaterStyle.png" />
-    <None Remove="Biomes\TaintedLandsBiome\TaintedWaterStyle_Block.png" />
-    <None Remove="Biomes\TaintedLandsBiome\TaintedWaterStyle_Slope.png" />
-    <None Remove="Buffs\CartilageBuff.png" />
-    <None Remove="Buffs\DeadlySkull.png" />
-    <None Remove="Common\UI\SoulBarFrame-Sheet.png" />
-    <None Remove="Common\UI\SoulResourceFrame.png" />
-    <None Remove="Dusts\TaintedSplash.png" />
-    <None Remove="Gores\GunPellets.png" />
-    <None Remove="Gores\NPC\Town\DetectiveGoreArm.png" />
-    <None Remove="Gores\NPC\Town\DetectiveGoreHead.png" />
-    <None Remove="Gores\NPC\Town\DetectiveGoreLeg.png" />
-    <None Remove="Gores\SplashGores.png" />
-    <None Remove="Items\Accessories\DashItems\SkeletalRelicShield.png" />
-    <None Remove="Items\Accessories\SkullPendant.png" />
-    <None Remove="Items\Accessories\SkullPendant_Neck.png" />
-    <None Remove="Items\Ammo\SharpenedBone.png" />
-    <None Remove="Items\Armor\NecromancerArmour\NecromancerHood.png" />
-    <None Remove="Items\Armor\NecromancerArmour\NecromancerHood_Head.png" />
-    <None Remove="Items\Armor\NecromancerArmour\NecromancerLeggings.png" />
-    <None Remove="Items\Armor\NecromancerArmour\NecromancerLeggings_Legs.png" />
-    <None Remove="Items\Armor\NecromancerArmour\NecromancerRobe.png" />
-    <None Remove="Items\Armor\NecromancerArmour\NecromancerRobe_Body.png" />
-    <None Remove="Items\Materials\AncientBone.png" />
-    <None Remove="Items\Placeables\Bars\SoulFlameBar.png" />
-    <None Remove="Items\Placeables\Biome\AccursedInfection\Blocks\Hexstone.png" />
-    <None Remove="Items\Placeables\Biome\AccursedInfection\Blocks\TaintedSoil.png" />
-    <None Remove="Items\Placeables\Biome\AccursedInfection\TaintedSeeds.png" />
-    <None Remove="Items\Tools\GuardiansPickaxe.png" />
-    <None Remove="Items\Weapons\Calcium\bloodgemBoneScepter.png" />
-    <None Remove="Items\Weapons\Calcium\BoneYoyoItem.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\BoneBasher.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\BoneCrusher.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\Bonerang.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\BoneSword.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\elementalBlade.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\ElementalClaymore.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\GuardiansMattock.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\RattleboneRapierProj.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\SawboneSword.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\SkeletalReaper.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\SkeletalReaperProjectile.png" />
-    <None Remove="Items\Weapons\Calcium\CalcMelee\WishboneRang.png" />
-    <None Remove="Items\Weapons\Calcium\CalcOther\BagOfBoneDust.png" />
-    <None Remove="Items\Weapons\Calcium\CalcOther\BagOfSkullDust.png" />
-    <None Remove="Items\Weapons\Calcium\CalcRange\BoneBomb.png" />
-    <None Remove="Items\Weapons\Calcium\CalcRange\BoneLongbow.png" />
-    <None Remove="Items\Weapons\Calcium\CalcRange\BoneLongbowP.png" />
-    <None Remove="Items\Weapons\Calcium\CalcRange\MarrowMelter.png" />
-    <None Remove="Items\Weapons\Calcium\CalcRange\Miniskull.png" />
-    <None Remove="Items\Weapons\Calcium\image.png" />
-    <None Remove="Items\Weapons\Calcium\MilkMage\BoneTome.png" />
-    <None Remove="Items\Weapons\Calcium\MilkMage\TrueBloodgemBoneScepter.png" />
-    <None Remove="Items\Weapons\Calcium\TrueBloodgemBoneScepter.png" />
-    <None Remove="NPCs\TownNPCs\DetectiveNPC.png" />
-    <None Remove="NPCs\TownNPCs\DetectiveNPC_Head.png" />
-    <None Remove="projectiles\bloodProjectile.png" />
-    <None Remove="projectiles\Calcprojs\CalcMageproj\ClonedSkull.png" />
-    <None Remove="projectiles\Calcprojs\CalcMageproj\SkullsplitterAxeProjectile.png" />
-    <None Remove="projectiles\Calcprojs\CalcMeleeproj\BoneScytheP.png" />
-    <None Remove="projectiles\Calcprojs\CalcMeleeproj\ElementalClaymoreP.png" />
-    <None Remove="projectiles\Calcprojs\CalcMeleeproj\SkeletalReaperP.png" />
-    <None Remove="projectiles\Calcprojs\CalcMeleeproj\WishboneRangP.png" />
-    <None Remove="projectiles\Calcprojs\CalcMeleeproj\WishboneRangPOne.png" />
-    <None Remove="projectiles\Calcprojs\CalcMeleeproj\WishboneRangPTwo.png" />
-    <None Remove="projectiles\Calcprojs\CalcMeleeproj\BonerangProjectile.png" />
-    <None Remove="projectiles\Calcprojs\CalcMeleeproj\BonerangReturnProjectile.png" />
-    <None Remove="projectiles\Calcprojs\CartArmour\Beam.png" />
-    <None Remove="projectiles\Calcprojs\CartArmour\CartilageSkull.png" />
-    <None Remove="projectiles\Calcprojs\CartArmour\CartilageSkull2.png" />
-    <None Remove="projectiles\GunBarrelFlash.png" />
-    <None Remove="projectiles\GunBarrelFlash_Glow.png" />
-    <None Remove="Tiles\Blocks\Biomes\AccursedInfection\HexstoneT.png" />
-    <None Remove="Tiles\Blocks\Biomes\AccursedInfection\TaintedGrassT.png" />
-    <None Remove="Tiles\Blocks\Biomes\AccursedInfection\TaintedSoilT.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Items\Armor\Misc\" />
-    <Folder Include="Items\Weapons\Magic\" />
-    <Folder Include="Items\Weapons\Melee\" />
+    <Folder Include="Common\WorldGen" />
+    <Folder Include="Content" />
     <Folder Include="Minibosses\" />
   </ItemGroup>
 </Project>
