@@ -225,7 +225,7 @@ namespace TheSkeletronMod.Common.Globals
                                     drawdata.sourceRect = null;
                                     drawdata.ignorePlayerRotation = true;
                                     drawdata.rotation = modplayer.CustomItemRotation;
-                                    drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * ((origin.Length() + ImprovedSwingSword.PLAYERARMLENGTH + meleeItem.PokeAttackOffset) * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH) * -player.direction;
+                                    drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * ((origin.Length() + meleeItem.PokeAttackOffset) * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH) * -player.direction;
                                     drawinfo.DrawDataCache[i] = drawdata;
                                 }
                             }
@@ -250,7 +250,7 @@ namespace TheSkeletronMod.Common.Globals
             {
                 item = Player.HeldItem;
             }
-            else if(item.type != Player.HeldItem.type)
+            else if (item.type != Player.HeldItem.type)
             {
                 AttackIndex = 0;
                 item = Player.HeldItem;
