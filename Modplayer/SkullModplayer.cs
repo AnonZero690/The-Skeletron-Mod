@@ -24,7 +24,7 @@ namespace TheSkeletronMod.Modplayer
         }
         public override void OnRespawn()
         {
-            Main.NewText("Your bones magicly pull them selves together and... Here you are again!");
+            Main.NewText("Your bones magically pull them selves together and... Here you are again!");
             base.OnRespawn();
         }
         public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
