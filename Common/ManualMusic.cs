@@ -1,4 +1,4 @@
-﻿using Terraria.ModLoader;
+﻿/*using Terraria.ModLoader;
 
 namespace TheSkeletronMod.Common
 {
@@ -7,8 +7,6 @@ namespace TheSkeletronMod.Common
     {
         public void Load(Mod mod)
         {
-            //MusicLoader.AddMusic(mod, "TheSkeletronMod/Assets/Music/Assault");
-
 
         }
 
@@ -17,4 +15,4 @@ namespace TheSkeletronMod.Common
 
         }
     }
-}
+}*/

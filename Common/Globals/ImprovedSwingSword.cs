@@ -4,7 +4,8 @@ using Terraria.GameContent;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using TheSkeletronMod.Items.Weapons.Calcium.CalcMelee;
+using TheSkeletronMod.Common.Utils;
+using TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee;
 
 namespace TheSkeletronMod.Common.Globals
 {

@@ -1,20 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria.GameContent.UI.Elements;
 using Terraria.GameContent;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria;
-using TheSkeletronMod.Items.Weapons.Calcium.CalcRange;
 using TheSkeletronMod.Common.Systems;
-using Terraria.ModLoader.UI;
-using System.Formats.Asn1;
 
 namespace TheSkeletronMod.Common.UI
 {
@@ -104,7 +97,7 @@ namespace TheSkeletronMod.Common.UI
             // Calculate quotient
 
             float quotient = (float)modPlayer.SoulResourceCurrent / modPlayer.SoulResourceMax2; // Creating a quotient that represents the difference of your currentResource vs your maximumResource, resulting in a float of 0-1f.
-            quotient = Utils.Clamp(quotient, 0f, 1f); // Clamping it to 0-1f so it doesn't go over that.
+            quotient = MathHelper.Clamp(quotient, 0f, 1f); // Clamping it to 0-1f so it doesn't go over that.
 
             // Here we get the screen dimensions of the barFrame element, then tweak the resulting rectangle to arrive at a rectangle within the barFrame texture that we will draw the gradient. These values were measured in a drawing program.
             Rectangle hitbox = barFrame.GetInnerDimensions().ToRectangle();

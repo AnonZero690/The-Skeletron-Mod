@@ -24,7 +24,6 @@ namespace TheSkeletronMod.Common.Systems
             ModMenuClick = new SoundStyle("TheSkeletronMod/Assets/Sounds/ModMenuClick", (SoundType)0);
             BoneCrunchShot = new SoundStyle("TheSkeletronMod/Assets/Sounds/BoneCrunchShot", (SoundType)0);
             DetectiveDeath = new SoundStyle("TheSkeletronMod/Assets/Sounds/DetectiveDeath", (SoundType)0);
-
         }
     }
 }

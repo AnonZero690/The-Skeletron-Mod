@@ -1,8 +1,8 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.UI;
-using Microsoft.Xna.Framework;
 
-namespace TheSkeletronMod
+namespace TheSkeletronMod.Common.Utils
 {
     public static partial class SkeletronUtils
     {
