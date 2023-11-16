@@ -119,12 +119,11 @@ namespace TheSkeletronMod.Common.Globals
             Item item = player.HeldItem;
             if (player.TryGetModPlayer(out ImprovedSwingGlobalItemPlayer modplayer)
                 && item.TryGetGlobalItem(out ImprovedSwingSword meleeItem)
-                && meleeItem.ArrayOfAttack != null)
+                && meleeItem.ArrayOfAttack != null && meleeItem.ArrayOfAttack.Length > 0)
             {
                 meleeItem.ArrayOfAttack[modplayer.AttackIndex].ModifyDrawInfo(ref drawinfo, player, item, modplayer, meleeItem);
             }
             orig.Invoke(ref drawinfo);
-
         }
     }
     public class ImprovedSwingGlobalItemPlayer : ModPlayer
