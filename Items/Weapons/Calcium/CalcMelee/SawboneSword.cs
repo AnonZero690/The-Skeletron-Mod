@@ -26,8 +26,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 meleeItem.ArrayOfAttack =
                     new CustomAttack[]
                     {
-                        new CustomAttack(CustomUseStyle.PokeAttack, true),
-                        new CustomAttack(CustomUseStyle.PokeAttack, false)
+                        new PokeAttack{ SwingDownWard = true },
+                        new PokeAttack{ SwingDownWard = false }
                     };
                 meleeItem.ItemSwingDegree = 150;
             }
@@ -63,16 +63,16 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-                recipe.AddIngredient(ItemID.CrimtaneBar, 12);
-                recipe.AddIngredient(ItemID.Bone, 20);
-                recipe.AddTile(TileID.Anvils);
-                recipe.Register();
+            recipe.AddIngredient(ItemID.CrimtaneBar, 12);
+            recipe.AddIngredient(ItemID.Bone, 20);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
 
             Recipe recipe2 = CreateRecipe();
-                recipe2.AddIngredient(ItemID.DemoniteBar, 12);
-                recipe2.AddIngredient(ItemID.Bone, 20);
-                recipe2.AddTile(TileID.Anvils);
-                recipe2.Register();
+            recipe2.AddIngredient(ItemID.DemoniteBar, 12);
+            recipe2.AddIngredient(ItemID.Bone, 20);
+            recipe2.AddTile(TileID.Anvils);
+            recipe2.Register();
         }
     }
     public class SawboneSwordSpawnSpikeP : ModProjectile

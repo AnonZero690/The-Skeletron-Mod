@@ -28,8 +28,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 meleeItem.ArrayOfAttack =
                     new CustomAttack[]
                     {
-                        new CustomAttack(CustomUseStyle.SwipeAttack, true),
-                        new CustomAttack(CustomUseStyle.SwipeAttack, false)
+                        new SwipeAttack(){ SwingDownWard = false },
+                        new SwipeAttack(){ SwingDownWard = false }
                     };
                 meleeItem.ItemSwingDegree = 150;
             }

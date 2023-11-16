@@ -29,8 +29,8 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 meleeItem.ArrayOfAttack =
                     new CustomAttack[]
                     {
-                        new CustomAttack(CustomUseStyle.PokeAttack, true),
-                        new CustomAttack(CustomUseStyle.PokeAttack, false)
+                        new PokeAttack{ SwingDownWard = true },
+                        new PokeAttack{ SwingDownWard = false }
                     };
                 meleeItem.ItemSwingDegree = 150;
             }

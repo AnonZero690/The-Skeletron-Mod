@@ -24,7 +24,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcMelee
                 meleeItem.ArrayOfAttack =
                     new CustomAttack[]
                     {
-                        new CustomAttack(CustomUseStyle.CircleAttack, true)
+                        new SwipeAttack()
                     };
             }
         }
