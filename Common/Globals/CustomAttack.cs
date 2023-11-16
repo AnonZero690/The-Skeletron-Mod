@@ -14,8 +14,9 @@ namespace TheSkeletronMod.Common.Globals
             float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
             float baseAngle = modplayer.data.ToRotation();
             float angle = MathHelper.ToRadians(baseAngle + globalitem.ItemSwingDegree) * player.direction;
-            float start = baseAngle + angle * SwingDownWard.BoolOne();
-            float end = baseAngle - angle * SwingDownWard.BoolOne();
+            int direct = SwingDownWard.ToDirectionInt();
+            float start = baseAngle + angle * direct;
+            float end = baseAngle - angle * direct;
             float currentAngle = MathHelper.SmoothStep(start, end, percentDone);
             player.itemRotation = currentAngle;
             player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, currentAngle - MathHelper.PiOver2);
@@ -56,7 +57,7 @@ namespace TheSkeletronMod.Common.Globals
         public override void UseStyle(Item item, ImprovedSwingSword globalitem, Player player, Rectangle heldItemFrame)
         {
             ImprovedSwingGlobalItemPlayer modplayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
-            int direct = SwingDownWard.BoolOne();
+            int direct = SwingDownWard.ToDirectionInt();
             float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
             float baseAngle = modplayer.data.ToRotation();
             float angle = MathHelper.ToRadians(baseAngle + globalitem.ItemSwingDegree) * player.direction;
