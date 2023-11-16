@@ -94,14 +94,6 @@ namespace TheSkeletronMod.Common.Globals
                 return;
             ArrayOfAttack[modPlayer.AttackIndex].ModifyItemScale(item, player, ref scale);
         }
-        private void Swipe(float start, float end, float percentDone, Player player)
-        {
-            float currentAngle = MathHelper.SmoothStep(start, end, percentDone);
-            player.itemRotation = currentAngle;
-            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, currentAngle - MathHelper.PiOver2);
-            player.itemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 * 3;
-            player.itemLocation = player.Center + Vector2.UnitX.RotatedBy(currentAngle) * PLAYERARMLENGTH;
-        }
         public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
         {
             ImprovedSwingGlobalItemPlayer modPlayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
@@ -185,7 +177,7 @@ namespace TheSkeletronMod.Common.Globals
             Item item = Player.HeldItem;
             if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
-                if (meleeItem.ArrayOfAttack != null)
+                if (meleeItem.ArrayOfAttack != null && meleeItem.ArrayOfAttack.Length <= AttackIndex)
                 {
                     meleeItem.ArrayOfAttack[AttackIndex].PreModifyDrawInfo(ref drawInfo, Player);
                 }
