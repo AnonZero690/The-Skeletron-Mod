@@ -3,6 +3,7 @@ using Terraria.GameContent;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
+using TheSkeletronMod.Common.Utils;
 
 namespace TheSkeletronMod.Common.Globals
 {
