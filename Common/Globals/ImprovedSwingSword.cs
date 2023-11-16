@@ -176,7 +176,7 @@ namespace TheSkeletronMod.Common.Globals
             Item item = Player.HeldItem;
             if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
-                if (meleeItem.ArrayOfAttack != null && meleeItem.ArrayOfAttack.Length <= AttackIndex)
+                if (meleeItem.ArrayOfAttack != null && meleeItem.ArrayOfAttack.Length <= AttackIndex && meleeItem.ArrayOfAttack.Length > 0)
                 {
                     meleeItem.ArrayOfAttack[AttackIndex].PreModifyDrawInfo(ref drawInfo, Player);
                 }
