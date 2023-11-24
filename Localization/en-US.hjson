@@ -531,6 +531,11 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Pointy Bone Weapon
 			}
+
+			Airstrike: {
+				DisplayName: Airstrike
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
@@ -584,6 +589,7 @@ Mods: {
 			ElementalClaymoreP.DisplayName: Elemental Claymore P
 			BoneLongbowP.DisplayName: Bone Longbow P
 			PointyBoneWeaponProjectile.DisplayName: Pointy Bone Weapon Projectile
+			AirstrikeBone.DisplayName: Airstrike Bone
 		}
 
 		Buffs: {

@@ -8,13 +8,14 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Content\Items\Weapons\Calcium\MilkMage\airstrike.PNG" />
+    <None Remove="Content\Projectiles\Calcprojs\CalcMageproj\AirstrikeBone.PNG" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\WorldGen" />
-    <Folder Include="Content" />
     <Folder Include="Minibosses\" />
   </ItemGroup>
 </Project>
