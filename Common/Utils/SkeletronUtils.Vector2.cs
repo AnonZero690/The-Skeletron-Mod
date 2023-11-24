@@ -1,40 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Utilities;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 
-namespace TheSkeletronMod
+namespace TheSkeletronMod.Common.Utils
 {
     public static partial class SkeletronUtils
     {
-        public static Vector2 LimitingVelocity(this Vector2 velocity, float limited)
+        public static Vector2 LimitLength(this Vector2 vec, float length)
         {
-            GetAbsoluteNormalizedVector2(velocity, limited, out float X, out float Y);
-            velocity.X = Math.Clamp(velocity.X, -X, X);
-            velocity.Y = Math.Clamp(velocity.Y, -Y, Y);
-            return velocity;
+            if (vec.Length() > length)
+            {
+                vec.Normalize();
+                vec *= length;
+            }
+            return vec;
         }
-        public static Vector2 LimitedPosition(this Vector2 position, Vector2 position2, float limited)
+        public static Vector2 LimitPosition(this Vector2 position, Vector2 center, float distance)
         {
-            position.X = Math.Clamp(position.X, -limited + position2.X, limited + position2.X);
-            position.Y = Math.Clamp(position.Y, -limited + position2.Y, limited + position2.Y);
+            position.X = Math.Clamp(position.X, -distance + center.X, distance + center.X);
+            position.Y = Math.Clamp(position.Y, -distance + center.Y, distance + center.Y);
             return position;
         }
-        /// <summary>
-        /// Take a bool and return a int number base on true or false
-        /// </summary>
-        /// <param name="Num"></param>
-        /// <returns>Return 1 if true
-        /// <br/>Otherwise return 0</returns>
-        public static int BoolZero(this bool Num) => Num ? 1 : 0;
-        public static int BoolOne(this bool Num) => Num ? 1 : -1;
         public static Vector2 NextVector2RectangleEdge(this UnifiedRandom r, float RectangleWidthHalf, float RectangleHeightHalf)
         {
             float X = r.NextFloat(-RectangleWidthHalf, RectangleWidthHalf);
             float Y = r.NextFloat(-RectangleHeightHalf, RectangleHeightHalf);
             bool Randomdecider = r.NextBool();
-            Vector2 RandomPointOnEdge = new Vector2(X * Randomdecider.BoolZero(), Y * (!Randomdecider).BoolZero());
+            Vector2 RandomPointOnEdge = new Vector2(X * Randomdecider.ToInt(), Y * (!Randomdecider).ToInt());
             if (RandomPointOnEdge.X == 0)
             {
                 RandomPointOnEdge.X = RectangleWidthHalf;
@@ -43,8 +37,9 @@ namespace TheSkeletronMod
             {
                 RandomPointOnEdge.Y = RectangleHeightHalf;
             }
-            return RandomPointOnEdge * r.NextBool().BoolOne();
+            return RandomPointOnEdge * r.NextBool().ToDirectionInt();
         }
+        // This can be done by just using Rectangle.Contains, so just use that instead
         public static bool Vector2WithinRectangle(this Vector2 position, float X, float Y, Vector2 Center)
         {
             Vector2 positionNeedCheck1 = new Vector2(Center.X + X, Center.Y + Y);
@@ -52,14 +47,6 @@ namespace TheSkeletronMod
             if (position.X < positionNeedCheck1.X && position.X > positionNeedCheck2.X && position.Y < positionNeedCheck1.Y && position.Y > positionNeedCheck2.Y)
             { return true; }//higher = -Y, lower = Y
             return false;
-        }
-        public static bool Vector2TouchLine(float pos1, float pos2, float CenterY) => pos1 < (CenterY + pos2) && pos1 > (CenterY - pos2);
-        public static bool IsLimitReached(this Vector2 velocity, float limited) => !(velocity.X < limited && velocity.X > -limited && velocity.Y < limited && velocity.Y > -limited);
-        public static void GetAbsoluteNormalizedVector2(Vector2 velocity, float limit, out float X, out float Y)
-        {
-            Vector2 newVelocity = velocity.SafeNormalize(Vector2.Zero) * limit;
-            X = Math.Abs(newVelocity.X);
-            Y = Math.Abs(newVelocity.Y);
         }
         public static Vector2 Vector2Evenly(this Vector2 vec, float ProjectileAmount, float rotation, int i)
         {
@@ -94,7 +81,11 @@ namespace TheSkeletronMod
             } while (!Collision.CanHitLine(positionCurrent, 0, 0, pos, 0, 0) || counter < 50);
             return pos;
         }
-        public static bool IsCloseToPosition(this Vector2 CurrentPosition, Vector2 Position, float distance) => (Position - CurrentPosition).Length() <= distance;
+        public static bool InRange(this Vector2 CurrentPosition, Vector2 Position, float distance) => (Position - CurrentPosition).Length() <= distance;
+        
+        // everything below hasnt been changed by me
+        // - Nurby
+        
         /// <summary>
         /// This will take a approximation of the rough position that it need to go and then stop the npc from moving when it reach that position 
         /// </summary>

@@ -4,37 +4,40 @@ using Terraria.GameContent;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using TheSkeletronMod.Items.Weapons.Calcium.CalcMelee;
+using TheSkeletronMod.Common.Utils;
+using TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee;
 
 namespace TheSkeletronMod.Common.Globals
 {
-    /// <summary>
-    /// When using this, please set ItemUseStyle to -1
-    /// </summary>
-    public enum CustomUseStyle
+    //public enum CustomUseStyle
+    //{
+    //    DefaultNoCustomSwing,
+    //    SwipeAttack,
+    //    PokeAttack,
+    //    CircleAttack,
+    //    SpearAttack,
+    //}
+    public abstract class CustomAttack
     {
-        DefaultNoCustomSwing,
-        SwipeAttack,
-        PokeAttack,
-        CircleAttack,
-        SpearAttack,
-    }
-    public struct CustomAttack
-    {
-        public CustomUseStyle style = CustomUseStyle.DefaultNoCustomSwing;
         public bool SwingDownWard = false;
-        public CustomAttack(CustomUseStyle style, bool SwingDownWard)
+        public CustomAttack()
         {
-            this.style = style;
-            this.SwingDownWard = SwingDownWard;
         }
-        public CustomAttack() { }
+        public CustomAttack(bool SwingDownWard)
+        {
+
+        }
+        public virtual void UseStyle(Item item, ImprovedSwingSword globalitem, Player player, Rectangle heldItemFrame) { }
+        public virtual void ModifyItemScale(Item item, Player player, ref float scale) { }
+        public virtual void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox) { }
+        public virtual void ModifyDrawInfo(ref PlayerDrawSet drawinfo, Player player, Item item, ImprovedSwingGlobalItemPlayer modplayer, ImprovedSwingSword meleeItem) { }
+        public virtual void PreModifyDrawInfo(ref PlayerDrawSet drawInfo, Player player) { }
     }
     /// <summary>
     /// To see implementation of this, please check <br/>
     /// <see cref="SawboneSword.SetDefaults"/> or <see cref="BoneSword.SetDefaults"/> to see how to use this
     /// </summary>
-    internal class ImprovedSwingSword : GlobalItem
+    public class ImprovedSwingSword : GlobalItem
     {
         public float PokeAttackOffset = 0;
         public override bool InstancePerEntity => true;
@@ -44,6 +47,7 @@ namespace TheSkeletronMod.Common.Globals
         /// Use this to set up your own attack swing<br/>
         /// Q : Why not use List ?<br/>
         /// A : Be responsible :>
+        /// Also Attack Index are automatically managed, so don't bother with it
         /// </summary>
         public CustomAttack[] ArrayOfAttack = new CustomAttack[] { };
 
@@ -52,11 +56,7 @@ namespace TheSkeletronMod.Common.Globals
         /// </summary>
         public override bool? UseItem(Item item, Player player)
         {
-            if (ArrayOfAttack == null)
-                return base.UseItem(item, player);
-            if (ArrayOfAttack.Length <= 0)
-                return base.UseItem(item, player);
-            if (item.type != player.HeldItem.type)
+            if (ArrayOfAttack == null || ArrayOfAttack.Length <= 0 || item.type != player.HeldItem.type)
                 return base.UseItem(item, player);
             if (player.ItemAnimationJustStarted)
             {
@@ -70,127 +70,36 @@ namespace TheSkeletronMod.Common.Globals
         }
         public override void UseStyle(Item item, Player player, Rectangle heldItemFrame)
         {
-            if (ArrayOfAttack == null)
-                return;
-            if (ArrayOfAttack.Length <= 0)
-                return;
-            if (item.type != player.HeldItem.type)
-                return;
             ImprovedSwingGlobalItemPlayer modPlayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
-            if (modPlayer.AttackIndex >= ArrayOfAttack.Length)
+            if (ArrayOfAttack == null || ArrayOfAttack.Length <= 0 || item.type != player.HeldItem.type || modPlayer.AttackIndex >= ArrayOfAttack.Length)
                 return;
-            ImprovedSwingGlobalItemPlayer modplayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
-            if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.SwipeAttack)
-            {
-                SwipeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
-            }
-            if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.PokeAttack)
-            {
-                PokeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
-            }
-            if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.CircleAttack)
-            {
-                CircleSwingAttack(player);
-            }
+            ArrayOfAttack[modPlayer.AttackIndex].UseStyle(item, this, player, heldItemFrame);
+            //if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.SwipeAttack)
+            //{
+            //    SwipeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
+            //}
+            //if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.PokeAttack)
+            //{
+            //    PokeAttack(player, modplayer, ItemSwingDegree, ArrayOfAttack[modPlayer.AttackIndex].SwingDownWard.BoolOne());
+            //}
+            //if (ArrayOfAttack[modPlayer.AttackIndex].style == CustomUseStyle.CircleAttack)
+            //{
+            //    CircleSwingAttack(player);
+            //}
         }
         public override void ModifyItemScale(Item item, Player player, ref float scale)
         {
             ImprovedSwingGlobalItemPlayer modPlayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
-            if (ArrayOfAttack == null)
+            if (ArrayOfAttack == null || ArrayOfAttack.Length <= 0 || item.type != player.HeldItem.type || modPlayer.AttackIndex >= ArrayOfAttack.Length)
                 return;
-            if (ArrayOfAttack.Length <= 0)
-                return;
-            if (item.type != player.HeldItem.type)
-                return;
-            if (modPlayer.AttackIndex >= ArrayOfAttack.Length)
-                return;
-            if (ArrayOfAttack[modPlayer.AttackIndex].style != CustomUseStyle.DefaultNoCustomSwing)
-            {
-                int duration = player.itemAnimationMax;
-                float thirdduration = duration / 3;
-                float progress;
-                if (player.itemAnimation < thirdduration)
-                {
-                    progress = player.itemAnimation / thirdduration;
-                }
-                else
-                {
-                    progress = (duration - player.itemAnimation) / thirdduration;
-                }
-                scale += MathHelper.SmoothStep(-.5f, .25f, progress);
-            }
+            ArrayOfAttack[modPlayer.AttackIndex].ModifyItemScale(item, player, ref scale);
         }
-        private void CircleSwingAttack(Player player)
-        {
-            float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
-            float end = (MathHelper.TwoPi + MathHelper.Pi) * -player.direction;
-            float addition = player.direction > 0 ? MathHelper.Pi : 0;
-            Swipe(addition, end + addition, percentDone, player);
-        }
-        private void SwipeAttack(Player player, ImprovedSwingGlobalItemPlayer modplayer, float swingdegree, int direct)
-        {
-            float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
-            float baseAngle = modplayer.data.ToRotation();
-            float angle = MathHelper.ToRadians(baseAngle + swingdegree) * player.direction;
-            float start = baseAngle + angle * direct;
-            float end = baseAngle - angle * direct;
-            Swipe(start, end, percentDone, player);
-        }
-        private void Swipe(float start, float end, float percentDone, Player player)
-        {
-            float currentAngle = MathHelper.SmoothStep(start, end, percentDone);
-            player.itemRotation = currentAngle;
-            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, currentAngle - MathHelper.PiOver2);
-            player.itemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 * 3;
-            player.itemLocation = player.Center + Vector2.UnitX.RotatedBy(currentAngle) * PLAYERARMLENGTH;
-        }
-        private void PokeAttack(Player player, ImprovedSwingGlobalItemPlayer modplayer, float swingdegree, int direct)
-        {
-            float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
-            float baseAngle = modplayer.data.ToRotation();
-            float angle = MathHelper.ToRadians(baseAngle + swingdegree) * player.direction;
-            float start = baseAngle + angle * direct;
-            float end = baseAngle - angle * direct;
-            Poke(start, end, percentDone, player, modplayer, direct);
-        }
-        private void Poke(float start, float end, float percentDone, Player player, ImprovedSwingGlobalItemPlayer modplayer, int direct)
-        {
-            float currentAngle = MathHelper.SmoothStep(start, end, percentDone);
-            ImprovedSwingGlobalItemPlayer modPlayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
-            player.itemRotation = currentAngle;
-            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, currentAngle - MathHelper.PiOver2);
-            player.itemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 * 3;
-            if (direct == -1)
-            {
-                modPlayer.CustomItemRotation = currentAngle;
-                modPlayer.CustomItemRotation += player.direction > 0 ? MathHelper.PiOver4 * 3 : MathHelper.PiOver4;
-            }
-            player.itemLocation = player.Center + Vector2.UnitX.RotatedBy(currentAngle) * PLAYERARMLENGTH;
-        }
-        //Credit hitbox code to Stardust
         public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
         {
-            if (ArrayOfAttack == null)
-                return;
-            if (ArrayOfAttack.Length <= 0)
-                return;
-            if (item.type != player.HeldItem.type)
-                return;
             ImprovedSwingGlobalItemPlayer modPlayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
-            if (modPlayer.AttackIndex >= ArrayOfAttack.Length)
+            if (ArrayOfAttack == null || ArrayOfAttack.Length <= 0 || item.type != player.HeldItem.type || modPlayer.AttackIndex >= ArrayOfAttack.Length)
                 return;
-            if (ArrayOfAttack[modPlayer.AttackIndex].style != CustomUseStyle.DefaultNoCustomSwing)
-            {
-                Vector2 handPos = Vector2.UnitY.RotatedBy(player.compositeFrontArm.rotation);
-                float length = new Vector2(item.width, item.height).Length() * player.GetAdjustedItemScale(player.HeldItem);
-                Vector2 endPos = handPos;
-                endPos *= length;
-                handPos += player.MountedCenter;
-                endPos += player.MountedCenter;
-                (int X1, int X2) XVals = SkeletronUtils.Order(handPos.X, endPos.X);
-                (int Y1, int Y2) YVals = SkeletronUtils.Order(handPos.Y, endPos.Y);
-                hitbox = new Rectangle(XVals.X1 - 2, YVals.Y1 - 2, XVals.X2 - XVals.X1 + 2, YVals.Y2 - YVals.Y1 + 2);
-            }
+            ArrayOfAttack[modPlayer.AttackIndex].UseItemHitbox(item, player, ref hitbox, ref noHitbox);
         }
     }
     /// <summary>
@@ -208,33 +117,13 @@ namespace TheSkeletronMod.Common.Globals
         {
             Player player = Main.LocalPlayer;
             Item item = player.HeldItem;
-            if (player.TryGetModPlayer(out ImprovedSwingGlobalItemPlayer modplayer))
+            if (player.TryGetModPlayer(out ImprovedSwingGlobalItemPlayer modplayer)
+                && item.TryGetGlobalItem(out ImprovedSwingSword meleeItem)
+                && meleeItem.ArrayOfAttack != null && modplayer.AttackIndex < meleeItem.ArrayOfAttack.Length)
             {
-                if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
-                {
-                    if (modplayer.AttackIndex < meleeItem.ArrayOfAttack.Length)
-                    {
-                        if (meleeItem.ArrayOfAttack[modplayer.AttackIndex].style == CustomUseStyle.PokeAttack && !meleeItem.ArrayOfAttack[modplayer.AttackIndex].SwingDownWard)
-                        {
-                            for (int i = 0; i < drawinfo.DrawDataCache.Count; i++)
-                            {
-                                if (drawinfo.DrawDataCache[i].texture == TextureAssets.Item[item.type].Value)
-                                {
-                                    DrawData drawdata = drawinfo.DrawDataCache[i];
-                                    Vector2 origin = drawdata.texture.Size() * .5f;
-                                    drawdata.sourceRect = null;
-                                    drawdata.ignorePlayerRotation = true;
-                                    drawdata.rotation = modplayer.CustomItemRotation;
-                                    drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * ((origin.Length() + ImprovedSwingSword.PLAYERARMLENGTH + meleeItem.PokeAttackOffset) * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH) * -player.direction;
-                                    drawinfo.DrawDataCache[i] = drawdata;
-                                }
-                            }
-                        }
-                    }
-                }
+                meleeItem.ArrayOfAttack[modplayer.AttackIndex].ModifyDrawInfo(ref drawinfo, player, item, modplayer, meleeItem);
             }
             orig.Invoke(ref drawinfo);
-
         }
     }
     public class ImprovedSwingGlobalItemPlayer : ModPlayer
@@ -250,22 +139,18 @@ namespace TheSkeletronMod.Common.Globals
             {
                 item = Player.HeldItem;
             }
-            else if(item.type != Player.HeldItem.type)
+            else if (item.type != Player.HeldItem.type)
             {
                 AttackIndex = 0;
                 item = Player.HeldItem;
             }
             if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
-                if (meleeItem.ArrayOfAttack == null)
-                    return;
-                if (meleeItem.ArrayOfAttack.Length <= 0)
-                    return;
-                if (item.type != Player.HeldItem.type)
-                    return;
-                if (AttackIndex >= meleeItem.ArrayOfAttack.Length)
-                    return;
-                if (meleeItem.ArrayOfAttack[AttackIndex].style == CustomUseStyle.DefaultNoCustomSwing || Player.HeldItem.noMelee)
+                if (meleeItem.ArrayOfAttack == null 
+                    || meleeItem.ArrayOfAttack.Length <= 0 
+                    || item.type != Player.HeldItem.type 
+                    || AttackIndex >= meleeItem.ArrayOfAttack.Length 
+                    || Player.HeldItem.noMelee)
                     return;
             }
             if (Player.ItemAnimationJustStarted)
@@ -291,19 +176,9 @@ namespace TheSkeletronMod.Common.Globals
             Item item = Player.HeldItem;
             if (item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
-                if (AttackIndex < meleeItem.ArrayOfAttack.Length)
+                if (meleeItem.ArrayOfAttack != null && meleeItem.ArrayOfAttack.Length <= AttackIndex && meleeItem.ArrayOfAttack.Length > 0)
                 {
-                    if (meleeItem.ArrayOfAttack[AttackIndex].style == CustomUseStyle.PokeAttack && !meleeItem.ArrayOfAttack[AttackIndex].SwingDownWard)
-                    {
-                        if (Player.direction == -1)
-                        {
-                            drawInfo.itemEffect = SpriteEffects.None;
-                        }
-                        else
-                        {
-                            drawInfo.itemEffect = SpriteEffects.FlipHorizontally;
-                        }
-                    }
+                    meleeItem.ArrayOfAttack[AttackIndex].PreModifyDrawInfo(ref drawInfo, Player);
                 }
             }
         }

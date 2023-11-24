@@ -6,7 +6,6 @@ using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria.GameContent;
 using System.Collections.Generic;
-using TheSkeletronMod.Modplayer;
 
 namespace TheSkeletronMod.Common.UI
 {
@@ -41,8 +40,8 @@ namespace TheSkeletronMod.Common.UI
         protected override void DrawSelf(SpriteBatch spriteBatch)
         {
             base.DrawSelf(spriteBatch);
-            float bar = (float)Main.LocalPlayer.GetModPlayer<SkullModplayer>().cc / Main.LocalPlayer.GetModPlayer<SkullModplayer>().ccMM;
-            bar = Utils.Clamp(bar, 0f, 1f);
+            float bar = (float)Main.LocalPlayer.GetModPlayer<SkeletronPlayer>().cc / Main.LocalPlayer.GetModPlayer<SkeletronPlayer>().ccMM;
+            bar = MathHelper.Clamp(bar, 0f, 1f);
 
             Rectangle locbar = ImageLoc.GetInnerDimensions().ToRectangle();
             locbar.X += 12;
@@ -96,7 +95,7 @@ namespace TheSkeletronMod.Common.UI
             int resourceBarIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Inventory"));
             if (resourceBarIndex != -1)
             {
-                if (Main.LocalPlayer.GetModPlayer<SkullModplayer>().ShowChargeBar == true)
+                if (Main.LocalPlayer.GetModPlayer<SkeletronPlayer>().ShowChargeBar == true)
                 {
                     ccI1.SetState(cc1);
 
@@ -112,7 +111,7 @@ namespace TheSkeletronMod.Common.UI
                 }
                 else
                 {
-                    if (Main.LocalPlayer.GetModPlayer<SkullModplayer>().ShowChargeBar == false)
+                    if (Main.LocalPlayer.GetModPlayer<SkeletronPlayer>().ShowChargeBar == false)
                     {
                         ccI1.SetState(null);
                     }

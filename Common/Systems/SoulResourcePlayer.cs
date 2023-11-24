@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
 
@@ -73,7 +68,7 @@ namespace TheSkeletronMod.Common.Systems
             }
 
             // Limit exampleResourceCurrent from going over the limit imposed by exampleResourceMax.
-            SoulResourceCurrent = Utils.Clamp(SoulResourceCurrent, 0, SoulResourceMax2);
+            SoulResourceCurrent = (int)MathHelper.Clamp(SoulResourceCurrent, 0, SoulResourceMax2);
         }
 
         private void CapResourceGodMode()

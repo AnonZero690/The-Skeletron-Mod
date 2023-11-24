@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
+
 namespace TheSkeletronMod.Common.Systems
 {
 
@@ -19,12 +15,10 @@ namespace TheSkeletronMod.Common.Systems
 
         public override void ModifyScreenPosition()
         {
-            //screenshake
             if (ScreenShake > 0)
             {
                 Main.screenPosition += new Vector2(Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
                 ScreenShake--;
-
             }
 
             if (SmallScreenshake == true)

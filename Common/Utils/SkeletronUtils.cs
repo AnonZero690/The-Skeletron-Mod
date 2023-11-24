@@ -1,12 +1,12 @@
 ﻿using System;
-using Terraria;
-using Terraria.ID;
-using System.Linq;
-using Terraria.GameContent;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.GameContent;
+using Terraria.ID;
 
-namespace TheSkeletronMod
+namespace TheSkeletronMod.Common.Utils
 {
     public static partial class SkeletronUtils
     {
@@ -16,7 +16,7 @@ namespace TheSkeletronMod
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string GetTheSameTextureAsEntity<T>() where T : class
+        public static string GetEntityTexture<T>() where T : class
         {
             var type = typeof(T);
             string NameSpace = type.Namespace;
@@ -89,285 +89,57 @@ namespace TheSkeletronMod
         /// <param name="v2"></param>
         /// <returns></returns>
         public static (int, int) Order(float v1, float v2) => v1 < v2 ? ((int)v1, (int)v2) : ((int)v2, (int)v1);
-        public static bool LookForSpecificNPC(int type) => Main.npc.Where(npc => npc.type == type).Any();
-        
-        public static bool LookForHostileNPC(this Vector2 position, float distance)
+        public static bool AnyNPCs(int type) => NPC.CountNPCS(type) > 0;
+        public static NPC GetNearestNPC(this Vector2 position, float distance)
         {
+            NPC nearest = null;
             for (int i = 0; i < Main.maxNPCs; i++)
             {
-                if (Main.npc[i].active)
+                float dist = Main.npc[i].Distance(position);
+                if (Main.npc[i].active && dist < distance)
                 {
-                    if (CompareSquareFloatValue(position, Main.npc[i].Center, distance)) return true;
+                    nearest = Main.npc[i];
+                    distance = dist;
                 }
             }
-            return false;
+            return nearest;
         }
-        public static Vector2 LookForHostileNPCPositionClosest(this Vector2 position, float distance)
+        public static NPC GetNearestValidTarget(this Vector2 position, float distance)
         {
-            List<Vector2> vector2List = new List<Vector2>();
-            List<float> ListOfDistance = new List<float>();
+            NPC nearest = null;
             for (int i = 0; i < Main.maxNPCs; i++)
             {
+                float dist = Main.npc[i].Distance(position);
                 if (Main.npc[i].active
-                    && CompareSquareFloatValue(position, Main.npc[i].Center, distance)
+                    && dist < distance
                     && Main.npc[i].CanBeChasedBy()
                     && !Main.npc[i].friendly)
                 {
-                    vector2List.Add(Main.npc[i].Center);
-                    ListOfDistance.Add(Vector2.DistanceSquared(position, Main.npc[i].Center));
+                    nearest = Main.npc[i];
+                    distance = dist;
                 }
             }
-            if (vector2List.Count > 0)
-            {
-                float smallNum = FloatSmallestInList(ListOfDistance);
-                //idk why but IndexOf always return 0 so we are searching manually
-                for (int i = 0; i < ListOfDistance.Count; i++)
-                {
-                    if (ListOfDistance[i] == smallNum)
-                    {
-                        return vector2List[i];
-                    }
-                }
-            }
-            return Vector2.Zero;
+
+            return nearest;
         }
-        public static float FloatSmallestInList(List<float> flag)
+        public static List<NPC> GetNPCsInRange(this Vector2 position, float distance)
         {
-            List<float> finalflag = flag;
-            for (int i = 0; i < flag.Count;)
-            {
-                float index = finalflag[i];
-                for (int l = i + 1; l < flag.Count; ++l)
-                {
-                    if (index > flag[l])
-                    {
-                        index = flag[l];
-                    }
-                }
-                return index;
-            }
-            return 0;
-        }
-        public static bool LookForHostileNPC(this Vector2 position, out NPC npc, float distance)
-        {
-            List<NPC> npcList = new List<NPC>();
-            List<Vector2> vector2List = new List<Vector2>();
-            for (int i = 0; i < Main.maxNPCs; i++)
-            {
-                if (Main.npc[i].active
-                    && CompareSquareFloatValue(Main.npc[i].Center, position, distance)
-                    && Main.npc[i].CanBeChasedBy()
-                    && !Main.npc[i].friendly
-                    && Collision.CanHitLine(position, 10, 10, Main.npc[i].position, Main.npc[i].width, Main.npc[i].height)
-                    )
-                {
-                    npcList.Add(Main.npc[i]);
-                    vector2List.Add(position - Main.npc[i].position);
-                }
-            }
-            if (npcList.Count > 0 || vector2List.Count > 0)
-            {
-                Vector2 closestPos = Vector2SmallestInList(vector2List);
-                //idk why but IndexOf always return 0 so we are searching manually
-                for (int i = 0; i < vector2List.Count; i++)
-                {
-                    if (vector2List[i] == closestPos)
-                    {
-                        npc = npcList[i];
-                        return true;
-                    }
-                }
-            }
-            npc = null;
-            return false;
-        }
-        public static void LookForHostileNPC(this Vector2 position, out List<NPC> npc, float distance)
-        {
-            npc = Main.npc.Where(npc =>
-            npc.active
-            && npc.type != NPCID.TargetDummy
+            return Main.npc.Where(npc =>
+                npc.type != NPCID.TargetDummy
             && npc.CanBeChasedBy()
-            && !npc.friendly
-            && CompareSquareFloatValueWithHitbox(position, npc.position, npc.Hitbox, distance)).ToList();
-        }
-        public static float InExpo(float t) => (float)Math.Pow(2, 5 * (t - 1));
-        public static float OutExpo(float t) => 1 - InExpo(1 - t);
-        public static float InOutExpo(float t)
-        {
-            if (t < 0.5) return InExpo(t * 2) * .5f;
-            return 1 - InExpo((1 - t) * 2) * .5f;
+            && npc.Distance(position) < distance).ToList();
         }
 
-        public static float InExpo(float t, float strength) => (float)Math.Pow(2, strength * (t - 1));
-        public static float OutExpo(float t, float strength) => 1 - InExpo(1 - t, strength);
-        public static float InOutExpo(float t, float strength)
+        public static Color MultiColor(Color[] colors, float f)
         {
-            if (t < 0.5) return InExpo(t * 2, strength) * .5f;
-            return 1 - InExpo((1 - t) * 2, strength) * .5f;
-        }
-        public static float InSine(float t) => (float)-Math.Cos(t * MathHelper.PiOver2);
-        public static float OutSine(float t) => (float)Math.Sin(t * MathHelper.PiOver2);
-        public static float InOutSine(float t) => (float)(Math.Cos(t * Math.PI) - 1) * -.5f;
-        public static float InBack(float t)
-        {
-            float s = 1.70158f;
-            return t * t * ((s + 1) * t - s);
-        }
-        public static float OutBack(float t) => 1 - InBack(1 - t);
-        public static float InOutBack(float t)
-        {
-            if (t < 0.5) return InBack(t * 2) * .5f;
-            return 1 - InBack((1 - t) * 2) * .5f;
-        }
-        /// <summary>
-        /// Calculate square length of Vector2 and check if it is smaller than square max distance
-        /// </summary>
-        /// <param name="pos1"></param>
-        /// <param name="pos2"></param>
-        /// <param name="maxDistance"></param>
-        /// <returns>
-        /// Return true if length of Vector2 smaller than max distance<br/>
-        /// Return false if length of Vector2 greater than max distance
-        /// </returns>
-        public static bool CompareSquareFloatValue(Vector2 pos1, Vector2 pos2, float maxDistance)
-        {
-            double value1X = pos1.X,
-                value1Y = pos1.Y,
-                value2X = pos2.X,
-                value2Y = pos2.Y,
-                DistanceX = value1X - value2X,
-                DistanceY = value1Y - value2Y,
-                maxDistanceDouble = maxDistance * maxDistance;
-            return (DistanceX * DistanceX + DistanceY * DistanceY) < maxDistanceDouble;
-        }
-        public static bool CompareSquareFloatValueWithHitbox(Vector2 position, Vector2 positionEntity, Rectangle hitboxEntity, float maxDis)
-        {
-            float maxDistanceDouble = maxDis * maxDis;
-
-            float disX = position.X - positionEntity.X;
-            float disXWidth = disX - hitboxEntity.Width;
-            float disXhalfWidth = disX - hitboxEntity.Width * .5f;
-
-            float disY = position.Y - positionEntity.Y;
-            float disYHeight = disY - hitboxEntity.Height;
-            float disYhalfHeight = disY - hitboxEntity.Height * .5f;
-            //|-|
-            //0-|
-            //|-|
-            if (disX * disX + disYhalfHeight * disYhalfHeight < maxDistanceDouble)
-                return true;
-            //|O|
-            //|-|
-            //|-|
-            if (disXhalfWidth * disXhalfWidth + disY * disY < maxDistanceDouble)
-                return true;
-            //|-|
-            //|-O
-            //|-|
-            if (disXWidth * disXWidth + disYhalfHeight * disYhalfHeight < maxDistanceDouble)
-                return true;
-            //|-|
-            //|-|
-            //|O|
-            if (disXhalfWidth * disXhalfWidth + disYHeight * disYHeight < maxDistanceDouble)
-                return true;
-            //0-|
-            //|-|
-            //|-|
-            if (disX * disX + disY * disY < maxDistanceDouble)
-                return true;
-            //|-0
-            //|-|
-            //|-|
-            if (disXWidth * disXWidth + disY * disY < maxDistanceDouble)
-                return true;
-            //|-|
-            //|-|
-            //0-|
-            if (disX * disX + disYHeight * disYHeight < maxDistanceDouble)
-                return true;
-            //|-|
-            //|-|
-            //|-0
-            if (disXWidth * disXWidth + disYHeight * disYHeight < maxDistanceDouble)
-                return true;
-            return false;
-        }
-        public static List<int> RemoveDupeInList(this List<int> flag)
-        {
-            HashSet<int> HashsetRemoveDup = new(flag);
-            return HashsetRemoveDup.ToList();
-        }
-        public static List<T> RemoveDupeInList<T>(this List<T> flag) where T : Enum
-        {
-            HashSet<T> HashsetRemoveDup = new(flag);
-            return HashsetRemoveDup.ToList();
-        }
-        /// <summary>
-        /// This will take a approximation of the rough position that it need to go and then stop the npc from moving when it reach that position 
-        /// </summary>
-        /// <param name="npc"></param>
-        /// <param name="Position"></param>
-        /// <param name="speed"></param>
-        public static bool NPCMoveToPosition(this NPC npc, Vector2 Position, float speed, float roomforError = 20f)
-        {
-            Vector2 distance = Position - npc.Center;
-            if (distance.Length() <= roomforError)
+            int start = (int)(f * (colors.Length - 1));
+            int end = (start + 1) % colors.Length;
+            if (end >= colors.Length)
             {
-                npc.velocity = Vector2.Zero;
-                return true;
+                end = start;
             }
-            npc.velocity = distance.SafeNormalize(Vector2.Zero) * speed;
-            return false;
+            float prog = f * (colors.Length - 1) - start;
+            return Color.Lerp(colors[start], colors[end], prog);
         }
-        public static Color MultiColor(List<Color> color, int speed)
-        {
-            if (progress >= 255)
-            {
-                progress = 0;
-            }
-            else
-            {
-                progress = Math.Clamp(progress + 1 * speed, 0, 255);
-            }
-            if (color.Count < 1)
-            {
-                return Color.White;
-            }
-            if (color.Count < 2)
-            {
-                return color[0];
-            }
-            int count = 0;
-            foreach (Color c in listcolor)
-            {
-                if (color.Contains(c))
-                {
-                    count++;
-                }
-            }
-            if (count != color.Count)
-            {
-                listcolor = color;
-                color1 = new Color();
-                color2 = new Color();
-            }
-            if (color1.Equals(color2))
-            {
-                color1 = color[currentIndex];
-                color3 = color[currentIndex];
-                currentIndex = Math.Clamp((currentIndex + 1 >= color.Count) ? 0 : currentIndex + 1, 0, color.Count - 1);
-                color2 = color[currentIndex];
-                progress = 0;
-            }
-            if (!color1.Equals(color2))
-            {
-                color1 = Color.Lerp(color3, color2, Math.Clamp(progress / 255f, 0, 1f));
-            }
-            return color1;
-        }
-        private static int currentIndex = 0, progress = 0;
-        static Color color1 = new Color(), color2 = new Color(), color3 = new Color();
-        static List<Color> listcolor = new List<Color>();
     }
 }
