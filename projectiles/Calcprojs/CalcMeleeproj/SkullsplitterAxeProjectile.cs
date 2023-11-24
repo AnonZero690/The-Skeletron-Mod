@@ -16,10 +16,9 @@ namespace TheSkeletronMod.projectiles.Calcprojs.CalcMeleeproj
         {
             Projectile.width = 88;
             Projectile.height = 93;
-            Projectile.penetrate = -1;
+            Projectile.penetrate = 0;
             Projectile.tileCollide = false;
             Projectile.timeLeft = 999;
-            Projectile.damage = 100;
             Projectile.knockBack = 10;
         }
         const int maxFramesPerAnimFrame = 5;

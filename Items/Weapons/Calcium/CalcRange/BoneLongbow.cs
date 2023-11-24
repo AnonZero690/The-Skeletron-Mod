@@ -96,7 +96,7 @@ namespace TheSkeletronMod.Items.Weapons.Calcium.CalcRange
         {
             player = Main.player[Projectile.owner];
             Projectile.rotation = (Main.MouseWorld - player.Center).ToRotation();
-            Projectile.position = player.position;
+            Projectile.position = player.position - new Vector2(0,40);
             if (!Main.mouseLeft)
             {
                 Projectile.Kill();

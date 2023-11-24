@@ -50,7 +50,7 @@ namespace TheSkeletronMod.Modplayer
             };
         }
 
-        public int cc;
+        public int cc; // cc stuff is for bone dagger charging
 
         public const int ccMMM = 100;
 
