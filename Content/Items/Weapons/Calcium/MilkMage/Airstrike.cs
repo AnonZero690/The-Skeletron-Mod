@@ -49,7 +49,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.MilkMage
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+            Vector2 target = Main.MouseWorld;
             float ceilingLimit = target.Y;
             if (ceilingLimit > player.Center.Y - 200f)
             {
