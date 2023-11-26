@@ -22,6 +22,8 @@ namespace TheSkeletronMod.Common.UI
         private UIImage barFrame;
         private Color gradientA;
         private Color gradientB;
+        int frame = 0;
+        int framecount;
 
         public override void OnInitialize()
         {
@@ -67,24 +69,50 @@ namespace TheSkeletronMod.Common.UI
             base.Draw(spriteBatch);
         }
 
+        public override void Update(GameTime gameTime)
+        {
+            if (framecount > 0)
+            {
+                framecount--;
+            }
+
+            if (framecount == 0)
+            {
+                if (frame < 105)
+                {
+                    frame += 84;
+                }
+                else
+                {
+                    frame = 0;
+                }
+
+                framecount = 8;
+            }
+
+
+
+            base.Update(gameTime);
+        }
+
 
         // Here we draw our UI
         protected override void DrawSelf(SpriteBatch spriteBatch)
         { 
 
-            //int frame = 0;
-            //int framecount;
+            int frame = 0;
+            int framecount;
 
-            //const int X = 958;
-            //const int Y = 530;
+            const int X = 958;
+            const int Y = 530;
 
-            //Vector2 locc = new Vector2(X, Y);
+            Vector2 locc = new Vector2(X, Y);
 
-            //Texture2D texture = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame");
+            Texture2D texture = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame");
 
-            //Rectangle sourceRect = new Rectangle(0, frame, texture.Width, 136);
+            Rectangle sourceRect = new Rectangle(0, frame, texture.Width, 136);
 
-            //Main.EntitySpriteDraw(texture, locc, sourceRect, Color.White, 0f, sourceRect.Size() / 2f, 1f, SpriteEffects.None, 0);
+            Main.EntitySpriteDraw(texture, locc, sourceRect, Color.White, 0f, sourceRect.Size() / 2f, 1f, SpriteEffects.None, 0);
 
 
 
