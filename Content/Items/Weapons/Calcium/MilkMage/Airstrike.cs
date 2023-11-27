@@ -58,7 +58,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.MilkMage
             // Loop these functions 3 times.
             for (int i = 0; i < 3; i++)
             {
-                position = player.Center - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
+                position = target - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
                 position.Y -= 100 * i;
                 Vector2 heading = target - position;
 
@@ -75,7 +75,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.MilkMage
                 heading.Normalize();
                 heading *= velocity.Length();
                 heading.Y += Main.rand.Next(-40, 41) * 0.02f;
-                Projectile.NewProjectile(source, position, heading, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
+                Projectile.NewProjectile(source, position, heading, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit, Main.mouseY);
             }
 
             return false;
