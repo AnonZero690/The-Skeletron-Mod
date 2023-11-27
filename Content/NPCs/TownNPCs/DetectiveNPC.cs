@@ -1,7 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
+using Terraria.GameContent;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.GameContent.Personalities;
+using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -22,7 +29,7 @@ namespace TheSkeletronMod.Content.NPCs.TownNPCs
             NPCID.Sets.DangerDetectRange[Type] = 700;
             NPCID.Sets.AttackType[Type] = 1;
             NPCID.Sets.AttackTime[Type] = 30;
-            NPCID.Sets.AttackAverageChance[Type] = 7;
+            NPCID.Sets.AttackAverageChance[Type] = 5 ;
             NPCID.Sets.HatOffsetY[Type] = 4;
 
             NPC.Happiness
@@ -62,7 +69,7 @@ namespace TheSkeletronMod.Content.NPCs.TownNPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.knockBackResist = 1f;
 
-            AnimationType = NPCID.ArmsDealer;
+            AnimationType = NPCID.Guide;
         }
 
         public override bool CanGoToStatue(bool toKingStatue)
@@ -194,6 +201,53 @@ namespace TheSkeletronMod.Content.NPCs.TownNPCs
                 "Bones",
                 "Skelelock Bones"
             };
+        }
+
+            public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
+            {
+            projType = ProjectileID.MeteorShot; 
+            attackDelay = 1; 
+
+            if (Main.hardMode)
+            {
+                projType = ProjectileID.ChlorophyteBullet;
+            }
+        }
+        public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
+        {
+            multiplier = 24f; 
+            randomOffset = 0f; 
+        }
+
+        public override void DrawTownAttackGun(ref Texture2D item, ref Rectangle itemFrame, ref float scale, ref int horizontalHoldoutOffset)
+        {
+            if (!Main.hardMode)
+            {
+                Main.GetItemDrawFrame(ItemID.Handgun, out Texture2D itemTexture, out Rectangle itemRectangle);
+
+                item = itemTexture;
+                itemFrame = itemRectangle;
+                scale = 0.75f; 
+                horizontalHoldoutOffset = -7; 
+
+                return; 
+            }
+            Main.GetItemDrawFrame(ItemID.Uzi, out Texture2D itemTexture2, out Rectangle itemRectangle2);
+            item = itemTexture2;
+            itemFrame = itemRectangle2;
+            scale = 0.70f;
+            horizontalHoldoutOffset = -7;
+        }
+        public override void TownNPCAttackStrength(ref int damage, ref float knockback)
+        {
+            damage = 25;
+            knockback = 3f;
+        }
+
+        public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
+        {
+            cooldown = 10;
+            randExtraCooldown = 10;
         }
     }
 }
