@@ -590,6 +590,8 @@ Mods: {
 			BoneLongbowP.DisplayName: Bone Longbow P
 			PointyBoneWeaponProjectile.DisplayName: Pointy Bone Weapon Projectile
 			AirstrikeBone.DisplayName: Airstrike Bone
+			VeryBigDamageHitbox.DisplayName: Very Big Damage Hitbox
+			HugeAirstrikeBone.DisplayName: Huge Airstrike Bone
 		}
 
 		Buffs: {

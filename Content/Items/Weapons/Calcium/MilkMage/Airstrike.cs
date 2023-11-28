@@ -46,39 +46,85 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.MilkMage
         //    base.ModifyShootStats(player, ref newPos, ref velocity, ref type, ref damage, ref knockback);
         //    position = position.PositionOFFSET(velocity, 50);
         //}
+        public override bool AltFunctionUse(Player player)
+        {
+            return true;
+        }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Vector2 target = Main.MouseWorld;
-            float ceilingLimit = target.Y;
-            if (ceilingLimit > player.Center.Y - 200f)
+            if (player.altFunctionUse == 2)
             {
-                ceilingLimit = player.Center.Y - 200f;
-            }
-            // Loop these functions 3 times.
-            for (int i = 0; i < 3; i++)
-            {
-                position = target - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
-                position.Y -= 100 * i;
-                Vector2 heading = target - position;
-
-                if (heading.Y < 0f)
+                if (player.statMana >= Item.mana * 2) // we want this to be more expensive, so make sure that the player has the mana for it
                 {
-                    heading.Y *= -1f;
+                    player.statMana -= Item.mana; // remove the mana
+
+                    Vector2 target = Main.MouseWorld;
+                    float ceilingLimit = target.Y;
+                    if (ceilingLimit > player.Center.Y - 200f)
+                    {
+                        ceilingLimit = player.Center.Y - 200f;
+                    }
+                    position = target - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
+                    position.Y -= 100;
+                    Vector2 heading = target - position;
+
+                    if (heading.Y < 0f)
+                    {
+                        heading.Y *= -1f;
+                    }
+
+                    if (heading.Y < 20f)
+                    {
+                        heading.Y = 20f;
+                    }
+
+                    heading.Normalize();
+                    heading *= velocity.Length();
+                    heading.Y += Main.rand.Next(-40, 41) * 0.02f;
+                    Projectile.NewProjectile(source, new Vector2(target.X,Main.screenPosition.Y), new Vector2(0,-10), ModContent.ProjectileType<HugeAirstrikeBone>(), damage * 2, knockback, player.whoAmI, 0f, ceilingLimit, Main.mouseY);
+                    
+                }else
+                {
+                    player.statMana += Item.mana; // refund the mana which was spent by the weapon
+                }
+                
+            }
+            else
+            {
+                Vector2 target = Main.MouseWorld;
+                float ceilingLimit = target.Y;
+                if (ceilingLimit > player.Center.Y - 200f)
+                {
+                    ceilingLimit = player.Center.Y - 200f;
+                }
+                // Loop these functions 3 times.
+                for (int i = 0; i < 3; i++)
+                {
+                    position = target - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
+                    position.Y -= 100 * i;
+                    Vector2 heading = target - position;
+
+                    if (heading.Y < 0f)
+                    {
+                        heading.Y *= -1f;
+                    }
+
+                    if (heading.Y < 20f)
+                    {
+                        heading.Y = 20f;
+                    }
+
+                    heading.Normalize();
+                    heading *= velocity.Length();
+                    heading.Y += Main.rand.Next(-40, 41) * 0.02f;
+                    Projectile.NewProjectile(source, position, heading, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit, Main.mouseY);
                 }
 
-                if (heading.Y < 20f)
-                {
-                    heading.Y = 20f;
-                }
-
-                heading.Normalize();
-                heading *= velocity.Length();
-                heading.Y += Main.rand.Next(-40, 41) * 0.02f;
-                Projectile.NewProjectile(source, position, heading, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit, Main.mouseY);
+                
             }
-
             return false;
+
         }
     }
 }

@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Common.Utils;
+using TheSkeletronMod.Content.Projectiles.Calcprojs.OtherProj;
 
 namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMageproj
 {
@@ -38,6 +39,14 @@ namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMageproj
             Projectile.velocity = Vector2.Zero;
             return false;
         }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Projectile.timeLeft -= damageDone * 2;
+            if (hit.Crit == true)
+            {
+                Projectile.timeLeft += damageDone;
+            }
+        }
         public override void OnKill(int timeLeft)
         {
             // Check if the projectile is about to disappear naturally or due to hitting a tile
@@ -45,9 +54,7 @@ namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMageproj
             {
                 // Explode or perform actions when the projectile dies
                 VisualExplosion(); // also handles audio, guess I'm really bad at naming things
-                Projectile.width = 100;
-                Projectile.height = 100;
-                Projectile.damage *= 3;
+                int explosionDamage = Projectile.NewProjectile(Projectile.GetSource_FromThis(),Projectile.position,Vector2.Zero,ModContent.ProjectileType<VeryBigDamageHitbox>(),100,0);
             }
         }
         private void VisualExplosion()
