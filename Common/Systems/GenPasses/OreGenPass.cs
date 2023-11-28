@@ -18,7 +18,7 @@ namespace TheSkeletronMod.Common.Systems.GenPasses
 
         protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration)
         {
-            progress.Message = "Spawning Ores";
+            progress.Message = "Spawning 0res";
 
             // Calcium Ore
             var maxToSpawn = (int)(Main.maxTilesX * Main.maxTilesY * 6E-05);
