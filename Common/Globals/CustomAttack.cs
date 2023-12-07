@@ -72,7 +72,7 @@ namespace TheSkeletronMod.Common.Globals
             if (direct == -1)
             {
                 modPlayer.CustomItemRotation = currentAngle;
-                modPlayer.CustomItemRotation += player.direction > 0 ? MathHelper.PiOver4 * 3 : MathHelper.PiOver4;
+                modPlayer.CustomItemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 + MathHelper.PiOver2;
             }
             player.itemLocation = player.Center + Vector2.UnitX.RotatedBy(currentAngle) * ImprovedSwingSword.PLAYERARMLENGTH;
         }
@@ -116,7 +116,7 @@ namespace TheSkeletronMod.Common.Globals
                         drawdata.sourceRect = null;
                         drawdata.ignorePlayerRotation = true;
                         drawdata.rotation = modplayer.CustomItemRotation;
-                        drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * ((origin.Length() + meleeItem.PokeAttackOffset) * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH + OffsetUpwardSwing) * -player.direction;
+                        drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * (drawdata.scale.X) * -player.direction;
                         drawinfo.DrawDataCache[i] = drawdata;
                     }
                 }
