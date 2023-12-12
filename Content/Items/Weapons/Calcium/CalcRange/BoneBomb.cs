@@ -18,7 +18,8 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcRange
         public override void SetDefaults()
         {
             Item.ItemSetDefault(30, 36, 34, 5f, 40, 40, ItemUseStyleID.Swing, true);
-            Item.DefaultToRangedWeapon(ModContent.ProjectileType<BoneBombProjectile>(), -1, 40, 7, true);
+            Item.DefaultToRangedWeapon(ModContent.ProjectileType<BoneBombProjectile>(), AmmoID.None, 40, 7, true);
+            Item.DamageType = DamageClass.Ranged;
             Item.noUseGraphic = true;
             Item.consumable = true;
             Item.maxStack = 999;
