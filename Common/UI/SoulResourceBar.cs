@@ -8,6 +8,8 @@ using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria;
 using TheSkeletronMod.Common.Systems;
+using TheSkeletronMod.Content.Items.Weapons.Calcium.CalcRange;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TheSkeletronMod.Common.UI
 {
@@ -43,8 +45,8 @@ namespace TheSkeletronMod.Common.UI
             // Frame of our resource bar
             barFrame.Left.Set(22, 0f);
             barFrame.Top.Set(0, 0f);       //height on the screen (both assests)
-            barFrame.Width.Set(13, 20);
-            barFrame.Height.Set(30, 0f);    //height of resource bar
+            barFrame.Width.Set(74, 0f);
+            barFrame.Height.Set(38, 0f);    //height of resource bar
 
             //text = new UIText("0/0", 0.8f); // text to show stat
             //text.Width.Set(138, 0f);
@@ -62,62 +64,22 @@ namespace TheSkeletronMod.Common.UI
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            // This prevents drawing unless we are using an ExampleCustomResourceWeapon
-            //if (Main.LocalPlayer.HeldItem.ModItem is not MarrowMelter)
-                //return;
+
+            const int X = 22;
+            const int Y = 0;
+
+
+            if (Main.LocalPlayer.HeldItem.ModItem is not MarrowMelter)
+                return;
 
             base.Draw(spriteBatch);
         }
 
-        public override void Update(GameTime gameTime)
-        {
-            if (framecount > 0)
-            {
-                framecount--;
-            }
-
-            if (framecount == 0)
-            {
-                if (frame < 105)
-                {
-                    frame += 84;
-                }
-                else
-                {
-                    frame = 0;
-                }
-
-                framecount = 8;
-            }
-
-
-
-            base.Update(gameTime);
-        }
 
 
         // Here we draw our UI
         protected override void DrawSelf(SpriteBatch spriteBatch)
         { 
-
-            int frame = 0;
-            int framecount;
-
-            const int X = 958;
-            const int Y = 530;
-
-            Vector2 locc = new Vector2(X, Y);
-
-            Texture2D texture = (Texture2D)ModContent.Request<Texture2D>("TheSkeletronMod/Common/UI/SoulResourceFrame");
-
-            Rectangle sourceRect = new Rectangle(0, frame, texture.Width, 136);
-
-            Main.EntitySpriteDraw(texture, locc, sourceRect, Color.White, 0f, sourceRect.Size() / 2f, 1f, SpriteEffects.None, 0);
-
-
-
-
-
 
             base.DrawSelf(spriteBatch);
 
