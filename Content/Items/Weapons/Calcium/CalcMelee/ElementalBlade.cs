@@ -24,7 +24,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
                 meleeItem.ArrayOfAttack =
                     new CustomAttack[]
                     {
-                        new SwipeAttack()
+                        new SwipeAttack() { SwingDownWard = true }
                     };
             }
         }
@@ -35,7 +35,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
                 timeToDebuff += 50;
             for (int i = 0; i < 2; i++)
             {
-                int buffToAdd = 
+                int buffToAdd =
                     Main.rand.Next(new int[] { BuffID.OnFire, BuffID.Electrified, BuffID.Frostburn, BuffID.Poisoned, ModContent.BuffType<BonedDebuff>(), BuffID.Stinky });
                 target.AddBuff(buffToAdd, timeToDebuff);
             }
