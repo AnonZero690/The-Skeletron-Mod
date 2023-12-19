@@ -72,7 +72,7 @@ namespace TheSkeletronMod.Common.Globals
             if (direct == -1)
             {
                 modPlayer.CustomItemRotation = currentAngle;
-                modPlayer.CustomItemRotation += player.direction > 0 ? MathHelper.PiOver4 * 3 : MathHelper.PiOver4;
+                modPlayer.CustomItemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 + MathHelper.PiOver2;
             }
             player.itemLocation = player.Center + Vector2.UnitX.RotatedBy(currentAngle) * ImprovedSwingSword.PLAYERARMLENGTH;
         }
@@ -116,7 +116,7 @@ namespace TheSkeletronMod.Common.Globals
                         drawdata.sourceRect = null;
                         drawdata.ignorePlayerRotation = true;
                         drawdata.rotation = modplayer.CustomItemRotation;
-                        drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * ((origin.Length() + meleeItem.PokeAttackOffset) * drawdata.scale.X + ImprovedSwingSword.PLAYERARMLENGTH + OffsetUpwardSwing) * -player.direction;
+                        drawdata.position += Vector2.UnitX.RotatedBy(modplayer.CustomItemRotation) * (drawdata.scale.X) * -player.direction;
                         drawinfo.DrawDataCache[i] = drawdata;
                     }
                 }
@@ -135,6 +135,62 @@ namespace TheSkeletronMod.Common.Globals
                     drawInfo.itemEffect = SpriteEffects.FlipHorizontally;
                 }
             }
+        }
+    }
+    public class SlashAttack : CustomAttack
+    {
+        public override void UseStyle(Item item, ImprovedSwingSword globalitem, Player player, Rectangle heldItemFrame)
+        {
+            ImprovedSwingGlobalItemPlayer modplayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
+            float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
+            float baseAngle = modplayer.data.ToRotation();
+            float start = baseAngle + MathHelper.Pi * -player.direction;
+            float end = baseAngle + MathHelper.PiOver4 * player.direction;
+            float currentAngle = MathHelper.SmoothStep(start, end, Easing.OutExpo(1 - percentDone));
+            player.itemRotation = currentAngle;
+            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, currentAngle - MathHelper.PiOver2);
+            player.itemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 * 3;
+            player.itemLocation = player.Center + Vector2.UnitX.RotatedBy(currentAngle) * ImprovedSwingSword.PLAYERARMLENGTH;
+        }
+        public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
+        {
+            Vector2 handPos = Vector2.UnitY.RotatedBy(player.compositeFrontArm.rotation);
+            float length = new Vector2(item.width, item.height).Length() * player.GetAdjustedItemScale(player.HeldItem);
+            Vector2 endPos = handPos;
+            endPos *= length;
+            handPos += player.MountedCenter;
+            endPos += player.MountedCenter;
+            (int X1, int X2) XVals = SkeletronUtils.Order(handPos.X, endPos.X);
+            (int Y1, int Y2) YVals = SkeletronUtils.Order(handPos.Y, endPos.Y);
+            hitbox = new Rectangle(XVals.X1 - 2, YVals.Y1 - 2, XVals.X2 - XVals.X1 + 2, YVals.Y2 - YVals.Y1 + 2);
+        }
+    }
+    public class Slash2Attack : CustomAttack
+    {
+        public override void UseStyle(Item item, ImprovedSwingSword globalitem, Player player, Rectangle heldItemFrame)
+        {
+            ImprovedSwingGlobalItemPlayer modplayer = player.GetModPlayer<ImprovedSwingGlobalItemPlayer>();
+            float percentDone = player.itemAnimation / (float)player.itemAnimationMax;
+            float baseAngle = modplayer.data.ToRotation();
+            float start = baseAngle + (MathHelper.PiOver2 + MathHelper.PiOver4) * -player.direction;
+            float end = baseAngle + MathHelper.PiOver2 * player.direction;
+            float currentAngle = MathHelper.SmoothStep(start, end, Easing.InExpo(percentDone));
+            player.itemRotation = currentAngle;
+            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, currentAngle - MathHelper.PiOver2);
+            player.itemRotation += player.direction > 0 ? MathHelper.PiOver4 : MathHelper.PiOver4 * 3;
+            player.itemLocation = player.Center + Vector2.UnitX.RotatedBy(currentAngle) * ImprovedSwingSword.PLAYERARMLENGTH;
+        }
+        public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
+        {
+            Vector2 handPos = Vector2.UnitY.RotatedBy(player.compositeFrontArm.rotation);
+            float length = new Vector2(item.width, item.height).Length() * player.GetAdjustedItemScale(player.HeldItem);
+            Vector2 endPos = handPos;
+            endPos *= length;
+            handPos += player.MountedCenter;
+            endPos += player.MountedCenter;
+            (int X1, int X2) XVals = SkeletronUtils.Order(handPos.X, endPos.X);
+            (int Y1, int Y2) YVals = SkeletronUtils.Order(handPos.Y, endPos.Y);
+            hitbox = new Rectangle(XVals.X1 - 2, YVals.Y1 - 2, XVals.X2 - XVals.X1 + 2, YVals.Y2 - YVals.Y1 + 2);
         }
     }
 }

@@ -38,6 +38,10 @@ namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcSummProj
         {
             return false;
         }
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+            return false;
+        }
         public override void AI()
         {
             Player player = Main.player[Projectile.owner];

@@ -536,6 +536,11 @@ Mods: {
 				DisplayName: Airstrike
 				Tooltip: ""
 			}
+
+			EarlyGameWeaponForDumbAss: {
+				DisplayName: Early Game Weapon For Dumb Ass
+				Tooltip: ""
+			}
 		}
 
 		BadToTheMusicBox: {
