@@ -11,7 +11,7 @@ namespace TheSkeletronMod.Common.Systems
         /// Just to clear that up! 👀👍
         /// Also .ogg files are much better (they have better quality and you can set whatever file size you want
         /// </summary>
-        public static readonly SoundStyle ModMenuClick;
+        public static readonly SoundStyle MenuClickCrunch;
 
         public static readonly SoundStyle BoneCrunchShot;
 
@@ -21,7 +21,7 @@ namespace TheSkeletronMod.Common.Systems
         //Had to change it to a static not a private static.
         static SkelSound()
         {
-            ModMenuClick = new SoundStyle("TheSkeletronMod/Assets/Sounds/ModMenuClick", (SoundType)0);
+            MenuClickCrunch = new SoundStyle("TheSkeletronMod/Assets/Sounds/MenuClickCrunch", (SoundType)0);
             BoneCrunchShot = new SoundStyle("TheSkeletronMod/Assets/Sounds/BoneCrunchShot", (SoundType)0);
             DetectiveDeath = new SoundStyle("TheSkeletronMod/Assets/Sounds/DetectiveDeath", (SoundType)0);
         }

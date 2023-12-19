@@ -1,6 +1,9 @@
 ﻿// Commented this out due to it not being used, idk who made it but it wasnt me
 // - Nurby
 
+//Eventually it will be
+// - Zero
+
 /*using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;

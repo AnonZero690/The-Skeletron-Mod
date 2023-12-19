@@ -18,16 +18,16 @@ namespace TheSkeletronMod
 
         public override Asset<Texture2D> MoonTexture => ModContent.Request<Texture2D>($"{menuAssetPath}/SkullMoon");
 
-        public override int Music => MusicLoader.GetMusicSlot(Mod, "Assets/Music/Assault");
+        public override int Music => MusicLoader.GetMusicSlot(Mod, "Assets/Music/WhenBonesArise");
         private float floatX;
 
         private float floatY;
 
-        public override string DisplayName => "The Dungeon's Last Hurrah";
+        public override string DisplayName => "Requiem: When Bones Arise";
 
         public override void OnSelected()
         {
-            SoundEngine.PlaySound(SkelSound.ModMenuClick);
+            SoundEngine.PlaySound(SkelSound.MenuClickCrunch);
 
         }
 
