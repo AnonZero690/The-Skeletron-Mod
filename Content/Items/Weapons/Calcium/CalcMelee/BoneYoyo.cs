@@ -25,7 +25,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
             Item.shootSpeed = 16f;
             Item.knockBack = 2.5f;
             Item.damage = 16;
-            Item.rare = 6;
+            Item.rare = ItemRarityID.LightPurple;
 
             Item.DamageType = DamageClass.Melee;
             Item.channel = true;
@@ -45,8 +45,9 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.DaoofPow)
-                .AddIngredient(ItemID.Chik)
+                .AddIngredient(ItemID.Valor)
+                .AddIngredient(ItemID.Bone, 30)
+                .AddTile(TileID.Anvils)
                 .Register();
         }
     }
