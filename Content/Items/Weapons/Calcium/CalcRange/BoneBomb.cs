@@ -75,8 +75,16 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcRange
                 List<NPC> npclist = Projectile.Center.GetNPCsInRange(200f);
                 foreach (NPC npc in npclist)
                 {
-                    npc.StrikeNPC(npc.CalculateHitInfo(Projectile.damage, 1));
-                    player.addDPS(Projectile.damage);
+                    player.StrikeNPCDirect(npc, npc.CalculateHitInfo(Projectile.damage, 1));
+                }
+                for (int i = 0; i < 75; i++)
+                {
+                    int dust = Dust.NewDust(Projectile.Center, 0, 0, DustID.Smoke, Scale: Main.rand.NextFloat(3f, 4f));
+                    Main.dust[dust].noGravity = true;
+                    Main.dust[dust].velocity = Main.rand.NextVector2Circular(15, 15);
+                    int dust1 = Dust.NewDust(Projectile.Center, 0, 0, DustID.Torch, Scale: Main.rand.NextFloat(2f, 3f));
+                    Main.dust[dust1].noGravity = true;
+                    Main.dust[dust1].velocity = Main.rand.NextVector2Circular(15, 15);
                 }
                 for (int i = 0; i < 10; i++)
                 {
