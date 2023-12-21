@@ -44,6 +44,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
         int direction = 0;
         public override void AI()
         {
+            //if you can figure out this code then you're actually cracked because I made this code and still have no clue how the heck it works
             if (Projectile.timeLeft == TimeLeftForReal)
             {
                 player = Main.player[Projectile.owner];

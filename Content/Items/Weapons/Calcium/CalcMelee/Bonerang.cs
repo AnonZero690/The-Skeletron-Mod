@@ -25,13 +25,13 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<StoneBone>(), 3);
             recipe.AddIngredient(ModContent.ItemType<LeadBone>(), 3);
-            recipe.AddTile(TileID.Furnaces);
+            recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
             Recipe recipeTwo = CreateRecipe();
             recipeTwo.AddIngredient(ModContent.ItemType<StoneBone>(), 3);
             recipeTwo.AddIngredient(ModContent.ItemType<IronBone>(), 3);
-            recipeTwo.AddTile(TileID.Furnaces);
+            recipeTwo.AddTile(TileID.Anvils);
             recipeTwo.Register();
         }
     }
