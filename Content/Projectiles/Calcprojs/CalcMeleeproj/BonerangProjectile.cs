@@ -38,8 +38,8 @@ namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj
         }
         private void ReturnFunction(Vector2 v)
         {
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, -v.RotatedBy(Math.PI / 10), ModContent.ProjectileType<BonerangReturnProjectile>(), 15, 4f, Projectile.owner);
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, -v.RotatedBy(-Math.PI / 10), ModContent.ProjectileType<BonerangReturnProjectile>(), 15, 4f, Projectile.owner);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + new Vector2(Main.rand.Next(-10,11), Main.rand.Next(-10, 11)), -v.RotatedBy(Math.PI / 10), ModContent.ProjectileType<BonerangReturnProjectileTopHalf>(), 15, 4f, Projectile.owner);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + new Vector2(Main.rand.Next(-10,11), Main.rand.Next(-10, 11)), -v.RotatedBy(-Math.PI / 10), ModContent.ProjectileType<BonerangReturnProjectileBottomHalf>(), 15, 4f, Projectile.owner);
         }
     }
 }

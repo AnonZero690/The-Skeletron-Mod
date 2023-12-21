@@ -394,10 +394,7 @@ Mods: {
 
 			BoneSword: {
 				DisplayName: Bone Sword
-				Tooltip: 
-				'''
-				A sword... made of bones- why do I have to explain this to you?
-				'''
+				Tooltip: A sword... made of bones- why do I have to explain this to you?
 			}
 
 			SkullSplitterAxe: {
@@ -600,6 +597,8 @@ Mods: {
 			AirstrikeBone.DisplayName: Airstrike Bone
 			VeryBigDamageHitbox.DisplayName: Very Big Damage Hitbox
 			HugeAirstrikeBone.DisplayName: Huge Airstrike Bone
+			BonerangReturnProjectileBottomHalf.DisplayName: Bonerang Return Projectile Bottom Half
+			BonerangReturnProjectileTopHalf.DisplayName: Bonerang Return Projectile Top Half
 		}
 
 		Buffs: {

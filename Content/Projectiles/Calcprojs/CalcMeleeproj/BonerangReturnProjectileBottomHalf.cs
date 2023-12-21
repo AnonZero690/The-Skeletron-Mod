@@ -6,7 +6,7 @@ using TheSkeletronMod.Common.Utils;
 
 namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj
 {
-    class BonerangReturnProjectile : ModProjectile
+    class BonerangReturnProjectileBottomHalf : ModProjectile
     {
         public override void SetDefaults()
         {
@@ -20,6 +20,7 @@ namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj
         public override void AI()
         {
             Vector2 target = Main.player[Projectile.owner].Center;
+            Projectile.rotation += 0.17f;
             if (Projectile.Center.InRange(target, 64))
             {
                 Projectile.Kill();
