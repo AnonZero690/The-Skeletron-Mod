@@ -43,10 +43,10 @@ using System.Security.Cryptography.X509Certificates;
 //            //barFrame = new UIAnimatedImage { Width = area.Width, Height = area.Height };
             
             // Frame of our resource bar
-            barFrame.Left.Set(22, 0f);
-            barFrame.Top.Set(0, 0f);       //height on the screen (both assests)
-            barFrame.Width.Set(74, 0f);
-            barFrame.Height.Set(38, 0f);    //height of resource bar
+//            barFrame.Left.Set(22, 0f);
+//            barFrame.Top.Set(0, 0f);       //height on the screen (both assests)
+//            barFrame.Width.Set(74, 0f);
+//            barFrame.Height.Set(38, 0f);    //height of resource bar
 
 //            //text = new UIText("0/0", 0.8f); // text to show stat
 //            //text.Width.Set(138, 0f);
@@ -62,18 +62,18 @@ using System.Security.Cryptography.X509Certificates;
 //            Append(area);
 //        }
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-
-            const int X = 22;
-            const int Y = 0;
-
-
-            if (Main.LocalPlayer.HeldItem.ModItem is not MarrowMelter)
-                return;
-
-            base.Draw(spriteBatch);
-        }
+ //       public override void Draw(SpriteBatch spriteBatch)
+ //       {
+ //
+ //           const int X = 22;
+ //           const int Y = 0;
+//
+//
+  //          if (Main.LocalPlayer.HeldItem.ModItem is not MarrowMelter)
+  //              return;
+//
+//            base.Draw(spriteBatch);
+//        }
 
 
 
@@ -81,7 +81,7 @@ using System.Security.Cryptography.X509Certificates;
 //        protected override void DrawSelf(SpriteBatch spriteBatch)
 //        { 
 
-            base.DrawSelf(spriteBatch);
+  //          base.DrawSelf(spriteBatch);
 
 //            var modPlayer = Main.LocalPlayer.GetModPlayer<SoulResourcePlayer>();
 //            // Calculate quotient

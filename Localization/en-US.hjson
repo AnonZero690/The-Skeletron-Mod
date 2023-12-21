@@ -394,7 +394,10 @@ Mods: {
 
 			BoneSword: {
 				DisplayName: Bone Sword
-				Tooltip: ""
+				Tooltip: 
+				'''
+				A sword... made of bones- why do I have to explain this to you?
+				'''
 			}
 
 			SkullSplitterAxe: {
