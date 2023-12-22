@@ -407,7 +407,11 @@ Mods: {
 
 			SkullSplitterAxe: {
 				DisplayName: Skull Splitter Axe
-				Tooltip: ""
+				Tooltip: 
+				'''
+				An axe which splits skulls-
+				Okay, that's it. I'm done. No more flavor text for you!
+				'''
 			}
 
 			BoneLongbow: {
