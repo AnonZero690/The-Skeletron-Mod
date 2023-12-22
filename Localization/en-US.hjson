@@ -384,12 +384,20 @@ Mods: {
 
 			BagOfBoneDust: {
 				DisplayName: Bag Of Bone Dust
-				Tooltip: ""
+				Tooltip: 
+				'''
+				Confuses enemies when they are hit with the dust.
+				What? You'd be confused too if someone just showered you in dust.
+				'''
 			}
 
 			BagOfSkullDust: {
 				DisplayName: Bag Of Skull Dust
-				Tooltip: ""
+				Tooltip: 
+				'''
+				Wait, aren't bones and skulls made out of the same thing?
+				Why is this one stronger then?
+				'''
 			}
 
 			BoneSword: {

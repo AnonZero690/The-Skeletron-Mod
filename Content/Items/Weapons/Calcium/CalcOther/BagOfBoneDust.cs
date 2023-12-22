@@ -2,6 +2,11 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSkeletronMod.Content.Items.Materials;
+using TheSkeletronMod.Content.Items.Materials.OreBones;
+using TheSkeletronMod.Content.Items.Placeables;
+using TheSkeletronMod.Content.Items.Placeables.Bars;
+using TheSkeletronMod.Content.Items.Weapons.Calcium.CalcOther;
 
 namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcOther
 {
@@ -11,7 +16,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcOther
         {
             Item.useStyle = ItemUseStyleID.Swing;
             Item.noUseGraphic = false;
-            Item.scale = 1;
+            Item.scale = 1.2f;
             Item.useAnimation = 20;
             Item.useTime = 20;
             Item.damage = 1;
@@ -38,6 +43,14 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcOther
         {
             hitbox = new Rectangle((int)player.position.X - 100, (int)player.position.Y - 75, 200, 150);
         }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 3)
+                .AddIngredient(ItemID.Silk, 3)
+                .AddTile(TileID.Anvils)
+                .Register();
+        }
     }
     public class BagOfSkullDust : ModItem
     {
@@ -45,7 +58,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcOther
         {
             Item.useStyle = ItemUseStyleID.Swing;
             Item.noUseGraphic = false;
-            Item.scale = 1;
+            Item.scale = 1.2f;
             Item.useAnimation = 20;
             Item.useTime = 20;
             Item.damage = 1;
@@ -71,6 +84,17 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcOther
         public override void UseItemHitbox(Player player, ref Rectangle hitbox, ref bool noHitbox)
         {
             hitbox = new Rectangle((int)player.position.X - 125, (int)player.position.Y - 100, 250, 200);
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ModContent.ItemType<BagOfBoneDust>(), 1)
+                .AddIngredient(ModContent.ItemType<PlatinumBone>(), 5)
+                .AddIngredient(ModContent.ItemType<LeadBone>(), 10)
+                .AddIngredient(ModContent.ItemType<AncientBone>(), 5)
+                .AddIngredient(ItemID.SkeletronMask, 1)
+                .AddTile(TileID.Anvils)
+                .Register();
         }
     }
 }
