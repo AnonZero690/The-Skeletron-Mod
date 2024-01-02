@@ -7,15 +7,15 @@ using TheSkeletronMod.Common.DamageClasses;
 
 namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcRange
 {
-    class SkeletonBlunderBlaster : ModItem
+    class SkeletonBlunderbusss : ModItem
     {
         public override void SetDefaults()
         {
             Item.noMelee = true;
             Item.useAmmo = AmmoID.Bullet;
             Item.damage = 12;
-            Item.width = 32;
-            Item.height = 32;
+            Item.width = 60;
+            Item.height = 28;
             Item.crit = 10;
             Item.DefaultToRangedWeapon(ProjectileID.Bullet, AmmoID.Bullet, 30, 6f, true);
             Item.DamageType = ModContent.GetInstance<Bonecursed>();

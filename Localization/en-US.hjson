@@ -434,7 +434,7 @@ Mods: {
 
 			RattleboneRapier: {
 				DisplayName: Rattlebone Rapier
-				Tooltip: ""
+				Tooltip: "A flurry of jabs which do alot of damage and deal the 'Fractured' Debuff!"
 			}
 
 			BloomingBonesWand: {
@@ -539,6 +539,11 @@ Mods: {
 
 			EarlyGameWeaponForDumbAss: {
 				DisplayName: Early Game Weapon For Dumb Ass
+				Tooltip: ""
+			}
+
+			SkeletonBlunderbusss: {
+				DisplayName: Skeleton Blunderbusss
 				Tooltip: ""
 			}
 		}
