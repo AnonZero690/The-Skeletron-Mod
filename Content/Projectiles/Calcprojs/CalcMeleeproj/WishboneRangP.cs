@@ -15,6 +15,7 @@ namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj
             Projectile.DamageType = ModContent.GetInstance<Bonecursed>();
             Projectile.tileCollide = false;
             Projectile.timeLeft = 999;
+            Projectile.scale = 1.25f;
             Projectile.penetrate = -1;
         }
         float MaxLengthX = 0;
@@ -115,6 +116,7 @@ namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj
             Projectile.friendly = true;
             Projectile.scale = 1.2f;
             Projectile.penetrate = 2;
+            Projectile.scale = 1.25f;
             Projectile.DamageType = ModContent.GetInstance<Bonecursed>();
             Projectile.aiStyle = 1;
         }
@@ -135,7 +137,7 @@ namespace TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj
             Projectile.width = 24;
             Projectile.height = 24;
             Projectile.friendly = true;
-            Projectile.scale = 1.2f;
+            Projectile.scale = 1.45f;
             Projectile.penetrate = 3;
             Projectile.DamageType = ModContent.GetInstance<Bonecursed>();
             Projectile.aiStyle = 1;

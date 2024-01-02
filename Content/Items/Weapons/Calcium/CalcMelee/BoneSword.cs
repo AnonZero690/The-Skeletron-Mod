@@ -2,7 +2,9 @@
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Common.Globals;
+using TheSkeletronMod.Content.Items.Placeables.Bars;
 
 namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
 {
@@ -22,6 +24,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
             Item.useAnimation = 100;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.autoReuse = false;
+            Item.DamageType = ModContent.GetInstance<Bonecursed>();
             if (Item.TryGetGlobalItem(out ImprovedSwingSword meleeItem))
             {
                 meleeItem.ArrayOfAttack =
@@ -32,6 +35,13 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
                     };
                 meleeItem.ItemSwingDegree = 150;
             }
+        }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<CalciumBar>(), 5);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
         }
     }
 }

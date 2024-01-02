@@ -1,7 +1,10 @@
-﻿using Terraria.ID;
+﻿using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Common.Utils;
+using TheSkeletronMod.Content.Items.Materials.OreBones;
+using TheSkeletronMod.Content.Items.Placeables.Block;
 using TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj;
 
 namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
@@ -15,6 +18,21 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
             Item.shootSpeed = 6f;
             Item.rare = 1;
             Item.value = 10000;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<StoneBone>(), 3);
+            recipe.AddIngredient(ModContent.ItemType<LeadBone>(), 3);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+
+            Recipe recipeTwo = CreateRecipe();
+            recipeTwo.AddIngredient(ModContent.ItemType<StoneBone>(), 3);
+            recipeTwo.AddIngredient(ModContent.ItemType<IronBone>(), 3);
+            recipeTwo.AddTile(TileID.Anvils);
+            recipeTwo.Register();
         }
     }
 }

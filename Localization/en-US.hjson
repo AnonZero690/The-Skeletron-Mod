@@ -384,22 +384,34 @@ Mods: {
 
 			BagOfBoneDust: {
 				DisplayName: Bag Of Bone Dust
-				Tooltip: ""
+				Tooltip: 
+				'''
+				Confuses enemies when they are hit with the dust.
+				What? You'd be confused too if someone just showered you in dust.
+				'''
 			}
 
 			BagOfSkullDust: {
 				DisplayName: Bag Of Skull Dust
-				Tooltip: ""
+				Tooltip: 
+				'''
+				Wait, aren't bones and skulls made out of the same thing?
+				Why is this one stronger then?
+				'''
 			}
 
 			BoneSword: {
 				DisplayName: Bone Sword
-				Tooltip: ""
+				Tooltip: A sword... made of bones- why do I have to explain this to you?
 			}
 
 			SkullSplitterAxe: {
 				DisplayName: Skull Splitter Axe
-				Tooltip: ""
+				Tooltip: 
+				'''
+				An axe which splits skulls-
+				Okay, that's it. I'm done. No more flavor text for you!
+				'''
 			}
 
 			BoneLongbow: {
@@ -602,6 +614,8 @@ Mods: {
 			AirstrikeBone.DisplayName: Airstrike Bone
 			VeryBigDamageHitbox.DisplayName: Very Big Damage Hitbox
 			HugeAirstrikeBone.DisplayName: Huge Airstrike Bone
+			BonerangReturnProjectileBottomHalf.DisplayName: Bonerang Return Projectile Bottom Half
+			BonerangReturnProjectileTopHalf.DisplayName: Bonerang Return Projectile Top Half
 		}
 
 		Buffs: {
