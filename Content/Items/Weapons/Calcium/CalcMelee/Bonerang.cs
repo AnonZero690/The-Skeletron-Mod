@@ -22,17 +22,17 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<StoneBone>(), 3);
-            recipe.AddIngredient(ModContent.ItemType<LeadBone>(), 3);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
+            CreateRecipe()
+            .AddIngredient(ModContent.ItemType<StoneBone>(), 3)
+            .AddIngredient(ModContent.ItemType<LeadBone>(), 3)
+            .AddTile(TileID.Anvils)
+            .Register();
 
-            Recipe recipeTwo = CreateRecipe();
-            recipeTwo.AddIngredient(ModContent.ItemType<StoneBone>(), 3);
-            recipeTwo.AddIngredient(ModContent.ItemType<IronBone>(), 3);
-            recipeTwo.AddTile(TileID.Anvils);
-            recipeTwo.Register();
+             CreateRecipe()
+            .AddIngredient(ModContent.ItemType<StoneBone>(), 3)
+            .AddIngredient(ModContent.ItemType<IronBone>(), 3)
+            .AddTile(TileID.Anvils)
+            .Register();
         }
     }
 }

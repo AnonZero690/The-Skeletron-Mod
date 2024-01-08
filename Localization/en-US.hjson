@@ -546,7 +546,12 @@ Mods: {
 
 			Airstrike: {
 				DisplayName: Airstrike
-				Tooltip: ""
+				Tooltip: 
+				'''
+				Hold down left click to rain bones from the sky.
+				Press right click to summon a giant bone to rain down.
+				Right click attack costs twice as much mana.
+				'''
 			}
 
 			EarlyGameWeaponForDumbAss: {

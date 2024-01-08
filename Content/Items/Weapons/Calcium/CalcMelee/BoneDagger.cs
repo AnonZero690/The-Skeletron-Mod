@@ -70,10 +70,10 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<AncientBone>(), 14);
-            recipe.AddTile(ModContent.TileType<BoneAltar>());
-            recipe.Register();
+            CreateRecipe()
+            .AddIngredient(ModContent.ItemType<AncientBone>(), 14)
+            .AddTile(ModContent.TileType<BoneAltar>())
+            .Register();
         }
 
     }

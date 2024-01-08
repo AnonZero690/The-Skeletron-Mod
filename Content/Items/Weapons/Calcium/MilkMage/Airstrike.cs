@@ -5,6 +5,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Common.Utils;
+using TheSkeletronMod.Content.Items.Materials.OreBones;
+using TheSkeletronMod.Content.Items.Placeables.Bars;
 using TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMageproj;
 using TheSkeletronMod.Content.Tiles;
 
@@ -125,6 +127,22 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.MilkMage
             }
             return false;
 
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.Bone, 400)
+                .AddIngredient(ModContent.ItemType<PlatinumBone>(), 40)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 100)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+            //yes its expensive but its supposed to be high-investment huge dps
+            CreateRecipe()
+                .AddIngredient(ItemID.Bone, 400)
+                .AddIngredient(ModContent.ItemType<GoldBone>(), 40)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 100)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
         }
     }
 }

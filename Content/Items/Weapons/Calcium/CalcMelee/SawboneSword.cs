@@ -63,17 +63,17 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.CrimtaneBar, 12);
-            recipe.AddIngredient(ItemID.Bone, 20);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
+            CreateRecipe()
+            .AddIngredient(ItemID.CrimtaneBar, 12)
+            .AddIngredient(ItemID.Bone, 20)
+            .AddTile(TileID.Anvils)
+            .Register();
 
-            Recipe recipe2 = CreateRecipe();
-            recipe2.AddIngredient(ItemID.DemoniteBar, 12);
-            recipe2.AddIngredient(ItemID.Bone, 20);
-            recipe2.AddTile(TileID.Anvils);
-            recipe2.Register();
+             CreateRecipe()
+            .AddIngredient(ItemID.DemoniteBar, 12)
+            .AddIngredient(ItemID.Bone, 20)
+            .AddTile(TileID.Anvils)
+            .Register();
         }
     }
     public class SawboneSwordSpawnSpikeP : ModProjectile

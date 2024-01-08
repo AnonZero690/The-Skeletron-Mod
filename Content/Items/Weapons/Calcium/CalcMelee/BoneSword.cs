@@ -38,10 +38,10 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<CalciumBar>(), 5);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
+            CreateRecipe()
+            .AddIngredient(ModContent.ItemType<CalciumBar>(), 5)
+            .AddTile(TileID.Anvils)
+            .Register();
         }
     }
 }
