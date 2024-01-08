@@ -3,6 +3,11 @@ using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Common.Utils;
 using TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj;
+using TheSkeletronMod.Content.Items.Materials;
+using TheSkeletronMod.Content.Items.Placeables;
+using TheSkeletronMod.Content.Items.Placeables.Bars;
+using TheSkeletronMod.Content.Items.Materials.OreBones;
+using TheSkeletronMod.Content.Tiles;
 
 namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
 {
@@ -20,6 +25,21 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
         public override bool MeleePrefix()
         {
             return true;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 10)
+                .AddIngredient(ModContent.ItemType<DemoniteBone>(), 10)
+                .AddIngredient(ItemID.Bone, 40)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+            CreateRecipe()
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 10)
+                .AddIngredient(ModContent.ItemType<CrimtaneBone>(), 10)
+                .AddIngredient(ItemID.Bone, 40)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
         }
     }
 }

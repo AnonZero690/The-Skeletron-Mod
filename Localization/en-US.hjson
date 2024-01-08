@@ -349,12 +349,19 @@ Mods: {
 
 			BoneScythe: {
 				DisplayName: Bone Scythe
-				Tooltip: ""
+				Tooltip: 
+				'''
+				A scythe which uses undead energy to slash foes into pieces.
+				'''
 			}
 
 			SkeletalReaper: {
 				DisplayName: Skeletal Reaper
-				Tooltip: ""
+				Tooltip: 
+				'''
+				Whoa, this thing is really cool.
+				Shoots out waves of focused undead energy to pulverize foes.
+				'''
 			}
 
 			MarrowMelter: {

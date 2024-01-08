@@ -9,7 +9,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSkeletronMod.Common.DamageClasses;
 using TheSkeletronMod.Common.Utils;
+using TheSkeletronMod.Content.Items.Materials;
+using TheSkeletronMod.Content.Items.Materials.OreBones;
+using TheSkeletronMod.Content.Items.Placeables.Bars;
 using TheSkeletronMod.Content.Projectiles.Calcprojs.CalcMeleeproj;
+using TheSkeletronMod.Content.Tiles;
 
 namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
 {
@@ -33,6 +37,85 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
         public override bool MeleePrefix()
         {
             return true;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe() // iron, gold, and demonite bone
+                .AddIngredient(ModContent.ItemType<IronBone>(),6)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 6)
+                .AddIngredient(ModContent.ItemType<GoldBone>(),6)
+                .AddIngredient(ModContent.ItemType<DemoniteBone>(),6)
+                .AddIngredient(ModContent.ItemType<AncientBone>(),25)
+                .AddIngredient(ModContent.ItemType<BoneScythe>(),1)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+            CreateRecipe() // lead, gold, and demonite bone
+                .AddIngredient(ModContent.ItemType<LeadBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 6)
+                .AddIngredient(ModContent.ItemType<GoldBone>(), 6)
+                .AddIngredient(ModContent.ItemType<DemoniteBone>(), 6)
+                .AddIngredient(ModContent.ItemType<AncientBone>(), 25)
+                .AddIngredient(ModContent.ItemType<BoneScythe>(), 1)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+            CreateRecipe() // iron, platinum, and demonite bone
+                .AddIngredient(ModContent.ItemType<IronBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 6)
+                .AddIngredient(ModContent.ItemType<PlatinumBone>(), 6)
+                .AddIngredient(ModContent.ItemType<DemoniteBone>(), 6)
+                .AddIngredient(ModContent.ItemType<AncientBone>(), 25)
+                .AddIngredient(ModContent.ItemType<BoneScythe>(), 1)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+            CreateRecipe() // lead, platinum, and demonite bone
+                .AddIngredient(ModContent.ItemType<LeadBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 6)
+                .AddIngredient(ModContent.ItemType<PlatinumBone>(), 6)
+                .AddIngredient(ModContent.ItemType<DemoniteBone>(), 6)
+                .AddIngredient(ModContent.ItemType<AncientBone>(), 25)
+                .AddIngredient(ModContent.ItemType<BoneScythe>(), 1)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+
+
+
+
+            CreateRecipe() // iron, gold, and Crimtane bone
+                .AddIngredient(ModContent.ItemType<IronBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 6)
+                .AddIngredient(ModContent.ItemType<GoldBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CrimtaneBone>(), 6)
+                .AddIngredient(ModContent.ItemType<AncientBone>(), 25)
+                .AddIngredient(ModContent.ItemType<BoneScythe>(), 1)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+            CreateRecipe() // lead, gold, and Crimtane bone
+                .AddIngredient(ModContent.ItemType<LeadBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 6)
+                .AddIngredient(ModContent.ItemType<GoldBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CrimtaneBone>(), 6)
+                .AddIngredient(ModContent.ItemType<AncientBone>(), 25)
+                .AddIngredient(ModContent.ItemType<BoneScythe>(), 1)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+            CreateRecipe() // iron, platinum, and Crimtane bone
+                .AddIngredient(ModContent.ItemType<IronBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 6)
+                .AddIngredient(ModContent.ItemType<PlatinumBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CrimtaneBone>(), 6)
+                .AddIngredient(ModContent.ItemType<AncientBone>(), 25)
+                .AddIngredient(ModContent.ItemType<BoneScythe>(), 1)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
+            CreateRecipe() // lead, platinum, and Crimtane bone
+                .AddIngredient(ModContent.ItemType<LeadBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CalciumBar>(), 6)
+                .AddIngredient(ModContent.ItemType<PlatinumBone>(), 6)
+                .AddIngredient(ModContent.ItemType<CrimtaneBone>(), 6)
+                .AddIngredient(ModContent.ItemType<AncientBone>(), 25)
+                .AddIngredient(ModContent.ItemType<BoneScythe>(), 1)
+                .AddTile(ModContent.TileType<BoneAltar>())
+                .Register();
         }
     }
     public class SkeletalReaperProjectile : ModProjectile
@@ -275,5 +358,7 @@ namespace TheSkeletronMod.Content.Items.Weapons.Calcium.CalcMelee
             Main.EntitySpriteDraw(sparkleTexture, drawpos, null, smallColor, MathHelper.PiOver2 + rotation, origin, scaleLeftRight * 0.6f, dir);
             Main.EntitySpriteDraw(sparkleTexture, drawpos, null, smallColor, 0f + rotation, origin, scaleUpDown * 0.6f, dir);
         }
+        
+        
     }
 }
